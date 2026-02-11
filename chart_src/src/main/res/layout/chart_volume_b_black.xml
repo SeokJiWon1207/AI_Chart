@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?><LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" android:background="#202020">
+    
+	<RelativeLayout android:layout_width="match_parent" android:layout_height="match_parent" android:orientation="vertical" android:background="#202020">
+	    <!-- 2012. 8. 27  차트유형 거래량 추가설정창  -->
+	    <ScrollView android:layout_width="fill_parent" android:layout_height="fill_parent" android:background="#202020" android:layout_marginTop="57dp">
+		    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:id="@+id/volumesetting" android:orientation="vertical">
+ 				<!-- <RadioGroup
+					android:id="@+id/volumesetting_radio_group"
+					android:layout_width="fill_parent"
+					android:layout_height="wrap_content"
+					android:orientation="vertical"
+					android:divider="@drawable/img_line4">
+						<RadioButton
+						    style="@style/volumesetting_radiobtn"
+							android:id="@+id/volume_radio_btn_1"
+							android:tag="1" 
+							android:text="일반"/>
+						<RadioButton
+						    style="@style/volumesetting_radiobtn"
+							android:id="@+id/volume_radio_btn_4"
+							android:tag="4" 
+							android:text="상승/하락(거래량)"/>
+						<RadioButton
+						    style="@style/volumesetting_radiobtn"
+							android:id="@+id/volume_radio_btn_5"
+							android:tag="5" 
+							android:text="캔들색과 같이"/>
+						<RadioButton
+						    style="@style/volumesetting_radiobtn"
+							android:id="@+id/volume_radio_btn_2"
+							android:tag="2" 
+							android:text="전일종가대비 상승/하락"/>
+						<RadioButton
+						    style="@style/volumesetting_radiobtn"
+							android:id="@+id/volume_radio_btn_3"
+							android:tag="3" 
+							android:text="전일고가대비 상승/하락"/>
+				</RadioGroup>	 -->	
+				
+				<ListView style="@style/chartset_listview_list" android:layout_height="270dp" android:id="@+id/volumeList"></ListView>
+					
+		        <LinearLayout style="@style/volumesetting_rowlinear" android:layout_marginTop="20dip">
+		            <TextView style="@style/detail_lineset_title_black" android:layout_weight="0.25" android:text="상승"/>
+		            <TextView style="@style/detail_lineset_items" android:layout_weight="0.35" android:id="@+id/volumecolor_up" android:background="#000000"></TextView>
+		        </LinearLayout>
+		        
+		        <LinearLayout style="@style/volumesetting_rowlinear">
+		            <TextView style="@style/detail_lineset_title_black" android:layout_weight="0.25" android:text="하락"/>
+		            <TextView style="@style/detail_lineset_items" android:layout_weight="0.35" android:id="@+id/volumecolor_down" android:background="#000000"></TextView>
+		        </LinearLayout>
+		        
+		        <LinearLayout style="@style/volumesetting_rowlinear">
+		            <TextView style="@style/detail_lineset_title_black" android:layout_weight="0.25" android:text="보합"/>
+		            <TextView style="@style/detail_lineset_items" android:layout_weight="0.35" android:id="@+id/volumecolor_equal" android:background="#000000"></TextView>
+		        </LinearLayout>
+		     </LinearLayout>
+	    </ScrollView> 
+	    
+	    <LinearLayout android:layout_width="match_parent" android:layout_height="40dip" android:background="#202020">
+        	   <!--  초기화  -->
+	            <Button android:text="초기화" android:textColor="#ffffff" android:layout_height="32dp" android:textSize="16dp" android:layout_marginLeft="10dp"
+				android:layout_width="70dip" android:layout_gravity="center"
+				android:background="@drawable/btn_chart_init_change" android:id="@+id/frameaBtnInit"/>  
+	 	    <TextView android:layout_weight="1" android:gravity="center" android:textColor="#ffffff" 
+	 	        android:textSize="20dp" android:text="차트 설정" android:id="@+id/frameaTitle"
+	 	        android:layout_height="match_parent" android:layout_width="0dp" android:layout_marginRight="10dp"></TextView>
+				<!-- 닫기  -->
+			<Button android:background="@drawable/btn_detail_back_change" android:layout_gravity="center_vertical"
+	            android:id="@+id/frameaBtnBack" android:layout_height="24dp" android:layout_width="24dp" android:layout_marginRight="10dp"/>   
+		</LinearLayout>
+		
+	</RelativeLayout>
+	
+</LinearLayout>

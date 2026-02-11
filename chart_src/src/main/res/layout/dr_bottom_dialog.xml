@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center"
+    android:orientation="vertical"
+    android:background="@android:color/transparent">
+
+    <LinearLayout
+        android:id="@+id/confirm_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@android:color/transparent"
+        android:orientation="vertical"
+        android:padding="0dp" >
+
+        <RelativeLayout android:id="@+id/popup_header_bg"
+            android:orientation="horizontal"
+            android:background="@drawable/shape_bottom_alert_roundrect"
+            android:layout_width="fill_parent" android:layout_height="92dp">
+            <TextView android:id="@+id/confirm_title" android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="40dp"
+                android:layout_marginLeft="40dp"
+                android:text="분할 설정"
+                android:textSize="22dp"
+                android:textStyle="bold"
+                android:textColor="#000000">
+            </TextView>
+<!--            <Button android:id="@+id/btn_devideview_refresh" android:background="@drawable/btn_refresh_change" android:layout_width="78dp" android:layout_height="30dp" android:layout_alignParentRight="true" android:layout_marginTop="20dp" android:layout_marginRight="20dp"></Button>-->
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="#f0f0f0"
+                android:layout_marginLeft="30dp"
+                android:layout_marginRight="30dp"
+                android:layout_alignParentBottom="true"/>
+        </RelativeLayout>
+
+        <LinearLayout android:id="@+id/ll_content"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:gravity="center_vertical"
+            android:background="#ffffff"
+            android:orientation="vertical" >
+
+<!--            <TextView android:id="@+id/alert_message"-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="56dp"-->
+<!--                 android:layout_marginTop="21dp" android:layout_marginBottom="21dp"-->
+<!--                android:gravity="left|center"-->
+<!--                />-->
+
+            <ListView android:id="@+id/lv_sub_cond"
+                android:layout_marginTop="10dp"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:divider="#ffffff"
+                android:dividerHeight="1dp"
+                android:background="#ffffff"
+                android:visibility="gone"
+                />
+
+            <LinearLayout
+                android:id="@+id/layout_bottomdlg"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:orientation="vertical"
+                android:layout_marginTop="20dp"
+                android:layout_marginLeft="27dp"
+                android:layout_marginRight="27dp"
+                android:gravity="center"
+                android:visibility="gone"/>
+        </LinearLayout>
+
+        <ImageView android:id="@+id/iv_bottomLine" android:layout_width="match_parent" android:layout_height="1dp" android:background="#d8d8d8" />
+
+        <LinearLayout
+            android:id="@+id/bottom_bg"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:gravity="bottom"
+            android:orientation="horizontal"
+            android:visibility="gone"
+            >
+
+            <Button
+                android:id="@+id/confirm_btn_no"
+                android:background="#f3f3f3"
+                android:layout_width="0dp"
+                android:layout_height="50dp"
+                android:layout_weight="0.5"
+                android:text="초기화"
+                android:textSize="17dp"
+                android:textColor="#000000"
+                android:visibility="gone"
+               />
+
+            <Button
+                android:id="@+id/confirm_btn_yes"
+                android:background="#f3f3f3"
+                android:layout_width="0dp"
+                android:layout_height="50dp"
+                android:layout_weight="0.5"
+                android:text="저장"
+                android:textColor="#666666"
+                android:textSize="17dp"
+                android:visibility="gone"
+                 />
+            <Button
+                android:id="@+id/confirm_btn_ok"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_weight="1"
+                android:background="#f3f3f3"
+                android:text="신규 그룹 만들기"
+                android:textColor="#666666"
+                android:textSize="17dp"
+                android:visibility="gone"
+                />
+        </LinearLayout>
+    </LinearLayout>
+
+</LinearLayout>

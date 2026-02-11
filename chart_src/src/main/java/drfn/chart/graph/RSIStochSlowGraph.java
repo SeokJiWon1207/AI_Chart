@@ -1,0 +1,145 @@
+package drfn.chart.graph;
+
+import android.graphics.Canvas;
+
+import java.util.Vector;
+
+import drfn.chart.draw.DrawTool;
+import drfn.chart.model.ChartDataModel;
+import drfn.chart.model.ChartViewModel;
+import drfn.chart.util.MinMax;
+
+public class RSIStochSlowGraph extends AbstractGraph {
+    //int[] interval = {12,5,5};
+    int[][] data;
+    int[] slow_k;
+    int[] slow_d;
+    Vector<DrawTool> tool;
+    public RSIStochSlowGraph(ChartViewModel cvm, ChartDataModel cdm){
+        super(cvm,cdm);
+        String[] datakind = {"고가","저가","종가"};
+        _dataKind = datakind;
+        tool = getDrawTool();//드로우 툴을 구한다
+        definition="Fast Stochastics는 지표의 등락이 상당히 심한 경우가 있기 때문에 Fast Stochastics의 값을 다시한번 이동평균하여 평활시킨 것이 Slow Stochastics입니다.  사용자 입력수치는 Fast %K를 구하기 위한 기간값과 Slow %K (=Fast %D)를 구하기 위한 이동평균기간, Slow %D값을 구하기 위한 이동평균기간입니다.";
+
+        m_strDefinitionHtml = "rsi+stochastic.html";    //2018.05.02 by lyj 보조지표 설명/활용법 추가(상세설정창)
+    }
+   
+    //------------------------------------
+    // Stochastics  
+    //    fast %K = {(오늘의 종가 - 최근 n일중 장중 최저가)/(최근 n일중 장중 최고가 - 최근 n일중 장중 최저가)}*100
+    //    fast %D = {(오늘의 종가 - 최근 n일중 장중 최저가)의 3일 이동평균 *100}
+    //              /{(최근 n일중 장중최고가 - 최근 n일중 장중 최저가의 3일 이동평균}
+    //    
+    //------------------------------------
+
+    public void FormulateData() {
+    	double[] highData = _cdm.getSubPacketData("고가");
+    	double[] lowData = _cdm.getSubPacketData("저가");
+    	double[] closeData = _cdm.getSubPacketData("종가");
+        double[] volData = _cdm.getSubPacketData("기본거래량");
+    	if(closeData==null) return;
+        int dLen = closeData.length;
+        double[] stoch_k = new double[dLen];
+        double[] rsi = new double[dLen];
+        double[] up_data = new double[dLen];
+        double[] dn_data = new double[dLen];
+
+        for(int i=0 ; i < dLen-1 ; i++){
+            up_data[i+1] =(closeData[i+1]-closeData[i]>0)?closeData[i+1]-closeData[i]:0;
+            dn_data[i+1] =(closeData[i+1]-closeData[i]<0)?closeData[i]-closeData[i+1]:0;
+        }
+        double[] upEMA = makeAverageD(up_data,interval[0]);
+        double[] downEMA = makeAverageD(dn_data,interval[0]);
+        for(int j=interval[0]; j < dLen ; j++){
+            //2015. 9. 18 특정종목에서 RSI 그리지 않음>>
+            if( (downEMA[j]+upEMA[j]) > 0 )
+            {
+                rsi[j]=upEMA[j]*100/(downEMA[j]+upEMA[j]);
+            }
+            else
+            {
+                rsi[j] = 0;
+            }
+            //2015. 9. 18 특정종목에서 RSI 그리지 않음<<
+        }
+        //RSI+Stochastic = RSI 구한 후 Stochastic %K 에 대입할 때 종가 대신 RSI 넣음
+        for(int i=1;i<dLen;i++){
+        	double l= MinMax.getRangeMin(rsi,i+1,interval[1]);
+            double h= MinMax.getRangeMax(rsi,i+1,interval[1]);
+            if(h==l)
+            	stoch_k[i] = 0;
+            else
+            	stoch_k[i]= ((rsi[i]-l)*100)/(h-l);
+        }
+        //2013.04.05 by LYH >> 고해상도 처리
+        double[] stoch_d = exponentialAverage(stoch_k,interval[2], interval[1]-1);
+        double[] slow_d = exponentialAverage(stoch_d,interval[3],interval[1]+interval[2]-2);
+//        double[] stoch_d = makeAverage(stoch_k,interval[1]);
+//        double[] slow_d = makeAverage(stoch_d,interval[2]);
+        //2013.04.05 by LYH <<
+        for(int i=0;i<tool.size();i++){
+            DrawTool dt = (DrawTool)tool.elementAt(i);
+            if(i==0){
+            	_cdm.setSubPacketData(dt.getPacketTitle(),stoch_d);
+            	_cdm.setPacketFormat(dt.getPacketTitle(), "× 0.01");
+            }
+            else {
+            	_cdm.setSubPacketData(dt.getPacketTitle(),slow_d);
+            	_cdm.setPacketFormat(dt.getPacketTitle(), "× 0.01");
+            }
+        }
+        formulated = true;
+    }
+    public void reFormulateData() {
+        FormulateData();
+        formulated = true;
+    }
+    public void drawGraph(Canvas gl){
+        if(!formulated)FormulateData();                       //저장되어 있지 않다면 계산을 새로 한다
+
+        
+        double[] drawData=null;
+        double[] baseData=null;
+        //2012. 7. 2   기준선 크기
+        //gl.glLineWidth(COMUtil.graphLineWidth);
+        for(int i=0;i<tool.size();i++){
+            DrawTool t=(DrawTool)tool.elementAt(i);
+            try{
+                drawData=_cdm.getSubPacketData(t.getPacketTitle());
+            }catch(ArrayIndexOutOfBoundsException e){
+                return;
+            }
+            if(i==0) _cvm.useJipyoSign=true;
+            else _cvm.useJipyoSign=false;
+            t.plot(gl,drawData);
+            
+            //2017. 3. 21 매매 신호 보기 기능 추가>>
+            if(isSellingSignalShow) {
+            	if(i==0) 
+            		baseData = drawData;
+            	else if(i==1)            	
+            		t.drawSignal(gl, baseData, drawData);
+            }
+            //2017. 3. 21 매매 신호 보기 기능 추가<<
+        }
+        
+        //2017. 3. 21 지표마다 기준선 설정 추가>>
+        drawBaseLine(gl);
+        //2017. 3. 21 지표마다 기준선 설정 추가>>
+        
+        //2012. 7. 2   기준선 크기
+        //gl.glLineWidth(COMUtil.graphLineWidth2);
+//        for(int i=0;i<base.length;i++){
+//            DrawTool t=(DrawTool)tool.elementAt(0);
+////            g.setColor(base_col[i]);
+//            t.draw(gl,base[i]);
+//        }
+    }
+    public void drawGraph_withSellPoint(Canvas g){
+    }
+    public String getName(){
+        return "RSI+Stochastic";
+    }
+
+}

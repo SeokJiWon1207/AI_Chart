@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content">
+
+    <TextView
+        android:id="@+id/text"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/kfit_tooltip_body_height"
+        android:layout_gravity="top"
+        android:background="@drawable/tooltip_background"
+        android:text="@string/tool_tip_text"
+        android:textColor="@color/kfits_grey0"
+        android:includeFontPadding="false"
+        android:paddingVertical="4dp"
+        android:paddingHorizontal="8dp"
+        android:gravity="center"
+        android:textSize="@dimen/kfit_tooltip_text_size"
+        app:layout_constraintBottom_toTopOf="@+id/arrow"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="SpUsage" />
+
+    <ImageView
+        android:id="@+id/arrow"
+        android:layout_width="@dimen/kfit_tooltip_arrow_size"
+        android:layout_height="@dimen/kfit_tooltip_arrow_size"
+        android:layout_marginEnd="@dimen/kfit_tooltip_icon_right_margin"
+        android:background="@drawable/kfit_kp_core_ic_tooltip_arrow_down_sharp"
+        android:importantForAccessibility="no"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/text"
+        app:layout_constraintTop_toBottomOf="@+id/text" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

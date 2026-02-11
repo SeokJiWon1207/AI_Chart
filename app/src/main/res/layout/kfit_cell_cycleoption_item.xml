@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="56.5dp"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:id="@+id/cell_body"
+        android:layout_width="match_parent"
+        android:layout_height="56dp"
+        android:background="@drawable/selector_cycleoption"
+        android:orientation="horizontal"
+        android:gravity="center_vertical">
+
+        <ImageView
+            android:id="@+id/cell_circle_view"
+            android:layout_width="4dp"
+            android:layout_height="4dp"
+            android:background="@drawable/image_circle"
+            android:layout_marginRight="12dp"
+            android:layout_marginLeft="12dp" />
+
+        <TextView
+            android:id="@+id/cell_textView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="1분"
+            android:textSize="@dimen/kfit_bottom_cycle_item_text_size"
+            android:textColor="@color/kfits_grey990" />
+    </LinearLayout>
+
+    <View
+        android:id="@+id/kfit_cell_divder"
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:background="@color/kfits_grey500"
+        android:layout_marginStart="24dp"
+        android:alpha="0.2" />
+</LinearLayout>

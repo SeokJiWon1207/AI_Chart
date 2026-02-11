@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout android:id="@+id/fctb_AbsoluteLayout01" 
+	android:layout_width="fill_parent" 
+	android:layout_height="56dp"
+	xmlns:android="http://schemas.android.com/apk/res/android"
+	android:weightSum="1">
+	<CheckBox android:text="" 
+				android:id="@+id/toolbarChk" android:layout_gravity="center_vertical"
+				android:checked="true" android:button="@drawable/checkbox_change_black"
+				android:focusable="false" android:layout_marginLeft="10dp" android:layout_width="26dp" android:layout_height="match_parent">
+			</CheckBox>
+	<ImageView android:id="@+id/toolbarImg"
+				android:layout_width="45dip" 
+				android:layout_height="32dip"
+				android:focusable="false"
+				android:background="@drawable/c_option_01_dn" android:layout_gravity="center_vertical" android:layout_marginLeft="10dp">
+			</ImageView>
+	<TextView android:text="지표이름" 
+		android:id="@+id/fctb_TextViewA01" android:layout_weight="1" android:textColor="#ffffff"
+		 android:layout_height="wrap_content" android:layout_width="0dp" android:layout_gravity="center_vertical" 
+		 android:layout_marginLeft="10dip" android:textSize="16dp">
+		</TextView>
+	<LinearLayout android:layout_width="45dp" android:layout_height="match_parent" android:orientation="vertical" 
+		     	    android:gravity="center|right">
+		<ImageView android:id="@+id/fctb_ImageViewA01"
+			android:layout_width="36dip" 
+			android:layout_height="36dip"
+			android:background="@drawable/dropdown_list_move" >
+		</ImageView>
+	</LinearLayout>
+</LinearLayout>

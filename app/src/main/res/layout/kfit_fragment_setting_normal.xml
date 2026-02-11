@@ -1,0 +1,1068 @@
+<?xml version="1.0" encoding="utf-8"?><!--현재 미사용-->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="#d9dce2"
+    android:clickable="true"
+    android:orientation="vertical">
+    <!-- 일반설정(기본환경) 창 시작  -->
+    <ScrollView
+        android:id="@+id/normalscroll"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_gravity="top"
+        android:background="#ffffff"
+        android:clickable="true"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:id="@+id/normalLinear"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:clickable="true"
+            android:orientation="vertical">
+            <!--<TextView android:id="@+id/normalset_txt_1" style="@style/normalset_subtitle" android:text="차트유형" />-->
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:background="#eff9ff">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="18dp"
+                    android:gravity="center_vertical"
+                    android:text="기본설정"
+                    android:textColor="#111111"
+                    android:textSize="15dp"
+                    android:textStyle="bold" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/ll_charttype"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <Button
+                    android:id="@+id/btn_charttypeindicator"
+                    style="@style/normalset_subtitle"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:tag="1190"
+                    android:text="차트유형" />
+
+                <TextView
+                    android:id="@+id/tv_charttype"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginRight="10dp"
+                    android:text="캔들"
+                    android:textColor="#488be2"
+                    android:textSize="15dp"
+                    android:textStyle="bold" />
+
+                <ImageView
+                    android:id="@+id/iv_charttype_arrow"
+                    android:layout_width="16dp"
+                    android:layout_height="16dp"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginRight="17dp"
+                    android:background="@drawable/btn_jipyo_arrow_down_n" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/chartLayout"
+                style="@style/chartset_fortablet_listview_rl"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:visibility="gone"> <!-- 2015. 1. 13 차트유형 추가 : height 조절 -->
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="10dp"
+                    android:background="#f8f8f8" />
+
+                <ListView
+                    android:id="@+id/chartList"
+                    style="@style/chartset_listview_list"
+                    android:background="#f8f8f8"
+                    android:dividerHeight="0dp"></ListView>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="10dp"
+                    android:background="#f8f8f8" />
+            </LinearLayout>
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="#eeeeee" />
+
+            <LinearLayout
+                style="@style/normalset_rowlinear"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/normalset_txt_2"
+                    style="@style/normalset_subtitle"
+                    android:layout_width="wrap_content"
+                    android:text="등락률 기준" />
+
+                <RelativeLayout
+                    android:id="@+id/rl_lastday"
+                    style="chartset_lr_radio_btn"
+                    android:layout_width="match_parent"
+                    android:layout_height="52dp">
+
+                    <RadioButton
+                        android:id="@+id/lastbong_radio_btn"
+                        style="@style/chartset_radio_btn"
+                        android:layout_width="68dp"
+                        android:layout_alignParentRight="true"
+                        android:layout_marginRight="92dp"
+                        android:checked="false"
+                        android:gravity="center"
+                        android:tag="510002"
+                        android:text="전봉대비" />
+
+                    <RadioButton
+                        android:id="@+id/lastday_radio_btn"
+                        style="@style/chartset_radio_btn"
+                        android:layout_width="68dp"
+                        android:layout_alignParentRight="true"
+                        android:layout_marginRight="18dp"
+                        android:checked="false"
+                        android:gravity="center"
+                        android:tag="510001"
+                        android:text="전일대비"
+                        android:textColor="#111111" />
+                    <!--<TextView style="@style/chartset_radio_text" android:text="전일 종가 대비" android:layout_toRightOf="@+id/lastday_radio_btn"/>-->
+                </RelativeLayout>
+                <!--<RelativeLayout android:id="@+id/rl_lastbong" style="chartset_lr_radio_btn" android:layout_width="match_parent" android:layout_height="52dp" android:layout_marginLeft="20dp">-->
+                <!--<RadioButton android:id="@+id/lastbong_radio_btn" style="@style/chartset_radio_btn" android:checked="false" android:tag="510002" android:layout_alignParentRight="true" android:text="White" android:gravity="center" android:layout_marginRight="76dp"/>-->
+                <!--<TextView style="@style/chartset_radio_text" android:text="직전 종가 대비" android:layout_toRightOf="@+id/lastbong_radio_btn" />-->
+                <!--</RelativeLayout>-->
+            </LinearLayout>
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="#eeeeee" />
+
+            <LinearLayout
+                style="@style/normalset_rowlinear"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/normalset_txt_4"
+                    style="@style/normalset_subtitle"
+                    android:layout_width="wrap_content"
+                    android:text="테마" />
+
+                <RelativeLayout
+                    android:id="@+id/rl_bns_gbn_white"
+                    android:layout_width="wrap_content"
+                    android:layout_height="52dp">
+
+                    <RadioButton
+                        android:id="@+id/bns_gbn_white_radio_btn"
+                        style="@style/chartset_radio_btn"
+                        android:layout_alignParentRight="true"
+                        android:layout_marginRight="76dp"
+                        android:checked="false"
+                        android:gravity="center"
+                        android:tag="500002"
+                        android:text="White" />
+
+                    <RadioButton
+                        android:id="@+id/bns_gbn_black_radio_btn"
+                        style="@style/chartset_radio_btn"
+                        android:layout_alignParentRight="true"
+                        android:layout_marginRight="18dp"
+                        android:checked="false"
+                        android:gravity="center"
+                        android:tag="500001"
+                        android:text="Black"
+                        android:textColor="#111111" />
+                    <!--<TextView style="@style/chartset_radio_text" android:text="화이트" android:layout_alignParentRight="true" />-->
+                </RelativeLayout>
+                <!--<RelativeLayout android:id="@+id/rl_bns_gbn_black"  android:layout_width="wrap_content" android:layout_height="52dp">-->
+                <!--<RadioButton android:id="@+id/bns_gbn_black_radio_btn" style="@style/chartset_radio_btn" android:checked="false" android:tag="500001" android:layout_alignParentRight="true" android:layout_marginRight="70dp" android:text="Black" android:gravity="center" android:textColor="#111111" android:textSize="14dp"/>-->
+                <!--<TextView style="@style/chartset_radio_text" android:text="Black" android:layout_alignParentRight="true" android:layout_marginRight="18dp"/>-->
+                <!--</RelativeLayout>-->
+                <RelativeLayout
+                    android:id="@+id/rl_bns_gbn_auto"
+                    style="chartset_lr_radio_btn"
+                    android:layout_width="100dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="12dp"
+                    android:visibility="gone">
+
+                    <RadioButton
+                        android:id="@+id/bns_gbn_auto_radio_btn"
+                        style="@style/chartset_radio_btn"
+                        android:checked="false"
+                        android:tag="500003" />
+
+                    <TextView
+                        style="@style/chartset_radio_text"
+                        android:text="자동(테마)" />
+                </RelativeLayout>
+            </LinearLayout>
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="#eeeeee" />
+
+            <LinearLayout
+                android:id="@+id/convenient_rowlinear_9"
+                style="@style/normalset_rowlinear">
+
+                <CheckBox
+                    android:id="@+id/normalset_check_9"
+                    style="@style/normalset_checkbox"
+                    android:checked="true"
+                    android:visibility="gone" />
+
+                <TextView
+                    android:id="@+id/normalset_tv_9"
+                    style="@style/normalset_title"
+                    android:layout_marginLeft="18dp"
+                    android:layout_weight="0.95"
+                    android:text="차트우측 여백(0~200)" />
+
+                <drfn.chart.comp.ExEditText
+                    android:id="@+id/ed_rightpaddingnumset"
+                    style="@style/detail_valset_valuebox_edit"
+                    android:layout_width="80dp"
+                    android:layout_height="32dp"
+                    android:layout_marginRight="18dp"
+                    android:background="@drawable/editbox_enable"
+                    android:gravity="center"
+                    android:inputType="number"
+                    android:text="10"
+                    android:textSize="16dp" />
+
+            </LinearLayout>
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="#eeeeee" />
+
+            <LinearLayout
+                android:id="@+id/convenient_rowlinear_21"
+                style="@style/normalset_rowlinear">
+
+                <TextView
+                    android:id="@+id/normalset_tv_21"
+                    style="@style/normalset_title"
+                    android:layout_marginLeft="18dp"
+                    android:layout_weight="0.95"
+                    android:text="폰트 크기" />
+
+                <Button
+                    android:id="@+id/font_small"
+                    android:layout_width="52dp"
+                    android:layout_height="32dp"
+                    android:layout_marginRight="6dp"
+                    android:background="@drawable/radiorect_change"
+                    android:text="작게"
+                    android:textSize="14dp" />
+
+                <Button
+                    android:id="@+id/font_middle"
+                    android:layout_width="52dp"
+                    android:layout_height="32dp"
+                    android:layout_marginRight="6dp"
+                    android:background="@drawable/radiorect_change"
+                    android:text="보통"
+                    android:textSize="14dp" />
+
+                <Button
+                    android:id="@+id/font_large"
+                    android:layout_width="52dp"
+                    android:layout_height="32dp"
+                    android:layout_marginRight="18dp"
+                    android:background="@drawable/radiorect_change"
+                    android:text="크게"
+                    android:textSize="14dp" />
+            </LinearLayout>
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="#eeeeee" />
+
+            <LinearLayout
+                android:id="@+id/convenient_rowlinear_22"
+                style="@style/normalset_rowlinear">
+
+                <TextView
+                    android:id="@+id/normalset_tv_22"
+                    style="@style/normalset_title"
+                    android:layout_marginLeft="18dp"
+                    android:layout_weight="0.95"
+                    android:text="수치조회창 폰트 크기" />
+
+                <Button
+                    android:id="@+id/viewp_font_small"
+                    android:layout_width="52dp"
+                    android:layout_height="32dp"
+                    android:layout_marginRight="6dp"
+                    android:background="@drawable/radiorect_change"
+                    android:text="작게"
+                    android:textSize="14dp" />
+
+                <Button
+                    android:id="@+id/viewp_font_middle"
+                    android:layout_width="52dp"
+                    android:layout_height="32dp"
+                    android:layout_marginRight="6dp"
+                    android:background="@drawable/radiorect_change"
+                    android:text="보통"
+                    android:textSize="14dp" />
+
+                <Button
+                    android:id="@+id/viewp_font_large"
+                    android:layout_width="52dp"
+                    android:layout_height="32dp"
+                    android:layout_marginRight="18dp"
+                    android:background="@drawable/radiorect_change"
+                    android:text="크게"
+                    android:textSize="14dp" />
+            </LinearLayout>
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="#eeeeee" />
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:background="#eff9ff">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="18dp"
+                    android:gravity="center_vertical"
+                    android:text="편의설정"
+                    android:textColor="#111111"
+                    android:textSize="15dp"
+                    android:textStyle="bold" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/convenient_rowlinear_8"
+                style="@style/normalset_rowlinear">
+
+                <CheckBox
+                    android:id="@+id/normalset_check_8"
+                    style="@style/normalset_checkbox"
+                    android:checked="true" />
+
+                <TextView
+                    android:id="@+id/normalset_tv_8"
+                    style="@style/normalset_title"
+                    android:layout_weight="0.95"
+                    android:text="주기별 차트 설정" />
+
+            </LinearLayout>
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="#eeeeee" />
+
+            <LinearLayout
+                android:id="@+id/convenient_rowlinear_6"
+                style="@style/normalset_rowlinear">
+
+                <CheckBox
+                    android:id="@+id/normalset_check_6"
+                    style="@style/normalset_checkbox" />
+
+                <TextView
+                    android:id="@+id/normalset_tv_6"
+                    style="@style/normalset_title"
+                    android:layout_weight="0.95"
+                    android:text="일자구분선 표시" />
+
+            </LinearLayout>
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="#eeeeee" />
+
+            <LinearLayout
+                android:id="@+id/convenient_rowlinear_16"
+                style="@style/normalset_rowlinear">
+
+                <CheckBox
+                    android:id="@+id/normalset_check_16"
+                    style="@style/normalset_checkbox"
+                    android:checked="true" />
+
+                <TextView
+                    android:id="@+id/normalset_tv_16"
+                    style="@style/normalset_title"
+                    android:layout_weight="0.95"
+                    android:text="가격차트로 채우기" />
+
+            </LinearLayout>
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="#eeeeee" />
+
+            <LinearLayout
+                android:id="@+id/convenient_rowlinear_14"
+                style="@style/normalset_rowlinear">
+
+                <CheckBox
+                    android:id="@+id/normalset_check_14"
+                    style="@style/normalset_checkbox"
+                    android:checked="true" />
+
+                <TextView
+                    android:id="@+id/normalset_tv_14"
+                    style="@style/normalset_title"
+                    android:layout_weight="0.95"
+                    android:text="Y축 격자선" />
+
+            </LinearLayout>
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="#eeeeee" />
+
+            <LinearLayout
+                android:id="@+id/convenient_rowlinear_15"
+                style="@style/normalset_rowlinear">
+
+                <CheckBox
+                    android:id="@+id/normalset_check_15"
+                    style="@style/normalset_checkbox"
+                    android:checked="true" />
+
+                <TextView
+                    android:id="@+id/normalset_tv_15"
+                    style="@style/normalset_title"
+                    android:layout_weight="0.95"
+                    android:text="X축 격자선" />
+
+            </LinearLayout>
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="#eeeeee" />
+
+
+            <LinearLayout
+                android:id="@+id/convenient_rowlinear_1"
+                style="@style/normalset_rowlinear">
+
+                <CheckBox
+                    android:id="@+id/normalset_check_1"
+                    style="@style/normalset_checkbox" />
+
+                <TextView
+                    android:id="@+id/normalset_tv_1"
+                    style="@style/normalset_title"
+                    android:layout_weight="0.95"
+                    android:text="수정주가 사용" />
+
+            </LinearLayout>
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="#eeeeee" />
+
+            <LinearLayout
+                android:id="@+id/convenient_rowlinear_17"
+                style="@style/normalset_rowlinear">
+
+                <CheckBox
+                    android:id="@+id/normalset_check_17"
+                    style="@style/normalset_checkbox"
+                    android:checked="true" />
+
+                <TextView
+                    android:id="@+id/normalset_tv_17"
+                    style="@style/normalset_title"
+                    android:layout_weight="0.95"
+                    android:text="갭보정 사용(분,틱)" />
+
+            </LinearLayout>
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="#eeeeee" />
+
+
+            <LinearLayout
+                android:id="@+id/convenient_rowlinear_19"
+                style="@style/normalset_rowlinear">
+
+                <CheckBox
+                    android:id="@+id/normalset_check_19"
+                    style="@style/normalset_checkbox"
+                    android:checked="true" />
+
+                <TextView
+                    android:id="@+id/normalset_tv_19"
+                    style="@style/normalset_title"
+                    android:layout_weight="0.95"
+                    android:text="수치조회 십자선 자석기능" />
+
+            </LinearLayout>
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="#eeeeee" />
+
+            <LinearLayout
+                android:id="@+id/convenient_rowlinear_18"
+                style="@style/normalset_rowlinear">
+
+                <CheckBox
+                    android:id="@+id/normalset_check_18"
+                    style="@style/normalset_checkbox"
+                    android:checked="true" />
+
+                <TextView
+                    android:id="@+id/normalset_tv_18"
+                    style="@style/normalset_title"
+                    android:layout_weight="0.95"
+                    android:text="로그차트" />
+
+            </LinearLayout>
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="#eeeeee" />
+
+            <LinearLayout
+                android:id="@+id/convenient_rowlinear_4"
+                style="@style/normalset_rowlinear">
+
+                <CheckBox
+                    android:id="@+id/normalset_check_4"
+                    style="@style/normalset_checkbox" />
+
+                <TextView
+                    android:id="@+id/normalset_tv_4"
+                    style="@style/normalset_title"
+                    android:layout_weight="0.95"
+                    android:text="상/하한가 바 표시" />
+
+            </LinearLayout>
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="#eeeeee" />
+
+            <LinearLayout
+                android:id="@+id/convenient_rowlinear_2"
+                style="@style/normalset_rowlinear">
+
+                <CheckBox
+                    android:id="@+id/normalset_check_2"
+                    style="@style/normalset_checkbox" />
+
+                <TextView
+                    android:id="@+id/normalset_tv_2"
+                    style="@style/normalset_title"
+                    android:layout_weight="0.95"
+                    android:text="Y축에 눈금 표시" />
+
+            </LinearLayout>
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="#eeeeee" />
+
+            <LinearLayout
+                android:id="@+id/convenient_rowlinear_5"
+                style="@style/normalset_rowlinear">
+
+                <CheckBox
+                    android:id="@+id/normalset_check_5"
+                    style="@style/normalset_checkbox" />
+
+                <TextView
+                    android:id="@+id/normalset_tv_5"
+                    style="@style/normalset_title"
+                    android:layout_weight="0.95"
+                    android:text="추세선 수치 표시" />
+
+            </LinearLayout>
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="#eeeeee" />
+
+            <LinearLayout
+                android:id="@+id/convenient_rowlinear_7"
+                style="@style/normalset_rowlinear">
+
+                <CheckBox
+                    android:id="@+id/normalset_check_7"
+                    style="@style/normalset_checkbox"
+                    android:checked="true" />
+
+                <TextView
+                    android:id="@+id/normalset_tv_7"
+                    style="@style/normalset_title"
+                    android:layout_weight="0.95"
+                    android:text="조회 개수 설정 표시" />
+
+            </LinearLayout>
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="#eeeeee" />
+
+
+            <LinearLayout
+                android:id="@+id/convenient_rowlinear_13"
+                style="@style/normalset_rowlinear">
+
+                <CheckBox
+                    android:id="@+id/normalset_check_13"
+                    style="@style/normalset_checkbox"
+                    android:checked="true" />
+
+                <TextView
+                    android:id="@+id/normalset_tv_13"
+                    style="@style/normalset_title"
+                    android:layout_weight="0.95"
+                    android:text="차트 내 최대/최소 표시" />
+
+            </LinearLayout>
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="#eeeeee" />
+
+            <LinearLayout
+                android:id="@+id/convenient_rowlinear_3"
+                style="@style/normalset_rowlinear">
+
+                <CheckBox
+                    android:id="@+id/normalset_check_3"
+                    style="@style/normalset_checkbox" />
+
+                <TextView
+                    android:id="@+id/normalset_tv_3"
+                    style="@style/normalset_title"
+                    android:layout_weight="0.95"
+                    android:text="눈금 위 현재가 라벨 표시" />
+
+            </LinearLayout>
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="#eeeeee" />
+
+
+            <ListView
+                android:id="@+id/chgrateList"
+                style="@style/chartset_listview_list"
+                android:layout_height="80dp"
+                android:visibility="gone"></ListView>
+
+            <LinearLayout
+                android:id="@+id/convenient_rowlinear_10"
+                style="@style/normalset_rowlinear"
+                android:visibility="gone">
+
+                <TextView
+                    android:id="@+id/normalset_tv_10"
+                    style="@style/normalset_title"
+                    android:layout_weight="0.95"
+                    android:text="한국시간적용" />
+
+                <CheckBox
+                    android:id="@+id/normalset_check_10"
+                    style="@style/normalset_checkbox"
+                    android:checked="true" />
+            </LinearLayout>
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="#eeeeee"
+                android:visibility="gone" />
+
+            <LinearLayout
+                android:id="@+id/convenient_rowlinear_candle"
+                style="@style/normalset_rowlinear"
+                android:visibility="gone">
+
+                <TextView
+                    style="@style/normalset_title"
+                    android:layout_marginLeft="20dp"
+                    android:layout_weight="0.95"
+                    android:text="캔들설정" />
+
+                <ImageView
+                    android:layout_width="7dp"
+                    android:layout_height="11dp"
+                    android:layout_gravity="right|center_vertical"
+                    android:layout_marginRight="15dp" />
+            </LinearLayout>
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="#eeeeee"
+                android:visibility="gone" />
+
+
+            <TextView
+                android:id="@+id/normalset_txt_3"
+                style="@style/normalset_subtitle"
+                android:text="확대/축소시 정밀도 설정"
+                android:visibility="gone" />
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="#eeeeee"
+                android:visibility="gone" />
+
+            <LinearLayout
+                style="@style/normalset_rowlinear"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:visibility="gone">
+
+                <RelativeLayout
+                    android:id="@+id/rl_zoom_normal"
+                    style="chartset_lr_radio_btn"
+                    android:layout_width="match_parent"
+                    android:layout_height="56dp"
+                    android:layout_marginLeft="20dp">
+
+                    <RadioButton
+                        android:id="@+id/zoom_radio_btn_normal"
+                        style="@style/chartset_radio_btn"
+                        android:checked="false"
+                        android:tag="520001" />
+
+                    <TextView
+                        style="@style/chartset_radio_text"
+                        android:layout_toRightOf="@+id/zoom_radio_btn_normal"
+                        android:text="보통으로" />
+                </RelativeLayout>
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="#eeeeee" />
+
+                <RelativeLayout
+                    android:id="@+id/rl_zoom_detail"
+                    style="chartset_lr_radio_btn"
+                    android:layout_width="match_parent"
+                    android:layout_height="56dp"
+                    android:layout_marginLeft="20dp">
+
+                    <RadioButton
+                        android:id="@+id/zoom_radio_btn_detail"
+                        style="@style/chartset_radio_btn"
+                        android:checked="false"
+                        android:tag="520002" />
+
+                    <TextView
+                        style="@style/chartset_radio_text"
+                        android:layout_toRightOf="@+id/zoom_radio_btn_detail"
+                        android:text="정밀하게" />
+                </RelativeLayout>
+            </LinearLayout>
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="#eeeeee"
+                android:visibility="gone" />
+
+            <TextView
+                android:id="@+id/normalset_txt_5"
+                style="@style/normalset_subtitle"
+                android:text="봉 작도 기준"
+                android:visibility="gone" />
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="#eeeeee"
+                android:visibility="gone" />
+
+            <LinearLayout
+                style="@style/normalset_rowlinear"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:visibility="gone">
+
+                <RelativeLayout
+                    android:id="@+id/rl_silbong"
+                    style="chartset_lr_radio_btn"
+                    android:layout_width="match_parent"
+                    android:layout_height="56dp"
+                    android:layout_marginLeft="20dp">
+
+                    <RadioButton
+                        android:id="@+id/silbong_radio_btn"
+                        style="@style/chartset_radio_btn"
+                        android:checked="false"
+                        android:tag="530002" />
+
+                    <TextView
+                        style="@style/chartset_radio_text"
+                        android:layout_toRightOf="@+id/silbong_radio_btn"
+                        android:text="실봉" />
+                </RelativeLayout>
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="#eeeeee" />
+
+                <RelativeLayout
+                    android:id="@+id/rl_hubong"
+                    style="chartset_lr_radio_btn"
+                    android:layout_width="match_parent"
+                    android:layout_height="56dp"
+                    android:layout_marginLeft="20dp">
+
+                    <RadioButton
+                        android:id="@+id/hubong_radio_btn"
+                        style="@style/chartset_radio_btn"
+                        android:checked="false"
+                        android:tag="530001" />
+
+                    <TextView
+                        style="@style/chartset_radio_text"
+                        android:layout_toRightOf="@+id/hubong_radio_btn"
+                        android:text="실봉 + 허봉" />
+                </RelativeLayout>
+            </LinearLayout>
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="#eeeeee"
+                android:visibility="gone" />
+            트
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:background="#eff9ff">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="18dp"
+                    android:gravity="center_vertical"
+                    android:text="전체 차트 설정 저장 및 불러오기"
+                    android:textColor="#111111"
+                    android:textSize="15dp"
+                    android:textStyle="bold" />
+            </LinearLayout>
+
+            <ImageView
+                android:layout_width="319dp"
+                android:layout_height="55dp"
+                android:layout_marginLeft="18dp"
+                android:layout_marginTop="12dp"
+                android:background="@drawable/img_server_set" />
+
+            <LinearLayout
+                style="@style/normalset_rowlinear"
+                android:layout_marginTop="16dp"
+                android:layout_marginBottom="30dp"
+                android:orientation="horizontal">
+
+                <View
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1" />
+
+                <Button
+                    android:id="@+id/convenient_save"
+                    android:layout_width="90dp"
+                    android:layout_height="36dp"
+                    android:layout_marginRight="8dp"
+                    android:background="@drawable/ctl_radio_rect_n"
+                    android:text="서버저장"
+                    android:textColor="#111111"
+                    android:textSize="14dp" />
+
+                <Button
+                    android:id="@+id/convenient_load"
+                    android:layout_width="90dp"
+                    android:layout_height="36dp"
+                    android:layout_marginRight="18dp"
+                    android:background="@drawable/ctl_radio_rect_n"
+                    android:text="불러오기"
+                    android:textColor="#111111"
+                    android:textSize="14dp" />
+            </LinearLayout>
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="#eeeeee"
+                android:visibility="gone" />
+
+            <LinearLayout
+                style="@style/normalset_rowlinear"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:visibility="gone">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="46dp"
+                    android:gravity="center_vertical">
+
+                    <TextView
+                        style="@style/normalset_title"
+                        android:layout_height="wrap_content"
+                        android:text="필터링 조건입력" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/convenient_rowlinear_11"
+                    android:layout_width="match_parent"
+                    android:layout_height="46dp"
+                    android:gravity="center_vertical">
+
+                    <TextView
+                        android:id="@+id/normalset_tv_11"
+                        style="@style/normalset_title"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0.95"
+                        android:text="가격 적용(이내)" />
+
+                    <drfn.chart.comp.ExEditText
+                        android:id="@+id/ed_skip_tick"
+                        style="@style/detail_valset_valuebox_edit"
+                        android:layout_width="67dp"
+                        android:layout_height="27dp"
+                        android:layout_marginRight="20dp"
+                        android:background="@drawable/editbox_enable"
+                        android:gravity="center"
+                        android:inputType="number"
+                        android:text="10"
+                        android:textSize="12dp" />
+
+                    <CheckBox
+                        android:id="@+id/normalset_check_11"
+                        style="@style/normalset_checkbox"
+                        android:checked="false" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/convenient_rowlinear_12"
+                    android:layout_width="match_parent"
+                    android:layout_height="46dp"
+                    android:gravity="center_vertical">
+
+                    <TextView
+                        android:id="@+id/normalset_tv_12"
+                        style="@style/normalset_title"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0.95"
+                        android:text="거래량 적용(이상)" />
+
+                    <drfn.chart.comp.ExEditText
+                        android:id="@+id/ed_skip_volume"
+                        style="@style/detail_valset_valuebox_edit"
+                        android:layout_width="67dp"
+                        android:layout_height="27dp"
+                        android:layout_marginRight="20dp"
+                        android:background="@drawable/editbox_enable"
+                        android:gravity="center"
+                        android:inputType="number"
+                        android:text="10"
+                        android:textSize="12dp" />
+
+                    <CheckBox
+                        android:id="@+id/normalset_check_12"
+                        style="@style/normalset_checkbox"
+                        android:checked="false" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="#eeeeee" />
+
+
+            <TextView
+                style="@style/normalset_subtitle"
+                android:text="화면설정(길게누름)"
+                android:visibility="gone" />
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="#eeeeee"
+                android:visibility="gone" />
+
+            <ListView
+                android:id="@+id/screensetList"
+                style="@style/chartset_listview_list"
+                android:layout_height="108dp"
+                android:visibility="gone"></ListView>
+
+            <!-- 2013. 11. 29 종목별 추세선 전체초기화  -->
+            <TextView
+                style="@style/normalset_subtitle"
+                android:text="추세선 전체 초기화"
+                android:visibility="gone"></TextView>
+            <!--                <ImageView android:layout_width="match_parent" android:layout_height="1dp" android:background="#eeeeee" />-->
+            <LinearLayout
+                android:id="@+id/convenient_rowlinear_analtool"
+                style="@style/normalset_rowlinear"
+                android:background="@drawable/indicator_list_bg_change"
+                android:visibility="gone">
+
+                <TextView
+                    style="@style/normalset_title"
+                    android:layout_width="match_parent"
+                    android:layout_marginLeft="20dp"
+                    android:text="추세선 전체 초기화" />
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+    <!-- 일반설정창 끝   -->
+
+</LinearLayout>

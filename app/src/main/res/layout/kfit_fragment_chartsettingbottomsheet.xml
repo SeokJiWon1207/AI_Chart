@@ -1,0 +1,175 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/kfits_grey0">
+
+    <RelativeLayout
+        android:id="@+id/relativeLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <RelativeLayout
+            android:id="@+id/bottom_title_layout"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/kfit_bottomSheet_title_height"
+            android:layout_alignParentTop="true"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/bottom_title_text"
+                android:layout_width="@dimen/kfit_bottomSheet_title_textwidth"
+                android:layout_height="match_parent"
+                android:layout_centerInParent="true"
+                android:gravity="center"
+                android:text="@string/tab_title_top"
+                android:textColor="@color/kfits_grey990"
+                android:textSize="@dimen/kfit_bottomSheet_title_textsize"
+                android:textStyle="bold" />
+
+            <LinearLayout
+                android:id="@+id/ll_bottom_title"
+                android:layout_width="40dp"
+                android:layout_height="match_parent"
+                android:layout_alignParentEnd="true"
+                android:layout_centerVertical="true"
+                android:layout_marginEnd="@dimen/kfit_bottomSheet_title_close_btn_marginEnd"
+                android:gravity="center_vertical|end">
+
+                <ImageView
+                    android:id="@+id/btn_bottom_title_close"
+                    android:layout_width="@dimen/kfit_bottomSheet_title_close_btn"
+                    android:layout_height="@dimen/kfit_bottomSheet_title_close_btn"
+                    android:background="@drawable/kfit_kp_core_ic_common_close" />
+            </LinearLayout>
+        </RelativeLayout>
+
+        <LinearLayout
+            android:id="@+id/tab_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/bottom_title_layout"
+            android:layout_marginLeft="@dimen/kfit_bottomSheet_common_side_margin"
+            android:layout_marginRight="@dimen/kfit_bottomSheet_common_side_margin"
+            android:orientation="horizontal"
+            android:weightSum="10">
+
+            <com.google.android.material.tabs.TabLayout
+                android:id="@+id/tabs"
+                android:layout_width="fill_parent"
+                android:layout_height="48dp"
+                app:tabBackground="@color/kfits_grey0"
+                app:tabIndicatorColor="@color/kfits_grey990"
+                app:tabIndicatorHeight="2dp"
+                app:tabMode="scrollable"
+                app:tabRippleColor="@null"
+                app:tabSelectedTextColor="@color/kfits_grey990"
+                app:tabTextAppearance="@style/kfit_tab_text"
+                app:tabTextColor="@color/kfits_fit_on_background_emphasis_medium" />
+
+            <!--            app:tabPaddingEnd="2dp"-->
+            <!--            app:tabPaddingStart="2dp"-->
+
+            <!--            <Button-->
+            <!--                android:id="@+id/btn_reset"-->
+            <!--                android:layout_width="0dp"-->
+            <!--                android:layout_height="57dp"-->
+            <!--                android:layout_weight="2"-->
+            <!--                android:text="@string/tab_title_reset" />-->
+        </LinearLayout>
+
+        <View
+            android:id="@+id/topline_divider"
+            android:layout_width="match_parent"
+            android:layout_height="0.5dp"
+            android:layout_below="@id/tab_layout"
+            android:alpha="0.2"
+            android:background="@color/kfits_grey500" />
+
+        <FrameLayout
+            android:id="@+id/bottomSheet"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_above="@+id/view_Trading"
+            android:layout_below="@id/topline_divider"
+            app:layout_behavior="android.support.design.widget.BottomSheetBehavior">
+
+            <androidx.viewpager2.widget.ViewPager2
+                android:id="@+id/viewPager"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@color/kfits_grey0" />
+        </FrameLayout>
+
+        <!--        <View-->
+        <!--            android:layout_width="match_parent"-->
+        <!--            android:layout_height="34dp"-->
+        <!--            android:layout_above="@+id/view_Trading"-->
+        <!--            android:background="@drawable/kfit_gradient" />-->
+        <LinearLayout
+            android:id="@+id/config_tooltip_body"
+            android:layout_width="match_parent"
+            android:layout_height="36dp"
+            android:orientation="horizontal"
+            android:layout_marginBottom="0dp"
+            android:layout_above="@+id/view_Trading"
+            android:visibility="gone"
+            android:weightSum="3">
+
+            <RelativeLayout
+                android:layout_width="0dp"
+                android:layout_height="42dp"
+                android:layout_weight="1"
+                android:layout_marginRight="4dp"
+                android:gravity="center"></RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="0dp"
+                android:layout_height="42dp"
+                android:layout_weight="2"
+                android:layout_marginLeft="8dp"
+                android:layout_marginRight="10dp"
+                android:gravity="center">
+
+                <FrameLayout
+                    android:id="@+id/tooltip_body"
+                    android:layout_marginBottom="@dimen/kfit_bottomSheet_config_side_margin"
+                    android:layout_width="@dimen/kfit_config_tooltip_width"
+                    android:layout_height="34dp">
+
+                    <TextView
+                        android:id="@+id/tooltip_textview"
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/kfit_config_tooltip_height"
+                        android:layout_gravity="top|center"
+                        android:background="@drawable/tooltip_background"
+                        android:gravity="center"
+                        android:text="한국주식 캔들차트에만 적용돼요"
+                        android:textColor="@color/kfits_grey0"
+                        android:textSize="@dimen/kfit_tooltip_text_size" />
+
+                    <ImageView
+                        android:id="@+id/tooltip_arrow"
+                        android:layout_width="@dimen/kfit_tooltip_arrow_size"
+                        android:layout_height="@dimen/kfit_tooltip_arrow_size"
+                        android:layout_gravity="bottom|center"
+                        android:layout_marginTop="20dp"
+                        android:layout_marginRight="@dimen/kfit_config_tooltip_icon_right_margin"
+                        android:background="@drawable/kfit_kp_core_ic_tooltip_arrow_down_sharp" />
+
+                </FrameLayout>
+            </RelativeLayout>
+        </LinearLayout>
+
+        <include
+            android:id="@+id/view_Trading"
+            layout="@layout/kfit_footer_trading_view"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_marginLeft="@dimen/kfit_bottomSheet_common_side_margin"
+            android:layout_marginRight="@dimen/kfit_bottomSheet_common_side_margin" />
+    </RelativeLayout>
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

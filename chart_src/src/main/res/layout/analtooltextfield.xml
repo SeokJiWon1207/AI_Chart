@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="horizontal"
+	android:layout_width="fill_parent"
+	android:layout_height="wrap_content" >
+    <ImageView
+		android:id="@+id/analtooltextfield_left"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content" />
+		<LinearLayout
+		android:id="@+id/custom_textfield_dummy"
+		android:layout_width="0px"
+		android:layout_height="0px"
+		android:focusable="true"
+		android:focusableInTouchMode="true" />
+	<LinearLayout
+		android:layout_width="fill_parent"
+		android:layout_height="wrap_content"
+		android:layout_weight="1">
+		<EditText
+			android:id="@+id/analtooltextfield_middle"
+			android:layout_width="fill_parent"
+			android:layout_height="wrap_content"
+			android:paddingBottom="2sp"
+			android:singleLine="true"
+			android:maxLength="20"
+			android:layout_weight="1"
+			android:textColor="#FF000000"
+			android:textSize="13sp"
+			android:textStyle="bold" />
+	</LinearLayout>
+	<ImageView
+		android:id="@+id/analtooltextfield_right"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content" />
+</LinearLayout>

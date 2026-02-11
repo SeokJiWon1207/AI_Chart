@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="300dp"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"  android:padding="0dp"
+	android:background="@drawable/shape_popup_alert_roundrect"
+	>
+<!--	<RelativeLayout android:id="@+id/savetop"-->
+<!--		android:orientation="horizontal"-->
+<!--		android:background="@drawable/popup_bg_top"-->
+<!--		android:layout_width="fill_parent" android:layout_height="40dp" >-->
+	<TextView android:id="@+id/alert_title" android:layout_width="match_parent"
+		android:gravity="center" android:text="추세선 삭제"  android:textSize="18dp"
+		android:layout_height="63dp" android:textColor="#000000" android:textStyle="bold" >
+	</TextView>
+<!--	</RelativeLayout>-->
+	<ImageView android:layout_width="260dp" android:layout_height="1dp" android:layout_marginLeft="20dp" android:background="#f0f0f0" />
+<!--	<ImageView-->
+<!--		android:layout_width="130dp"-->
+<!--		android:layout_height="1px"-->
+<!--		android:layout_marginLeft="15dp"-->
+<!--		android:layout_marginRight="15dp"-->
+<!--		android:background="#000000" />-->
+<!--	<ImageView android:layout_width="match_parent" android:layout_height="1px" android:background="#444444" />-->
+
+	<LinearLayout android:id ="@+id/trenddellist" android:layout_weight="1" android:layout_width="fill_parent" android:layout_height="wrap_content"  android:orientation="vertical" android:background="#ffffff">
+
+		<LinearLayout android:layout_height="wrap_content"  android:layout_width="match_parent" android:layout_marginTop="20dp">
+			<CheckBox style="@style/detail_checkbox" android:id ="@+id/chk_del" android:button="@drawable/radiobtn_change"
+				android:layout_marginLeft="18dp" android:layout_width="20dp" android:layout_height="20dp" android:checked="true"/>
+			<TextView android:text="현 차트 추세선 삭제" android:id="@+id/textType1" android:layout_width="match_parent" android:layout_height="wrap_content" android:textColor="#111111"
+				android:textSize="15dp" android:gravity="left|center" android:layout_marginLeft="8dp"/>
+		</LinearLayout>
+<!--		<ImageView android:layout_width="match_parent" android:layout_height="1px" android:background="#e5e5e5" />-->
+		<LinearLayout android:layout_height="wrap_content" android:layout_width="match_parent" android:layout_marginTop="20dp" android:layout_marginBottom="30dp">
+			<CheckBox style="@style/detail_checkbox" android:id ="@+id/chk_Alldel" android:button="@drawable/radiobtn_change"
+				android:layout_marginLeft="18dp" android:layout_width="20dp" android:layout_height="20dp"/>
+			<TextView android:text="전 종목 추세선 삭제" android:id="@+id/textType2" android:layout_width="match_parent" android:layout_height="wrap_content" android:textColor="#111111"
+				android:textSize="15dp" android:gravity="left|center" android:layout_marginLeft="8dp"/>
+		</LinearLayout>
+	</LinearLayout>
+<!--	<LinearLayout-->
+<!--		android:layout_width="match_parent"-->
+<!--		android:layout_height="wrap_content">-->
+<!--		<ImageView android:layout_width="match_parent" android:layout_height="1px" android:background="#444444" /></LinearLayout>-->
+		<LinearLayout
+			android:orientation="horizontal"
+			android:layout_width="fill_parent" android:layout_height="48dp"
+			>
+			<Button
+				android:id="@+id/alert_btn_no"
+				style="@style/alert_bottom_btn"
+				android:layout_weight="0.4"
+				android:background="@drawable/btn_popup_chart_neg"
+				android:textStyle="normal"
+				android:text="취소" />
+			<Button
+				android:id="@+id/alert_btn_yes"
+				style="@style/alert_bottom_btn"
+				android:layout_weight="0.6"
+				android:background="@drawable/btn_popup_chart"
+				android:textColor="@color/kfit_white"
+				android:text="확인" />
+
+			<Button
+				android:id="@+id/alert_btn_ok"
+				style="@style/alert_bottom_btn"
+				android:layout_width="match_parent"
+				android:textColor="#ffffff"
+				android:text="확인" android:visibility="gone"
+				/>
+		</LinearLayout>
+	<!--</LinearLayout>-->
+</LinearLayout>

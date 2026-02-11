@@ -1,0 +1,17 @@
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+    <!-- Disabled state -->
+    <item android:state_enabled="false">
+        <shape android:shape="rectangle" android:padding="10dp">
+            <solid android:color="@color/kfit_grey990"/>
+            <corners android:radius="50dp" />
+        </shape>
+    </item>
+
+    <!-- Default state (enabled) -->
+    <item>
+        <shape android:shape="rectangle" android:padding="10dp">
+            <solid android:color="@color/kfit_yellow500_base" /> <!-- Your default color here -->
+            <corners android:radius="50dp" />
+        </shape>
+    </item>
+</selector>

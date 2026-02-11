@@ -1,0 +1,25 @@
+buildscript {
+    ext.kotlin_version = '1.9.23'
+    repositories {
+        google()
+        mavenCentral() // jcenter 대신 사용
+    }
+    dependencies {
+        // AGP 버전을 최소 7.4.2 또는 8.x 이상으로 올리는 것이 좋지만, 
+        // 일단 기존 코드와의 호환성을 위해 7.0.0 정도로 조율해봅니다.
+        classpath 'com.android.tools.build:gradle:7.4.2'
+        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
+    }
+}
+
+allprojects {
+    repositories {
+        google()
+        mavenCentral() // jcenter 대신 사용
+        maven { url 'https://jitpack.io' }
+    }
+}
+
+task clean(type: Delete) {
+    delete rootProject.buildDir
+}

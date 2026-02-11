@@ -1,0 +1,1599 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools" xmlns:android="http://schemas.android.com/apk/res/android">
+	<style name="style_stockcode">
+    	<item name="android:textSize">10dp</item>
+    	<item name="android:textColor">#A3A3A3</item>
+    	<item name="android:layout_width">60dp</item> 
+		<item name="android:layout_height">wrap_content</item>
+		<item name="android:singleLine">true</item>
+    </style>
+    <style name="style_stockcodename">
+    	<item name="android:textSize">14dp</item>
+    	<item name="android:textColor">#A3A3A3</item>
+    	<item name="android:layout_width">118dp</item> 
+		<item name="android:layout_height">wrap_content</item>
+		<item name="android:singleLine">true</item>
+		<item name="android:textStyle">bold</item>
+    </style>
+    <style name="style_stockcodename2">
+    	<item name="android:textSize">14dp</item>
+    	<item name="android:textColor">#A3A3A3</item>
+    	<item name="android:layout_width">fill_parent</item> 
+		<item name="android:layout_height">wrap_content</item>
+		<item name="android:singleLine">true</item>
+		<item name="android:textStyle">bold</item>
+    </style>
+        <style name="style_stockcodename3">
+    	<item name="android:textSize">18dp</item>
+    	<item name="android:textColor">#A3A3A3</item>
+    	<item name="android:layout_width">fill_parent</item> 
+		<item name="android:layout_height">wrap_content</item>
+		<item name="android:singleLine">true</item>
+		<item name="android:textStyle">bold</item>
+    </style>
+    	<style name="style_stockcode2">
+    	<item name="android:textSize">14dp</item>
+    	<item name="android:textColor">#A3A3A3</item>
+    	<item name="android:layout_width">60dp</item> 
+		<item name="android:layout_height">wrap_content</item>
+		<item name="android:singleLine">true</item>
+		<item name="android:textStyle">bold</item>
+    </style>
+    <style name="style_stockcurrent">
+    	<item name="android:textSize">12dp</item>
+    	<item name="android:layout_width">90dp</item> 
+		<item name="android:layout_height">wrap_content</item>
+		<item name="android:singleLine">true</item>
+		<item name="android:gravity">right</item>
+    </style>
+    <style name="style_stockrate">
+    	<item name="android:textSize">12dp</item>
+    	<item name="android:layout_width">60dp</item> 
+		<item name="android:layout_height">wrap_content</item>
+		<item name="android:singleLine">true</item>
+		<item name="android:gravity">right</item>
+    </style>
+    <style name="style_stockvolume">
+    	<item name="android:textSize">12dp</item>
+    	<item name="android:layout_width">90dp</item> 
+		<item name="android:layout_height">wrap_content</item>
+		<item name="android:singleLine">true</item>
+		<item name="android:gravity">right</item>
+    </style>
+        
+ 	<style name="style_sigdatetime">
+    	<item name="android:textSize">12dp</item>
+    	<item name="android:layout_width">90dp</item> 
+		<item name="android:layout_height">wrap_content</item>
+		<item name="android:singleLine">true</item>
+		<item name="android:gravity">right</item>
+    </style>
+    <style name="style_signalname">
+    	<item name="android:textSize">13dp</item>	
+    	<item name="android:layout_width">200dp</item> 
+		<item name="android:layout_height">wrap_content</item>
+		<item name="android:singleLine">true</item>
+		<item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="style_setupcond">
+    	<item name="android:textSize">13dp</item>
+    	<item name="android:layout_width">200dp</item> 
+		<item name="android:layout_height">wrap_content</item>
+		<item name="android:singleLine">true</item>
+		<item name="android:gravity">right</item>
+    </style>
+    
+    <style name="style_notitle">        
+		<item name="android:windowNoTitle">true</item>
+		<item name="android:windowFullscreen">true</item>
+	</style>
+	
+    <style name="finds_codename">
+    	<item name="android:textSize">16dp</item>
+    	<item name="android:textStyle">bold</item>
+    </style>
+    <style name="finds_signalname">
+    	<item name="android:textSize">9pt</item>
+    	<item name="android:textStyle">bold</item>
+    </style>
+    <style name="finds_current">
+    	<item name="android:textColor">#FF0000</item>
+    	<item name="android:textSize">7pt</item>
+    </style>
+    <style name="codehelper_code">
+        <item name="android:textColor">#000000</item>
+    	<item name="android:textSize">14pt</item>
+    	<item name="android:textStyle">bold</item>
+    </style>
+    <style name="codehelper_name">
+    	<item name="android:textColor">#000000</item>
+    	<item name="android:textSize">18pt</item>
+    	<item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="btn_minus_pad">
+    	<item name="android:layout_width">32dp</item>
+    	<item name="android:layout_height">32dp</item>
+    	<item name="android:background">@drawable/btn_minus_change</item>
+    	<item name="android:layout_gravity">center_vertical</item>
+		<item name="android:layout_marginRight">4dp</item>
+    </style>
+    <style name="btn_plus_pad">
+    	<item name="android:layout_width">32dp</item>
+    	<item name="android:layout_height">32dp</item>
+    	<item name="android:background">@drawable/btn_plus_change</item>
+    	<item name="android:layout_gravity">center_vertical</item>
+		<item name="android:layout_marginLeft">4dp</item>
+    </style>
+    <style name="btn_minus_pad_black">
+    	<item name="android:layout_width">25dip</item>
+    	<item name="android:layout_height">25dip</item>
+    	<item name="android:layout_gravity">center_vertical</item>
+    	<item name="android:layout_marginLeft">20dp</item>
+    </style>
+    <style name="btn_plus_pad_black">
+    	<item name="android:layout_width">25dip</item>
+    	<item name="android:layout_height">25dip</item>
+    	<item name="android:layout_gravity">center_vertical</item>
+    </style>
+    
+    <!-- 2012. 7. 30 지표설정창 속성정리 (indicatorview.xml) -->
+	<style name="chartset_lr_radio_btn"> <!-- 지표설정창 라디오버튼 RelativeLayout -->
+		<item name="android:layout_width">wrap_content</item>
+		<item name="android:layout_height">match_parent</item>
+	</style>
+	<style name="chartset_radio_btn"> <!-- 일반설정창 라디오버튼 Radio -->
+		<item name="android:layout_width">52dp</item>
+		<item name="android:layout_height">32dp</item>
+		<item name="android:textSize">14dp</item>
+		<item name="android:textColor">#ffffff</item>
+		<item name="android:button">@null</item>
+		<item name="android:layout_centerVertical">true</item>
+		<item name="android:background">@drawable/radiorect_change</item>
+	</style>
+	<style name="chartset_radio_text"> <!-- 지표설정창 라디오버튼 Text -->
+		<item name="android:layout_width">wrap_content</item>
+		<item name="android:layout_height">wrap_content</item>
+		<item name="android:layout_centerVertical">true</item>
+		<item name="android:layout_marginLeft">6dp</item>
+		<item name="android:textColor">#000000</item>
+		<item name="android:textSize">16dp</item>
+	</style>
+    <style name="chartset_headline_rl"> <!-- 지표설정창 헤드라인 렐러티브레이아웃  -->
+    	<item name="android:layout_width">fill_parent</item>
+    	<item name="android:layout_height">29dip</item>
+    	<item name="android:clickable">true</item>
+    	<item name="android:layout_marginBottom">1dip</item>
+    </style>
+        <style name="chartset_headline_rl_black"> <!-- 지표설정창 헤드라인 렐러티브레이아웃  -->
+    	<item name="android:layout_width">fill_parent</item>
+    	<item name="android:layout_height">29dip</item>
+    	<item name="android:clickable">true</item>
+    	<item name="android:layout_marginBottom">1dip</item>
+    </style>
+    <style name="chartset_fortablet_headline_rl"> <!-- 태블릿용 지표설정창 헤드라인 렐러티브레이아웃  -->
+    	<item name="android:layout_width">fill_parent</item>
+    	<item name="android:layout_height">28dip</item>
+    	<item name="android:clickable">true</item>
+    	<item name="android:layout_gravity">center_vertical</item>
+    	<item name="android:visibility">gone</item>
+    </style>
+    <style name="chartset_headline_tv"> <!-- 지표설정창 헤드라인 텍스트뷰   -->
+    	<item name="android:layout_width">match_parent</item>
+    	<item name="android:layout_height">wrap_content</item>
+    	<item name="android:paddingLeft">18dip</item>
+    	<item name="android:layout_alignParentLeft">true</item>
+    	<item name="android:textColor">@color/color03</item>
+    	<item name="android:layout_centerInParent">true</item>
+    	<item name="android:textSize">14dp</item>
+    </style> 
+     <style name="chartset_headline_tv_black"> <!-- 지표설정창 헤드라인 텍스트뷰   -->
+    	<item name="android:layout_width">match_parent</item>
+    	<item name="android:layout_height">wrap_content</item>
+    	<item name="android:paddingLeft">18dip</item>
+    	<item name="android:layout_alignParentLeft">true</item>
+    	<item name="android:textColor">@color/kfit_white</item>
+    	<item name="android:layout_centerInParent">true</item>
+    	<item name="android:textSize">14dp</item>
+    </style>
+    <style name="chartset_fortablet_headline_tv"> <!-- 태블릿 지표설정창 헤드라인 텍스트뷰   -->
+    	<item name="android:layout_width">fill_parent</item>
+    	<item name="android:layout_height">wrap_content</item>
+    	<item name="android:layout_marginLeft">12dip</item>
+    	<item name="android:layout_alignParentLeft">true</item>
+    	<item name="android:textColor">#ffffff</item>
+    	<item name="android:layout_centerInParent">true</item>
+    </style>
+    <style name="chartset_headline_btn"> <!-- 지표설정창 헤드라인 버튼   -->
+    	<item name="android:layout_width">10dip</item>
+    	<item name="android:layout_height">10dip</item>
+    	<item name="android:layout_marginRight">15dip</item>
+    	<item name="android:layout_marginTop">3dip</item>
+    	<item name="android:layout_alignParentRight">true</item>
+    	<item name ="android:layout_centerVertical">true</item>    	
+    </style>
+    <style name="chartset_fortablet_headline_btn"> <!-- 지표설정창 헤드라인 버튼   -->
+    	<item name="android:layout_width">16dip</item>
+    	<item name="android:layout_height">11dip</item>
+    	<item name="android:layout_marginRight">20dip</item>
+    	<item name="android:layout_marginTop">15dip</item>
+    	<item name="android:layout_alignParentRight">true</item>
+    </style>
+    <style name="chartset_listview_rl"> <!-- 지표설정창 리스트뷰 렐러티브레이아웃   -->
+    	<item name="android:layout_width">fill_parent</item>
+    	<item name="android:clickable">true</item>
+    	<item name="android:layout_marginBottom">20dip</item>
+    	<item name="android:layout_marginTop">15dip</item>
+    </style>
+    <style name="chartset_fortablet_listview_rl"> <!-- 태블릿용 지표설정창 리스트뷰 렐러티브레이아웃   -->
+    	<item name="android:layout_width">fill_parent</item>
+    	<item name="android:clickable">true</item>
+    </style>
+      <style name="chartset_fortablet_listview_rl_black"> <!-- 태블릿용 지표설정창 리스트뷰 렐러티브레이아웃 black  -->
+    	<item name="android:layout_width">fill_parent</item>
+    	<item name="android:clickable">true</item>
+    	<item name="android:background">#262626</item>
+    </style>
+    <style name="chartset_listview_list"> <!-- 지표설정창 리스트뷰    -->
+    	<item name="android:layout_width">match_parent</item>
+    	<item name="android:layout_height">40dp</item>
+    	<item name="android:scrollbars">none</item>
+    	<item name="android:divider">#e5e5e5</item>
+    	<item name="android:dividerHeight">1px</item>
+    	<item name="android:layout_alignParentLeft">true</item>
+    	<item name="android:cacheColorHint">#00000000</item>
+    </style>
+     <style name="chartset_listview_list_black"> <!-- 지표설정창 리스트뷰    -->
+    	<item name="android:layout_width">match_parent</item>
+    	<item name="android:layout_height">match_parent</item>
+    	<item name="android:scrollbars">none</item>
+    	<item name="android:divider">#999999</item>
+    	<item name="android:dividerHeight">1px</item>
+    	<item name="android:layout_alignParentLeft">true</item>
+    	<item name="android:cacheColorHint">#00000000</item>
+    </style>
+	<style name="indicator_tabbutton"> <!-- 지표설정창 탭버튼   -->
+		<item name="android:layout_width">0dip</item>
+		<item name="android:layout_height">match_parent</item>
+		<item name="android:layout_weight">0.25</item>
+		<item name="android:scrollbars">none</item>
+		<item name="android:textSize">16dp</item>
+		<item name="android:textColor">#111111</item>
+		<!--<item name="android:textStyle">bold</item>-->
+		<item name="android:layout_alignParentLeft">true</item>
+		<item name="android:background">@drawable/btn_tab_change</item>
+		<item name="android:stateListAnimator">@null</item>
+	</style>
+	<style name="indicator_tabbutton_left"> <!-- 지표설정창 왼쪽 탭버튼   -->
+		<item name="android:layout_width">0dip</item>
+		<item name="android:layout_height">match_parent</item>
+		<item name="android:layout_weight">0.25</item>
+		<item name="android:scrollbars">none</item>
+		<item name="android:textSize">15dp</item>
+		<item name="android:textColor">#ffffff</item>
+		<item name="android:layout_alignParentLeft">true</item>
+		<item name="android:background">@drawable/btn_tab_change_left</item>
+	</style>
+	<style name="indicator_tabbutton_right"> <!-- 지표설정창 오른 탭버튼   -->
+		<item name="android:layout_width">0dip</item>
+		<item name="android:layout_height">match_parent</item>
+		<item name="android:layout_weight">0.25</item>
+		<item name="android:scrollbars">none</item>
+		<item name="android:textSize">15dp</item>
+		<item name="android:textColor">#ffffff</item>
+		<item name="android:layout_alignParentLeft">true</item>
+		<item name="android:background">@drawable/btn_tab_change_right</item>
+	</style>
+    <style name="indicator_jipyolistbutton"> <!-- 지표설정창 지표리스트 버튼   -->
+    	<item name="android:layout_width">0dip</item>
+    	<item name="android:layout_height">36dp</item>
+    	<item name="android:layout_weight">0.25</item>
+		<item name="android:textSize">15dp</item>
+		<item name="android:textColor">#696969</item>
+		<item name="android:layout_gravity">center_vertical</item>
+    </style>
+    <style name="indicator_jipyolistbutton_black"> <!-- 지표설정창 지표리스트 버튼 black  -->
+    	<item name="android:layout_width">0dip</item>
+    	<item name="android:layout_height">36dp</item>
+    	<item name="android:layout_weight">0.25</item>
+		<item name="android:textSize">15dp</item>
+		<item name="android:textColor">#ffffff</item>
+		<item name="android:layout_gravity">center_vertical</item>
+    </style>
+     <style name="indicator_tabbutton_black"> <!-- 지표설정창 탭버튼 black   -->
+    	<item name="android:layout_width">0dip</item>
+    	<item name="android:layout_height">match_parent</item>
+    	<item name="android:layout_weight">0.25</item>
+    	<item name="android:scrollbars">none</item>
+		<item name="android:textSize">15dp</item>
+		<item name="android:textColor">#ffffff</item>    	
+    	<item name="android:layout_alignParentLeft">true</item>
+    	<item name="android:background">@drawable/btn_tab_change_black</item>
+    </style>
+    <!-- 분틱설정(지표설정창)  -->
+    <style name="periodset_rowlinear"> <!-- 분틱설정 row linear  -->
+        <item name="android:layout_width">match_parent</item>
+		<item name="android:layout_height">44dp</item>
+		<item name="android:weightSum">1</item>
+		<item name="android:orientation">horizontal</item>
+		<item name="android:gravity">center_vertical</item>
+<!--		<item name="android:background">@drawable/list_bg</item>-->
+    </style>
+    <style name="periodset_rowlinear_tab"> <!-- 분틱설정  linear  -->
+        <item name="android:layout_width">match_parent</item>
+		<item name="android:layout_height">40dip</item>
+		<item name="android:weightSum">1</item>
+		<item name="android:orientation">horizontal</item>
+		<item name="android:gravity">center_vertical</item>
+    </style>
+	<style name="periodset_column_linear"> <!-- 분틱설정 column linear  -->
+		<item name="android:layout_weight">0.5</item>
+		<item name="android:layout_width">0dp</item>
+		<item name="android:layout_height">match_parent</item>
+		<item name="android:gravity">center_vertical</item>
+		<item name="android:orientation">horizontal</item>
+		<item name="android:paddingLeft">40dp</item>
+		<item name="android:paddingRight">40dip</item>
+		<item name="android:focusable">true</item>
+	</style>
+    <style name="periodset_checkbox"> <!-- 분틱설정 체크박스     -->
+		<item name="android:layout_width">20dip</item>
+		<item name="android:layout_height">20dip</item>
+		<item name="android:gravity">center_vertical</item>
+		<item name="android:button">@drawable/checkbox_change</item>
+		<item name="android:layout_marginRight">8dp</item>
+    </style>
+    <style name="periodset_checkbox_tab"> <!-- 분틱설정 체크박스     -->
+		<item name="android:layout_width">40dip</item>
+		<item name="android:layout_height">match_parent</item>
+		<item name="android:gravity">center_vertical</item>
+		<item name="android:button">@drawable/checkbox_change_tab</item>
+    </style>
+    <style name="periodset_title"> <!-- 분틱설정 타이틀텍스트  -->
+    	<item name="android:textColor">#000000</item>
+    	<item name="android:textSize">14dp</item>
+    	<item name="android:layout_width">0dp</item>
+    	<item name="android:layout_height">wrap_content</item>
+    	<item name="android:layout_weight">0.19</item>
+		<item name="android:layout_marginLeft">12dp</item>
+    </style>
+    <style name="periodset_title_black"> <!-- 분틱설정 타이틀텍스트 black -->
+    	<item name="android:textColor">#ffffff</item>
+    	<item name="android:textSize">15dp</item>
+    	<item name="android:layout_width">0dp</item>
+    	<item name="android:layout_height">wrap_content</item>
+    	<item name="android:gravity">center</item>
+    	<item name="android:layout_weight">0.225</item>
+    </style>
+    <style name="periodset_edit"> <!-- 분틱설정 타이틀텍스트  -->
+    	<item name="android:textColor">#000000</item>
+    	<item name="android:layout_width">0dp</item>
+    	<item name="android:layout_height">32dp</item>
+    	<item name="android:gravity">center</item>
+    	<item name="android:privateImeOptions">inputType=spamNumber;symbol=false</item>
+		<item name="android:digits">0123456789</item>
+		<item name="android:inputType">number</item>
+		<item name="android:selectAllOnFocus">true</item>
+		<item name="android:background">@drawable/edittext_change2</item>
+		<item name="android:layout_weight">0.48</item>
+		<item name="android:paddingLeft">5dip</item>
+		<item name="android:paddingRight">5dip</item>
+		<item name="android:textSize">16dp</item>
+		<item name="android:layout_gravity">center_vertical</item>
+		<item name="android:imeOptions">actionDone</item>
+		<item name="android:focusable">true</item>
+	</style>
+    <style name="periodset_edit_black"> <!-- 분틱설정 타이틀텍스트 black  -->
+    	<item name="android:textColor">#ffffff</item>
+    	<item name="android:layout_width">0dp</item>
+    	<item name="android:layout_height">35dip</item>
+    	<item name="android:gravity">center</item>
+    	<item name="android:privateImeOptions">inputType=spamNumber;symbol=false</item>
+		<item name="android:digits">0123456789</item>
+		<item name="android:inputType">number</item>
+		<item name="android:selectAllOnFocus">true</item>
+		<item name="android:background">@drawable/edittext_change2_black</item>
+		<item name="android:layout_weight">0.225</item>
+		<item name="android:paddingLeft">5dip</item>
+		<item name="android:paddingRight">5dip</item>
+		<item name="android:textSize">15dp</item>
+		<item name="android:layout_gravity">center_vertical</item>
+		<item name="android:imeOptions">actionDone</item> 
+    </style>
+    <style name="periodset_blank"> <!-- 분틱설정 공백   -->
+    	<item name="android:layout_width">0dip</item>
+    	<item name="android:layout_height">match_parent</item>
+    </style>
+    <!-- 일반설정  -->
+    <style name="normalset_subtitle_black"> <!-- 일반설정  linear  -->
+        <item name="android:layout_width">match_parent</item>
+		<item name="android:layout_height">25dip</item>
+		<item name="android:background">#404040</item>
+		<item name="android:textColor">#999999</item>
+		<item name="android:gravity">left|center</item>
+		<item name="android:paddingLeft">14dp</item>
+		<item name="android:textStyle">bold</item>
+		<item name="android:textSize">14dp</item>
+    </style>
+    <style name="normalset_subtitle"> <!--  일반설정  linear   --> 
+		  <item name="android:layout_width">match_parent</item> 
+		  <item name="android:layout_height">52dp</item>
+		  <item name="android:background">#ffffff</item>
+		  <item name="android:textColor">#111111</item>
+		  <item name="android:gravity">left|center</item> 
+		  <item name="android:paddingLeft">18dp</item>
+		  <item name="android:textSize">15dp</item>
+	</style>
+
+	<style name="normalset_rowlinear"> <!-- 일반설정  linear  -->
+		<item name="android:layout_width">match_parent</item>
+		<item name="android:layout_height">52dp</item>
+		<!-- <item name="android:weightSum">1</item> -->
+		<item name="android:orientation">horizontal</item>
+		<item name="android:gravity">center_vertical</item>
+	</style>
+    <!--<style name="normalset_checkbox"> &lt;!&ndash; 일반설정 체크박스     &ndash;&gt;-->
+		<!--<item name="android:layout_width">29dp</item>-->
+		<!--<item name="android:layout_height">match_parent</item>-->
+		<!--<item name="android:button">@drawable/checkbox_change</item>-->
+		<!--<item name="android:gravity">center_vertical</item>-->
+		<!--<item name="android:layout_marginLeft">10dp</item>-->
+    <!--</style>-->
+	<style name="normalset_checkbox"> <!-- 일반설정 체크박스     -->
+		<item name="android:layout_width">24dp</item>
+		<item name="android:layout_height">24dp</item>
+		<!-- <item name="android:layout_marginTop">3dip</item> -->
+<!--		<item name="android:layout_alignParentRight">true</item>-->
+		<item name="android:button">@null</item>
+		<!--<item name="android:background">@drawable/checkboxbar_change</item>-->
+		<item name="android:background">@drawable/checkbox_change_circle</item>
+		<item name="android:gravity">center_vertical</item>
+		<item name="android:layout_marginLeft">18dp</item>
+<!--		<item name="android:layout_marginRight">10dp</item>-->
+		<item name="android:scaleType">fitXY</item>
+	</style>
+      <style name="normalset_checkbox_black"> <!-- 일반설정 체크박스  black   -->
+		<item name="android:layout_width">29dp</item>
+		<item name="android:layout_height">match_parent</item>
+		<item name="android:button">@drawable/checkbox_change_black</item>
+		<item name="android:gravity">center_vertical</item>
+		<item name="android:layout_marginLeft">10dp</item>
+    </style>
+    <style name="normalset_checkbox_tab"> <!-- 일반설정 체크박스 (태블릿)     -->
+		<item name="android:layout_width">wrap_content</item>
+		<item name="android:layout_height">wrap_content</item>
+		<item name="android:button">@drawable/checkbox_change_tab</item>
+		<item name="android:gravity">center_vertical</item>
+    </style>
+	<style name="normalset_title"> <!-- 일반설정 타이틀텍스트  -->
+		<item name="android:textColor">#111111</item>
+		<item name="android:layout_marginLeft">6dp</item>
+		<item name="android:layout_width">wrap_content</item>
+		<item name="android:layout_height">wrap_content</item>
+		<item name="android:layout_gravity">center_vertical</item>
+		<item name="android:textSize">15dp</item>
+	</style>
+    <style name="normalset_title_black"> <!-- 일반설정 타이틀텍스트  black-->
+    	<item name="android:textColor">#ffffff</item>
+    	<item name="android:layout_marginLeft">12dip</item>
+    	<item name="android:layout_width">wrap_content</item>
+    	<item name="android:layout_height">wrap_content</item>
+    	<item name="android:layout_gravity">center_vertical</item>
+    	<item name="android:textSize">16dp</item>
+    </style>
+    <style name="normalset_blank"> <!-- 일반설정 공백   -->
+    	<item name="android:layout_width">0dip</item>
+    	<item name="android:layout_height">match_parent</item>
+    </style>
+    
+    <!-- 2012. 7. 18~19 지표상세설정 속성정리  -->
+    <style name="detail_valset_title"> <!-- 상세설정창  변수값  조정  타이틀텍스트  -->
+    	<item name="android:layout_width">0dp</item>
+    	<item name="android:layout_height">match_parent</item>
+		<item name="android:layout_weight">1</item>
+    	<!--<item name="android:layout_marginLeft">8dp</item>-->
+    	<item name="android:textColor">#111111</item>
+    	<item name="android:gravity">center_vertical</item>
+    	<!--<item name="android:textStyle">bold</item>-->
+    	<item name="android:textSize">15dp</item>
+    </style>
+
+	<style name="detail_valset_title_jipyo"> <!-- 상세설정창  변수값  조정  타이틀텍스트  -->
+		<item name="android:layout_width">match_parent</item>
+		<item name="android:layout_height">wrap_content</item>
+		<item name="android:layout_marginLeft">24dp</item>
+		<item name="android:textColor">@color/kfit_fit_on_background_emphasis_medium</item>
+		<item name="android:gravity">center_vertical</item>
+		<!--<item name="android:textStyle">bold</item>-->
+		<item name="android:textSize">12dp</item>
+	</style>
+	<style name="detail_valset_title_jipyo_dark"> <!-- 상세설정창  변수값  조정  타이틀텍스트  -->
+		<item name="android:layout_width">match_parent</item>
+		<item name="android:layout_height">wrap_content</item>
+		<item name="android:layout_marginLeft">24dp</item>
+		<item name="android:textColor">@color/kfit_fit_on_background_emphasis_medium</item>
+		<item name="android:gravity">center_vertical</item>
+		<!--<item name="android:textStyle">bold</item>-->
+		<item name="android:textSize">12dp</item>
+	</style>
+    
+     <!-- 2012. 7. 18~19 지표상세설정 속성정리  -->
+    <style name="detail_valset_title_black"> <!-- 상세설정창  변수값  조정  타이틀텍스트 black  -->
+    	<item name="android:layout_width">wrap_content</item>
+    	<item name="android:layout_height">wrap_content</item>
+    	<item name="android:layout_marginLeft">10dp</item>
+    	<item name="android:textColor">#ffffff</item>
+    	<item name="android:layout_gravity">left|center</item>
+    	<item name="android:textStyle">bold</item>
+    	<item name="android:textSize">14dp</item>
+    </style>
+	<style name="detail_valset_title_datatype"> <!-- 상세설정창  변수값  조정  타이틀텍스트  -->
+		<item name="android:layout_width">wrap_content</item>
+		<item name="android:layout_height">wrap_content</item>
+		<!--<item name="android:layout_marginLeft">8dp</item>-->
+		<item name="android:textColor">#111111</item>
+		<item name="android:layout_gravity">center_vertical</item>
+		<!--<item name="android:textStyle">bold</item>-->
+		<item name="android:textSize">15dp</item>
+	</style>
+    <style name="detail_valset_seekbar"> <!-- 상세설정창  변수값  조정 seekbar  -->
+    	<item name="android:layout_width">0dip</item>
+    	<item name="android:layout_height">27dip</item>
+		<item name="android:minHeight">3dip</item>
+		<item name="android:maxHeight">3dip</item>
+		<item name="android:paddingRight">17dip</item>
+		<item name="android:paddingLeft">17dip</item>
+    	<item name="android:layout_weight">0.95</item>
+    	<item name="android:progress">0</item>
+		<item name="android:secondaryProgress">0</item>
+		<item name="android:progressDrawable">@drawable/seekbar_progress</item>
+<!--		<item name="android:thumb">@drawable/chart_barcircle</item>-->
+    	<item name="android:layout_gravity">center_vertical</item>    	
+    </style>
+    <style name="detail_lineset_title"> <!-- 상세설정창  선굵기 조정 타이틀텍스트  -->
+    	<item name="android:textColor">#111111</item>
+    	<item name="android:layout_width">0dp</item>
+    	<item name="android:layout_height">wrap_content</item>
+		<item name="android:layout_weight">1</item>
+    	<item name="android:layout_gravity">center_vertical</item>
+		<item name="android:layout_marginLeft">9dp</item>
+    	<item name="android:textSize">15dp</item>
+    	<!--<item name="android:layout_weight">0.21</item>-->
+    </style>
+    <style name="detail_lineset_title_black"> <!-- 상세설정창  선굵기 조정 타이틀텍스트  -->
+    	<item name="android:textColor">#ffffff</item>
+    	<item name="android:layout_width">wrap_content</item>
+    	<item name="android:layout_height">wrap_content</item>
+    	<item name="android:layout_gravity">center_vertical</item>
+    	<item name="android:textSize">14dp</item>
+    	<item name="android:paddingLeft">20dp</item>
+    	<item name="android:layout_weight">0.21</item>
+    </style>
+	<style name="detail_volset_title"> <!-- 상세설정창  선굵기 조정 타이틀텍스트  -->
+		<item name="android:textColor">#000000</item>
+		<item name="android:layout_width">wrap_content</item>
+		<item name="android:layout_height">wrap_content</item>
+		<item name="android:layout_gravity">center_vertical</item>
+		<!-- <item name="android:layout_marginLeft">10dp</item> -->
+		<item name="android:textSize">16dp</item>
+		<!-- <item name="android:layout_weight">0.18</item> -->
+	</style>
+    <style name="detail_lineset_items"> <!-- 상세설정창  선굵기 조정 텍스트,리니어레이아웃 등   -->
+    	<item name="android:layout_width">30dp</item>
+    	<item name="android:layout_height">30dp</item>
+    	<item name="android:layout_gravity">center_vertical</item>
+    </style>
+        <!-- 라인 선 굵기 조절 2016.01.04 by pjm-->
+    <style name="detial_lineset_thick">
+        <item name="android:layout_width">25dp</item>
+    	<item name="android:layout_height">wrap_content</item>
+		<item name="android:layout_marginRight">12dp</item>
+		<item name="android:layout_marginTop">6dp</item>
+		<item name="android:layout_marginBottom">6dp</item>
+		<item name="android:textSize">14dp</item>
+		<item name="android:textColor">@color/kfit_high__emphasis</item>
+    	<item name="android:layout_gravity">center_vertical</item>
+    </style>
+	<style name="detial_lineset_thick_dark">
+		<item name="android:layout_width">25dp</item>
+		<item name="android:layout_height">wrap_content</item>
+		<item name="android:layout_marginRight">12dp</item>
+		<item name="android:layout_marginTop">6dp</item>
+		<item name="android:layout_marginBottom">6dp</item>
+		<item name="android:textSize">14dp</item>
+		<item name="android:textColor">@color/kfit_high__emphasis</item>
+		<item name="android:layout_gravity">center_vertical</item>
+	</style>
+    <style name="detail_lineset_seekbar"> <!-- 상세설정창  선굵기 조정 seekbar  -->
+    	<item name="android:layout_width">0dip</item>
+    	<item name="android:layout_height">27dip</item>
+    	<item name="android:progress">0</item>
+    	<item name="android:layout_weight">0.52</item>
+    	<item name="android:layout_gravity">center_vertical</item>
+		<item name="android:minHeight">3dip</item>
+		<item name="android:maxHeight">3dip</item>
+		<item name="android:paddingRight">17dip</item>
+		<item name="android:paddingLeft">17dip</item>
+		<item name="android:secondaryProgress">0</item>
+		<item name="android:progressDrawable">@drawable/seekbar_progress</item>
+<!--		<item name="android:thumb">@drawable/chart_barcircle</item>-->
+	</style>
+    <style name="detail_valset_linear"> <!-- 상세설정창  변수설정의 아이템들을 포함하는 linearlayout -->
+		<item name="android:layout_width">match_parent</item>
+		<item name="android:layout_height">match_parent</item>
+		<item name="android:orientation">horizontal</item>
+		<item name="android:paddingLeft">24dp</item>
+		<item name="android:paddingRight">24dp</item>
+		<item name="android:layout_marginTop">20dp</item>
+    </style>
+	<style name="detail_valset_linear_kakao"> <!-- 상세설정창  변수설정의 아이템들을 포함하는 linearlayout -->
+		<item name="android:layout_width">match_parent</item>
+		<item name="android:layout_height">match_parent</item>
+		<item name="android:orientation">horizontal</item>
+		<item name="android:paddingLeft">24dp</item>
+		<item name="android:paddingRight">24dp</item>
+	</style>
+    <style name="detail_valset_outerlinear"> <!-- 상세설정창  변수설정의 한 행  linearlayout (아래 변수설정아이템 포함하는 linear 가 직속 자식들임) -->
+		<item name="android:layout_width">match_parent</item>
+		<item name="android:layout_height">52dp</item>
+		<item name="android:orientation">vertical</item>
+		<!--<item name="android:weightSum">1</item>-->
+		<item name="android:background">#ffffff</item>
+    </style>
+	<style name="detail_valset_outerlinear_dark"> <!-- 상세설정창  변수설정의 한 행  linearlayout (아래 변수설정아이템 포함하는 linear 가 직속 자식들임) -->
+		<item name="android:layout_width">match_parent</item>
+		<item name="android:layout_height">52dp</item>
+		<item name="android:orientation">vertical</item>
+		<!--<item name="android:weightSum">1</item>-->
+		<item name="android:background">@color/kfit_white</item>
+	</style>
+    <style name="detail_valset_valuebox"> <!-- 상세설정창  변수설정의 seekbar 값 표시하는 box  -->
+		<item name="android:layout_width">40dip</item>
+		<item name="android:layout_height">23dip</item>
+		<item name="android:textColor">#244275</item>
+		<item name="android:gravity">center</item>
+    </style>
+    <style name="detail_valset_valuebox_edit"> <!-- 상세설정창  변수설정의 seekbar 값 표시하는 box  (편집가능)  -->
+		<item name="android:layout_width">wrap_content</item>
+		<item name="android:layout_height">match_parent</item>
+		<item name="android:textColor">@color/kfit_high__emphasis</item>
+		<item name="android:textStyle">bold</item>
+		<item name="android:textSize">20dp</item>
+		<item name="android:background">@null</item>
+		<item name="android:gravity">left|center</item>
+		<item name="android:layout_gravity">center_vertical</item>
+		<item name="android:selectAllOnFocus">true</item>
+		<item name="android:inputType">number</item>
+		<item name="android:layout_marginLeft">0dp</item>
+    </style>
+	<style name="detail_valset_valuebox_edit_dark"> <!-- 상세설정창  변수설정의 seekbar 값 표시하는 box  (편집가능)  -->
+		<item name="android:layout_width">wrap_content</item>
+		<item name="android:layout_height">match_parent</item>
+		<item name="android:textColor">@color/kfit_high__emphasis</item>
+		<item name="android:textStyle">bold</item>
+		<item name="android:textSize">20dp</item>
+		<item name="android:background">@null</item>
+		<item name="android:gravity">left|center</item>
+		<item name="android:layout_gravity">center_vertical</item>
+		<item name="android:selectAllOnFocus">true</item>
+		<item name="android:inputType">number</item>
+		<item name="android:layout_marginLeft">0dp</item>
+	</style>
+	<style name="detail_valset_valuebox_edit_jipyo"> <!-- 상세설정창  변수설정의 seekbar 값 표시하는 box  (편집가능)  -->
+		<item name="android:layout_width">match_parent</item>
+		<item name="android:layout_height">match_parent</item>
+		<item name="android:textColor">@color/kfit_high__emphasis</item>
+		<item name="android:textStyle">bold</item>
+		<item name="android:textSize">20dp</item>
+		<item name="android:background">@null</item>
+		<item name="android:gravity">left|center</item>
+		<item name="android:layout_gravity">center_vertical</item>
+		<item name="android:selectAllOnFocus">true</item>
+		<item name="android:inputType">number</item>
+		<item name="android:layout_marginLeft">0dp</item>
+	</style>
+	<style name="detail_valset_valuebox_edit_jipyo_dark"> <!-- 상세설정창  변수설정의 seekbar 값 표시하는 box  (편집가능)  -->
+		<item name="android:layout_width">match_parent</item>
+		<item name="android:layout_height">match_parent</item>
+		<item name="android:textColor">@color/kfit_high__emphasis</item>
+		<item name="android:textStyle">bold</item>
+		<item name="android:textSize">20dp</item>
+		<item name="android:background">@null</item>
+		<item name="android:gravity">left|center</item>
+		<item name="android:layout_gravity">center_vertical</item>
+		<item name="android:selectAllOnFocus">true</item>
+		<item name="android:inputType">number</item>
+		<item name="android:layout_marginLeft">0dp</item>
+	</style>
+     <style name="detail_valset_valuebox_edit_black"> <!-- 상세설정창  변수설정의 seekbar 값 표시하는 box  (편집가능)  -->
+		<item name="android:layout_width">60dip</item>
+		<item name="android:layout_height">match_parent</item>
+		<item name="android:textColor">#ffffff</item>
+		<item name="android:textSize">15dp</item>
+		<item name="android:background">@drawable/edittext_change2_black</item>
+		<item name="android:gravity">center</item>
+		<item name="android:layout_gravity">center_vertical</item>
+		<item name="android:layout_marginLeft">10dip</item>
+		<item name="android:selectAllOnFocus">true</item>
+		<item name="android:inputType">number</item>
+    </style>
+    <style name="detail_headline"> <!-- 상세설정창  변수설정 / 색굵기설정     제목표시줄  -->
+		<item name="android:layout_width">match_parent</item>
+		<item name="android:layout_height">45dip</item>
+		<item name="android:background">#F2F2F2</item>
+		<item name="android:gravity">left|center</item>
+		<item name="android:paddingLeft">10dip</item>
+		<item name="android:textColor">#333333</item>
+		<item name="android:textSize">16dp</item>
+		<item name="android:textStyle">bold</item>
+    </style>
+     <style name="detail_headline_black"> <!-- 상세설정창  변수설정 / 색굵기설정     제목표시줄  -->
+		<item name="android:layout_width">match_parent</item>
+		<item name="android:layout_height">29dip</item>
+		<item name="android:background">#404040</item>
+		<item name="android:gravity">left|center</item>
+		<item name="android:paddingLeft">10dip</item>
+		<item name="android:textColor">#999999</item>
+		<item name="android:textSize">14dp</item>
+		<item name="android:textStyle">bold</item>
+    </style>
+	<style name="detail_headline2"> <!-- 상세설정창  변수설정 / 색굵기설정     제목표시줄  -->
+		<item name="android:layout_width">fill_parent</item>
+		<item name="android:layout_height">48dp</item>
+		<item name="android:background">#f8f8f8</item>
+		<item name="android:gravity">center_vertical</item>
+		<item name="android:textColor">#111111</item>
+		<item name="android:textSize">15dp</item>
+		<item name="android:textStyle">bold</item>
+		<item name="android:paddingLeft">18dp</item>
+	</style>
+	<style name="detail_headline2_dark"> <!-- 상세설정창  변수설정 / 색굵기설정     제목표시줄  -->
+		<item name="android:layout_width">fill_parent</item>
+		<item name="android:layout_height">48dp</item>
+		<item name="android:background">@color/kfit_white</item>
+		<item name="android:gravity">center_vertical</item>
+		<item name="android:textColor">@color/kfit_high__emphasis</item>
+		<item name="android:textSize">15dp</item>
+		<item name="android:textStyle">bold</item>
+		<item name="android:paddingLeft">18dp</item>
+	</style>
+    <style name="detail_checkbox"> <!-- 상세설정창  체크박스   -->
+		<item name="android:layout_width">24dp</item>
+		<item name="android:layout_height">24dp</item>
+		<item name="android:button">@drawable/checkbox_change</item>
+		<item name="android:layout_marginLeft">24dp</item>
+		<!--<item name="android:layout_marginRight">8dp</item>-->
+		 <!--<item name="android:id">@+id/chk_isSelect</item> -->
+		<item name="android:layout_gravity">center_vertical</item>
+    </style>
+	<style name="detail_checkbox_dark"> <!-- 상세설정창  체크박스   -->
+		<item name="android:layout_width">24dp</item>
+		<item name="android:layout_height">24dp</item>
+		<item name="android:button">@drawable/checkbox_change_dark</item>
+		<item name="android:layout_marginLeft">24dp</item>
+		<!--<item name="android:layout_marginRight">8dp</item>-->
+		<!--<item name="android:id">@+id/chk_isSelect</item> -->
+		<item name="android:layout_gravity">center_vertical</item>
+	</style>
+    <style name="detail_checkbox_black"> <!-- 상세설정창  체크박스   -->
+		<item name="android:layout_width">29dip</item>
+		<item name="android:layout_height">match_parent</item>
+		<item name="android:button">@drawable/checkbox_change_black</item>
+		<!-- <item name="android:id">@+id/chk_isSelect</item> -->
+		<item name="android:layout_gravity">center_vertical</item>
+    </style>
+    <style name="detail_basesetting_title"> <!-- 상세설정창  기준선설정 타이틀텍스트  -->
+    	<item name="android:textColor">#111111</item>
+    	<item name="android:layout_width">0dp</item>
+    	<item name="android:layout_height">wrap_content</item>
+		<item name="android:layout_weight">1</item>
+    	<item name="android:layout_gravity">center_vertical</item>
+		<item name="android:layout_marginLeft">9dp</item>
+    	<item name="android:textSize">15dp</item>
+    	<!--<item name="android:layout_weight">0.6</item>-->
+    </style>
+     <style name="detail_basesetting_title_black"> <!-- 상세설정창  기준선설정 타이틀텍스트  -->
+    	<item name="android:textColor">#ffffff</item>
+    	<item name="android:layout_width">0dip</item>
+    	<item name="android:layout_height">wrap_content</item>
+    	<item name="android:layout_gravity">center_vertical</item>
+    	<item name="android:textSize">14dp</item>
+    	<item name="android:layout_weight">0.6</item>
+    </style>
+    <style name="detail_basesetting_outerlinear"> <!-- 상세설정창  기준선설정 한 행  linearlayout (아래 변수설정아이템 포함하는 linear 가 직속 자식들임) -->
+		<item name="android:layout_width">match_parent</item>
+		<item name="android:layout_height">32dp</item>
+		<item name="android:orientation">vertical</item>
+		<!--<item name="android:layout_weight">0.5</item>-->
+		<!--<item name="android:weightSum">1</item>-->
+		<item name="android:layout_marginTop">20dp</item>
+		<item name="android:background">#ffffff</item>
+    </style>
+    <style name="detail_basesetting_valuebox_edit"> <!-- 상세설정창  기준선설정 seekbar 값 표시하는 box  (편집가능)  -->
+		<item name="android:layout_width">80dp</item>
+		<item name="android:layout_height">32dp</item>
+		<item name="android:textColor">#111111</item>
+		<item name="android:textSize">14dp</item>
+		<item name="android:background">@drawable/edittext_change2</item>
+		<item name="android:gravity">center</item>
+		<item name="android:layout_gravity">center_vertical</item>
+		<item name="android:selectAllOnFocus">true</item>
+		<!--<item name="android:privateImeOptions">inputType=spamNumber;symbol=false</item>-->
+		<!--<item name="android:digits">0123456789</item>-->
+		<item name="android:inputType">number</item>
+    </style>
+    <style name="detail_basesetting_valuebox_edit_black"> <!-- 상세설정창  기준선설정 seekbar 값 표시하는 box  (편집가능)  -->
+		<item name="android:layout_width">60dip</item>
+		<item name="android:layout_height">match_parent</item>
+		<item name="android:textColor">#ffffff</item>
+		<item name="android:textSize">15dp</item>
+		<item name="android:background">@drawable/edittext_change2_black</item>
+		<item name="android:gravity">center</item>
+		<item name="android:layout_gravity">center_vertical</item>
+		<item name="android:layout_marginLeft">10dip</item>
+		<item name="android:selectAllOnFocus">true</item>
+		<item name="android:privateImeOptions">inputType=spamNumber;symbol=false</item>
+		<item name="android:digits">0123456789</item>
+		<item name="android:inputType">number</item>
+    </style>
+    
+    <style name="detail_standscale_outerlinear">   <!--  상세설정창 매물대설정 한 행 Linear --> 
+		  <item name="android:layout_width">match_parent</item> 
+		  <item name="android:layout_height">56dip</item>
+		  <item name="android:orientation">vertical</item> 
+		  <!--<item name="android:layout_marginLeft">5dip</item> -->
+		  <!--<item name="android:weightSum">1</item> -->
+<!--		<item name="android:background">@drawable/list_bg</item>-->
+ 	 </style>
+	 <style name="detail_standscale_items">   <!--  상세설정창  선굵기 조정 텍스트,리니어레이아웃 등   --> 
+		  <item name="android:layout_width">30dp</item>
+		  <item name="android:layout_height">30dp</item>
+		  <item name="android:layout_gravity">center_vertical</item>
+<!--		 <item name="android:layout_marginLeft">30dp</item>-->
+		 <item name="android:layout_marginRight">20dp</item>
+	  </style>
+	 <!-- 2015. 1. 13 보조지표 bar 타입 유형 변경 기능 -->
+	 <style name="detail_drawtype_radiogroup">   <!--  상세설정창  그리기타입 라디오   --> 
+		  <item name="android:layout_width">0dip</item> 
+		  <item name="android:layout_height">match_parent</item> 
+		  <item name="android:layout_weight">0.42</item>
+		  <item name="android:gravity">center_vertical</item> 
+		  <item name="android:orientation">horizontal</item> 
+	  </style> 
+	  <style name="detail_drawtype_combo">   <!--  상세설정창  그리기타입 콤보   -->
+		  <item name="android:layout_width">60dp</item>
+		  <item name="android:layout_height">32dp</item>
+		  <item name="android:background">@drawable/btncombo_change</item>
+		  <item name="android:gravity">center</item>
+		  <item name="android:layout_gravity">center_vertical</item> 
+		  <item name="android:orientation">vertical</item>
+		  <item name="android:paddingLeft">10dp</item>
+	  </style> 
+	  <style name="detail_drawtype_combo_text">   <!--  상세설정창  그리기타입 콤보   --> 
+		  <item name="android:layout_width">wrap_content</item>
+		  <item name="android:layout_height">wrap_content</item>
+		  <item name="android:singleLine">true</item>
+		  <item name="android:textColor">#111111</item>
+		  <item name="android:textSize">14dp</item>
+		  <item name="android:layout_gravity">left|center_vertical</item>
+	  </style> 
+	   <style name="detail_drawtype_combo_text_black">   <!--  상세설정창  그리기타입 콤보   --> 
+		  <item name="android:layout_width">0dip</item> 
+		  <item name="android:layout_height">wrap_content</item> 
+		  <item name="android:layout_weight">0.6</item>
+		  <item name="android:singleLine">true</item>
+		  <item name="android:textColor">#ffffff</item>
+		  <item name="android:textSize">15dp</item>
+		  <item name="android:layout_marginLeft">5dp</item>
+	  </style>
+	<style name="detail_lineset_palette"> <!-- 상세설정창  선굵기 조정 팔레트   -->
+		<item name="android:layout_width">16dp</item>
+		<item name="android:layout_height">16dp</item>
+		<item name="android:layout_marginLeft">12dp</item>
+		<item name="android:layout_marginRight">6dp</item>
+		<item name="android:layout_marginTop">8dp</item>
+		<item name="android:layout_marginBottom">8dp</item>
+		<item name="android:layout_gravity">center_vertical</item>
+	</style>
+	  
+	 <!-- 2015. 1. 13 각 보조지표 설명/활용법 추가(상세설정창) -->
+	 <style name="detail_tabbutton"> <!-- 상세설정창 탭   -->
+    	<item name="android:layout_width">0dip</item>
+    	<item name="android:layout_height">match_parent</item>
+    	<item name="android:layout_weight">0.5</item>
+		<item name="android:textSize">15dp</item>
+		<item name="android:textColor">#ffffff</item>
+		<item name="android:layout_gravity">center_vertical</item>
+    </style>
+    
+	 <style name="detail_tv_description_title"> <!-- 상세설정창 설명 단락제목 -->
+	     <item name="android:layout_width">wrap_content</item>
+    	<item name="android:layout_height">wrap_content</item>
+    	<item name="android:textColor">#0671a4</item>
+    	<item name="android:textSize">20dp</item>
+	 </style>
+	 
+	 <style name="detail_tv_description_contenttext"> <!-- 상세설정창 설명 각 단락의 내용 -->
+	     <item name="android:layout_width">wrap_content</item>
+    	<item name="android:layout_height">wrap_content</item>
+    	<item name="android:textColor">#000000</item>
+    	<item name="android:textSize">16dp</item>
+	 </style>
+	 
+	 <style name="detail_linear_description"> <!-- 상세설정창 설명 각 단락 linearLayout-->
+	     <item name="android:layout_width">match_parent</item>
+    	<item name="android:layout_height">wrap_content</item>
+    	<item name="android:background">#f0f0f0</item>
+    	<item name="android:padding">5dp</item>
+    	<item name="android:orientation">vertical</item>
+    	<item name="android:layout_marginBottom">10dp</item>
+	 </style>
+	 <!-- 2015. 1. 13 각 보조지표 설명/활용법 추가(상세설정창) -->
+	 
+    <!-- 8.28 거래량 설정 -->
+    <style name="volumesetting_radiobtn"> <!-- 상세설정창 거래량설정    -->
+		<item name="android:layout_width">wrap_content</item>
+    	<item name="android:layout_height">52dp</item>
+    	<item name="android:textSize">15dp</item>
+    	<item name="android:textColor">#111111</item>
+    	<item name="android:button">@drawable/radiobtn_change</item>
+    	<item name="android:checked">false</item>
+    </style>
+    <style name="volumesetting_radiobtn_black"> <!-- 상세설정창 거래량설정    -->
+		<item name="android:layout_width">wrap_content</item>
+    	<item name="android:layout_height">54dp</item>
+    	<item name="android:textSize">17dp</item>
+    	<item name="android:textColor">#000000</item>
+    	<item name="android:button">@drawable/radiobtn_change_black</item>
+    	<item name="android:checked">false</item>
+    </style>
+    <!-- 상세설정창 거래량일때 텍스트뷰 -->
+    <!-- <style name="volumesetting_textview"> 
+		<item name="android:layout_width">0dip</item>
+		<item name="android:layout_height">wrap_content</item>
+		<item name="android:layout_weight">0.25</item>
+		<item name="android:textColor">#000000</item>
+		<item name="android:textSize">16dp</item>
+		<item name="android:layout_gravity">center_vertical</item>
+    </style> -->
+    <!-- 상세설정창 거래량일때 팔레트용 리니어   -->
+    <!-- <style name="volumesetting_palettetv"> 
+		<item name="android:layout_width">0dip</item>
+		<item name="android:layout_height">match_parent</item>
+		<item name="android:layout_weight">0.35</item>
+    </style> -->
+    <style name="volumesetting_rowlinear"> <!-- 상세설정창 거래량일때 팔레트 한행의 리니어레이아웃  -->
+        <item name="android:layout_width">110dp</item>
+		<item name="android:layout_height">wrap_content</item>
+		<!--<item name="android:weightSum">1</item>-->
+		<item name="android:orientation">horizontal</item>
+		<item name="android:gravity">center_vertical</item>
+    </style>
+    
+    <!-- 8.28 캔들 설정  -->
+    <!-- 상세설정창 캔들일때 텍스트뷰 -->
+    <!-- <style name="candlesetting_textview"> 
+		<item name="android:layout_width">0dip</item>
+		<item name="android:layout_height">wrap_content</item>
+		<item name="android:layout_weight">0.25</item>
+		<item name="android:textColor">#000000</item>
+		<item name="android:textSize">16sp</item>
+		<item name="android:layout_gravity">center_vertical</item>
+    </style> -->
+    
+    <!-- 상세설정창 캔들일때 팔레트용 리니어   -->
+    <!-- <style name="candlesetting_palettetv"> 
+		<item name="android:layout_width">0dip</item>
+		<item name="android:layout_height">match_parent</item>
+		<item name="android:layout_weight">0.35</item>
+    </style> -->
+    <style name="candlesetting_spinner"> <!-- 상세설정창 캔들일때 스피너  -->
+        <item name="android:layout_width">wrap_content</item>
+		<item name="android:layout_height">wrap_content</item>
+		<item name="android:button">@drawable/checkbox_change</item>
+    </style>
+    <style name="candlesetting_rowlinear"> <!-- 상세설정창 캔들일때 한행 리니어레이아웃  -->
+        <item name="android:layout_width">match_parent</item>
+		<item name="android:layout_height">52dp</item>
+		<!--<item name="android:weightSum">1</item>-->
+		<item name="android:orientation">horizontal</item>
+		<item name="android:layout_marginLeft">18dp</item>
+		<!--<item name="android:layout_marginBottom">5dip</item>-->
+    </style>
+
+	<style name="detail_candleset_title"> <!-- 캔들설정창 타이틀텍스트  -->
+		<item name="android:textColor">#111111</item>
+		<item name="android:layout_width">0dp</item>
+		<item name="android:layout_height">wrap_content</item>
+		<item name="android:layout_weight">1</item>
+		<item name="android:layout_gravity">center_vertical</item>
+		<!--<item name="android:layout_marginLeft">18dp</item>-->
+		<item name="android:textSize">15dp</item>
+		<!--<item name="android:layout_weight">0.21</item>-->
+	</style>
+
+	<style name="detail_candleset_subtitle"> <!-- 캔들설정창 서브텍스트  -->
+		<item name="android:textColor">#111111</item>
+		<item name="android:layout_width">wrap_content</item>
+		<item name="android:layout_height">wrap_content</item>
+		<item name="android:layout_gravity">center_vertical</item>
+		<item name="android:layout_marginRight">20dp</item>
+		<item name="android:textSize">15dp</item>
+		<!--<item name="android:layout_weight">0.21</item>-->
+	</style>
+
+	<style name="detail_candleset_checkbox"> <!-- 캔들설정창  체크박스   -->
+		<item name="android:layout_width">20dp</item>
+		<item name="android:layout_height">20dp</item>
+		<item name="android:button">@drawable/checkbox_change</item>
+		<!--<item name="android:layout_marginLeft">8dp</item>-->
+		<!--<item name="android:layout_marginRight">8dp</item>-->
+		<!--<item name="android:id">@+id/chk_isSelect</item> -->
+		<item name="android:layout_gravity">center_vertical</item>
+	</style>
+    
+    <!-- 7.20 기준선 설정 레이아웃  -->
+    <style name="baseline_checkbox"> <!-- 기준선설정 체크박스  -->
+		<item name="android:layout_width">wrap_content</item>
+		<item name="android:layout_height">match_parent</item>
+		<item name="android:focusable">false</item>
+		<item name="android:checked">false</item>
+		<item name="android:button">@drawable/checkbox_change</item>
+		<item name="android:gravity">center_vertical</item>
+		<item name="android:onClick">setBaseLine</item>
+		<item name="android:layout_marginLeft">15dp</item>
+    </style>
+    <style name="baseline_checkbox_tab"> <!-- 기준선설정 체크박스 (태블릿용)  -->
+		<item name="android:layout_width">0dp</item>
+		<item name="android:layout_height">34dp</item>
+		<item name="android:focusable">false</item>
+		<item name="android:checked">false</item>
+		<item name="android:onClick">setBaseLine</item>
+		<item name="android:layout_weight">0.15</item>
+		<item name="android:button">@drawable/checkbox_change_tab</item>
+    </style>
+    <style name="baseline_textview"> <!-- 기준선설정 텍스트뷰  -->
+		<item name="android:layout_width">0dp</item>
+		<item name="android:layout_height">match_parent</item>
+		<item name="android:textSize">17dp</item>
+		<item name="android:textColor">#333333</item>
+		<item name="android:layout_weight">0.95</item>
+		<item name="android:gravity">center_vertical</item>
+		<item name="android:layout_marginLeft">10dp</item>
+    </style>
+    <style name="baseline_weightlinear"> <!-- 기준선설정 가중치전용 리니어   -->
+		<item name="android:layout_width">fill_parent</item>
+		<item name="android:layout_height">50dp</item>
+		<!--<item name="android:weightSum">1</item>-->
+		<item name="android:orientation">horizontal</item>
+		<!--<item name="android:layout_gravity">center_vertical</item>-->
+		<item name="android:paddingRight">20dp</item>
+		<item name="android:background">#ffffff</item>
+    </style>
+    <style name="baseline_whitespacerightoftextview_tab"> <!-- 기준선설정 텍스트뷰와 체크박스 사이 공백 (태블릿)    -->
+		<item name="android:layout_width">0dp</item>
+		<item name="android:layout_height">wrap_content</item>
+		<item name="android:layout_weight">0.5</item>
+    </style>
+    
+    <!-- 7.20 자동추세 설정 레이아웃  -->
+    <style name="autotrend_checkbox"> <!-- 자동추세설정  체크박스  -->
+		<item name="android:layout_width">wrap_content</item>
+		<item name="android:layout_height">match_parent</item>
+		<item name="android:focusable">false</item>
+		<item name="android:checked">false</item>
+		<item name="android:button">@drawable/checkbox_change</item>
+		<item name="android:gravity">center_vertical</item>
+		<item name="android:layout_marginLeft">12dp</item>
+    </style>
+    <style name="autotrend_checkbox_tab"> <!-- 자동추세설정  체크박스  -->
+		<item name="android:layout_width">0dp</item>
+		<item name="android:layout_height">31dip</item>
+		<item name="android:focusable">false</item>
+		<item name="android:checked">false</item>
+		<item name="android:layout_weight">0.15</item>
+		<item name="android:layout_marginBottom">2dip</item>
+		<item name="android:button">@drawable/checkbox_change_tab</item>
+    </style>
+    <style name="autotrend_textview"> <!-- 자동추세설정 텍스트뷰  -->
+		<item name="android:layout_width">0dp</item>
+		<item name="android:layout_height">match_parent</item>
+		<item name="android:textSize">15dp</item>
+		<item name="android:textColor">#000000</item>
+		<item name="android:layout_weight">0.25</item>
+		<item name="android:gravity">center_vertical</item>
+		<item name="android:layout_marginLeft">8dp</item>
+    </style>
+    <style name="autotrend_edittext"> <!-- 자동추세설정 에디트  -->
+        <item name="android:layout_width">70dp</item>
+		<item name="android:layout_height">32dp</item>
+		<item name="android:textColor">#111111</item>
+		<item name="android:textSize">14sp</item>
+		<item name="android:inputType">phone</item>
+		<item name="android:selectAllOnFocus">true</item>
+		<item name="android:background">@drawable/edittext_change</item>	
+		<item name="android:privateImeOptions">inputType=spamNumber;symbol=false</item>
+		<item name="android:layout_gravity">center_vertical</item>
+    </style>
+    <style name="autotrend_weightlinear"> <!-- 자동추세설정 가중치전용 리니어   -->
+		<item name="android:layout_width">fill_parent</item>
+		<item name="android:layout_height">40dp</item>
+		<item name="android:weightSum">1</item>
+		<item name="android:orientation">horizontal</item>
+		<item name="android:layout_gravity">center_vertical</item>
+		<item name="android:background">#ffffff</item>
+    </style>
+    <style name="popup_imageline"> <!-- 팝업의 구분선  -->
+        <item name="android:layout_width">fill_parent</item>
+		<item name="android:layout_height">1dp</item>
+		<item name="android:layout_marginRight">0dp</item>
+		<item name="android:layout_marginLeft">0dp</item>
+    </style>
+     <style name="autotrend_weightlinear_gray"> <!-- 자동추세설정 가중치전용 회색 리니어   -->
+		<item name="android:layout_width">fill_parent</item>
+		<item name="android:layout_height">wrap_content</item>
+		<item name="android:weightSum">1</item>
+		<item name="android:orientation">horizontal</item>
+		<item name="android:layout_gravity">center_vertical</item>
+		<item name="android:background">#E0E0E0</item>
+    </style>
+    <style name="autotrend_whitespacerightoftextview_tab"> <!-- 자동추세설정설정 텍스트뷰와 체크박스 및 에디트텍스트 사이 공백 (태블릿)    -->
+		<item name="android:layout_width">0dp</item>
+		<item name="android:layout_height">wrap_content</item>
+		<item name="android:layout_weight">0.45</item>
+    </style>
+    
+    <!-- 2012. 7. 24 차트로드화면 레이아웃  -->
+    <style name="chartload_textview"> <!-- 차트로드화면  텍스트뷰  -->
+        <item name="android:layout_width">fill_parent</item>
+		<item name="android:layout_height">0dip</item>
+		<item name="android:textColor">#000000</item>
+    </style>
+    
+    <!-- 2012. 7. 25 우측 툴바 각 도구  레이아웃  -->
+    <style name="toolbar_icons">
+        <item name="android:layout_width">48dp</item>
+		<item name="android:layout_height">37dp</item>
+		<item name="android:clickable">true</item>
+		<item name="android:layout_marginLeft">1dip</item>
+		<item name="android:textColor">#00000000</item>
+    </style>
+     <!-- 2012. 7. 25 우측 툴바 각 도구  레이아웃  -->
+    <style name="toolbar_icons_black">
+        <item name="android:layout_width">wrap_content</item>
+		<!-- <item name="android:layout_height">29dip</item> -->
+		<item name="android:layout_height">37dip</item> 
+		<item name="android:clickable">true</item>
+		<item name="android:layout_marginLeft">1dip</item>
+		<item name="android:textColor">#ffffff</item>
+    </style>
+    
+    
+    <style name="toolbar_imageline"> <!-- 툴바의 구분선  -->
+        <item name="android:layout_width">fill_parent</item>
+		<item name="android:layout_height">1dip</item>
+		<item name="android:layout_marginLeft">1dip</item>
+		<item name="android:visibility">gone</item>
+    </style>
+    <style name="toolbar_fortablet_icons">
+        <item name="android:layout_width">53dip</item>
+		<item name="android:layout_height">29dip</item>
+		<item name="android:clickable">true</item>
+		<item name="android:layout_marginLeft">5dip</item>
+    </style>
+    
+    <!-- 2013. 1. 24 저장하기창 레이아웃  -->
+    <style name="savechart_rowlinear"> <!-- 저장하기 종목정보 한 행 리니어   -->
+        <item name="android:layout_width">match_parent</item>
+		<item name="android:layout_height">0dip</item>
+		<item name="android:layout_weight">0.15</item>
+		<item name="android:weightSum">1</item>
+		<item name="android:orientation">horizontal</item> 
+    </style>
+    <style name="savechart_tv_symbolinfo"> <!-- 저장하기 종목정보 텍스트뷰  -->
+        <item name="android:layout_width">0dip</item>
+		<item name="android:layout_height">match_parent</item>
+		<item name="android:layout_weight">0.68</item>
+		<item name="android:textColor">#000000</item>
+		<item name="android:gravity">center_vertical</item>
+    </style>
+    <style name="savechart_tv_detailinfo"> <!-- 저장하기 상세내용 텍스트뷰   -->
+        <item name="android:layout_width">wrap_content</item>
+		<item name="android:layout_height">wrap_content</item>
+		<item name="android:textSize">15dp</item>
+		<item name="android:textColor">#999999</item>
+		<item name="android:gravity">center_vertical</item>
+    </style>
+
+    
+    <!-- 2012. 8. 2 저장불러오기 레이아웃  -->
+    <style name="saveload_textview"> <!-- 저장불러오기 텍스트뷰 -->
+        <item name="android:layout_width">match_parent</item>
+		<item name="android:layout_height">50dip</item>
+<!-- 		<item name="android:background">#ffffffff</item> -->
+		<item name="android:background">@drawable/btn_pop_saveload</item>
+		<item name="android:textColor">@color/text_grey4</item>
+		<item name="android:gravity">left|center</item>
+		<item name="android:paddingLeft">30dp</item>
+		<item name="android:textSize">14dp</item>
+    </style>
+    
+    <!-- 2012. 8. 3 분할차트 레이아웃  -->
+    <style name="devideview_relative"> <!-- 분할차트 렐러티브 -->
+        <item name="android:layout_width">wrap_content</item>
+		<item name="android:layout_height">wrap_content</item>
+		<item name="android:layout_marginTop">20dp</item>
+		<item name="android:layout_gravity">center</item>
+    </style>
+    <style name="devideview_textview"> <!-- 분할차트 텍스트뷰 -->
+        <item name="android:layout_width">match_parent</item>
+		<item name="android:layout_height">20dp</item>
+		<item name="android:textSize">14dp</item>
+		<item name="android:textColor">#888888</item>
+		<item name="android:background">#ffffff</item>
+		<item name="android:layout_marginRight">6dp</item>
+		<!--<item name="android:paddingLeft">5dip</item>-->
+		<item name="android:layout_gravity">center_vertical</item>
+    </style>
+    <style name="devideview_imageview"> <!-- 분할차트 이미지뷰 -->
+        <item name="android:layout_width">wrap_content</item>
+		<item name="android:layout_height">wrap_content</item>
+		<item name="android:layout_marginLeft">30dip</item>
+		<item name="android:layout_centerVertical">true</item>
+		<item name="android:layout_marginTop">8dip</item>
+	</style>
+    <style name="devideview_button"> <!-- 분할차트 버튼 -->
+        <item name="android:layout_width">26dp</item>
+		<item name="android:layout_height">26dp</item>
+		<item name="android:clickable">true</item>
+		<item name="android:layout_alignParentTop">true</item>
+		<item name="android:layout_marginRight">30dp</item>
+		<!--<item name="android:layout_marginRight">6dp</item>-->
+		<!--<item name="android:layout_marginLeft">6dp</item-->
+			>
+		<item name="android:layout_gravity">center_vertical</item>
+    </style>
+    <style name="devideview_line"> <!-- 분할차트 구분선  -->
+        <item name="android:layout_width">match_parent</item>
+		<item name="android:layout_height">1px</item>
+		<item name="android:background">#e3e4e6</item> 
+    </style>
+    <style name="devideview_fortablet_line"> <!-- 분할차트 구분선  -->
+        <item name="android:layout_width">210dip</item>
+		<item name="android:layout_height">wrap_content</item>
+		<item name="android:layout_marginLeft">1dip</item>
+    </style>
+    
+    <!-- 2012. 8. 6 동기화 레이아웃  -->
+    <style name="sync_checkbox"> <!-- 동기화  체크박스  -->
+		<item name="android:layout_width">20dip</item>
+		<item name="android:layout_height">20dip</item>
+		<item name="android:button">@drawable/checkbox_change</item>
+		<item name="android:focusable">false</item>
+		<item name="android:checked">false</item>
+		<item name="android:gravity">center_vertical</item>
+    </style>
+    <style name="sync_textview"> <!-- 동기화  텍스트뷰   -->
+		<item name="android:layout_width">wrap_content</item>
+		<item name="android:layout_height">wrap_content</item>
+		<item name="android:paddingLeft">9dp</item>
+		<item name="android:textColor">#666666</item>
+		<item name="android:gravity">center_vertical</item>
+		<item name="android:textSize">15sp</item>
+		<item name="android:textStyle">normal</item>
+    </style>
+    <style name="sync_textview_full"> <!-- 저장불러오기 텍스트뷰 -->
+        <item name="android:layout_width">match_parent</item>
+		<item name="android:layout_height">match_parent</item>
+		<item name="android:paddingLeft">6dip</item>
+		<item name="android:background">@drawable/btn_pop_saveload</item>
+		<item name="android:textColor">#333333</item>
+		<item name="android:gravity">center_vertical</item>
+    </style>
+    <style name="sync_fortablet_textview"> <!-- 태블릿용 동기화  텍스트뷰   -->
+		<item name="android:layout_width">wrap_content</item>
+		<item name="android:layout_height">20dip</item>
+		<item name="android:textColor">#244275</item>
+    </style>
+    <style name="sync_button_pad"> <!-- 차트 저장/로드 팝업 메뉴 버튼  -->
+		<item name="android:layout_width">73dip</item>
+		<item name="android:layout_height">32dip</item>
+		<item name="android:layout_marginRight">0dip</item>
+		<item name="android:background">#00000000</item>
+		<item name="android:focusable">false</item>
+		<item name="android:checked">false</item>
+    </style>
+
+    <style name="sync_linearlayout"> <!-- 동기화 리니어레이아웃  -->
+		<item name="android:layout_width">wrap_content</item>
+		<item name="android:layout_height">wrap_content</item>
+		<item name="android:gravity">center_vertical</item>
+		<item name="android:orientation">horizontal</item>
+    </style>
+    
+    <!-- 2012. 9. 5  분틱차트주기 설정  -->
+    <style name="periodsetting_outerlinear"> <!-- 분틱차트주기 분차트/틱차트 세로줄 리니어   -->
+		<item name="android:layout_width">0dip</item>
+		<item name="android:layout_height">wrap_content</item>
+		<item name="android:orientation">vertical</item>
+		<item name="android:layout_weight">0.5</item>
+    </style>
+    <style name="periodsetting_rowlinear"> <!-- 분틱차트주기 분차트/틱차트 각 행 리니어  -->
+		<item name="android:layout_width">match_parent</item>
+		<item name="android:layout_height">match_parent</item>
+		<item name="android:orientation">horizontal</item>
+		<item name="android:weightSum">1</item>
+    </style>
+    <style name="periodsetting_text"> <!-- 분틱차트주기 분차트/틱차트 각 텍스트뷰(제목줄제외)  -->
+		<item name="android:layout_width">0dip</item>
+		<item name="android:layout_height">wrap_content</item>
+		<item name="android:textColor">#2f4a67</item>
+		<item name="android:layout_weight">0.4</item>
+    </style>
+    <style name="periodsetting_edittext"> <!-- 분틱차트주기 분차트/틱차트 각 입력창  -->
+		<item name="android:layout_width">0dip</item>
+		<item name="android:layout_height">40dp</item>
+		<item name="android:layout_weight">0.5</item>
+		<item name="android:singleLine">true</item>
+		<item name="android:inputType">phone</item>
+		<item name="android:selectAllOnFocus">true</item>
+		<item name="android:privateImeOptions">inputType=spamNumber;symbol=false</item>
+    </style>
+    
+    <!-- 차트화면 롱클릭 지표리스트  -->
+    <style name="jipyolist_textview"> <!-- 지표리스트 텍스트뷰   -->
+		<item name="android:layout_width">match_parent</item>
+		<item name="android:layout_height">0dp</item>
+		<item name="android:gravity">center_vertical</item>
+    </style>
+    
+    <!-- 2013. 1. 8 비교차트 -->
+    <style name="compare_textview_linear"> <!-- 비교차트 텍스트뷰를 감싸는 리니어     -->
+    	<item name="android:layout_width">0dip</item>
+    	<item name="android:layout_height">match_parent</item>
+    	<item name="android:layout_weight">0.68</item>
+    	<item name="android:orientation">vertical</item>
+    	<item name="android:paddingLeft">7dp</item>
+    	<item name="android:paddingRight">7dp</item>
+    	<item name="android:weightSum">1</item>
+    </style>
+    <style name="compare_delbutton_linear"> <!-- 비교차트 삭제버튼을 감싸는 리니어     -->
+    	<item name="android:layout_width">0dip</item>
+    	<item name="android:layout_height">match_parent</item>
+    	<item name="android:layout_weight">0.2</item>
+    	<item name="android:paddingLeft">7dp</item>	
+  		<item name="android:paddingRight">7dp</item>
+    </style>
+    <style name="compare_textview"> <!-- 비교차트 텍스트뷰     -->
+    	<item name="android:layout_width">match_parent</item>
+    	<item name="android:layout_height">0dip</item>
+    	<item name="android:layout_weight">0.5</item>
+    	<item name="android:gravity">left|center</item>
+    	<item name="android:textColor">#FF000000</item>
+    </style>
+    <style name="compare_delbutton"> <!-- 비교차트 삭제버튼     -->
+    	<item name="android:layout_width">28dip</item>
+    	<item name="android:layout_height">28dip</item>
+    	<item name="android:layout_gravity">center_vertical</item>
+    	<item name="android:paddingRight">11dp</item>
+    	<item name="android:textSize">13dp</item>
+    </style>
+    <style name="compare_divider"> <!-- 비교차트  구분선    -->
+		<item name="android:layout_width">fill_parent</item>
+		<item name="android:layout_height">wrap_content</item>
+    </style>
+    
+    <!-- 2013. 7. 25 멀티 및 동기화 선택창 스타일 추가  -->
+    <style name="divideandsync_textview"> <!-- 멀티및동기화 텍스트뷰 -->
+        <item name="android:layout_width">wrap_content</item>
+		<item name="android:layout_height">wrap_content</item>
+		<item name="android:textColor">#666666</item>
+		<item name="android:paddingLeft">6dp</item>
+		<item name="android:textSize">15dp</item>
+    </style>
+    
+    <style name="divideandsync_checkbox"> <!-- 멀티및동기화  체크박스  -->
+		<item name="android:layout_width">30dp</item>
+		<item name="android:layout_height">30dp</item>
+		<item name="android:layout_marginLeft">5dip</item>
+		<item name="android:button">@drawable/checkbox_change</item>
+    </style>
+    
+    <style name="divideandsync_linear"> <!-- 멀티및동기화  리니어레이아웃  -->
+		<item name="android:layout_width">match_parent</item>
+		<item name="android:layout_height">40dip</item>
+		<item name="android:orientation">horizontal</item>
+		<item name="android:gravity">center_vertical</item>
+    </style>
+    
+    <!-- 2015. 1. 13 분석도구 설정창 스타일 추가  -->
+    <style name="analsettingview_linear"> <!-- 분석도구설정 리니어레이아웃  -->
+		<item name="android:layout_width">match_parent</item>
+		<item name="android:layout_height">0dp</item>
+		<item name="android:layout_weight">0.33</item>
+		<item name="android:orientation">horizontal</item>
+		<item name="android:gravity">center_vertical</item>
+		<item name="android:weightSum">1</item>
+    </style>
+    <style name="analsettingview_tv"> <!-- 분석도구설정 텍스트뷰  -->
+		<item name="android:layout_width">0dp</item>
+		<item name="android:layout_height">wrap_content</item>
+		<item name="android:gravity">center</item>
+		<item name="android:layout_gravity">center_vertical</item>
+		<item name="android:textSize">15dp</item>
+		<item name="android:textColor">#111111</item>
+    </style>
+    <style name="analsettingview_edit"> <!-- 분석도구설정 에디트텍스트  -->
+		<item name="android:layout_width">80dp</item>
+		<item name="android:layout_height">30dp</item>
+		<item name="android:gravity">center</item>
+		<item name="android:selectAllOnFocus">true</item>
+		<item name="android:background">@drawable/edittext_change</item>
+		<item name="android:inputType">numberDecimal</item>
+		<item name="android:textColor">#111111</item>
+		<item name="android:textSize">14sp</item>
+    </style>
+    
+    
+    <!-- 2013. 9. 12 알림창(초기화창) 스타일 추가  -->
+    <style name="alert_bottom_btn"> <!-- 멀티및동기화  리니어레이아웃  -->
+		<item name="android:layout_width">0dp</item>
+		<item name="android:layout_height">48dp</item>
+		<item name="android:background">@drawable/btn_popup_chart_confirm</item>
+		<item name="android:textColor">#ffffff</item>
+		<item name="android:textSize">17dp</item>
+		<item name="android:textStyle">normal</item>
+		<item name="android:layout_weight">0.5</item>
+    </style>
+
+    <style name="alert_layout" parent="android:style/Theme.Dialog">
+		<item name="android:windowBackground">@android:color/transparent</item>
+        <item name="android:windowNoTitle">true</item>
+		<item name="android:windowIsFloating">true</item>
+    </style>
+
+	<style name="compare_checkbox"> <!-- 비교차트 설정 체크박스  -->
+		<item name="android:layout_width">34dp</item>
+		<item name="android:layout_height">34dp</item>
+		<item name="android:focusable">false</item>
+		<item name="android:checked">true</item>
+		<item name="android:button">@drawable/checkbox_change</item>
+    </style>
+
+	<style name="check_editbox"> <!-- editext enable/disable  -->
+		<item name="android:layout_width">34dp</item>
+		<item name="android:layout_height">34dp</item>
+		<item name="android:focusable">false</item>
+		<item name="android:checked">true</item>
+		<item name="android:button">@drawable/checkbox_change</item>
+	</style>
+
+	<!-- 2017. 8. 1 by hyh - 지표설정 UI 변경 >> -->
+	<style name="jipyo_tab_button"> <!-- 지표설정 탭 버튼 -->
+		<item name="android:layout_width">87dp</item>
+		<item name="android:layout_height">36dp</item>
+		<item name="android:scrollbars">none</item>
+		<item name="android:layout_alignParentLeft">true</item>
+		<item name="android:textColor">#111111</item>
+		<item name="android:background">@drawable/btn_tab_sub_change</item>
+		<item name="android:textSize">15dp</item>
+		<item name="android:stateListAnimator">@null</item>
+	</style>
+	<style name="mini_top_btn"> <!-- 미니 지표설정 상단 버튼 -->
+		<item name="android:layout_width">92dp</item>
+		<item name="android:layout_height">28dp</item>
+		<item name="android:background">@drawable/chart_menu_btn</item>
+		<item name="android:textColor">#111111</item>
+		<item name="android:textSize">13dp</item>
+		<item name="android:layout_alignParentRight">true</item>
+		<item name="android:layout_centerInParent">true</item>
+	</style>
+	<style name="mini_tab_btn"> <!-- 미니 지표설정 탭 버튼 -->
+		<item name="android:layout_width">0dp</item>
+		<item name="android:layout_height">match_parent</item>
+		<item name="android:background">@drawable/btn_mini_tab</item>
+		<item name="android:textColor">#ffffff</item>
+		<item name="android:textSize">13dp</item>
+		<item name="android:layout_weight">0.33</item>
+	</style>
+	<style name="mini_sub_tab_btn"> <!-- 미니 지표설정 보조 탭 버튼 -->
+		<item name="android:layout_width">0dp</item>
+		<item name="android:layout_height">match_parent</item>
+		<item name="android:background">@drawable/btn_mini_sub_tab</item>
+		<item name="android:textColor">#ffffff</item>
+		<item name="android:textSize">14dp</item>
+		<item name="android:layout_weight">0.5</item>
+	</style>
+	<!-- 2017. 8. 1 by hyh - 지표설정 UI 변경 << -->
+    <style name="AnimationPopupStyle">
+        <item name="android:windowEnterAnimation">@anim/bottom_alert_open</item>
+        <item name="android:windowExitAnimation">@anim/bottom_alert_close</item>
+    </style>
+	<style name="alert_layout_bottom" parent="android:style/Theme.Dialog">
+		<item name="android:windowBackground">@android:color/transparent</item>
+		<item name="android:windowNoTitle">true</item>
+		<item name="android:windowIsTranslucent">true</item>
+		<item name="android:windowAnimationStyle">@style/AnimationPopupStyle</item>
+	</style>
+<!--	2020.04.24 by JJH >> 차트 설정 팝업 UI 수정 start-->
+	<style name="chart_setting_list_sub_tv">
+		<item name="android:layout_width">wrap_content</item>
+		<item name="android:layout_height">19dp</item>
+		<item name="android:gravity">left</item>
+		<item name="android:textSize">13dp</item>
+		<item name="android:textColor">#999999</item>
+	</style>
+	<style name="chart_setting_list_tv">
+		<item name="android:layout_width">wrap_content</item>
+		<item name="android:layout_height">19dp</item>
+		<item name="android:gravity">left</item>
+		<item name="android:textSize">16dp</item>
+		<item name="android:textColor">#000000</item>
+	</style>
+<!--	2020.04.24 by JJH >> 차트 설정 팝업 UI 수정 end-->
+	<!--	2021.10.07 by JHY >> 차트 설정 팝업 애니메이션 start-->
+	<style name="CustomDialogAnimation">
+		<item name="android:windowEnterAnimation">@anim/anim_top_to_center</item>
+		<item name="android:windowExitAnimation">@anim/anim_center_to_down</item>
+	</style>
+	<style name="CustomDialog" parent="@android:style/Theme.Dialog">
+		<item name="android:windowAnimationStyle">@style/CustomDialogAnimation</item>
+	</style>
+	<!--	2021.10.07 by JHY >> 차트 설정 팝업 애니메이션 end-->
+	<!--	2021.10.20 by JHY >> toast_dialog 애니메이션 start-->
+	<style name="ToastDialogAnimation">
+		<item name="android:windowEnterAnimation">@anim/toastdialog_top_to_center</item>
+		<item name="android:windowExitAnimation">@anim/toastdialog_center_to_down</item>
+	</style>
+	<style name="ToastDialog" parent="@android:style/Theme.Dialog">
+		<item name="android:windowAnimationStyle">@style/ToastDialogAnimation</item>
+	</style>
+	<!--	2021.10.20 by JHY >> toast_dialog 애니메이션 end-->
+
+	<!-- 2023.11.21 by CYJ - kakaopay 인터렉션 추가 >> -->
+	<style name="ToastDialogAnimation2">
+		<item name="android:windowEnterAnimation">@anim/anim_toast_dialog1</item>
+	</style>
+	<!-- 2023.11.21 by CYJ - kakaopay 인터렉션 추가 << -->
+	<style name="error_tooltip">
+		<item name="android:layout_width"> wrap_content </item>
+		<item name="android:layout_height"> wrap_content </item>
+		<item name="android:layout_marginLeft"> 24dp </item>
+		<item name="android:layout_marginRight">24dp </item>
+		<item name="android:layout_marginTop"> -12dp </item>
+		<item name="android:paddingTop"> 12dp </item>
+		<item name="android:paddingLeft"> 8dp </item>
+		<item name="android:paddingRight"> 8dp </item>
+		<item name="android:background"> @drawable/kfit_error_tooltip </item>
+		<item name="android:textSize"> 12dp </item>
+		<item name="android:textColor"> @color/kfit_inverse_high__emphasis </item>
+		<item name="android:visibility"> gone </item>
+	</style>
+
+	<style name="error_tooltip_dark">
+		<item name="android:layout_width"> wrap_content </item>
+		<item name="android:layout_height"> wrap_content </item>
+		<item name="android:layout_marginLeft"> 24dp </item>
+		<item name="android:layout_marginRight">24dp </item>
+		<item name="android:layout_marginTop"> -12dp </item>
+		<item name="android:paddingTop"> 12dp </item>
+		<item name="android:paddingLeft"> 8dp </item>
+		<item name="android:paddingRight"> 8dp </item>
+		<item name="android:background"> @drawable/kfit_error_tooltip_dark </item>
+		<item name="android:textSize"> 12dp </item>
+		<item name="android:textColor"> @color/kfit_inverse_high__emphasis </item>
+		<item name="android:visibility"> gone </item>
+	</style>
+
+	<style name="ExpandedToolbar.TitleText" parent="TextAppearance.Design.CollapsingToolbar.Expanded">
+		<item name="android:layout_width"> match_parent</item>
+		<item name="android:textColor">@color/kfit_high__emphasis</item>
+		<item name="android:textSize">24dp</item>
+	</style>
+	<style name="CollapsingToolbar.TitleText" parent="TextAppearance.Design.CollapsingToolbar.Expanded">
+		<item name="android:layout_width"> match_parent</item>
+		<item name="android:textColor">@color/kfit_high__emphasis</item>
+		<item name="android:textSize">17dp</item>
+	</style>
+</resources>

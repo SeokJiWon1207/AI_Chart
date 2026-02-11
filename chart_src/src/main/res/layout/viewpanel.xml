@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/linearLayout1"
+    android:layout_width="220dip"
+    android:layout_height="70dip"
+    android:background="@color/stockupColor">
+
+    <View
+        android:id="@+id/view1"
+        android:layout_width="220dip"
+        android:layout_height="70dip"></View>
+</LinearLayout>

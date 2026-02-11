@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" 
+      android:orientation="vertical" android:background="#202020" android:clickable="true">
+  		<LinearLayout android:layout_width="fill_parent" android:layout_height="40dip" android:background="#202020">
+  		    
+  		    <Button android:textColor="#ffffff" android:layout_height="32dp" android:text="초기화" android:textSize="16dp"
+				android:layout_width="70dip" android:layout_gravity="center" android:layout_marginLeft="10dp" 
+				 android:background="@drawable/btn_chart_init_change" android:id="@+id/frameaBtnInit"/>
+  		    
+	  	    <TextView android:textColor="#ffffff" android:textSize="20dp" android:text="비교차트 설정" android:layout_marginRight="10dp"
+	 	        android:layout_height="match_parent" android:layout_width="wrap_content" android:layout_weight="1" android:gravity="center"></TextView>
+	  	    
+	        <Button android:background="@drawable/btn_detail_back_change" android:layout_marginRight="10dp" android:layout_gravity="center_vertical"
+	            android:id="@+id/frameaBtnBack" android:layout_height="24dp" android:layout_width="24dip"/> 
+		</LinearLayout>
+
+  		<ScrollView
+	    android:weightSum="1"
+		android:orientation="vertical"  android:layout_weight="1"  android:scrollbars="none"
+	    android:layout_width="fill_parent" android:layout_height="0dip">
+    <LinearLayout android:layout_width="match_parent" android:id="@+id/linearlayout1" android:layout_height="match_parent" android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/comparetype"
+            style="@style/detail_headline_black"
+            android:layout_width="match_parent"
+            android:text="비교유형" />
+ 
+        <LinearLayout android:layout_height="49dp" android:layout_marginLeft="6dp" android:layout_width="match_parent">
+            <CheckBox style="@style/volumesetting_radiobtn_black" android:id ="@+id/chk_comptype1" 
+                android:layout_marginLeft="10dp" android:layout_width="30dp" android:layout_height="match_parent" android:checked="true"/>"
+            <TextView android:text="등락률비교(오버레이)" android:id="@+id/textType1" android:layout_width="match_parent" android:layout_height="match_parent" android:textColor="@color/kfit_white"
+                android:textSize="16dp" android:gravity="left|center" android:layout_marginLeft="6dp"/>
+        </LinearLayout>
+        
+		<LinearLayout android:layout_height="49dp" android:layout_marginLeft="6dp" android:layout_width="match_parent">
+            <CheckBox style="@style/volumesetting_radiobtn_black" android:id ="@+id/chk_comptype2"
+                android:layout_marginLeft="10dp" android:layout_width="30dp" android:layout_height="match_parent"/>"
+            <TextView android:text="등락률비교" android:id="@+id/textType2" android:layout_width="match_parent" android:layout_height="match_parent" android:textColor="@color/kfit_white"
+                android:textSize="16dp" android:gravity="left|center" android:layout_marginLeft="6dp"/>
+        </LinearLayout>
+        
+        <LinearLayout android:layout_height="49dp" android:layout_marginLeft="6dp" android:layout_width="match_parent">
+            <CheckBox style="@style/volumesetting_radiobtn_black" android:id ="@+id/chk_comptype3"
+                android:layout_marginLeft="10dp" android:layout_width="30dp" android:layout_height="match_parent"/>"
+            <TextView android:text="추세비교" android:id="@+id/textType3" android:layout_width="match_parent" android:layout_height="match_parent" android:textColor="@color/kfit_white"
+                android:textSize="16dp" android:gravity="left|center" android:layout_marginLeft="6dp"/>
+        </LinearLayout>
+        
+        <TextView style="@style/detail_headline_black" android:text="라인" android:id="@+id/compareline"/>
+        
+ 		<LinearLayout android:layout_height="49dp" android:layout_marginLeft="6dp" android:layout_width="match_parent" >
+            <TextView android:text="종목 1" android:id="@+id/item1" android:layout_marginLeft="10dp"  android:layout_height="match_parent" android:textColor="@color/kfit_white"  android:textSize="16dp"
+                android:gravity="center|left" android:layout_width="120dp" />
+            <TextView style="@style/detail_lineset_items" android:layout_width="70dp" android:id="@+id/line1" android:background="@drawable/shape_roundrect"></TextView>
+            <TextView style="@style/detial_lineset_thick"   android:id="@+id/thicktextview1" android:background="@drawable/line_thick_black" android:layout_marginLeft="40dp" android:layout_width="60dp" android:layout_height="45dp"/>
+			<TextView style="@style/detail_lineset_title_black" android:id="@+id/pttv1" android:text="1pt"  android:layout_width="wrap_content"  android:layout_marginLeft="0dp" android:layout_gravity="center" />
+        </LinearLayout>
+        
+        <LinearLayout android:layout_height="49dp" android:layout_marginLeft="6dp" android:layout_width="match_parent">
+            <TextView android:text="종목 2" android:id="@+id/item2" android:layout_marginLeft="10dp" android:layout_height="match_parent" android:textColor="@color/kfit_white"  android:textSize="16dp"
+                android:gravity="center|left" android:layout_width="120dp"/>
+            <TextView style="@style/detail_lineset_items" android:layout_width="70dp" android:id="@+id/line2" android:background="@drawable/shape_roundrect"></TextView>
+            <TextView style="@style/detial_lineset_thick" android:id="@+id/thicktextview2" android:background="@drawable/line_thick_black" android:layout_marginLeft="40dp" android:layout_width="60dp" android:layout_height="45dp" />
+			<TextView style="@style/detail_lineset_title_black"  android:id="@+id/pttv2" android:text="1pt"  android:layout_width="wrap_content" android:layout_marginLeft="0dp" android:layout_gravity="center"/>
+        </LinearLayout>
+        
+		<LinearLayout android:layout_height="49dp" android:layout_marginLeft="6dp" android:layout_width="match_parent" >
+            <TextView android:text="종목 3" android:id="@+id/item3" android:layout_marginLeft="10dp" android:layout_height="match_parent" android:textColor="@color/kfit_white"  android:textSize="16dp"
+                android:gravity="center|left" android:layout_width="120dp" />
+            <TextView style="@style/detail_lineset_items" android:layout_width="70dp" android:id="@+id/line3" android:background="@drawable/shape_roundrect"></TextView>
+            <TextView style="@style/detial_lineset_thick" android:id="@+id/thicktextview3" android:background="@drawable/line_thick_black" android:layout_marginLeft="40dp" android:layout_width="60dp" android:layout_height="45dp" />
+			<TextView style="@style/detail_lineset_title_black"  android:id="@+id/pttv3" android:text="1pt"   android:layout_width="wrap_content"  android:layout_marginLeft="0dp" android:layout_gravity="center"/>
+        </LinearLayout>
+        
+		<LinearLayout android:layout_height="49dp" android:layout_marginLeft="6dp" android:layout_width="match_parent" >
+            <TextView android:text="종목 4" android:id="@+id/item4" android:layout_marginLeft="10dp" android:layout_height="match_parent" android:textColor="@color/kfit_white"  android:textSize="16dp"
+                android:gravity="center|left" android:layout_width="120dp" />
+            <TextView style="@style/detail_lineset_items" android:layout_width="70dp" android:id="@+id/line4" android:background="@drawable/shape_roundrect"></TextView>
+            <TextView style="@style/detial_lineset_thick" android:id="@+id/thicktextview4" android:background="@drawable/line_thick_black" android:layout_marginLeft="40dp" android:layout_width="60dp" android:layout_height="45dp" />
+			<TextView style="@style/detail_lineset_title_black"  android:id="@+id/pttv4" android:text="1pt"   android:layout_width="wrap_content"   android:layout_marginLeft="0dp" android:layout_gravity="center"/>
+        </LinearLayout>
+
+		<LinearLayout android:layout_height="49dp" android:layout_marginLeft="6dp" android:layout_width="match_parent" >
+            <TextView android:text="종목 5" android:id="@+id/item5" android:layout_marginLeft="10dp" android:layout_height="match_parent" android:textColor="@color/kfit_white"  android:textSize="16dp"
+                android:gravity="center|left" android:layout_width="120dp" />
+            <TextView style="@style/detail_lineset_items" android:layout_width="70dp" android:id="@+id/line5" android:background="@drawable/shape_roundrect"></TextView>
+            <TextView style="@style/detial_lineset_thick" android:id="@+id/thicktextview5" android:background="@drawable/line_thick_black" android:layout_marginLeft="40dp" android:layout_width="60dp" android:layout_height="45dp" />
+			<TextView style="@style/detail_lineset_title_black" android:id="@+id/pttv5" android:text="1pt"   android:layout_width="wrap_content"  android:layout_marginLeft="0dp" android:layout_gravity="center" />
+        </LinearLayout>
+        
+		<LinearLayout android:layout_height="40dp" android:layout_marginLeft="6dp" android:layout_width="match_parent" >
+	     </LinearLayout>
+    </LinearLayout>
+    </ScrollView>
+</LinearLayout>

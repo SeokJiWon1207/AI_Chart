@@ -1,0 +1,37 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<INDEX VERSION="2.0">
+	<ITEM KEY="2013" NAME="이동평균 정배열"/>
+	<ITEM KEY="2013" NAME="이동평균 정배열(5,20,60)"/>
+	<ITEM KEY="2002" NAME="5일이평 하향돌파"/>
+	<ITEM KEY="1001" NAME="상한가"/>
+	<ITEM KEY="2014" NAME="이동평균 역배열(5,20,60)"/>
+	<ITEM KEY="2003" NAME="5일이평 상승반전 "/>
+	<ITEM KEY="1002" NAME="하한가"/>
+	<ITEM KEY="2015" NAME="5일 매물대 상향돌파"/>
+	<ITEM KEY="2004" NAME="5일이평 하락반전"/>
+	<ITEM KEY="1003" NAME="5일 최고거래량 갱신"/>
+	<ITEM KEY="2016" NAME="5일 매물대 하향돌파"/>
+	<ITEM KEY="2005" NAME="20일이평 상향돌파"/>
+	<ITEM KEY="1004" NAME="3% 시가갭 발생 "/>
+	<ITEM KEY="2017" NAME="20일 매물대 상향돌파"/>
+	<ITEM KEY="2006" NAME="20일이평 하향돌파"/>
+	<ITEM KEY="1005" NAME="전일저가 갱신"/>
+	<ITEM KEY="2018" NAME="20일 매물대 하향돌파"/>
+	<ITEM KEY="2007" NAME="20일이평 상승반전 "/>
+	<ITEM KEY="1006" NAME="전일고가 갱신"/>
+	<ITEM KEY="2019" NAME="60일 매물대 상향돌파"/>
+	<ITEM KEY="2008" NAME="20일이평 하락반전"/>
+	<ITEM KEY="1007" NAME="5일 신고가 갱신"/>
+	<ITEM KEY="2009" NAME="이평 골든크로스(5, 20)"/>
+	<ITEM KEY="1008" NAME="5일 신저가 갱신"/>
+	<ITEM KEY="2020" NAME="60일 매물대 하향돌파"/>
+	<ITEM KEY="2021" NAME="5분 이평 골든크로스(5, 20)"/>
+	<ITEM KEY="2010" NAME="이평 골든크로스(20, 60)"/>
+	<ITEM KEY="3001" NAME="외국계회원 순매도 1만주 이상"/>
+	<ITEM KEY="2011" NAME="이평 데드크로스(5, 20)"/>
+	<ITEM KEY="2022" NAME="10분 이평 골든크로스(5, 20)"/>
+	<ITEM KEY="3002" NAME="외국계회원 순매수 1만주 이상"/>
+	<ITEM KEY="2012" NAME="이평 데드크로스(20, 60)"/>
+	<ITEM KEY="2023" NAME="30분 이평 골든크로스(5, 20)"/>
+	<ITEM KEY="2001" NAME="5일이평 상향돌파"/>
+</INDEX>

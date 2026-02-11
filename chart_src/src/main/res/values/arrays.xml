@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="find_sigdiscnts">
+		<item>20</item>
+		<item>30</item>
+		<item>40</item>
+		<item>50</item>
+		<item>60</item>
+	</string-array>
+	
+    <!-- 2012. 8. 28 캔들 설정창의 스피너 데이터 리스트  -->
+	<string-array name="candle_baseprice">
+	    <item>시가</item>
+		<item>종가</item>
+	</string-array>
+	
+	<string-array name="candle_samecolor">
+		<item>일반(흑색)</item>
+		<item>전일종가대비</item>
+	</string-array>
+
+	<!-- 종가기준값(시/고/저/종가) -->
+	<string-array name="jipyo_baseprice">
+		<item>종가</item>
+		<item>시가</item>
+		<item>고가</item>
+		<item>저가</item>
+		<item>(고+저)/2</item>
+		<item>(고+저+종)/3</item>
+	</string-array>
+	<!-- 이평선 종류 -->
+	<string-array name="jipyo_averagetype">
+		<item>단순</item>
+		<item>가중</item>
+		<item>지수</item>
+		<!--<item>기하이평</item>-->
+	</string-array>
+	<!-- 2019. 07. 04 by hyh - BollingerBand 기준가, 계산방법 추가 >> -->
+	<string-array name="jipyo_baseprice_bollingerband">
+		<item>종가</item>
+		<item>시가</item>
+		<item>고가</item>
+		<item>저가</item>
+		<item>(고+저)/2</item>
+		<item>(고+저+종)/3</item>
+	</string-array>
+	<!-- Bollinger Band 이평선 종류 -->
+	<string-array name="jipyo_calctype_bollingerband">
+		<item>단순</item>
+		<item>가중</item>
+		<item>지수</item>
+	</string-array>
+    <!-- 2019. 07. 04 by hyh - BollingerBand 기준가, 계산방법 추가 << -->
+</resources>

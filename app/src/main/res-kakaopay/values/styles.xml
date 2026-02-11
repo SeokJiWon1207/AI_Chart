@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="MtsTradingTabButton" parent="Widget.MaterialComponents.Button.UnelevatedButton">
+        <item name="android:paddingLeft">0dp</item>
+        <item name="android:paddingRight">0dp</item>
+        <item name="android:paddingTop">0dp</item>
+        <item name="android:paddingBottom">0dp</item>
+        <item name="android:insetLeft">0dp</item>
+        <item name="android:insetRight">0dp</item>
+        <item name="android:insetTop">0dp</item>
+        <item name="android:insetBottom">0dp</item>
+        <item name="android:minWidth">60dp</item>
+        <item name="android:minHeight">40dp</item>
+        <item name="iconPadding">0dp</item>
+        <item name="iconTint">@color/mts_trading_tab_selector</item>
+        <item name="android:textSize">15dp</item>
+        <item name="android:textColor">@color/mts_trading_tab_selector</item>
+        <item name="android:backgroundTint">#191c20</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:gravity">center</item>
+        <item name="cornerRadius">0dp</item>
+    </style>
+
+</resources>

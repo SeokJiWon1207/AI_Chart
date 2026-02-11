@@ -1,0 +1,381 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mts_trading_container"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/kfits_fit_color_background_white"
+    android:orientation="vertical">
+
+    <!-- 탑 헤더 : 가격 정보 등 -->
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/top_appbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <FrameLayout
+            android:id="@+id/name_container"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="8dp"
+            android:addStatesFromChildren="true"
+            android:orientation="horizontal"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <TextView
+                android:id="@+id/stock_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="TSLA"
+                android:textColor="@color/kfits_fit_on_background_emphasis_high_type"
+                tools:ignore="TextSizeCheck,TouchTargetSizeCheck" />
+
+        </FrameLayout>
+
+        <TextView
+            android:id="@+id/price_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="24dp"
+            android:text="$200"
+            android:textColor="@color/kfits_red500_base"
+            android:textSize="26dp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/name_container" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <!-- 하단 헤더 & 탭 -->
+    <androidx.coordinatorlayout.widget.CoordinatorLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:clipChildren="false">
+
+        <com.google.android.material.appbar.AppBarLayout
+            android:id="@+id/bottom_appbar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/kfits_fit_color_background_white"
+            android:clipChildren="false"
+            android:stateListAnimator="@null">
+
+            <!-- 헤더 : 장상태 / 티커 / 계좌 정보 등 -->
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/transition_container"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:clipChildren="false"
+                android:clipToPadding="false"
+                android:paddingTop="4dp"
+                android:paddingBottom="6dp"
+                app:layout_scrollFlags="noScroll">
+
+                <TextView
+                    android:id="@+id/fluctuation"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="24dp"
+                    android:text="-2.3%"
+                    android:textColor="@color/kfits_fit_on_background_emphasis_high_type"
+                    android:textSize="12dp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_goneMarginStart="24dp" />
+
+                <TextView
+                    android:id="@+id/deco"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="4dp"
+                    android:text="장마감"
+                    android:textColor="@color/kfits_fit_on_background_emphasis_high_type"
+                    android:textSize="12dp"
+                    android:textStyle="bold"
+                    app:layout_constraintBottom_toBottomOf="@+id/fluctuation"
+                    app:layout_constraintStart_toEndOf="@+id/fluctuation"
+                    app:layout_constraintTop_toTopOf="@+id/fluctuation"
+                    tools:ignore="TextSizeCheck" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="24dp"
+                    android:addStatesFromChildren="true"
+                    android:text="주식계좌 6036"
+                    android:textColor="@color/kfits_fit_on_background_emphasis_high_type"
+                    app:layout_constraintBottom_toBottomOf="@+id/fluctuation"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="@+id/fluctuation"
+                    tools:ignore="TextSizeCheck,TouchTargetSizeCheck" />
+
+                <View
+                    android:id="@+id/divider"
+                    android:layout_width="match_parent"
+                    android:layout_height="0.5dp"
+                    android:layout_marginTop="8dp"
+                    android:background="#3387929c"
+                    app:layout_constraintTop_toBottomOf="@+id/fluctuation" />
+
+                <TextView
+                    android:id="@+id/decimal_text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="6dp"
+                    android:text="소수점 구매 가능"
+                    android:textColor="@color/kfits_blue600_base"
+                    android:textSize="10dp"
+                    android:textStyle="bold"
+                    app:layout_constraintStart_toStartOf="@+id/fluctuation"
+                    app:layout_constraintTop_toBottomOf="@+id/divider"
+                    tools:ignore="TextSizeCheck" />
+
+                <ImageView
+                    android:id="@+id/dot_separator"
+                    android:layout_width="3dp"
+                    android:layout_height="3dp"
+                    android:layout_marginHorizontal="4dp"
+                    android:background="#29060B11"
+                    android:importantForAccessibility="no"
+                    app:layout_constraintBottom_toBottomOf="@+id/decimal_text"
+                    app:layout_constraintStart_toEndOf="@+id/decimal_text"
+                    app:layout_constraintTop_toTopOf="@+id/decimal_text"
+                    tools:ignore="ImageContrastCheck" />
+
+                <TextView
+                    android:id="@+id/ticker"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="4dp"
+                    android:layout_marginTop="6dp"
+                    android:text="Large cap ETF"
+                    android:textColor="@color/kfits_fit_on_background_emphasis_high_type"
+                    android:textSize="10dp"
+                    android:textStyle="bold"
+                    app:layout_constraintStart_toEndOf="@+id/dot_separator"
+                    app:layout_constraintTop_toBottomOf="@+id/divider"
+                    tools:ignore="TextSizeCheck" />
+
+                <androidx.constraintlayout.widget.Barrier
+                    android:id="@+id/first_end_barrier"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:barrierDirection="end"
+                    app:constraint_referenced_ids="ticker" />
+
+                <ImageView
+                    android:id="@+id/exchange_name_dot_separator"
+                    android:layout_width="3dp"
+                    android:layout_height="3dp"
+                    android:layout_marginHorizontal="4dp"
+                    android:layout_marginTop="12dp"
+                    android:background="#29060B11"
+                    android:importantForAccessibility="no"
+                    app:layout_constraintStart_toEndOf="@+id/first_end_barrier"
+                    app:layout_constraintTop_toBottomOf="@+id/divider"
+                    tools:ignore="ImageContrastCheck" />
+
+                <TextView
+                    android:id="@+id/mts_trading_appbar_stock_exchange_name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="4dp"
+                    android:layout_marginTop="6dp"
+                    android:text="아멕스"
+                    android:textColor="@color/kfits_fit_on_background_emphasis_high_type"
+                    android:textSize="10dp"
+                    android:textStyle="bold"
+                    app:layout_constraintStart_toEndOf="@+id/exchange_name_dot_separator"
+                    app:layout_constraintTop_toBottomOf="@+id/divider"
+                    tools:ignore="TextSizeCheck" />
+
+                <ImageView
+                    android:id="@+id/index_expected_delay_dot_separator"
+                    android:layout_width="3dp"
+                    android:layout_height="3dp"
+                    android:layout_marginHorizontal="4dp"
+                    android:layout_marginTop="12dp"
+                    android:background="#29060B11"
+                    android:importantForAccessibility="no"
+                    app:layout_constraintStart_toEndOf="@+id/first_end_barrier"
+                    app:layout_constraintTop_toBottomOf="@+id/divider"
+                    tools:ignore="ImageContrastCheck" />
+
+                <TextView
+                    android:id="@+id/index_expected_delay"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="4dp"
+                    android:layout_marginTop="6dp"
+                    android:text="아멕스"
+                    android:textColor="@color/kfits_fit_inverse_emphasis_medium"
+                    android:textSize="10dp"
+                    android:textStyle="bold"
+                    app:layout_constraintStart_toEndOf="@+id/index_expected_delay_dot_separator"
+                    app:layout_constraintTop_toBottomOf="@+id/divider"
+                    tools:ignore="TextSizeCheck"
+                    tools:visibility="gone" />
+
+                <androidx.constraintlayout.widget.Barrier
+                    android:id="@+id/second_end_barrier"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:barrierDirection="end"
+                    app:constraint_referenced_ids="mts_trading_appbar_stock_exchange_name, index_expected_delay" />
+
+                <ImageView
+                    android:id="@+id/deferred_rate_dot_separator"
+                    android:layout_width="3dp"
+                    android:layout_height="3dp"
+                    android:layout_marginHorizontal="4dp"
+                    android:layout_marginTop="12dp"
+                    android:background="#29060B11"
+                    android:importantForAccessibility="no"
+                    app:layout_constraintStart_toEndOf="@+id/second_end_barrier"
+                    app:layout_constraintTop_toBottomOf="@+id/divider"
+                    tools:ignore="ImageContrastCheck" />
+
+                <TextView
+                    android:id="@+id/deferred_rate"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="4dp"
+                    android:layout_marginTop="6dp"
+                    android:text="아멕스"
+                    android:textColor="@color/kfits_fit_on_background_emphasis_high_type"
+                    android:textSize="10dp"
+                    android:textStyle="bold"
+                    app:layout_constraintStart_toEndOf="@+id/deferred_rate_dot_separator"
+                    app:layout_constraintTop_toBottomOf="@+id/divider"
+                    tools:ignore="TextSizeCheck" />
+
+                <ImageView
+                    android:id="@+id/credit_rate_dot_separator"
+                    android:layout_width="3dp"
+                    android:layout_height="3dp"
+                    android:layout_marginHorizontal="4dp"
+                    android:layout_marginTop="12dp"
+                    android:background="#29060B11"
+                    android:importantForAccessibility="no"
+                    app:layout_constraintStart_toEndOf="@+id/deferred_rate"
+                    app:layout_constraintTop_toBottomOf="@+id/divider"
+                    tools:ignore="ImageContrastCheck" />
+
+                <TextView
+                    android:id="@+id/credit_rate"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="4dp"
+                    android:layout_marginTop="6dp"
+                    android:text="아멕스"
+                    android:textColor="@color/kfits_fit_on_background_emphasis_high_type"
+                    android:textSize="10sp"
+                    android:textStyle="bold"
+                    app:layout_constraintStart_toEndOf="@+id/credit_rate_dot_separator"
+                    app:layout_constraintTop_toBottomOf="@+id/divider"
+                    tools:ignore="TextSizeCheck" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <!-- 탭 컨테이너 -->
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/tab_container"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="#191c20"
+                android:orientation="horizontal"
+                app:layout_scrollFlags="noScroll">
+
+                <Button
+                    android:id="@+id/tab_info"
+                    style="@style/MtsTradingTabButton"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="4dp"
+                    android:text="정보"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toStartOf="@+id/tab_chart"
+                    app:layout_constraintHorizontal_chainStyle="packed"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <Button
+                    android:id="@+id/tab_chart"
+                    style="@style/MtsTradingTabButton"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="4dp"
+                    android:text="차트"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toStartOf="@+id/tab_bid_ask"
+                    app:layout_constraintStart_toEndOf="@+id/tab_info"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <Button
+                    android:id="@+id/tab_bid_ask"
+                    style="@style/MtsTradingTabButton"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="4dp"
+                    android:text="호가"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toStartOf="@+id/tab_holding"
+                    app:layout_constraintStart_toEndOf="@+id/tab_chart"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <Button
+                    android:id="@+id/tab_holding"
+                    style="@style/MtsTradingTabButton"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="4dp"
+                    android:text="내보유"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toStartOf="@+id/tab_order"
+                    app:layout_constraintStart_toEndOf="@+id/tab_bid_ask"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <Button
+                    android:id="@+id/tab_order"
+                    style="@style/MtsTradingTabButton"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="4dp"
+                    android:text="주문"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@+id/tab_holding"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <View
+                    android:id="@+id/fake_view"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    android:visibility="gone"
+                    tools:visibility="visible"
+                    android:layout_width="match_parent"
+                    android:layout_height="100dp"/>
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </com.google.android.material.appbar.AppBarLayout>
+
+        <!-- 탭 화면 -->
+        <androidx.viewpager2.widget.ViewPager2
+            android:id="@+id/pager"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:layout_behavior="@string/appbar_scrolling_view_behavior"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/mts_trading_tab_container" />
+
+    </androidx.coordinatorlayout.widget.CoordinatorLayout>
+
+</LinearLayout>

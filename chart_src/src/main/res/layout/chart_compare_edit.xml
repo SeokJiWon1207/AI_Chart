@@ -1,0 +1,221 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	android:orientation="vertical" android:layout_height="fill_parent"
+	android:layout_width="fill_parent" android:clickable="true" android:weightSum="1" 
+    android:paddingLeft="0dip"
+    android:paddingRight="0dip"
+    android:background="#ffffff">
+	<!-- 2012. 8. 4 Mug맵차트에서 PopupWindow 의 너비/높이를 둘다 match_parent 를 했을경우 위쪽이 짤리는데 이것이 y축좌표 설정하는 것으로 해결되지 않아 위쪽 여백 설정  -->
+	<!-- 2012. 7. 20  기준선 설정  레이아웃 수정 - 배경색 변경  -->
+
+	<LinearLayout
+	    android:id="@+id/savetop"
+	    android:layout_width="fill_parent"
+	    android:layout_height="45dip"
+	    android:background="#c54646"
+	    android:orientation="horizontal" >
+
+		<!-- 2012. 7. 24  저장  <-> 닫기  위치바꿈  -->
+		<!-- 2012. 7. 26 저장, 닫기버튼의 이미지 없애고 기본형 변경  -->
+		<TextView android:id="@+id/frameaTitle" 
+			android:layout_width="fill_parent" 
+			android:paddingLeft="30dp"
+			android:textColor="#000000"
+			android:text="비교종목편집" 
+			android:textSize="18dp"
+			android:gravity="center|center_vertical" android:layout_gravity="center_vertical" android:layout_height="match_parent" android:layout_weight="1"/>	
+		<Button
+            android:id="@+id/frameabtnfunction"
+            android:layout_centerVertical="true"
+           android:layout_width="24dp"
+           android:layout_height="24dp"
+           android:layout_marginRight="10dp"
+           android:layout_gravity="center_vertical"
+            android:background="@drawable/btn_close_transparent"  android:layout_weight="0"/>
+		<!-- 닫기버튼 -->
+	</LinearLayout>
+	
+
+	<!-- 2012. 7. 25 기준선 설정 레이아웃  weight(가중치) 로 수정, 구분선(divider) 추가    -->
+	<LinearLayout android:layout_marginLeft="13dip" android:layout_marginRight="7dip" android:layout_marginBottom="7dip" android:background="#ffffff" android:weightSum="1" android:layout_width="fill_parent" android:layout_height="wrap_content"  android:orientation="vertical">
+	    <!-- <LinearLayout android:layout_width="fill_parent" android:layout_height="0dp" android:layout_weight="0.15"></LinearLayout> -->
+		    <LinearLayout  style="@style/baseline_weightlinear" android:id="@+id/item01" android:visibility="invisible" android:layout_height="40dip" android:background="#ffffff">
+		        <LinearLayout android:layout_width="34dp" android:layout_height="match_parent">
+		            <CheckBox android:id="@+id/compare_checkbox01" style="@style/compare_checkbox" android:checked="true" android:tag="1" android:layout_gravity="center"/>
+		        </LinearLayout>
+
+		        <RelativeLayout android:layout_width="fill_parent" android:layout_height="match_parent">
+			        <LinearLayout style="@style/compare_textview_linear" android:layout_width="fill_parent" android:layout_height="match_parent">
+	
+						<TextView
+						    android:layout_width="fill_parent"
+						    style="@style/compare_textview"
+						    android:id="@+id/txtname"
+							android:textSize="11sp"
+							android:text="종목명1"/>
+						<TextView
+						    android:layout_width="fill_parent"
+						    style="@style/compare_textview"
+						    android:id="@+id/txtcode"
+							android:textSize="9sp"
+							android:text="종목코드1"/>
+			        </LinearLayout>
+			        
+					<Button
+					    android:id="@+id/del_button"
+					    style="@style/compare_delbutton"
+					    android:layout_alignParentRight="true"
+					    android:layout_centerInParent="true"
+					    android:layout_marginRight="5dp" />
+
+				</RelativeLayout>
+						
+		       	<!--<LinearLayout android:id="@+id/del_button_layout" style="@style/compare_delbutton_linear" android:gravity="right" android:layout_width="34dp"> -->
+						<!-- <kr.co.koreastock.mts.android.custom.Button
+							android:id="@+id/del_button"
+							style="@style/compare_delbutton"
+							android:text="삭제"
+							app:button_layout="@layout/custom_button_red" /> -->
+						<!-- <Button android:id="@+id/del_button" style="@style/compare_delbutton"/>
+						
+				</LinearLayout> -->
+			</LinearLayout>
+			<LinearLayout style="@style/compare_divider" />
+		    <LinearLayout  style="@style/baseline_weightlinear" android:id="@+id/item02"  android:visibility="invisible" android:layout_height="40dip">
+		        <LinearLayout android:layout_width="34dp" android:layout_height="match_parent">
+		            <CheckBox style="@style/compare_checkbox" android:checked="true" android:id="@+id/compare_checkbox02" android:layout_alignTop="@+id/title01" android:layout_toRightOf="@+id/title01" android:tag="1" android:layout_gravity="center"></CheckBox>
+		        </LinearLayout>
+
+		        <RelativeLayout android:layout_width="fill_parent" android:layout_height="match_parent">
+			        <LinearLayout style="@style/compare_textview_linear" android:layout_width="fill_parent" android:layout_height="match_parent">
+	
+						<TextView
+						    android:layout_width="fill_parent"
+						    style="@style/compare_textview"
+						    android:id="@id/txtname"
+							android:textSize="11sp"
+							android:text="종목명1"/>
+						<TextView
+						    android:layout_width="fill_parent"
+						    style="@style/compare_textview"
+						    android:id="@id/txtcode"
+							android:textSize="9sp"
+							android:text="종목코드1"/>
+			        </LinearLayout>
+			        
+					<Button
+					    android:id="@id/del_button"
+					    style="@style/compare_delbutton"
+					    android:layout_alignParentRight="true"
+					    android:layout_centerInParent="true" 
+					    android:layout_marginRight="5dp"/>
+				</RelativeLayout>
+			</LinearLayout>
+			
+			<LinearLayout style="@style/compare_divider"/>
+			
+		     <LinearLayout  style="@style/baseline_weightlinear" android:id="@+id/item03"  android:visibility="invisible" android:layout_height="40dip">
+		        <LinearLayout android:layout_width="34dp" android:layout_height="match_parent">
+		            <CheckBox style="@style/compare_checkbox" android:checked="true" android:id="@+id/compare_checkbox03" android:layout_alignTop="@+id/title01" android:layout_toRightOf="@+id/title01" android:tag="1" android:layout_gravity="center"></CheckBox>
+		        </LinearLayout>
+
+		        <RelativeLayout android:layout_width="fill_parent" android:layout_height="match_parent">
+			        <LinearLayout style="@style/compare_textview_linear" android:layout_width="fill_parent" android:layout_height="match_parent">
+	
+						<TextView
+						    android:layout_width="fill_parent"
+						    style="@style/compare_textview"
+						    android:id="@id/txtname"
+							android:textSize="11sp"
+							android:text="종목명1"/>
+						<TextView
+						    android:layout_width="fill_parent"
+						    style="@style/compare_textview"
+						    android:id="@id/txtcode"
+							android:textSize="9sp"
+							android:text="종목코드1"/>
+			        </LinearLayout>
+			        
+					<Button
+					    android:id="@id/del_button"
+					    style="@style/compare_delbutton"
+					    android:layout_alignParentRight="true"
+					    android:layout_centerInParent="true" 
+					    android:layout_marginRight="5dp"/>
+				</RelativeLayout>
+			</LinearLayout>
+			
+			<LinearLayout style="@style/compare_divider"/>
+			
+		    <LinearLayout  style="@style/baseline_weightlinear" android:id="@+id/item04"  android:visibility="invisible" android:layout_height="40dip">
+		        <LinearLayout android:layout_width="34dp" android:layout_height="match_parent">
+		            <CheckBox style="@style/compare_checkbox" android:checked="true" android:id="@+id/compare_checkbox04" android:layout_alignTop="@+id/title01" android:layout_toRightOf="@+id/title01" android:tag="1" android:layout_gravity="center"></CheckBox>
+		        </LinearLayout>
+
+		         <RelativeLayout android:layout_width="fill_parent" android:layout_height="match_parent">
+			        <LinearLayout style="@style/compare_textview_linear" android:layout_width="fill_parent" android:layout_height="match_parent">
+	
+						<TextView
+						    android:layout_width="fill_parent"
+						    style="@style/compare_textview"
+						    android:id="@id/txtname"
+							android:textSize="11sp"
+							android:text="종목명1"/>
+						<TextView
+						    android:layout_width="fill_parent"
+						    style="@style/compare_textview"
+						    android:id="@id/txtcode"
+							android:textSize="9sp"
+							android:text="종목코드1"/>
+			        </LinearLayout>
+			        
+					<Button
+					    android:id="@id/del_button"
+					    style="@style/compare_delbutton"
+					    android:layout_alignParentRight="true"
+					    android:layout_centerInParent="true" 
+					    android:layout_marginRight="5dp"/>
+				</RelativeLayout>
+			</LinearLayout>
+			
+			<LinearLayout style="@style/compare_divider"/>
+		    <LinearLayout  style="@style/baseline_weightlinear" android:id="@+id/item05"  android:visibility="invisible" android:layout_height="40dip">
+		        <LinearLayout android:layout_width="34dp" android:layout_height="match_parent">
+		            <CheckBox style="@style/compare_checkbox" android:checked="true" android:id="@+id/compare_checkbox05" android:layout_alignTop="@+id/title01" android:layout_toRightOf="@+id/title01" android:tag="1" android:layout_gravity="center"></CheckBox>
+		        </LinearLayout>
+
+		         <RelativeLayout android:layout_width="fill_parent" android:layout_height="match_parent">
+			        <LinearLayout style="@style/compare_textview_linear" android:layout_width="fill_parent" android:layout_height="match_parent">
+	
+						<TextView
+						    android:layout_width="fill_parent"
+						    style="@style/compare_textview"
+						    android:id="@id/txtname"
+							android:textSize="11sp"
+							android:text="종목명1"/>
+						<TextView
+						    android:layout_width="fill_parent"
+						    style="@style/compare_textview"
+						    android:id="@id/txtcode"
+							android:textSize="9sp"
+							android:text="종목코드1"/>
+			        </LinearLayout>
+			        
+					<Button
+					    android:id="@id/del_button"
+					    style="@style/compare_delbutton"
+					    android:layout_alignParentRight="true"
+					    android:layout_centerInParent="true" 
+					    android:layout_marginRight="5dp"/>
+				</RelativeLayout>
+			</LinearLayout>
+			
+			<LinearLayout style="@style/compare_divider"/>
+			<LinearLayout style="@style/baseline_weightlinear" android:id="@+id/baselinear05" android:layout_below="@id/baselinear04">
+				<LinearLayout android:layout_weight="0.5" android:layout_width="0dp" android:layout_height="wrap_content"></LinearLayout>
+				<!-- <Button android:gravity="center"  android:id="@+id/btn_baseline_refresh" android:layout_width="65dip" android:layout_height="wrap_content" android:background="@drawable/btn_refresh_change"/> -->
+			</LinearLayout>
+
+		<!-- <LinearLayout android:layout_width="fill_parent" android:layout_height="0dp" android:layout_weight="0.1"></LinearLayout> -->
+	</LinearLayout>
+</LinearLayout>

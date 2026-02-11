@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout android:id="@+id/fctb_AbsoluteLayout01" 
+	android:layout_width="fill_parent" android:orientation="horizontal"
+	android:layout_height="25dp" android:weightSum="1"
+	xmlns:android="http://schemas.android.com/apk/res/android">
+	<!-- <ImageView android:id="@+id/indicatormini_row_check" android:background="@drawable/ic_list_check" android:layout_width="20dp" android:layout_height="20dp" 
+	    android:layout_gravity="center_vertical" android:layout_marginLeft="18dp"  android:layout_marginRight="6dp"/> --> 
+	<CheckBox android:text=""
+				android:id="@+id/indicatormini_row_check"
+				android:checked="false" android:button="@drawable/radiobtn_change_black"
+				android:focusable="false" android:layout_marginLeft="18dp" android:layout_width="30dp" android:layout_height="match_parent">
+			</CheckBox>	    
+	<TextView android:text="지표이름" android:textSize="16dp"
+		android:id="@+id/fctb_TextViewA01" android:layout_weight="1" android:textColor="#ffffff" android:gravity="center_vertical"
+		android:layout_height="match_parent" android:layout_width="0dp" android:layout_marginLeft="1dip">
+		</TextView>
+	<TextView android:text="설정"  android:background="@drawable/btn_showdetail_change"
+		android:id="@+id/tv_setjipyo" android:textColor="#000000" android:gravity="center"
+		android:layout_width="47dp" android:layout_height="40dp" android:textSize="12dp" android:visibility="gone"/>
+	<!-- <ImageView android:id="@+id/indicatormini_row_check" android:background="@drawable/ic_list_check" android:layout_width="19dp" android:layout_height="19dp" 
+	    android:layout_gravity="center_vertical" android:layout_marginRight="6dp"/> -->
+</LinearLayout>

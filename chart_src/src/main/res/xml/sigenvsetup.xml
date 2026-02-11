@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright (C) 2008 The Android Open Source Project
+
+     Licensed under the Apache License, Version 2.0 (the "License");
+     you may not use this file except in compliance with the License.
+     You may obtain a copy of the License at
+
+          http://www.apache.org/licenses/LICENSE-2.0
+
+     Unless required by applicable law or agreed to in writing, software
+     distributed under the License is distributed on an "AS IS" BASIS,
+     WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+     See the License for the specific language governing permissions and
+     limitations under the License.
+-->
+
+<!-- This is a primitive example showing the different types of preferences available. -->
+<PreferenceScreen
+        xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <PreferenceCategory
+            android:title="신호환경설정">
+            
+        <CheckBoxPreference
+                android:key="ses_signalalram"
+                android:title="신호 알림창"
+                android:summary="신호 알림 사용여부 "/>
+        <CheckBoxPreference
+                android:key="ses_signalalramsnd"
+                android:title="신호 알림소리"
+                android:summary="신호 알람시 소리 사용여부 "/>
+         <CheckBoxPreference
+                android:key="ses_signalalramthunder"
+                android:title="신호 알림진동"
+                android:summary="신호 알람시 진동 사용여부 "/>
+          <CheckBoxPreference
+                android:key="ses_sigalsms"
+                android:title="신호 SMS전송"
+                android:summary="신호 알람시 SMS 사용여부 "/>
+           <EditTextPreference
+                android:key="ses_signaldispcnt"
+                android:title="최대표시 수신목록수"
+                android:summary="화면에 표시할 수신  카운트 지정"
+                android:dialogTitle="화면에 표시할 수신 카운트 설정(30/40/50/60/70)" />    
+    </PreferenceCategory>    
+</PreferenceScreen>

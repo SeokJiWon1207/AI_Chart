@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout android:id="@+id/fctb_AbsoluteLayout01" 
+	android:layout_width="fill_parent" android:orientation="horizontal"
+	android:layout_height="40dp"
+	android:background="#262626" android:weightSum="1"
+	android:gravity="center_vertical"
+	xmlns:android="http://schemas.android.com/apk/res/android">
+	<CheckBox android:text=""
+				android:id="@+id/usf_CheckBoxB01"
+				android:checked="false" android:button="@drawable/checkbox_change_black"
+				android:focusable="false" android:layout_marginLeft="18dp" android:layout_width="30dp" android:layout_height="match_parent">
+			</CheckBox>
+	<TextView android:text="지표이름"
+		android:id="@+id/fctb_TextViewA01" android:layout_weight="1"
+		 android:textColor="#ffffff" android:gravity="center_vertical"
+		 android:layout_height="match_parent" android:layout_width="0dp" android:layout_marginLeft="1dip" android:textSize="16dp">
+		</TextView>
+
+	<TextView android:background="@drawable/btn_duplicatedindicator_plus_change_black"
+		android:id="@+id/tv_add_or_del_jipyo" android:textColor="#ffffff" android:gravity="center"
+		android:layout_width="47dp" android:layout_height="40dp"  android:textSize="12dp">
+		</TextView>
+
+	<TextView android:text="변수 설정"  android:background="@drawable/btn_showdetail_change"
+		android:id="@+id/tv_setjipyo" android:textColor="#000000" android:gravity="center" 
+		android:layout_width="47dp" android:layout_height="40dp" android:textSize="12dp">
+		</TextView>
+</LinearLayout>

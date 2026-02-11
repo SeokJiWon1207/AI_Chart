@@ -1,0 +1,2066 @@
+<!--<?xml version="1.0" encoding="utf-8"?>-->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	android:layout_width="fill_parent"
+	android:layout_height="match_parent"
+	android:orientation="vertical">
+
+	<!-- 2015. 1. 13 각 보조지표 설명/활용법 추가(상세설정창) : 아랫쪽 버튼 layout 은 지운다. 부모의 layout형태 linear 로 -->
+	<LinearLayout android:id="@+id/LinearLayout01" android:layout_width="fill_parent" android:layout_height="52dp" android:background="#ffffff">
+		<!-- 닫기  -->
+		<androidx.appcompat.widget.AppCompatButton android:background="@drawable/btn_back" android:layout_gravity="center_vertical"
+			android:id="@+id/frameaBtnBack" android:layout_height="44dp"
+			android:layout_width="44dp" android:layout_marginLeft="4dp"/>
+
+		<TextView  android:id="@+id/navi_frameaTitle" android:layout_width="match_parent" android:layout_height="match_parent" android:gravity="center" android:layout_marginRight="48dp" android:text="지표명" android:textSize="17dp" android:textStyle="bold" android:textColor="@color/kfit_high__emphasis" android:alpha="0"/>
+		<!--  초기화  -->
+		<androidx.appcompat.widget.AppCompatButton android:textColor="#ffffff" android:layout_height="28dp" android:textSize="13dp" android:text="초기화"
+			android:layout_width="54dp" android:layout_gravity="center_vertical" android:layout_marginRight="6dp"
+			android:background="@drawable/btn_header_init" android:id="@+id/frameaBtnInit" android:visibility="gone"/>
+		<androidx.appcompat.widget.AppCompatButton
+			android:id="@+id/btn_description"
+			android:layout_width="28dp"
+			android:layout_height="28dp"
+			android:background="@drawable/btn_info_change"
+			android:layout_gravity="center_vertical"
+			android:layout_marginRight="6dp"
+			android:visibility="gone"
+			/>
+	</LinearLayout>
+	<TextView android:id="@+id/tvDivider" android:layout_width="match_parent" android:layout_height="1dp" android:background="@color/kfit_primary" android:alpha="0"/>
+
+	<!--  <LinearLayout android:id="@+id/detail_tab" android:layout_height="35dip" android:layout_width="match_parent" android:orientation="horizontal" android:background="@drawable/list_bg" android:visibility="gone">
+         <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/btn_valuesetting"
+                style="@style/detail_tabbutton"
+                android:focusable="true"
+                android:text="변수설정"
+                android:background="@drawable/btn_indicator_jipyolistbutton_center_change"/>
+
+         <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/btn_description"
+                style="@style/detail_tabbutton"
+                android:focusable="true"
+                android:text="설명 "
+                android:background="@drawable/btn_indicator_jipyolistbutton_center_change"/>
+     </LinearLayout> -->
+	<!-- 2014. 11. 20 각 보조지표 설명/활용법 추가(상세설정창) -->
+
+	<FrameLayout
+		android:layout_width="match_parent"
+		android:layout_height="match_parent"
+		android:orientation="vertical">
+		<!-- 2015. 1. 13 각 보조지표 설명/활용법 추가(상세설정창) -->
+
+
+		<RelativeLayout android:id="@+id/detail_settingview" android:layout_width="match_parent" android:layout_height="match_parent" android:orientation="vertical" android:background="#ffffff">
+			<!-- 2015. 1. 13 각 보조지표 설명/활용법 추가(상세설정창)  : scrollview 의 margin 삭제-->
+			<ScrollView android:id="@+id/scrollview" android:layout_width="match_parent" android:layout_height="match_parent" android:background="#ffffff" android:layout_marginBottom="60dp">
+				<LinearLayout android:layout_width="match_parent" android:id="@+id/linearlayout1" android:layout_height="match_parent" android:orientation="vertical" >
+					<LinearLayout  android:id="@+id/ll_frame_title" android:layout_width="match_parent" android:layout_height="90dp" android:background="@color/kfit_white">
+						<TextView  android:id="@+id/frameaTitle" android:layout_width="match_parent" android:layout_height="match_parent" android:gravity="center_vertical" android:layout_marginLeft="24dp" android:layout_marginRight="24dp" android:layout_marginTop="24dp" android:layout_marginBottom="32dp" android:text="지표명" android:textSize="24dp" android:textStyle="bold" android:textColor="@color/kfit_high__emphasis"/>
+					</LinearLayout>
+					<!-- 2012. 7. 17 상세설정창 제목 배경색 및 글자색  변경  -->
+					<TextView style="@style/detail_headline2" android:text="변수설정" android:id="@+id/paramtv"/>
+					<ImageView android:layout_width="match_parent" android:layout_height="1dp" android:background="#f0f0f0" android:visibility="gone"/>
+
+					<LinearLayout android:id="@+id/paramlinear" android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="vertical">
+
+						<!-- 2019. 07. 04 by hyh - BollingerBand 기준가, 계산방법 추가 >> -->
+						<LinearLayout
+							android:id="@+id/LinearLayout02"
+							style="@style/detail_valset_outerlinear"
+							android:layout_width="match_parent">
+							<!-- 시고가,가중이평선 콤보박스-->
+							<LinearLayout
+								android:id="@+id/jipyo_baseprice"
+								style="@style/detail_valset_linear"
+								android:layout_height="match_parent"
+								android:gravity="left|center_vertical"
+								android:orientation="horizontal">
+
+								<!-- 시/저/고 -->
+								<TextView
+									android:id="@+id/pricetv"
+									style="@style/detail_valset_title_datatype"
+									android:text="기준" />
+
+								<androidx.appcompat.widget.AppCompatButton
+									android:id="@+id/jipyo_button_price"
+									android:layout_width="120dp"
+									android:layout_height="32dp"
+									android:layout_gravity="left|center_vertical"
+									android:layout_marginLeft="9dp"
+									android:background="@drawable/btncombo_change"
+									android:gravity="left|center_vertical"
+									android:paddingLeft="9dp"
+									android:text="종가"
+									android:textColor="#111111"
+									android:textSize="14dp" />
+
+								<View
+									android:layout_width="0dp"
+									android:layout_height="match_parent"
+									android:layout_weight="1" />
+
+								<!-- 가중평균이동선 타입 -->
+								<TextView
+									android:id="@+id/averagetypetv"
+									style="@style/detail_valset_title_datatype"
+									android:text="계산" />
+
+								<androidx.appcompat.widget.AppCompatButton
+									android:id="@+id/jipyo_button_type"
+									android:layout_width="120dp"
+									android:layout_height="32dp"
+									android:layout_gravity="left|center_vertical"
+									android:layout_marginLeft="9dp"
+									android:background="@drawable/btncombo_change"
+									android:gravity="left|center_vertical"
+									android:paddingLeft="9dp"
+									android:text="15"
+									android:textColor="#111111"
+									android:textSize="14dp" />
+							</LinearLayout>
+						</LinearLayout>
+						<!-- 2019. 07. 04 by hyh - BollingerBand 기준가, 계산방법 추가 << -->
+
+						<!-- 2012. 7. 18  변수설정  및  색굵기설정의 가로세로모드 호환 레이아웃 적용 및 중복되는 attr 들 최소화를 위한 styles 이용방식으로 바꿈, 눈금그림 삭제   -->
+						<LinearLayout style="@style/detail_valset_outerlinear" android:id="@+id/gsetItem1" android:layout_height="90dp">
+							<LinearLayout style="@style/detail_valset_linear_kakao">
+								<androidx.appcompat.widget.AppCompatButton style="@style/btn_minus_pad" android:id="@+id/btnminus"/>
+								<drfn.chart.comp.UnderLineEditText style="@style/detail_valset_valuebox_edit_jipyo" android:id="@+id/textView2"/>
+								<androidx.appcompat.widget.AppCompatButton style="@style/btn_plus_pad" android:id="@+id/btnplus"/>
+								<SeekBar style="@style/detail_valset_seekbar" android:id="@+id/seekBar1" android:visibility="gone"/>
+								<!-- <TextView style="@style/detail_valset_valuebox" android:id="@+id/textView2"/> -->
+							</LinearLayout>
+							<ImageView android:layout_width="match_parent" android:layout_height="1dp" android:background="#f0f0f0" android:visibility="gone"/>
+						</LinearLayout>
+
+						<LinearLayout style="@style/detail_valset_outerlinear" android:id="@+id/gsetItem2" android:layout_height="90dp">
+							<LinearLayout style="@style/detail_valset_linear_kakao">
+								<androidx.appcompat.widget.AppCompatButton style="@style/btn_minus_pad" android:id="@id/btnminus"/>
+								<drfn.chart.comp.UnderLineEditText style="@style/detail_valset_valuebox_edit_jipyo" android:id="@id/textView2"/>
+								<androidx.appcompat.widget.AppCompatButton style="@style/btn_plus_pad" android:id="@id/btnplus"/>
+								<SeekBar style="@style/detail_valset_seekbar" android:id="@+id/seekBar2" android:visibility="gone"/>
+							</LinearLayout>
+							<ImageView android:layout_width="match_parent" android:layout_height="1dp" android:background="#f0f0f0" android:visibility="gone"/>
+						</LinearLayout>
+
+						<LinearLayout style="@style/detail_valset_outerlinear" android:id="@+id/gsetItem3" android:layout_height="90dp">
+							<LinearLayout style="@style/detail_valset_linear_kakao">
+								<androidx.appcompat.widget.AppCompatButton style="@style/btn_minus_pad" android:id="@id/btnminus"/>
+								<drfn.chart.comp.UnderLineEditText style="@style/detail_valset_valuebox_edit_jipyo" android:id="@id/textView2"/>
+								<androidx.appcompat.widget.AppCompatButton style="@style/btn_plus_pad" android:id="@id/btnplus"/>
+								<SeekBar style="@style/detail_valset_seekbar" android:id="@+id/seekBar3" android:visibility="gone"/>
+								<!-- <TextView style="@style/detail_valset_valuebox" android:id="@+id/textView2"/> -->
+							</LinearLayout>
+							<ImageView android:layout_width="match_parent" android:layout_height="1dp" android:background="#f0f0f0" android:visibility="gone"/>
+						</LinearLayout>
+
+						<LinearLayout style="@style/detail_valset_outerlinear" android:id="@+id/gsetItem4" android:layout_height="90dp">
+							<LinearLayout style="@style/detail_valset_linear_kakao">
+								<androidx.appcompat.widget.AppCompatButton style="@style/btn_minus_pad" android:id="@id/btnminus"/>
+								<drfn.chart.comp.UnderLineEditText style="@style/detail_valset_valuebox_edit_jipyo" android:id="@id/textView2"/>
+								<androidx.appcompat.widget.AppCompatButton style="@style/btn_plus_pad" android:id="@id/btnplus"/>
+								<SeekBar style="@style/detail_valset_seekbar" android:id="@+id/seekBar4" android:visibility="gone"/>
+							</LinearLayout>
+							<ImageView android:layout_width="match_parent" android:layout_height="1dp" android:background="#f0f0f0" android:visibility="gone"/>
+						</LinearLayout>
+
+						<LinearLayout style="@style/detail_valset_outerlinear" android:id="@+id/gsetItem5" android:layout_height="90dp">
+							<LinearLayout style="@style/detail_valset_linear_kakao">
+								<androidx.appcompat.widget.AppCompatButton style="@style/btn_minus_pad" android:id="@id/btnminus"/>
+								<drfn.chart.comp.UnderLineEditText style="@style/detail_valset_valuebox_edit_jipyo" android:id="@id/textView2"/>
+								<androidx.appcompat.widget.AppCompatButton style="@style/btn_plus_pad" android:id="@id/btnplus"/>
+								<SeekBar style="@style/detail_valset_seekbar" android:id="@+id/seekBar5" android:visibility="gone"/>
+							</LinearLayout>
+							<ImageView android:layout_width="match_parent" android:layout_height="1dp" android:background="#f0f0f0" android:visibility="gone"/>
+						</LinearLayout>
+
+						<LinearLayout style="@style/detail_valset_outerlinear" android:id="@+id/gsetItem6" android:layout_height="90dp">
+							<LinearLayout style="@style/detail_valset_linear_kakao">
+								<androidx.appcompat.widget.AppCompatButton style="@style/btn_minus_pad" android:id="@id/btnminus"/>
+								<drfn.chart.comp.UnderLineEditText style="@style/detail_valset_valuebox_edit_jipyo" android:id="@id/textView2"/>
+								<androidx.appcompat.widget.AppCompatButton style="@style/btn_plus_pad" android:id="@id/btnplus"/>
+								<SeekBar style="@style/detail_valset_seekbar" android:id="@+id/seekBar6" android:visibility="gone"/>
+							</LinearLayout>
+							<ImageView android:layout_width="match_parent" android:layout_height="1dp" android:background="#f0f0f0" android:visibility="gone"/>
+						</LinearLayout>
+
+						<LinearLayout style="@style/detail_valset_outerlinear" android:id="@+id/gsetItem7" android:layout_height="90dp">
+							<LinearLayout style="@style/detail_valset_linear_kakao">
+								<androidx.appcompat.widget.AppCompatButton style="@style/btn_minus_pad" android:id="@id/btnminus"/>
+								<drfn.chart.comp.UnderLineEditText style="@style/detail_valset_valuebox_edit_jipyo" android:id="@id/textView2"/>
+								<androidx.appcompat.widget.AppCompatButton style="@style/btn_plus_pad" android:id="@id/btnplus"/>
+								<SeekBar style="@style/detail_valset_seekbar" android:id="@+id/seekBar7" android:visibility="gone"/>
+							</LinearLayout>
+							<ImageView android:layout_width="match_parent" android:layout_height="1dp" android:background="#f0f0f0" android:visibility="gone"/>
+						</LinearLayout>
+
+						<LinearLayout style="@style/detail_valset_outerlinear" android:id="@+id/gsetItem8" android:layout_height="90dp">
+							<LinearLayout style="@style/detail_valset_linear_kakao">
+								<androidx.appcompat.widget.AppCompatButton style="@style/btn_minus_pad" android:id="@id/btnminus"/>
+								<drfn.chart.comp.UnderLineEditText style="@style/detail_valset_valuebox_edit_jipyo" android:id="@id/textView2"/>
+								<androidx.appcompat.widget.AppCompatButton style="@style/btn_plus_pad" android:id="@id/btnplus"/>
+								<SeekBar style="@style/detail_valset_seekbar" android:id="@+id/seekBar8" android:visibility="gone"/>
+							</LinearLayout>
+							<ImageView android:layout_width="match_parent" android:layout_height="1dp" android:background="#f0f0f0" android:visibility="gone"/>
+						</LinearLayout>
+
+						<LinearLayout style="@style/detail_valset_outerlinear" android:id="@+id/gsetItem9" android:layout_height="90dp">
+							<LinearLayout style="@style/detail_valset_linear_kakao">
+								<androidx.appcompat.widget.AppCompatButton style="@style/btn_minus_pad" android:id="@id/btnminus"/>
+								<drfn.chart.comp.UnderLineEditText style="@style/detail_valset_valuebox_edit_jipyo" android:id="@id/textView2"/>
+								<androidx.appcompat.widget.AppCompatButton style="@style/btn_plus_pad" android:id="@id/btnplus"/>
+								<SeekBar style="@style/detail_valset_seekbar" android:id="@+id/seekBar9" android:visibility="gone"/>
+							</LinearLayout>
+							<ImageView android:layout_width="match_parent" android:layout_height="1dp" android:background="#f0f0f0" android:visibility="gone"/>
+						</LinearLayout>
+
+						<LinearLayout style="@style/detail_valset_outerlinear" android:id="@+id/gsetItem10" android:layout_height="90dp">
+							<LinearLayout style="@style/detail_valset_linear_kakao">
+								<androidx.appcompat.widget.AppCompatButton style="@style/btn_minus_pad" android:id="@id/btnminus"/>
+								<drfn.chart.comp.UnderLineEditText style="@style/detail_valset_valuebox_edit_jipyo" android:id="@id/textView2"/>
+								<androidx.appcompat.widget.AppCompatButton style="@style/btn_plus_pad" android:id="@id/btnplus"/>
+								<SeekBar style="@style/detail_valset_seekbar" android:id="@+id/seekBar10" android:visibility="gone"/>
+							</LinearLayout>
+							<ImageView android:layout_width="match_parent" android:layout_height="1dp" android:background="#f0f0f0" android:visibility="gone"/>
+						</LinearLayout>
+
+						<View android:layout_width="match_parent" android:layout_height="30dp" android:background="#ffffff"/>
+					</LinearLayout>
+
+					<!-- 2012.7.17 상세설정창 제목배경색 및 글자색  변경  -->
+					<TextView style="@style/detail_headline2" android:layout_marginTop="0dp" android:text="색/굵기 설정" android:id="@+id/colortv"/>
+					<LinearLayout android:id="@+id/colorlinear" android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="vertical">
+
+						<LinearLayout style="@style/detail_valset_outerlinear" android:id="@+id/l_gsetItem1" android:visibility="gone">
+							<LinearLayout style="@style/detail_valset_linear">
+								<!--  <LinearLayout style="@style/detail_lineset_items"/> -->
+								<androidx.appcompat.widget.AppCompatCheckBox style="@style/detail_checkbox" android:id="@+id/chk_isSelect"/>
+								<!-- <LinearLayout style="@style/detail_lineset_items"/> -->
+								<TextView style="@style/detail_lineset_title" android:id="@id/textView1" />
+
+								<!-- 2015. 1. 13 보조지표 bar 타입 유형 변경 기능 : 위쪽 weight 0.3변경, 아랫쪽 weight 0.18 변경할 것 -->
+								<!-- <RadioGroup
+                                        android:id="@+id/detail_drawtype_radiogroup"
+                                        style="@style/detail_drawtype_radiogroup">
+                                        <RadioButton
+                                            style="@style/chartset_radio_btn"
+                                            android:id="@+id/detail_radiobtn_line"
+                                            android:text="라인"
+                                            android:checked="true"
+                                            android:layout_marginRight="5dip"/>
+                                        <RadioButton
+                                            style="@style/chartset_radio_btn"
+                                            android:id="@+id/detail_radiobtn_bar"
+                                            android:checked="false"
+                                            android:text="바"/>
+                                </RadioGroup> -->
+								<LinearLayout
+									android:id="@+id/detail_drawtype_combo"
+									style="@style/detail_drawtype_combo"
+									android:layout_marginRight="12dp">
+									<TextView
+										android:id="@+id/detail_drawtype_combo_text"
+										style="@style/detail_drawtype_combo_text"/>
+								</LinearLayout>
+
+								<!-- <LinearLayout style="@style/detail_lineset_items" android:layout_weight="0.02"/> -->
+
+
+								<TextView style="@style/detial_lineset_thick" android:background="@drawable/line_thick" android:layout_marginRight="6dp" android:id="@+id/thicktextview"/>
+								<TextView style="@style/detail_lineset_palette" android:id="@+id/colortextview" android:background="@drawable/shape_circle"/>
+								<!-- <LinearLayout style="@style/detail_lineset_items" android:layout_weight="0.04"/> -->  <!--  이 linearlayout 은 whiteSpace 용입니다.  -->
+							</LinearLayout>
+							<LinearLayout style="@style/detail_valset_linear" android:layout_weight="0.55" android:id="@+id/gsetcolorSubLayout1" android:visibility="gone">
+								<LinearLayout style="@style/detail_lineset_items" android:layout_weight="0.13"/>  <!--  이 linearlayout 은 whiteSpace 용입니다.  -->
+								<androidx.appcompat.widget.AppCompatButton style="@style/btn_minus_pad" android:id="@id/btnminus"/>
+								<SeekBar style="@style/detail_lineset_seekbar" android:id="@+id/l_seekBar1"></SeekBar>
+								<androidx.appcompat.widget.AppCompatButton style="@style/btn_plus_pad" android:id="@id/btnplus"/>
+								<LinearLayout style="@style/detail_lineset_items" android:layout_weight="0.07"/>  <!--  이 linearlayout 은 whiteSpace 용입니다.  -->
+								<TextView style="@style/detail_lineset_title" android:text="굵기" android:id="@+id/textView3"/>
+								<!-- <TextView style="@style/detail_valset_valuebox" android:id="@+id/textView2"/> -->
+								<drfn.chart.comp.UnderLineEditText style="@style/detail_valset_valuebox_edit" android:layout_marginLeft="0dp" android:id="@id/textView2"/>
+							</LinearLayout>
+						</LinearLayout>
+
+						<LinearLayout style="@style/detail_valset_outerlinear" android:id="@+id/l_gsetItem2" android:visibility="gone">
+							<LinearLayout style="@style/detail_valset_linear">
+								<!-- <LinearLayout style="@style/detail_lineset_items" android:layout_weight="0.04"/> -->
+								<androidx.appcompat.widget.AppCompatCheckBox style="@style/detail_checkbox" android:id="@id/chk_isSelect"/>
+								<!-- <LinearLayout style="@style/detail_lineset_items" android:layout_weight="0.02"/> -->
+								<TextView style="@style/detail_lineset_title" android:id="@id/textView1"/>
+
+								<!-- 2015. 1. 13 보조지표 bar 타입 유형 변경 기능 : 위쪽 weight 0.3변경, 아랫쪽 weight 0.18 변경할 것 -->
+								<!-- <RadioGroup
+                                        android:id="@+id/detail_drawtype_radiogroup"
+                                        style="@style/detail_drawtype_radiogroup">
+                                        <RadioButton
+                                            style="@style/chartset_radio_btn"
+                                            android:id="@+id/detail_radiobtn_line"
+                                            android:text="라인"
+                                            android:checked="true"
+                                            android:layout_marginRight="5dip"/>
+                                        <RadioButton
+                                            style="@style/chartset_radio_btn"
+                                            android:id="@+id/detail_radiobtn_bar"
+                                            android:checked="false"
+                                            android:text="바"/>
+                                </RadioGroup> -->
+								<LinearLayout
+									android:id="@id/detail_drawtype_combo"
+									style="@style/detail_drawtype_combo"
+									android:layout_marginRight="12dp">
+									<TextView
+										android:id="@id/detail_drawtype_combo_text"
+										style="@style/detail_drawtype_combo_text"/>
+								</LinearLayout>
+
+								<!-- <LinearLayout style="@style/detail_lineset_items" android:layout_weight="0.02"/> -->
+								<TextView style="@style/detial_lineset_thick" android:background="@drawable/line_thick" android:layout_marginRight="6dp" android:id="@id/thicktextview"/>
+								<TextView style="@style/detail_lineset_palette" android:id="@id/colortextview" android:background="@drawable/shape_circle"/>
+
+								<!-- <LinearLayout style="@style/detail_lineset_items" android:layout_weight="0.04"/> -->  <!--  이 linearlayout 은 whiteSpace 용입니다.  -->
+							</LinearLayout>
+							<LinearLayout style="@style/detail_valset_linear" android:layout_weight="0.55" android:id="@id/gsetcolorSubLayout1" android:visibility="gone" >
+								<LinearLayout style="@style/detail_lineset_items" android:layout_weight="0.13"/>  <!--  이 linearlayout 은 whiteSpace 용입니다.  -->
+								<androidx.appcompat.widget.AppCompatButton style="@style/btn_minus_pad" android:id="@id/btnminus"/>
+								<SeekBar style="@style/detail_lineset_seekbar" android:id="@+id/l_seekBar2"></SeekBar>
+								<androidx.appcompat.widget.AppCompatButton style="@style/btn_plus_pad" android:id="@id/btnplus"/>
+								<LinearLayout style="@style/detail_lineset_items" android:layout_weight="0.07"/>  <!--  이 linearlayout 은 whiteSpace 용입니다.  -->
+								<TextView style="@style/detail_lineset_title" android:text="굵기" android:id="@id/textView3"/>
+								<!-- <TextView style="@style/detail_valset_valuebox" android:id="@+id/textView2"/> -->
+								<drfn.chart.comp.UnderLineEditText style="@style/detail_valset_valuebox_edit" android:layout_marginLeft="0dp" android:id="@id/textView2"/>
+							</LinearLayout>
+						</LinearLayout>
+
+						<LinearLayout style="@style/detail_valset_outerlinear" android:id="@+id/l_gsetItem3" android:visibility="gone">
+							<LinearLayout style="@style/detail_valset_linear" >
+								<!-- <LinearLayout style="@style/detail_lineset_items" android:layout_weight="0.04"/> -->
+								<androidx.appcompat.widget.AppCompatCheckBox style="@style/detail_checkbox" android:id="@id/chk_isSelect"/>
+								<!-- <LinearLayout style="@style/detail_lineset_items" android:layout_weight="0.02"/> -->
+								<TextView style="@style/detail_lineset_title" android:id="@id/textView1"/>
+
+								<!-- 2015. 1. 13 보조지표 bar 타입 유형 변경 기능 : 위쪽 weight 0.3변경, 아랫쪽 weight 0.18 변경할 것 -->
+								<!-- <RadioGroup
+                                        android:id="@+id/detail_drawtype_radiogroup"
+                                        style="@style/detail_drawtype_radiogroup">
+                                        <RadioButton
+                                            style="@style/chartset_radio_btn"
+                                            android:id="@+id/detail_radiobtn_line"
+                                            android:text="라인"
+                                            android:checked="true"
+                                            android:layout_marginRight="5dip"/>
+                                        <RadioButton
+                                            style="@style/chartset_radio_btn"
+                                            android:id="@+id/detail_radiobtn_bar"
+                                            android:checked="false"
+                                            android:text="바"/>
+                                </RadioGroup> -->
+								<LinearLayout
+									android:id="@id/detail_drawtype_combo"
+									style="@style/detail_drawtype_combo"
+									android:layout_marginRight="12dp">
+									<TextView
+										android:id="@id/detail_drawtype_combo_text"
+										style="@style/detail_drawtype_combo_text"/>
+								</LinearLayout>
+
+								<!-- <LinearLayout style="@style/detail_lineset_items" android:layout_weight="0.02"/> -->
+								<TextView style="@style/detial_lineset_thick" android:background="@drawable/line_thick" android:layout_marginRight="6dp" android:id="@id/thicktextview"/>
+								<TextView style="@style/detail_lineset_palette" android:id="@id/colortextview" android:background="@drawable/shape_circle"/>
+
+								<!-- <LinearLayout style="@style/detail_lineset_items" android:layout_weight="0.04"/> -->  <!--  이 linearlayout 은 whiteSpace 용입니다.  -->
+							</LinearLayout>
+							<LinearLayout style="@style/detail_valset_linear" android:layout_weight="0.55" android:id="@id/gsetcolorSubLayout1" android:visibility="gone">
+								<LinearLayout style="@style/detail_lineset_items" android:layout_weight="0.13"/>  <!--  이 linearlayout 은 whiteSpace 용입니다.  -->
+								<androidx.appcompat.widget.AppCompatButton style="@style/btn_minus_pad" android:id="@id/btnminus"/>
+								<SeekBar style="@style/detail_lineset_seekbar" android:id="@+id/l_seekBar3"></SeekBar>
+								<androidx.appcompat.widget.AppCompatButton style="@style/btn_plus_pad" android:id="@id/btnplus"/>
+								<LinearLayout style="@style/detail_lineset_items" android:layout_weight="0.07"/>  <!--  이 linearlayout 은 whiteSpace 용입니다.  -->
+								<TextView style="@style/detail_lineset_title" android:text="굵기" android:id="@id/textView3"/>
+								<!-- <TextView style="@style/detail_valset_valuebox" android:id="@+id/textView2"/> -->
+								<drfn.chart.comp.UnderLineEditText style="@style/detail_valset_valuebox_edit" android:layout_marginLeft="0dp" android:id="@id/textView2"/>
+							</LinearLayout>
+						</LinearLayout>
+
+						<LinearLayout style="@style/detail_valset_outerlinear" android:id="@+id/l_gsetItem4" android:visibility="gone">
+							<LinearLayout style="@style/detail_valset_linear" >
+								<!-- <LinearLayout style="@style/detail_lineset_items" android:layout_weight="0.04"/> -->
+								<androidx.appcompat.widget.AppCompatCheckBox style="@style/detail_checkbox" android:id="@id/chk_isSelect"/>
+								<!-- <LinearLayout style="@style/detail_lineset_items" android:layout_weight="0.02"/> -->
+								<TextView style="@style/detail_lineset_title" android:id="@id/textView1" />
+
+								<!-- 2015. 1. 13 보조지표 bar 타입 유형 변경 기능 : 위쪽 weight 0.3변경, 아랫쪽 weight 0.18 변경할 것 -->
+								<!-- <RadioGroup
+                                        android:id="@+id/detail_drawtype_radiogroup"
+                                        style="@style/detail_drawtype_radiogroup">
+                                        <RadioButton
+                                            style="@style/chartset_radio_btn"
+                                            android:id="@+id/detail_radiobtn_line"
+                                            android:text="라인"
+                                            android:checked="true"
+                                            android:layout_marginRight="5dip"/>
+                                        <RadioButton
+                                            style="@style/chartset_radio_btn"
+                                            android:id="@+id/detail_radiobtn_bar"
+                                            android:checked="false"
+                                            android:text="바"/>
+                                </RadioGroup> -->
+								<LinearLayout
+									android:id="@id/detail_drawtype_combo"
+									style="@style/detail_drawtype_combo"
+									android:layout_marginRight="12dp">
+									<TextView
+										android:id="@id/detail_drawtype_combo_text"
+										style="@style/detail_drawtype_combo_text"/>
+								</LinearLayout>
+
+								<!-- <LinearLayout style="@style/detail_lineset_items" android:layout_weight="0.02"/> -->
+								<TextView style="@style/detial_lineset_thick" android:background="@drawable/line_thick" android:layout_marginRight="6dp" android:id="@id/thicktextview"/>
+								<TextView style="@style/detail_lineset_palette" android:id="@id/colortextview" android:background="@drawable/shape_circle"/>
+
+								<!-- <LinearLayout style="@style/detail_lineset_items" android:layout_weight="0.04"/> -->  <!--  이 linearlayout 은 whiteSpace 용입니다.  -->
+							</LinearLayout>
+							<LinearLayout style="@style/detail_valset_linear" android:layout_weight="0.55" android:id="@id/gsetcolorSubLayout1" android:visibility="gone">
+								<LinearLayout style="@style/detail_lineset_items" android:layout_weight="0.13"/>  <!--  이 linearlayout 은 whiteSpace 용입니다.  -->
+								<androidx.appcompat.widget.AppCompatButton style="@style/btn_minus_pad" android:id="@id/btnminus"/>
+								<SeekBar style="@style/detail_lineset_seekbar" android:id="@+id/l_seekBar4"></SeekBar>
+								<androidx.appcompat.widget.AppCompatButton style="@style/btn_plus_pad" android:id="@id/btnplus"/>
+								<LinearLayout style="@style/detail_lineset_items" android:layout_weight="0.07"/>  <!--  이 linearlayout 은 whiteSpace 용입니다.  -->
+								<TextView style="@style/detail_lineset_title" android:text="굵기" android:id="@id/textView3"/>
+								<!-- <TextView style="@style/detail_valset_valuebox" android:id="@+id/textView2"/> -->
+								<drfn.chart.comp.UnderLineEditText style="@style/detail_valset_valuebox_edit" android:layout_marginLeft="0dp" android:id="@id/textView2"/>
+							</LinearLayout>
+						</LinearLayout>
+
+						<LinearLayout style="@style/detail_valset_outerlinear" android:id="@+id/l_gsetItem5" android:visibility="gone">
+							<LinearLayout style="@style/detail_valset_linear" >
+								<!-- <LinearLayout style="@style/detail_lineset_items" android:layout_weight="0.04"/> -->
+								<androidx.appcompat.widget.AppCompatCheckBox style="@style/detail_checkbox" android:id="@id/chk_isSelect"/>
+								<!-- <LinearLayout style="@style/detail_lineset_items" android:layout_weight="0.02"/> -->
+								<TextView style="@style/detail_lineset_title" android:id="@id/textView1" />
+
+								<!-- 2015. 1. 13 보조지표 bar 타입 유형 변경 기능 : 위쪽 weight 0.3변경, 아랫쪽 weight 0.18 변경할 것 -->
+								<!-- <RadioGroup
+                                        android:id="@+id/detail_drawtype_radiogroup"
+                                        style="@style/detail_drawtype_radiogroup">
+                                        <RadioButton
+                                            style="@style/chartset_radio_btn"
+                                            android:id="@+id/detail_radiobtn_line"
+                                            android:text="라인"
+                                            android:checked="true"
+                                            android:layout_marginRight="5dip"/>
+                                        <RadioButton
+                                            style="@style/chartset_radio_btn"
+                                            android:id="@+id/detail_radiobtn_bar"
+                                            android:checked="false"
+                                            android:text="바"/>
+                                </RadioGroup> -->
+								<LinearLayout
+									android:id="@id/detail_drawtype_combo"
+									style="@style/detail_drawtype_combo"
+									android:layout_marginRight="12dp">
+									<TextView
+										android:id="@id/detail_drawtype_combo_text"
+										style="@style/detail_drawtype_combo_text"/>
+								</LinearLayout>
+
+								<!-- <LinearLayout style="@style/detail_lineset_items" android:layout_weight="0.02"/> -->
+								<TextView style="@style/detial_lineset_thick" android:background="@drawable/line_thick"  android:layout_marginRight="6dp" android:id="@id/thicktextview"/>
+								<TextView style="@style/detail_lineset_palette" android:id="@id/colortextview" android:background="@drawable/shape_circle"/>
+
+								<!-- <LinearLayout style="@style/detail_lineset_items" android:layout_weight="0.04"/>  --> <!--  이 linearlayout 은 whiteSpace 용입니다.  -->
+							</LinearLayout>
+							<LinearLayout style="@style/detail_valset_linear" android:layout_weight="0.55" android:id="@id/gsetcolorSubLayout1" android:visibility="gone">
+								<LinearLayout style="@style/detail_lineset_items" android:layout_weight="0.13"/>  <!--  이 linearlayout 은 whiteSpace 용입니다.  -->
+								<androidx.appcompat.widget.AppCompatButton style="@style/btn_minus_pad" android:id="@id/btnminus"/>
+								<SeekBar style="@style/detail_lineset_seekbar" android:id="@+id/l_seekBar5"></SeekBar>
+								<androidx.appcompat.widget.AppCompatButton style="@style/btn_plus_pad" android:id="@id/btnplus"/>
+								<LinearLayout style="@style/detail_lineset_items" android:layout_weight="0.07"/>  <!--  이 linearlayout 은 whiteSpace 용입니다.  -->
+								<TextView style="@style/detail_lineset_title" android:text="굵기" android:id="@id/textView3"/>
+								<!-- <TextView style="@style/detail_valset_valuebox" android:id="@+id/textView2"/> -->
+								<drfn.chart.comp.UnderLineEditText style="@style/detail_valset_valuebox_edit" android:layout_marginLeft="0dp" android:id="@id/textView2"/>
+							</LinearLayout>
+						</LinearLayout>
+
+						<LinearLayout style="@style/detail_valset_outerlinear" android:id="@+id/l_gsetItem6" android:visibility="gone">
+							<LinearLayout style="@style/detail_valset_linear">
+								<!-- <LinearLayout style="@style/detail_lineset_items" android:layout_weight="0.04"/> -->
+								<androidx.appcompat.widget.AppCompatCheckBox style="@style/detail_checkbox" android:id="@id/chk_isSelect"/>
+								<!-- <LinearLayout style="@style/detail_lineset_items" android:layout_weight="0.02"/> -->
+								<TextView style="@style/detail_lineset_title" android:id="@id/textView1" />
+
+								<!-- 2015. 1. 13 보조지표 bar 타입 유형 변경 기능 : 위쪽 weight 0.3변경, 아랫쪽 weight 0.18 변경할 것 -->
+								<!-- <RadioGroup
+                                        android:id="@+id/detail_drawtype_radiogroup"
+                                        style="@style/detail_drawtype_radiogroup">
+                                        <RadioButton
+                                            style="@style/chartset_radio_btn"
+                                            android:id="@+id/detail_radiobtn_line"
+                                            android:text="라인"
+                                            android:checked="true"
+                                            android:layout_marginRight="5dip"/>
+                                        <RadioButton
+                                            style="@style/chartset_radio_btn"
+                                            android:id="@+id/detail_radiobtn_bar"
+                                            android:checked="false"
+                                            android:text="바"/>
+                                </RadioGroup> -->
+								<LinearLayout
+									android:id="@id/detail_drawtype_combo"
+									style="@style/detail_drawtype_combo"
+									android:layout_marginRight="12dp">
+									<TextView
+										android:id="@id/detail_drawtype_combo_text"
+										style="@style/detail_drawtype_combo_text"/>
+								</LinearLayout>
+
+								<!-- <LinearLayout style="@style/detail_lineset_items" android:layout_weight="0.02"/> -->
+								<TextView style="@style/detial_lineset_thick" android:background="@drawable/line_thick"  android:layout_marginRight="6dp" android:id="@id/thicktextview"/>
+								<TextView style="@style/detail_lineset_palette" android:id="@id/colortextview" android:background="@drawable/shape_circle"/>
+
+								<!-- <LinearLayout style="@style/detail_lineset_items" android:layout_weight="0.04"/> -->  <!--  이 linearlayout 은 whiteSpace 용입니다.  -->
+							</LinearLayout>
+							<LinearLayout style="@style/detail_valset_linear" android:layout_weight="0.55" android:id="@id/gsetcolorSubLayout1" android:visibility="gone">
+								<LinearLayout style="@style/detail_lineset_items" android:layout_weight="0.13"/>  <!--  이 linearlayout 은 whiteSpace 용입니다.  -->
+								<androidx.appcompat.widget.AppCompatButton style="@style/btn_minus_pad" android:id="@id/btnminus"/>
+								<SeekBar style="@style/detail_lineset_seekbar" android:id="@+id/l_seekBar6"></SeekBar>
+								<androidx.appcompat.widget.AppCompatButton style="@style/btn_plus_pad" android:id="@id/btnplus"/>
+								<LinearLayout style="@style/detail_lineset_items" android:layout_weight="0.07"/>  <!--  이 linearlayout 은 whiteSpace 용입니다.  -->
+								<TextView style="@style/detail_lineset_title" android:text="굵기" android:id="@id/textView3"/>
+								<!-- <TextView style="@style/detail_valset_valuebox" android:id="@+id/textView2"/> -->
+								<drfn.chart.comp.UnderLineEditText style="@style/detail_valset_valuebox_edit" android:layout_marginLeft="0dp" android:id="@id/textView2"/>
+							</LinearLayout>
+						</LinearLayout>
+
+						<LinearLayout style="@style/detail_valset_outerlinear" android:id="@+id/l_gsetItem7" android:visibility="gone">
+							<LinearLayout style="@style/detail_valset_linear">
+								<!--  <LinearLayout style="@style/detail_lineset_items"/> -->
+								<androidx.appcompat.widget.AppCompatCheckBox style="@style/detail_checkbox" android:id="@id/chk_isSelect"/>
+								<!-- <LinearLayout style="@style/detail_lineset_items"/> -->
+								<TextView style="@style/detail_lineset_title" android:id="@id/textView1"/>
+
+								<!-- 2015. 1. 13 보조지표 bar 타입 유형 변경 기능 : 위쪽 weight 0.3변경, 아랫쪽 weight 0.18 변경할 것 -->
+								<!-- <RadioGroup
+                                        android:id="@+id/detail_drawtype_radiogroup"
+                                        style="@style/detail_drawtype_radiogroup">
+                                        <RadioButton
+                                            style="@style/chartset_radio_btn"
+                                            android:id="@+id/detail_radiobtn_line"
+                                            android:text="라인"
+                                            android:checked="true"
+                                            android:layout_marginRight="5dip"/>
+                                        <RadioButton
+                                            style="@style/chartset_radio_btn"
+                                            android:id="@+id/detail_radiobtn_bar"
+                                            android:checked="false"
+                                            android:text="바"/>
+                                </RadioGroup> -->
+								<LinearLayout
+									android:id="@id/detail_drawtype_combo"
+									style="@style/detail_drawtype_combo"
+									android:layout_marginRight="12dp">
+									<TextView
+										android:id="@id/detail_drawtype_combo_text"
+										style="@style/detail_drawtype_combo_text"/>
+								</LinearLayout>
+
+								<!-- <LinearLayout style="@style/detail_lineset_items" android:layout_weight="0.02"/> -->
+								<TextView style="@style/detial_lineset_thick" android:background="@drawable/line_thick"  android:layout_marginRight="6dp" android:id="@id/thicktextview"/>
+								<TextView style="@style/detail_lineset_palette" android:id="@id/colortextview" android:background="@drawable/shape_circle"/>
+
+								<!-- <LinearLayout style="@style/detail_lineset_items" android:layout_weight="0.04"/> -->  <!--  이 linearlayout 은 whiteSpace 용입니다.  -->
+							</LinearLayout>
+							<LinearLayout style="@style/detail_valset_linear" android:layout_weight="0.55" android:id="@id/gsetcolorSubLayout1" android:visibility="gone">
+								<LinearLayout style="@style/detail_lineset_items" android:layout_weight="0.13"/>  <!--  이 linearlayout 은 whiteSpace 용입니다.  -->
+								<androidx.appcompat.widget.AppCompatButton style="@style/btn_minus_pad" android:id="@id/btnminus"/>
+								<SeekBar style="@style/detail_lineset_seekbar" android:id="@+id/l_seekBar7"></SeekBar>
+								<androidx.appcompat.widget.AppCompatButton style="@style/btn_plus_pad" android:id="@id/btnplus"/>
+								<LinearLayout style="@style/detail_lineset_items" android:layout_weight="0.07"/>  <!--  이 linearlayout 은 whiteSpace 용입니다.  -->
+								<TextView style="@style/detail_lineset_title" android:text="굵기" android:id="@id/textView3"/>
+								<!-- <TextView style="@style/detail_valset_valuebox" android:id="@+id/textView2"/> -->
+								<drfn.chart.comp.UnderLineEditText style="@style/detail_valset_valuebox_edit" android:layout_marginLeft="0dp" android:id="@id/textView2"/>
+							</LinearLayout>
+						</LinearLayout>
+
+						<LinearLayout style="@style/detail_valset_outerlinear" android:id="@+id/l_gsetItem8" android:visibility="gone">
+							<LinearLayout style="@style/detail_valset_linear">
+								<!--  <LinearLayout style="@style/detail_lineset_items"/> -->
+								<androidx.appcompat.widget.AppCompatCheckBox style="@style/detail_checkbox" android:id="@id/chk_isSelect"/>
+								<!-- <LinearLayout style="@style/detail_lineset_items"/> -->
+								<TextView style="@style/detail_lineset_title" android:id="@id/textView1" />
+
+								<!-- 2015. 1. 13 보조지표 bar 타입 유형 변경 기능 : 위쪽 weight 0.3변경, 아랫쪽 weight 0.18 변경할 것 -->
+								<!-- <RadioGroup
+                                        android:id="@+id/detail_drawtype_radiogroup"
+                                        style="@style/detail_drawtype_radiogroup">
+                                        <RadioButton
+                                            style="@style/chartset_radio_btn"
+                                            android:id="@+id/detail_radiobtn_line"
+                                            android:text="라인"
+                                            android:checked="true"
+                                            android:layout_marginRight="5dip"/>
+                                        <RadioButton
+                                            style="@style/chartset_radio_btn"
+                                            android:id="@+id/detail_radiobtn_bar"
+                                            android:checked="false"
+                                            android:text="바"/>
+                                </RadioGroup> -->
+								<LinearLayout
+									android:id="@id/detail_drawtype_combo"
+									style="@style/detail_drawtype_combo"
+									android:layout_marginRight="12dp">
+									<TextView
+										android:id="@id/detail_drawtype_combo_text"
+										style="@style/detail_drawtype_combo_text"/>
+								</LinearLayout>
+
+								<!-- <LinearLayout style="@style/detail_lineset_items" android:layout_weight="0.02"/> -->
+								<TextView style="@style/detial_lineset_thick" android:background="@drawable/line_thick"  android:layout_marginRight="6dp" android:id="@id/thicktextview"/>
+								<TextView style="@style/detail_lineset_palette" android:id="@id/colortextview" android:background="@drawable/shape_circle"/>
+
+								<!-- <LinearLayout style="@style/detail_lineset_items" android:layout_weight="0.04"/> -->  <!--  이 linearlayout 은 whiteSpace 용입니다.  -->
+							</LinearLayout>
+							<LinearLayout style="@style/detail_valset_linear" android:layout_weight="0.55" android:id="@id/gsetcolorSubLayout1" android:visibility="gone">
+								<LinearLayout style="@style/detail_lineset_items" android:layout_weight="0.13"/>  <!--  이 linearlayout 은 whiteSpace 용입니다.  -->
+								<androidx.appcompat.widget.AppCompatButton style="@style/btn_minus_pad" android:id="@id/btnminus"/>
+								<SeekBar style="@style/detail_lineset_seekbar" android:id="@+id/l_seekBar8"></SeekBar>
+								<androidx.appcompat.widget.AppCompatButton style="@style/btn_plus_pad" android:id="@id/btnplus"/>
+								<LinearLayout style="@style/detail_lineset_items" android:layout_weight="0.07"/>  <!--  이 linearlayout 은 whiteSpace 용입니다.  -->
+								<TextView style="@style/detail_lineset_title" android:text="굵기" android:id="@id/textView3"/>
+								<!-- <TextView style="@style/detail_valset_valuebox" android:id="@+id/textView2"/> -->
+								<drfn.chart.comp.UnderLineEditText style="@style/detail_valset_valuebox_edit" android:layout_marginLeft="0dp" android:id="@id/textView2"/>
+							</LinearLayout>
+						</LinearLayout>
+
+						<LinearLayout style="@style/detail_valset_outerlinear" android:id="@+id/l_gsetItem9" android:visibility="gone">
+							<LinearLayout style="@style/detail_valset_linear">
+								<!--  <LinearLayout style="@style/detail_lineset_items"/> -->
+								<androidx.appcompat.widget.AppCompatCheckBox style="@style/detail_checkbox" android:id="@id/chk_isSelect"/>
+								<!-- <LinearLayout style="@style/detail_lineset_items"/> -->
+								<TextView style="@style/detail_lineset_title" android:id="@id/textView1" />
+
+								<!-- 2015. 1. 13 보조지표 bar 타입 유형 변경 기능 : 위쪽 weight 0.3변경, 아랫쪽 weight 0.18 변경할 것 -->
+								<!-- <RadioGroup
+                                        android:id="@+id/detail_drawtype_radiogroup"
+                                        style="@style/detail_drawtype_radiogroup">
+                                        <RadioButton
+                                            style="@style/chartset_radio_btn"
+                                            android:id="@+id/detail_radiobtn_line"
+                                            android:text="라인"
+                                            android:checked="true"
+                                            android:layout_marginRight="5dip"/>
+                                        <RadioButton
+                                            style="@style/chartset_radio_btn"
+                                            android:id="@+id/detail_radiobtn_bar"
+                                            android:checked="false"
+                                            android:text="바"/>
+                                </RadioGroup> -->
+								<LinearLayout
+									android:id="@id/detail_drawtype_combo"
+									style="@style/detail_drawtype_combo"
+									android:layout_marginRight="12dp">
+									<TextView
+										android:id="@id/detail_drawtype_combo_text"
+										style="@style/detail_drawtype_combo_text"/>
+								</LinearLayout>
+
+								<!-- <LinearLayout style="@style/detail_lineset_items" android:layout_weight="0.02"/> -->
+								<TextView style="@style/detial_lineset_thick" android:background="@drawable/line_thick"  android:layout_marginRight="6dp" android:id="@id/thicktextview"/>
+								<TextView style="@style/detail_lineset_palette" android:id="@id/colortextview" android:background="@drawable/shape_circle"/>
+
+								<!-- <LinearLayout style="@style/detail_lineset_items" android:layout_weight="0.04"/> -->  <!--  이 linearlayout 은 whiteSpace 용입니다.  -->
+							</LinearLayout>
+							<LinearLayout style="@style/detail_valset_linear" android:layout_weight="0.55" android:id="@id/gsetcolorSubLayout1" android:visibility="gone">
+								<LinearLayout style="@style/detail_lineset_items" android:layout_weight="0.13"/>  <!--  이 linearlayout 은 whiteSpace 용입니다.  -->
+								<androidx.appcompat.widget.AppCompatButton style="@style/btn_minus_pad" android:id="@id/btnminus"/>
+								<SeekBar style="@style/detail_lineset_seekbar" android:id="@+id/l_seekBar9"></SeekBar>
+								<androidx.appcompat.widget.AppCompatButton style="@style/btn_plus_pad" android:id="@id/btnplus"/>
+								<LinearLayout style="@style/detail_lineset_items" android:layout_weight="0.07"/>  <!--  이 linearlayout 은 whiteSpace 용입니다.  -->
+								<TextView style="@style/detail_lineset_title" android:text="굵기" android:id="@id/textView3"/>
+								<!-- <TextView style="@style/detail_valset_valuebox" android:id="@+id/textView2"/> -->
+								<drfn.chart.comp.UnderLineEditText style="@style/detail_valset_valuebox_edit" android:layout_marginLeft="0dp" android:id="@id/textView2"/>
+							</LinearLayout>
+						</LinearLayout>
+
+						<LinearLayout style="@style/detail_valset_outerlinear" android:id="@+id/l_gsetItem10" android:visibility="gone">
+							<LinearLayout style="@style/detail_valset_linear">
+								<!--  <LinearLayout style="@style/detail_lineset_items"/> -->
+								<androidx.appcompat.widget.AppCompatCheckBox style="@style/detail_checkbox" android:id="@id/chk_isSelect"/>
+								<!-- <LinearLayout style="@style/detail_lineset_items"/> -->
+								<TextView style="@style/detail_lineset_title" android:id="@id/textView1" />
+
+								<!-- 2015. 1. 13 보조지표 bar 타입 유형 변경 기능 : 위쪽 weight 0.3변경, 아랫쪽 weight 0.18 변경할 것 -->
+								<!-- <RadioGroup
+                                        android:id="@+id/detail_drawtype_radiogroup"
+                                        style="@style/detail_drawtype_radiogroup">
+                                        <RadioButton
+                                            style="@style/chartset_radio_btn"
+                                            android:id="@+id/detail_radiobtn_line"
+                                            android:text="라인"
+                                            android:checked="true"
+                                            android:layout_marginRight="5dip"/>
+                                        <RadioButton
+                                            style="@style/chartset_radio_btn"
+                                            android:id="@+id/detail_radiobtn_bar"
+                                            android:checked="false"
+                                            android:text="바"/>
+                                </RadioGroup> -->
+								<LinearLayout
+									android:id="@id/detail_drawtype_combo"
+									style="@style/detail_drawtype_combo"
+									android:layout_marginRight="12dp">
+									<TextView
+										android:id="@id/detail_drawtype_combo_text"
+										style="@style/detail_drawtype_combo_text"/>
+								</LinearLayout>
+
+								<!-- <LinearLayout style="@style/detail_lineset_items" android:layout_weight="0.02"/> -->
+								<TextView style="@style/detial_lineset_thick" android:background="@drawable/line_thick"  android:layout_marginRight="6dp" android:id="@id/thicktextview"/>
+								<TextView style="@style/detail_lineset_palette" android:id="@id/colortextview" android:background="@drawable/shape_circle"/>
+
+								<!-- <LinearLayout style="@style/detail_lineset_items" android:layout_weight="0.04"/> -->  <!--  이 linearlayout 은 whiteSpace 용입니다.  -->
+							</LinearLayout>
+							<LinearLayout style="@style/detail_valset_linear" android:layout_weight="0.55" android:id="@id/gsetcolorSubLayout1" android:visibility="gone">
+								<LinearLayout style="@style/detail_lineset_items" android:layout_weight="0.13"/>  <!--  이 linearlayout 은 whiteSpace 용입니다.  -->
+								<androidx.appcompat.widget.AppCompatButton style="@style/btn_minus_pad" android:id="@id/btnminus"/>
+								<SeekBar style="@style/detail_lineset_seekbar" android:id="@+id/l_seekBar10"></SeekBar>
+								<androidx.appcompat.widget.AppCompatButton style="@style/btn_plus_pad" android:id="@id/btnplus"/>
+								<LinearLayout style="@style/detail_lineset_items" android:layout_weight="0.07"/>  <!--  이 linearlayout 은 whiteSpace 용입니다.  -->
+								<TextView style="@style/detail_lineset_title" android:text="굵기" android:id="@id/textView3"/>
+								<!-- <TextView style="@style/detail_valset_valuebox" android:id="@+id/textView2"/> -->
+								<drfn.chart.comp.UnderLineEditText style="@style/detail_valset_valuebox_edit" android:layout_marginLeft="0dp" android:id="@id/textView2"/>
+							</LinearLayout>
+						</LinearLayout>
+
+						<!--						<LinearLayout style="@style/detail_valset_outerlinear" android:id="@+id/l_gsetItem11"  android:visibility="gone">-->
+						<!--							&lt;!&ndash;<ImageView android:layout_width="match_parent" android:layout_height="1px" android:background="#cccccc"/>&ndash;&gt;-->
+						<!--							<LinearLayout style="@style/detail_valset_linear" >-->
+						<!--								&lt;!&ndash;<LinearLayout style="@style/detail_lineset_items" android:layout_weight="0.04" android:visibility="gone"/>&ndash;&gt;-->
+						<!--								<androidx.appcompat.widget.AppCompatCheckBox style="@style/detail_checkbox" android:id="@id/chk_isSelect"/>-->
+						<!--								&lt;!&ndash;<LinearLayout style="@style/detail_lineset_items" android:layout_weight="0.02" android:visibility="gone"/>&ndash;&gt;-->
+						<!--								<TextView style="@style/detail_lineset_title" android:id="@id/textView1" />-->
+						<!--								<LinearLayout-->
+						<!--									android:id="@id/detail_drawtype_combo"-->
+						<!--									style="@style/detail_drawtype_combo" >-->
+						<!--									<TextView-->
+						<!--										android:id="@id/detail_drawtype_combo_text"-->
+						<!--										style="@style/detail_drawtype_combo_text"/>-->
+						<!--								</LinearLayout>-->
+
+						<!--								&lt;!&ndash;<LinearLayout style="@style/detail_lineset_items" android:layout_width="26dp"/>&ndash;&gt;-->
+						<!--								<TextView style="@style/detial_lineset_thick" android:background="@drawable/line_thick"  android:layout_marginRight="6dp" android:id="@id/thicktextview" />-->
+						<!--								<TextView style="@style/detail_lineset_palette"  android:id="@id/colortextview" android:background="@drawable/shape_circle"/>-->
+
+						<!--								&lt;!&ndash;<LinearLayout style="@style/detail_lineset_items" android:layout_width="8dp"/>  &lt;!&ndash;  이 linearlayout 은 whiteSpace 용입니다.  &ndash;&gt;&ndash;&gt;-->
+						<!--							</LinearLayout>-->
+						<!--							<LinearLayout style="@style/detail_valset_linear" android:layout_weight="0.6" android:id="@id/gsetcolorSubLayout1" android:visibility="gone">-->
+						<!--								<LinearLayout style="@style/detail_lineset_items" android:layout_weight="0.13"/>  &lt;!&ndash;  이 linearlayout 은 whiteSpace 용입니다.  &ndash;&gt;-->
+						<!--								<androidx.appcompat.widget.AppCompatButton style="@style/btn_minus_pad" android:id="@id/btnminus"/>-->
+						<!--								<SeekBar style="@style/detail_lineset_seekbar" android:id="@+id/l_seekBar11"></SeekBar>-->
+						<!--								<androidx.appcompat.widget.AppCompatButton style="@style/btn_plus_pad" android:id="@id/btnplus"/>-->
+						<!--								<LinearLayout style="@style/detail_lineset_items" android:layout_weight="0.07"/>  &lt;!&ndash;  이 linearlayout 은 whiteSpace 용입니다.  &ndash;&gt;-->
+						<!--								<TextView style="@style/detail_lineset_title" android:text="굵기" android:id="@id/textView3"/>-->
+						<!--								&lt;!&ndash; <TextView style="@style/detail_valset_valuebox" android:id="@id/textView2"/> &ndash;&gt;-->
+						<!--								<drfn.chart.comp.UnderLineEditText style="@style/detail_valset_valuebox_edit" android:layout_marginLeft="0dp" android:id="@id/textView2"/>-->
+						<!--							</LinearLayout>-->
+						<!--						</LinearLayout>-->
+
+						<!--						<LinearLayout style="@style/detail_valset_outerlinear" android:id="@+id/l_gsetItem12"  android:visibility="gone">-->
+						<!--							&lt;!&ndash;<ImageView android:layout_width="match_parent" android:layout_height="1px" android:background="#cccccc"/>&ndash;&gt;-->
+						<!--							<LinearLayout style="@style/detail_valset_linear" >-->
+						<!--								&lt;!&ndash;<LinearLayout style="@style/detail_lineset_items" android:layout_weight="0.04" android:visibility="gone"/>&ndash;&gt;-->
+						<!--								<androidx.appcompat.widget.AppCompatCheckBox style="@style/detail_checkbox" android:id="@id/chk_isSelect"/>-->
+						<!--								&lt;!&ndash;<LinearLayout style="@style/detail_lineset_items" android:layout_weight="0.02" android:visibility="gone"/>&ndash;&gt;-->
+						<!--								<TextView style="@style/detail_lineset_title" android:id="@id/textView1" />-->
+						<!--								<LinearLayout-->
+						<!--									android:id="@id/detail_drawtype_combo"-->
+						<!--									style="@style/detail_drawtype_combo" >-->
+						<!--									<TextView-->
+						<!--										android:id="@id/detail_drawtype_combo_text"-->
+						<!--										style="@style/detail_drawtype_combo_text"/>-->
+						<!--								</LinearLayout>-->
+
+						<!--								&lt;!&ndash;<LinearLayout style="@style/detail_lineset_items" android:layout_width="26dp"/>&ndash;&gt;-->
+						<!--								<TextView style="@style/detial_lineset_thick" android:background="@drawable/line_thick"  android:layout_marginRight="6dp" android:id="@id/thicktextview" />-->
+						<!--								<TextView style="@style/detail_lineset_palette"  android:id="@id/colortextview" android:background="@drawable/shape_circle"/>-->
+
+						<!--								&lt;!&ndash;<LinearLayout style="@style/detail_lineset_items" android:layout_width="8dp"/>  &lt;!&ndash;  이 linearlayout 은 whiteSpace 용입니다.  &ndash;&gt;&ndash;&gt;-->
+						<!--							</LinearLayout>-->
+						<!--							<LinearLayout style="@style/detail_valset_linear" android:layout_weight="0.6" android:id="@id/gsetcolorSubLayout1" android:visibility="gone">-->
+						<!--								<LinearLayout style="@style/detail_lineset_items" android:layout_weight="0.13"/>  &lt;!&ndash;  이 linearlayout 은 whiteSpace 용입니다.  &ndash;&gt;-->
+						<!--								<androidx.appcompat.widget.AppCompatButton style="@style/btn_minus_pad" android:id="@id/btnminus"/>-->
+						<!--								<SeekBar style="@style/detail_lineset_seekbar" android:id="@+id/l_seekBar12"></SeekBar>-->
+						<!--								<androidx.appcompat.widget.AppCompatButton style="@style/btn_plus_pad" android:id="@id/btnplus"/>-->
+						<!--								<LinearLayout style="@style/detail_lineset_items" android:layout_weight="0.07"/>  &lt;!&ndash;  이 linearlayout 은 whiteSpace 용입니다.  &ndash;&gt;-->
+						<!--								<TextView style="@style/detail_lineset_title" android:text="굵기" android:id="@id/textView3"/>-->
+						<!--								&lt;!&ndash; <TextView style="@style/detail_valset_valuebox" android:id="@id/textView2"/> &ndash;&gt;-->
+						<!--								<drfn.chart.comp.UnderLineEditText style="@style/detail_valset_valuebox_edit" android:layout_marginLeft="0dp" android:id="@id/textView2"/>-->
+						<!--							</LinearLayout>-->
+						<!--						</LinearLayout>-->
+
+
+						<!--						<LinearLayout style="@style/detail_valset_outerlinear" android:id="@+id/l_gsetItem13"  android:visibility="gone">-->
+						<!--							&lt;!&ndash;<ImageView android:layout_width="match_parent" android:layout_height="1px" android:background="#cccccc"/>&ndash;&gt;-->
+						<!--							<LinearLayout style="@style/detail_valset_linear" >-->
+						<!--								&lt;!&ndash;<LinearLayout style="@style/detail_lineset_items" android:layout_weight="0.04" android:visibility="gone"/>&ndash;&gt;-->
+						<!--								<androidx.appcompat.widget.AppCompatCheckBox style="@style/detail_checkbox" android:id="@id/chk_isSelect"/>-->
+						<!--								&lt;!&ndash;<LinearLayout style="@style/detail_lineset_items" android:layout_weight="0.02" android:visibility="gone"/>&ndash;&gt;-->
+						<!--								<TextView style="@style/detail_lineset_title" android:id="@id/textView1" />-->
+						<!--								<LinearLayout-->
+						<!--									android:id="@id/detail_drawtype_combo"-->
+						<!--									style="@style/detail_drawtype_combo" >-->
+						<!--									<TextView-->
+						<!--										android:id="@id/detail_drawtype_combo_text"-->
+						<!--										style="@style/detail_drawtype_combo_text"/>-->
+						<!--								</LinearLayout>-->
+
+						<!--								&lt;!&ndash;<LinearLayout style="@style/detail_lineset_items" android:layout_width="26dp"/>&ndash;&gt;-->
+						<!--								<TextView style="@style/detial_lineset_thick" android:background="@drawable/line_thick"  android:layout_marginRight="6dp" android:id="@id/thicktextview" />-->
+						<!--								<TextView style="@style/detail_lineset_palette"  android:id="@id/colortextview" android:background="@drawable/shape_circle"/>-->
+
+						<!--								&lt;!&ndash;<LinearLayout style="@style/detail_lineset_items" android:layout_width="8dp"/>  &lt;!&ndash;  이 linearlayout 은 whiteSpace 용입니다.  &ndash;&gt;&ndash;&gt;-->
+						<!--							</LinearLayout>-->
+						<!--							<LinearLayout style="@style/detail_valset_linear" android:layout_weight="0.6" android:id="@id/gsetcolorSubLayout1" android:visibility="gone">-->
+						<!--								<LinearLayout style="@style/detail_lineset_items" android:layout_weight="0.13"/>  &lt;!&ndash;  이 linearlayout 은 whiteSpace 용입니다.  &ndash;&gt;-->
+						<!--								<androidx.appcompat.widget.AppCompatButton style="@style/btn_minus_pad" android:id="@id/btnminus"/>-->
+						<!--								<SeekBar style="@style/detail_lineset_seekbar" android:id="@+id/l_seekBar13"></SeekBar>-->
+						<!--								<androidx.appcompat.widget.AppCompatButton style="@style/btn_plus_pad" android:id="@id/btnplus"/>-->
+						<!--								<LinearLayout style="@style/detail_lineset_items" android:layout_weight="0.07"/>  &lt;!&ndash;  이 linearlayout 은 whiteSpace 용입니다.  &ndash;&gt;-->
+						<!--								<TextView style="@style/detail_lineset_title" android:text="굵기" android:id="@id/textView3"/>-->
+						<!--								&lt;!&ndash; <TextView style="@style/detail_valset_valuebox" android:id="@id/textView2"/> &ndash;&gt;-->
+						<!--								<drfn.chart.comp.UnderLineEditText style="@style/detail_valset_valuebox_edit" android:layout_marginLeft="0dp" android:id="@id/textView2"/>-->
+						<!--							</LinearLayout>-->
+						<!--						</LinearLayout>-->
+
+
+						<!--						<LinearLayout style="@style/detail_valset_outerlinear" android:id="@+id/l_gsetItem14"  android:visibility="gone">-->
+						<!--							&lt;!&ndash;<ImageView android:layout_width="match_parent" android:layout_height="1px" android:background="#cccccc"/>&ndash;&gt;-->
+						<!--							<LinearLayout style="@style/detail_valset_linear" >-->
+						<!--								&lt;!&ndash;<LinearLayout style="@style/detail_lineset_items" android:layout_weight="0.04" android:visibility="gone"/>&ndash;&gt;-->
+						<!--								<androidx.appcompat.widget.AppCompatCheckBox style="@style/detail_checkbox" android:id="@id/chk_isSelect"/>-->
+						<!--								&lt;!&ndash;<LinearLayout style="@style/detail_lineset_items" android:layout_weight="0.02" android:visibility="gone"/>&ndash;&gt;-->
+						<!--								<TextView style="@style/detail_lineset_title" android:id="@id/textView1" />-->
+						<!--								<LinearLayout-->
+						<!--									android:id="@id/detail_drawtype_combo"-->
+						<!--									style="@style/detail_drawtype_combo" >-->
+						<!--									<TextView-->
+						<!--										android:id="@id/detail_drawtype_combo_text"-->
+						<!--										style="@style/detail_drawtype_combo_text"/>-->
+						<!--								</LinearLayout>-->
+
+						<!--								&lt;!&ndash;<LinearLayout style="@style/detail_lineset_items" android:layout_width="26dp"/>&ndash;&gt;-->
+						<!--								<TextView style="@style/detial_lineset_thick" android:background="@drawable/line_thick"  android:layout_marginRight="6dp" android:id="@id/thicktextview" />-->
+						<!--								<TextView style="@style/detail_lineset_palette"  android:id="@id/colortextview" android:background="@drawable/shape_circle"/>-->
+
+						<!--								&lt;!&ndash;<LinearLayout style="@style/detail_lineset_items" android:layout_width="8dp"/>  &lt;!&ndash;  이 linearlayout 은 whiteSpace 용입니다.  &ndash;&gt;&ndash;&gt;-->
+						<!--							</LinearLayout>-->
+						<!--							<LinearLayout style="@style/detail_valset_linear" android:layout_weight="0.6" android:id="@id/gsetcolorSubLayout1" android:visibility="gone">-->
+						<!--								<LinearLayout style="@style/detail_lineset_items" android:layout_weight="0.13"/>  &lt;!&ndash;  이 linearlayout 은 whiteSpace 용입니다.  &ndash;&gt;-->
+						<!--								<androidx.appcompat.widget.AppCompatButton style="@style/btn_minus_pad" android:id="@id/btnminus"/>-->
+						<!--								<SeekBar style="@style/detail_lineset_seekbar" android:id="@+id/l_seekBar14"></SeekBar>-->
+						<!--								<androidx.appcompat.widget.AppCompatButton style="@style/btn_plus_pad" android:id="@id/btnplus"/>-->
+						<!--								<LinearLayout style="@style/detail_lineset_items" android:layout_weight="0.07"/>  &lt;!&ndash;  이 linearlayout 은 whiteSpace 용입니다.  &ndash;&gt;-->
+						<!--								<TextView style="@style/detail_lineset_title" android:text="굵기" android:id="@id/textView3"/>-->
+						<!--								&lt;!&ndash; <TextView style="@style/detail_valset_valuebox" android:id="@id/textView2"/> &ndash;&gt;-->
+						<!--								<drfn.chart.comp.UnderLineEditText style="@style/detail_valset_valuebox_edit" android:layout_marginLeft="0dp" android:id="@id/textView2"/>-->
+						<!--							</LinearLayout>-->
+						<!--						</LinearLayout>-->
+
+
+						<!--						<LinearLayout style="@style/detail_valset_outerlinear" android:id="@+id/l_gsetItem15"  android:visibility="gone">-->
+						<!--							&lt;!&ndash;<ImageView android:layout_width="match_parent" android:layout_height="1px" android:background="#cccccc"/>&ndash;&gt;-->
+						<!--							<LinearLayout style="@style/detail_valset_linear" >-->
+						<!--								&lt;!&ndash;<LinearLayout style="@style/detail_lineset_items" android:layout_weight="0.04" android:visibility="gone"/>&ndash;&gt;-->
+						<!--								<androidx.appcompat.widget.AppCompatCheckBox style="@style/detail_checkbox" android:id="@id/chk_isSelect"/>-->
+						<!--								&lt;!&ndash;<LinearLayout style="@style/detail_lineset_items" android:layout_weight="0.02" android:visibility="gone"/>&ndash;&gt;-->
+						<!--								<TextView style="@style/detail_lineset_title" android:id="@id/textView1" />-->
+						<!--								<LinearLayout-->
+						<!--									android:id="@id/detail_drawtype_combo"-->
+						<!--									style="@style/detail_drawtype_combo" >-->
+						<!--									<TextView-->
+						<!--										android:id="@id/detail_drawtype_combo_text"-->
+						<!--										style="@style/detail_drawtype_combo_text"/>-->
+						<!--								</LinearLayout>-->
+
+						<!--								&lt;!&ndash;<LinearLayout style="@style/detail_lineset_items" android:layout_width="26dp"/>&ndash;&gt;-->
+						<!--								<TextView style="@style/detial_lineset_thick" android:background="@drawable/line_thick"  android:layout_marginRight="6dp" android:id="@id/thicktextview" />-->
+						<!--								<TextView style="@style/detail_lineset_palette"  android:id="@id/colortextview" android:background="@drawable/shape_circle"/>-->
+
+						<!--								&lt;!&ndash;<LinearLayout style="@style/detail_lineset_items" android:layout_width="8dp"/>  &lt;!&ndash;  이 linearlayout 은 whiteSpace 용입니다.  &ndash;&gt;&ndash;&gt;-->
+						<!--							</LinearLayout>-->
+						<!--							<LinearLayout style="@style/detail_valset_linear" android:layout_weight="0.6" android:id="@id/gsetcolorSubLayout1" android:visibility="gone">-->
+						<!--								<LinearLayout style="@style/detail_lineset_items" android:layout_weight="0.13"/>  &lt;!&ndash;  이 linearlayout 은 whiteSpace 용입니다.  &ndash;&gt;-->
+						<!--								<androidx.appcompat.widget.AppCompatButton style="@style/btn_minus_pad" android:id="@id/btnminus"/>-->
+						<!--								<SeekBar style="@style/detail_lineset_seekbar" android:id="@+id/l_seekBar15"></SeekBar>-->
+						<!--								<androidx.appcompat.widget.AppCompatButton style="@style/btn_plus_pad" android:id="@id/btnplus"/>-->
+						<!--								<LinearLayout style="@style/detail_lineset_items" android:layout_weight="0.07"/>  &lt;!&ndash;  이 linearlayout 은 whiteSpace 용입니다.  &ndash;&gt;-->
+						<!--								<TextView style="@style/detail_lineset_title" android:text="굵기" android:id="@id/textView3"/>-->
+						<!--								&lt;!&ndash; <TextView style="@style/detail_valset_valuebox" android:id="@id/textView2"/> &ndash;&gt;-->
+						<!--								<drfn.chart.comp.UnderLineEditText style="@style/detail_valset_valuebox_edit" android:layout_marginLeft="0dp" android:id="@id/textView2"/>-->
+						<!--							</LinearLayout>-->
+						<!--						</LinearLayout>-->
+
+
+						<!--						<LinearLayout style="@style/detail_valset_outerlinear" android:id="@+id/l_gsetItem16"  android:visibility="gone">-->
+						<!--							&lt;!&ndash;<ImageView android:layout_width="match_parent" android:layout_height="1px" android:background="#cccccc"/>&ndash;&gt;-->
+						<!--							<LinearLayout style="@style/detail_valset_linear" >-->
+						<!--								&lt;!&ndash;<LinearLayout style="@style/detail_lineset_items" android:layout_weight="0.04" android:visibility="gone"/>&ndash;&gt;-->
+						<!--								<androidx.appcompat.widget.AppCompatCheckBox style="@style/detail_checkbox" android:id="@id/chk_isSelect"/>-->
+						<!--								&lt;!&ndash;<LinearLayout style="@style/detail_lineset_items" android:layout_weight="0.02" android:visibility="gone"/>&ndash;&gt;-->
+						<!--								<TextView style="@style/detail_lineset_title" android:id="@id/textView1" />-->
+						<!--								<LinearLayout-->
+						<!--									android:id="@id/detail_drawtype_combo"-->
+						<!--									style="@style/detail_drawtype_combo" >-->
+						<!--									<TextView-->
+						<!--										android:id="@id/detail_drawtype_combo_text"-->
+						<!--										style="@style/detail_drawtype_combo_text"/>-->
+						<!--								</LinearLayout>-->
+
+						<!--								&lt;!&ndash;<LinearLayout style="@style/detail_lineset_items" android:layout_width="26dp"/>&ndash;&gt;-->
+						<!--								<TextView style="@style/detial_lineset_thick" android:background="@drawable/line_thick"  android:layout_marginRight="6dp" android:id="@id/thicktextview" />-->
+						<!--								<TextView style="@style/detail_lineset_palette"  android:id="@id/colortextview" android:background="@drawable/shape_circle"/>-->
+
+						<!--								&lt;!&ndash;<LinearLayout style="@style/detail_lineset_items" android:layout_width="8dp"/>  &lt;!&ndash;  이 linearlayout 은 whiteSpace 용입니다.  &ndash;&gt;&ndash;&gt;-->
+						<!--							</LinearLayout>-->
+						<!--							<LinearLayout style="@style/detail_valset_linear" android:layout_weight="0.6" android:id="@id/gsetcolorSubLayout1" android:visibility="gone">-->
+						<!--								<LinearLayout style="@style/detail_lineset_items" android:layout_weight="0.13"/>  &lt;!&ndash;  이 linearlayout 은 whiteSpace 용입니다.  &ndash;&gt;-->
+						<!--								<androidx.appcompat.widget.AppCompatButton style="@style/btn_minus_pad" android:id="@id/btnminus"/>-->
+						<!--								<SeekBar style="@style/detail_lineset_seekbar" android:id="@+id/l_seekBar16"></SeekBar>-->
+						<!--								<androidx.appcompat.widget.AppCompatButton style="@style/btn_plus_pad" android:id="@id/btnplus"/>-->
+						<!--								<LinearLayout style="@style/detail_lineset_items" android:layout_weight="0.07"/>  &lt;!&ndash;  이 linearlayout 은 whiteSpace 용입니다.  &ndash;&gt;-->
+						<!--								<TextView style="@style/detail_lineset_title" android:text="굵기" android:id="@id/textView3"/>-->
+						<!--								&lt;!&ndash; <TextView style="@style/detail_valset_valuebox" android:id="@id/textView2"/> &ndash;&gt;-->
+						<!--								<drfn.chart.comp.UnderLineEditText style="@style/detail_valset_valuebox_edit" android:layout_marginLeft="0dp" android:id="@id/textView2"/>-->
+						<!--							</LinearLayout>-->
+						<!--						</LinearLayout>-->
+
+
+						<!--						<LinearLayout style="@style/detail_valset_outerlinear" android:id="@+id/l_gsetItem17"  android:visibility="gone">-->
+						<!--							&lt;!&ndash;<ImageView android:layout_width="match_parent" android:layout_height="1px" android:background="#cccccc"/>&ndash;&gt;-->
+						<!--							<LinearLayout style="@style/detail_valset_linear" >-->
+						<!--								&lt;!&ndash;<LinearLayout style="@style/detail_lineset_items" android:layout_weight="0.04" android:visibility="gone"/>&ndash;&gt;-->
+						<!--								<androidx.appcompat.widget.AppCompatCheckBox style="@style/detail_checkbox" android:id="@id/chk_isSelect"/>-->
+						<!--								&lt;!&ndash;<LinearLayout style="@style/detail_lineset_items" android:layout_weight="0.02" android:visibility="gone"/>&ndash;&gt;-->
+						<!--								<TextView style="@style/detail_lineset_title" android:id="@id/textView1" />-->
+						<!--								<LinearLayout-->
+						<!--									android:id="@id/detail_drawtype_combo"-->
+						<!--									style="@style/detail_drawtype_combo" >-->
+						<!--									<TextView-->
+						<!--										android:id="@id/detail_drawtype_combo_text"-->
+						<!--										style="@style/detail_drawtype_combo_text"/>-->
+						<!--								</LinearLayout>-->
+
+						<!--								&lt;!&ndash;<LinearLayout style="@style/detail_lineset_items" android:layout_width="26dp"/>&ndash;&gt;-->
+						<!--								<TextView style="@style/detial_lineset_thick" android:background="@drawable/line_thick"  android:layout_marginRight="6dp" android:id="@id/thicktextview" />-->
+						<!--								<TextView style="@style/detail_lineset_palette"  android:id="@id/colortextview" android:background="@drawable/shape_circle"/>-->
+
+						<!--								&lt;!&ndash;<LinearLayout style="@style/detail_lineset_items" android:layout_width="8dp"/>  &lt;!&ndash;  이 linearlayout 은 whiteSpace 용입니다.  &ndash;&gt;&ndash;&gt;-->
+						<!--							</LinearLayout>-->
+						<!--							<LinearLayout style="@style/detail_valset_linear" android:layout_weight="0.6" android:id="@id/gsetcolorSubLayout1" android:visibility="gone">-->
+						<!--								<LinearLayout style="@style/detail_lineset_items" android:layout_weight="0.13"/>  &lt;!&ndash;  이 linearlayout 은 whiteSpace 용입니다.  &ndash;&gt;-->
+						<!--								<androidx.appcompat.widget.AppCompatButton style="@style/btn_minus_pad" android:id="@id/btnminus"/>-->
+						<!--								<SeekBar style="@style/detail_lineset_seekbar" android:id="@+id/l_seekBar17"></SeekBar>-->
+						<!--								<androidx.appcompat.widget.AppCompatButton style="@style/btn_plus_pad" android:id="@id/btnplus"/>-->
+						<!--								<LinearLayout style="@style/detail_lineset_items" android:layout_weight="0.07"/>  &lt;!&ndash;  이 linearlayout 은 whiteSpace 용입니다.  &ndash;&gt;-->
+						<!--								<TextView style="@style/detail_lineset_title" android:text="굵기" android:id="@id/textView3"/>-->
+						<!--								&lt;!&ndash; <TextView style="@style/detail_valset_valuebox" android:id="@id/textView2"/> &ndash;&gt;-->
+						<!--								<drfn.chart.comp.UnderLineEditText style="@style/detail_valset_valuebox_edit" android:layout_marginLeft="0dp" android:id="@id/textView2"/>-->
+						<!--							</LinearLayout>-->
+						<!--						</LinearLayout>-->
+
+
+						<!--						<LinearLayout style="@style/detail_valset_outerlinear" android:id="@+id/l_gsetItem18"  android:visibility="gone">-->
+						<!--							&lt;!&ndash;<ImageView android:layout_width="match_parent" android:layout_height="1px" android:background="#cccccc"/>&ndash;&gt;-->
+						<!--							<LinearLayout style="@style/detail_valset_linear" >-->
+						<!--								&lt;!&ndash;<LinearLayout style="@style/detail_lineset_items" android:layout_weight="0.04" android:visibility="gone"/>&ndash;&gt;-->
+						<!--								<androidx.appcompat.widget.AppCompatCheckBox style="@style/detail_checkbox" android:id="@id/chk_isSelect"/>-->
+						<!--								&lt;!&ndash;<LinearLayout style="@style/detail_lineset_items" android:layout_weight="0.02" android:visibility="gone"/>&ndash;&gt;-->
+						<!--								<TextView style="@style/detail_lineset_title" android:id="@id/textView1"  />-->
+						<!--								<LinearLayout-->
+						<!--									android:id="@id/detail_drawtype_combo"-->
+						<!--									style="@style/detail_drawtype_combo" >-->
+						<!--									<TextView-->
+						<!--										android:id="@id/detail_drawtype_combo_text"-->
+						<!--										style="@style/detail_drawtype_combo_text"/>-->
+						<!--								</LinearLayout>-->
+
+						<!--								&lt;!&ndash;<LinearLayout style="@style/detail_lineset_items" android:layout_width="26dp"/>&ndash;&gt;-->
+						<!--								<TextView style="@style/detial_lineset_thick" android:background="@drawable/line_thick"  android:layout_marginRight="6dp" android:id="@id/thicktextview" />-->
+						<!--								<TextView style="@style/detail_lineset_palette"  android:id="@id/colortextview" android:background="@drawable/shape_circle"/>-->
+
+						<!--								&lt;!&ndash;<LinearLayout style="@style/detail_lineset_items" android:layout_width="8dp"/>  &lt;!&ndash;  이 linearlayout 은 whiteSpace 용입니다.  &ndash;&gt;&ndash;&gt;-->
+						<!--							</LinearLayout>-->
+						<!--							<LinearLayout style="@style/detail_valset_linear" android:layout_weight="0.6" android:id="@id/gsetcolorSubLayout1" android:visibility="gone">-->
+						<!--								<LinearLayout style="@style/detail_lineset_items" android:layout_weight="0.13"/>  &lt;!&ndash;  이 linearlayout 은 whiteSpace 용입니다.  &ndash;&gt;-->
+						<!--								<androidx.appcompat.widget.AppCompatButton style="@style/btn_minus_pad" android:id="@id/btnminus"/>-->
+						<!--								<SeekBar style="@style/detail_lineset_seekbar" android:id="@+id/l_seekBar18"></SeekBar>-->
+						<!--								<androidx.appcompat.widget.AppCompatButton style="@style/btn_plus_pad" android:id="@id/btnplus"/>-->
+						<!--								<LinearLayout style="@style/detail_lineset_items" android:layout_weight="0.07"/>  &lt;!&ndash;  이 linearlayout 은 whiteSpace 용입니다.  &ndash;&gt;-->
+						<!--								<TextView style="@style/detail_lineset_title" android:text="굵기" android:id="@id/textView3"/>-->
+						<!--								&lt;!&ndash; <TextView style="@style/detail_valset_valuebox" android:id="@id/textView2"/> &ndash;&gt;-->
+						<!--								<drfn.chart.comp.UnderLineEditText style="@style/detail_valset_valuebox_edit" android:layout_marginLeft="0dp" android:id="@id/textView2"/>-->
+						<!--							</LinearLayout>-->
+						<!--						</LinearLayout>-->
+
+
+						<!--						<LinearLayout style="@style/detail_valset_outerlinear" android:id="@+id/l_gsetItem19"  android:visibility="gone">-->
+						<!--							&lt;!&ndash;<ImageView android:layout_width="match_parent" android:layout_height="1px" android:background="#cccccc"/>&ndash;&gt;-->
+						<!--							<LinearLayout style="@style/detail_valset_linear" >-->
+						<!--								&lt;!&ndash;<LinearLayout style="@style/detail_lineset_items" android:layout_weight="0.04" android:visibility="gone"/>&ndash;&gt;-->
+						<!--								<androidx.appcompat.widget.AppCompatCheckBox style="@style/detail_checkbox" android:id="@id/chk_isSelect"/>-->
+						<!--								&lt;!&ndash;<LinearLayout style="@style/detail_lineset_items" android:layout_weight="0.02" android:visibility="gone"/>&ndash;&gt;-->
+						<!--								<TextView style="@style/detail_lineset_title" android:id="@id/textView1"  />-->
+						<!--								<LinearLayout-->
+						<!--									android:id="@id/detail_drawtype_combo"-->
+						<!--									style="@style/detail_drawtype_combo" >-->
+						<!--									<TextView-->
+						<!--										android:id="@id/detail_drawtype_combo_text"-->
+						<!--										style="@style/detail_drawtype_combo_text"/>-->
+						<!--								</LinearLayout>-->
+
+						<!--								&lt;!&ndash;<LinearLayout style="@style/detail_lineset_items" android:layout_width="26dp"/>&ndash;&gt;-->
+						<!--								<TextView style="@style/detial_lineset_thick" android:background="@drawable/line_thick"  android:layout_marginRight="6dp" android:id="@id/thicktextview" />-->
+						<!--								<TextView style="@style/detail_lineset_palette"  android:id="@id/colortextview" android:background="@drawable/shape_circle"/>-->
+
+						<!--								&lt;!&ndash;<LinearLayout style="@style/detail_lineset_items" android:layout_width="8dp"/>  &lt;!&ndash;  이 linearlayout 은 whiteSpace 용입니다.  &ndash;&gt;&ndash;&gt;-->
+						<!--							</LinearLayout>-->
+						<!--							<LinearLayout style="@style/detail_valset_linear" android:layout_weight="0.6" android:id="@id/gsetcolorSubLayout1" android:visibility="gone">-->
+						<!--								<LinearLayout style="@style/detail_lineset_items" android:layout_weight="0.13"/>  &lt;!&ndash;  이 linearlayout 은 whiteSpace 용입니다.  &ndash;&gt;-->
+						<!--								<androidx.appcompat.widget.AppCompatButton style="@style/btn_minus_pad" android:id="@id/btnminus"/>-->
+						<!--								<SeekBar style="@style/detail_lineset_seekbar" android:id="@+id/l_seekBar19"></SeekBar>-->
+						<!--								<androidx.appcompat.widget.AppCompatButton style="@style/btn_plus_pad" android:id="@id/btnplus"/>-->
+						<!--								<LinearLayout style="@style/detail_lineset_items" android:layout_weight="0.07"/>  &lt;!&ndash;  이 linearlayout 은 whiteSpace 용입니다.  &ndash;&gt;-->
+						<!--								<TextView style="@style/detail_lineset_title" android:text="굵기" android:id="@id/textView3"/>-->
+						<!--								&lt;!&ndash; <TextView style="@style/detail_valset_valuebox" android:id="@id/textView2"/> &ndash;&gt;-->
+						<!--								<drfn.chart.comp.UnderLineEditText style="@style/detail_valset_valuebox_edit" android:layout_marginLeft="0dp" android:id="@id/textView2"/>-->
+						<!--							</LinearLayout>-->
+						<!--						</LinearLayout>-->
+
+
+						<!--						<LinearLayout style="@style/detail_valset_outerlinear" android:id="@+id/l_gsetItem20"  android:visibility="gone">-->
+						<!--							&lt;!&ndash;<ImageView android:layout_width="match_parent" android:layout_height="1px" android:background="#cccccc"/>&ndash;&gt;-->
+						<!--							<LinearLayout style="@style/detail_valset_linear" >-->
+						<!--								&lt;!&ndash;<LinearLayout style="@style/detail_lineset_items" android:layout_weight="0.04" android:visibility="gone"/>&ndash;&gt;-->
+						<!--								<androidx.appcompat.widget.AppCompatCheckBox style="@style/detail_checkbox" android:id="@id/chk_isSelect"/>-->
+						<!--								&lt;!&ndash;<LinearLayout style="@style/detail_lineset_items" android:layout_weight="0.02" android:visibility="gone"/>&ndash;&gt;-->
+						<!--								<TextView style="@style/detail_lineset_title" android:id="@id/textView1"  />-->
+						<!--								<LinearLayout-->
+						<!--									android:id="@id/detail_drawtype_combo"-->
+						<!--									style="@style/detail_drawtype_combo" >-->
+						<!--									<TextView-->
+						<!--										android:id="@id/detail_drawtype_combo_text"-->
+						<!--										style="@style/detail_drawtype_combo_text"/>-->
+						<!--								</LinearLayout>-->
+
+						<!--								&lt;!&ndash;<LinearLayout style="@style/detail_lineset_items" android:layout_width="26dp"/>&ndash;&gt;-->
+						<!--								<TextView style="@style/detial_lineset_thick" android:background="@drawable/line_thick"  android:layout_marginRight="6dp" android:id="@id/thicktextview" />-->
+						<!--								<TextView style="@style/detail_lineset_palette"  android:id="@id/colortextview" android:background="@drawable/shape_circle"/>-->
+
+						<!--								&lt;!&ndash;<LinearLayout style="@style/detail_lineset_items" android:layout_width="8dp"/>  &lt;!&ndash;  이 linearlayout 은 whiteSpace 용입니다.  &ndash;&gt;&ndash;&gt;-->
+						<!--							</LinearLayout>-->
+						<!--							<LinearLayout style="@style/detail_valset_linear" android:layout_weight="0.6" android:id="@id/gsetcolorSubLayout1" android:visibility="gone">-->
+						<!--								<LinearLayout style="@style/detail_lineset_items" android:layout_weight="0.13"/>  &lt;!&ndash;  이 linearlayout 은 whiteSpace 용입니다.  &ndash;&gt;-->
+						<!--								<androidx.appcompat.widget.AppCompatButton style="@style/btn_minus_pad" android:id="@id/btnminus"/>-->
+						<!--								<SeekBar style="@style/detail_lineset_seekbar" android:id="@+id/l_seekBar20"></SeekBar>-->
+						<!--								<androidx.appcompat.widget.AppCompatButton style="@style/btn_plus_pad" android:id="@id/btnplus"/>-->
+						<!--								<LinearLayout style="@style/detail_lineset_items" android:layout_weight="0.07"/>  &lt;!&ndash;  이 linearlayout 은 whiteSpace 용입니다.  &ndash;&gt;-->
+						<!--								<TextView style="@style/detail_lineset_title" android:text="굵기" android:id="@id/textView3"/>-->
+						<!--								&lt;!&ndash; <TextView style="@style/detail_valset_valuebox" android:id="@id/textView2"/> &ndash;&gt;-->
+						<!--								<drfn.chart.comp.UnderLineEditText style="@style/detail_valset_valuebox_edit" android:layout_marginLeft="0dp" android:id="@id/textView2"/>-->
+						<!--							</LinearLayout>-->
+						<!--						</LinearLayout>-->
+
+						<!--						<LinearLayout style="@style/detail_valset_outerlinear" android:id="@+id/l_gsetItem21"  android:visibility="gone">-->
+						<!--							&lt;!&ndash;<ImageView android:layout_width="match_parent" android:layout_height="1px" android:background="#cccccc"/>&ndash;&gt;-->
+						<!--							<LinearLayout style="@style/detail_valset_linear" >-->
+						<!--								&lt;!&ndash;<LinearLayout style="@style/detail_lineset_items" android:layout_weight="0.04" android:visibility="gone"/>&ndash;&gt;-->
+						<!--								<androidx.appcompat.widget.AppCompatCheckBox style="@style/detail_checkbox" android:id="@id/chk_isSelect"/>-->
+						<!--								&lt;!&ndash;<LinearLayout style="@style/detail_lineset_items" android:layout_weight="0.02" android:visibility="gone"/>&ndash;&gt;-->
+						<!--								<TextView style="@style/detail_lineset_title" android:id="@id/textView1"  />-->
+						<!--								<LinearLayout-->
+						<!--									android:id="@id/detail_drawtype_combo"-->
+						<!--									style="@style/detail_drawtype_combo" >-->
+						<!--									<TextView-->
+						<!--										android:id="@id/detail_drawtype_combo_text"-->
+						<!--										style="@style/detail_drawtype_combo_text"/>-->
+						<!--								</LinearLayout>-->
+
+						<!--								&lt;!&ndash;<LinearLayout style="@style/detail_lineset_items" android:layout_width="26dp"/>&ndash;&gt;-->
+						<!--								<TextView style="@style/detial_lineset_thick" android:background="@drawable/line_thick"  android:layout_marginRight="6dp" android:id="@id/thicktextview" />-->
+						<!--								<TextView style="@style/detail_lineset_palette"  android:id="@id/colortextview" android:background="@drawable/shape_circle"/>-->
+
+						<!--								&lt;!&ndash;<LinearLayout style="@style/detail_lineset_items" android:layout_width="8dp"/>  &lt;!&ndash;  이 linearlayout 은 whiteSpace 용입니다.  &ndash;&gt;&ndash;&gt;-->
+						<!--							</LinearLayout>-->
+						<!--							<LinearLayout style="@style/detail_valset_linear" android:layout_weight="0.6" android:id="@id/gsetcolorSubLayout1" android:visibility="gone">-->
+						<!--								<LinearLayout style="@style/detail_lineset_items" android:layout_weight="0.13"/>  &lt;!&ndash;  이 linearlayout 은 whiteSpace 용입니다.  &ndash;&gt;-->
+						<!--								<androidx.appcompat.widget.AppCompatButton style="@style/btn_minus_pad" android:id="@id/btnminus"/>-->
+						<!--								<SeekBar style="@style/detail_lineset_seekbar" android:id="@+id/l_seekBar21"></SeekBar>-->
+						<!--								<androidx.appcompat.widget.AppCompatButton style="@style/btn_plus_pad" android:id="@id/btnplus"/>-->
+						<!--								<LinearLayout style="@style/detail_lineset_items" android:layout_weight="0.07"/>  &lt;!&ndash;  이 linearlayout 은 whiteSpace 용입니다.  &ndash;&gt;-->
+						<!--								<TextView style="@style/detail_lineset_title" android:text="굵기" android:id="@id/textView3"/>-->
+						<!--								&lt;!&ndash; <TextView style="@style/detail_valset_valuebox" android:id="@id/textView2"/> &ndash;&gt;-->
+						<!--								<drfn.chart.comp.UnderLineEditText style="@style/detail_valset_valuebox_edit" android:layout_marginLeft="0dp" android:id="@id/textView2"/>-->
+						<!--							</LinearLayout>-->
+						<!--						</LinearLayout>-->
+
+						<!--						<LinearLayout style="@style/detail_valset_outerlinear" android:id="@+id/l_gsetItem22"  android:visibility="gone">-->
+						<!--							&lt;!&ndash;<ImageView android:layout_width="match_parent" android:layout_height="1px" android:background="#cccccc"/>&ndash;&gt;-->
+						<!--							<LinearLayout style="@style/detail_valset_linear" >-->
+						<!--								&lt;!&ndash;<LinearLayout style="@style/detail_lineset_items" android:layout_weight="0.04" android:visibility="gone"/>&ndash;&gt;-->
+						<!--								<androidx.appcompat.widget.AppCompatCheckBox style="@style/detail_checkbox" android:id="@id/chk_isSelect"/>-->
+						<!--								&lt;!&ndash;<LinearLayout style="@style/detail_lineset_items" android:layout_weight="0.02" android:visibility="gone"/>&ndash;&gt;-->
+						<!--								<TextView style="@style/detail_lineset_title" android:id="@id/textView1"  />-->
+						<!--								<LinearLayout-->
+						<!--									android:id="@id/detail_drawtype_combo"-->
+						<!--									style="@style/detail_drawtype_combo" >-->
+						<!--									<TextView-->
+						<!--										android:id="@id/detail_drawtype_combo_text"-->
+						<!--										style="@style/detail_drawtype_combo_text"/>-->
+						<!--								</LinearLayout>-->
+
+						<!--								&lt;!&ndash;<LinearLayout style="@style/detail_lineset_items" android:layout_width="26dp"/>&ndash;&gt;-->
+						<!--								<TextView style="@style/detial_lineset_thick" android:background="@drawable/line_thick"  android:layout_marginRight="6dp" android:id="@id/thicktextview" />-->
+						<!--								<TextView style="@style/detail_lineset_palette"  android:id="@id/colortextview" android:background="@drawable/shape_circle"/>-->
+
+						<!--								&lt;!&ndash;<LinearLayout style="@style/detail_lineset_items" android:layout_width="8dp"/>  &lt;!&ndash;  이 linearlayout 은 whiteSpace 용입니다.  &ndash;&gt;&ndash;&gt;-->
+						<!--							</LinearLayout>-->
+						<!--							<LinearLayout style="@style/detail_valset_linear" android:layout_weight="0.6" android:id="@id/gsetcolorSubLayout1" android:visibility="gone">-->
+						<!--								<LinearLayout style="@style/detail_lineset_items" android:layout_weight="0.13"/>  &lt;!&ndash;  이 linearlayout 은 whiteSpace 용입니다.  &ndash;&gt;-->
+						<!--								<androidx.appcompat.widget.AppCompatButton style="@style/btn_minus_pad" android:id="@id/btnminus"/>-->
+						<!--								<SeekBar style="@style/detail_lineset_seekbar" android:id="@+id/l_seekBar22"></SeekBar>-->
+						<!--								<androidx.appcompat.widget.AppCompatButton style="@style/btn_plus_pad" android:id="@id/btnplus"/>-->
+						<!--								<LinearLayout style="@style/detail_lineset_items" android:layout_weight="0.07"/>  &lt;!&ndash;  이 linearlayout 은 whiteSpace 용입니다.  &ndash;&gt;-->
+						<!--								<TextView style="@style/detail_lineset_title" android:text="굵기" android:id="@id/textView3"/>-->
+						<!--								&lt;!&ndash; <TextView style="@style/detail_valset_valuebox" android:id="@id/textView2"/> &ndash;&gt;-->
+						<!--								<drfn.chart.comp.UnderLineEditText style="@style/detail_valset_valuebox_edit" android:layout_marginLeft="0dp" android:id="@id/textView2"/>-->
+						<!--							</LinearLayout>-->
+						<!--						</LinearLayout>-->
+
+						<!--						<LinearLayout style="@style/detail_valset_outerlinear" android:id="@+id/l_gsetItem23"  android:visibility="gone">-->
+						<!--							&lt;!&ndash;<ImageView android:layout_width="match_parent" android:layout_height="1px" android:background="#cccccc"/>&ndash;&gt;-->
+						<!--							<LinearLayout style="@style/detail_valset_linear" >-->
+						<!--								&lt;!&ndash;<LinearLayout style="@style/detail_lineset_items" android:layout_weight="0.04" android:visibility="gone"/>&ndash;&gt;-->
+						<!--								<androidx.appcompat.widget.AppCompatCheckBox style="@style/detail_checkbox" android:id="@id/chk_isSelect"/>-->
+						<!--								&lt;!&ndash;<LinearLayout style="@style/detail_lineset_items" android:layout_weight="0.02" android:visibility="gone"/>&ndash;&gt;-->
+						<!--								<TextView style="@style/detail_lineset_title" android:id="@id/textView1"  />-->
+						<!--								<LinearLayout-->
+						<!--									android:id="@id/detail_drawtype_combo"-->
+						<!--									style="@style/detail_drawtype_combo" >-->
+						<!--									<TextView-->
+						<!--										android:id="@id/detail_drawtype_combo_text"-->
+						<!--										style="@style/detail_drawtype_combo_text"/>-->
+						<!--								</LinearLayout>-->
+
+						<!--								&lt;!&ndash;<LinearLayout style="@style/detail_lineset_items" android:layout_width="26dp"/>&ndash;&gt;-->
+						<!--								<TextView style="@style/detial_lineset_thick" android:background="@drawable/line_thick"  android:layout_marginRight="6dp" android:id="@id/thicktextview" />-->
+						<!--								<TextView style="@style/detail_lineset_palette"  android:id="@id/colortextview" android:background="@drawable/shape_circle"/>-->
+
+						<!--								&lt;!&ndash;<LinearLayout style="@style/detail_lineset_items" android:layout_width="8dp"/>  &lt;!&ndash;  이 linearlayout 은 whiteSpace 용입니다.  &ndash;&gt;&ndash;&gt;-->
+						<!--							</LinearLayout>-->
+						<!--							<LinearLayout style="@style/detail_valset_linear" android:layout_weight="0.6" android:id="@id/gsetcolorSubLayout1" android:visibility="gone">-->
+						<!--								<LinearLayout style="@style/detail_lineset_items" android:layout_weight="0.13"/>  &lt;!&ndash;  이 linearlayout 은 whiteSpace 용입니다.  &ndash;&gt;-->
+						<!--								<androidx.appcompat.widget.AppCompatButton style="@style/btn_minus_pad" android:id="@id/btnminus"/>-->
+						<!--								<SeekBar style="@style/detail_lineset_seekbar" android:id="@+id/l_seekBar23"></SeekBar>-->
+						<!--								<androidx.appcompat.widget.AppCompatButton style="@style/btn_plus_pad" android:id="@id/btnplus"/>-->
+						<!--								<LinearLayout style="@style/detail_lineset_items" android:layout_weight="0.07"/>  &lt;!&ndash;  이 linearlayout 은 whiteSpace 용입니다.  &ndash;&gt;-->
+						<!--								<TextView style="@style/detail_lineset_title" android:text="굵기" android:id="@id/textView3"/>-->
+						<!--								&lt;!&ndash; <TextView style="@style/detail_valset_valuebox" android:id="@id/textView2"/> &ndash;&gt;-->
+						<!--								<drfn.chart.comp.UnderLineEditText style="@style/detail_valset_valuebox_edit" android:layout_marginLeft="0dp" android:id="@id/textView2"/>-->
+						<!--							</LinearLayout>-->
+						<!--						</LinearLayout>-->
+
+						<!--						<LinearLayout style="@style/detail_valset_outerlinear" android:id="@+id/l_gsetItem24"  android:visibility="gone">-->
+						<!--							&lt;!&ndash;<ImageView android:layout_width="match_parent" android:layout_height="1px" android:background="#cccccc"/>&ndash;&gt;-->
+						<!--							<LinearLayout style="@style/detail_valset_linear" >-->
+						<!--								&lt;!&ndash;<LinearLayout style="@style/detail_lineset_items" android:layout_weight="0.04" android:visibility="gone"/>&ndash;&gt;-->
+						<!--								<androidx.appcompat.widget.AppCompatCheckBox style="@style/detail_checkbox" android:id="@id/chk_isSelect"/>-->
+						<!--								&lt;!&ndash;<LinearLayout style="@style/detail_lineset_items" android:layout_weight="0.02" android:visibility="gone"/>&ndash;&gt;-->
+						<!--								<TextView style="@style/detail_lineset_title" android:id="@id/textView1"  />-->
+						<!--								<LinearLayout-->
+						<!--									android:id="@id/detail_drawtype_combo"-->
+						<!--									style="@style/detail_drawtype_combo" >-->
+						<!--									<TextView-->
+						<!--										android:id="@id/detail_drawtype_combo_text"-->
+						<!--										style="@style/detail_drawtype_combo_text"/>-->
+						<!--								</LinearLayout>-->
+
+						<!--								&lt;!&ndash;<LinearLayout style="@style/detail_lineset_items" android:layout_width="26dp"/>&ndash;&gt;-->
+						<!--								<TextView style="@style/detial_lineset_thick" android:background="@drawable/line_thick"  android:layout_marginRight="6dp" android:id="@id/thicktextview" />-->
+						<!--								<TextView style="@style/detail_lineset_palette"  android:id="@id/colortextview" android:background="@drawable/shape_circle"/>-->
+
+						<!--								&lt;!&ndash;<LinearLayout style="@style/detail_lineset_items" android:layout_width="8dp"/>  &lt;!&ndash;  이 linearlayout 은 whiteSpace 용입니다.  &ndash;&gt;&ndash;&gt;-->
+						<!--							</LinearLayout>-->
+						<!--							<LinearLayout style="@style/detail_valset_linear" android:layout_weight="0.6" android:id="@id/gsetcolorSubLayout1" android:visibility="gone">-->
+						<!--								<LinearLayout style="@style/detail_lineset_items" android:layout_weight="0.13"/>  &lt;!&ndash;  이 linearlayout 은 whiteSpace 용입니다.  &ndash;&gt;-->
+						<!--								<androidx.appcompat.widget.AppCompatButton style="@style/btn_minus_pad" android:id="@id/btnminus"/>-->
+						<!--								<SeekBar style="@style/detail_lineset_seekbar" android:id="@+id/l_seekBar24"></SeekBar>-->
+						<!--								<androidx.appcompat.widget.AppCompatButton style="@style/btn_plus_pad" android:id="@id/btnplus"/>-->
+						<!--								<LinearLayout style="@style/detail_lineset_items" android:layout_weight="0.07"/>  &lt;!&ndash;  이 linearlayout 은 whiteSpace 용입니다.  &ndash;&gt;-->
+						<!--								<TextView style="@style/detail_lineset_title" android:text="굵기" android:id="@id/textView3"/>-->
+						<!--								&lt;!&ndash; <TextView style="@style/detail_valset_valuebox" android:id="@id/textView2"/> &ndash;&gt;-->
+						<!--								<drfn.chart.comp.UnderLineEditText style="@style/detail_valset_valuebox_edit" android:layout_marginLeft="0dp" android:id="@id/textView2"/>-->
+						<!--							</LinearLayout>-->
+						<!--						</LinearLayout>-->
+
+						<!--						<LinearLayout style="@style/detail_valset_outerlinear" android:id="@+id/l_gsetItem25"  android:visibility="gone">-->
+						<!--							&lt;!&ndash;<ImageView android:layout_width="match_parent" android:layout_height="1px" android:background="#cccccc"/>&ndash;&gt;-->
+						<!--							<LinearLayout style="@style/detail_valset_linear" >-->
+						<!--								&lt;!&ndash;<LinearLayout style="@style/detail_lineset_items" android:layout_weight="0.04" android:visibility="gone"/>&ndash;&gt;-->
+						<!--								<androidx.appcompat.widget.AppCompatCheckBox style="@style/detail_checkbox" android:id="@id/chk_isSelect"/>-->
+						<!--								&lt;!&ndash;<LinearLayout style="@style/detail_lineset_items" android:layout_weight="0.02" android:visibility="gone"/>&ndash;&gt;-->
+						<!--								<TextView style="@style/detail_lineset_title" android:id="@id/textView1"  />-->
+						<!--								<LinearLayout-->
+						<!--									android:id="@id/detail_drawtype_combo"-->
+						<!--									style="@style/detail_drawtype_combo" >-->
+						<!--									<TextView-->
+						<!--										android:id="@id/detail_drawtype_combo_text"-->
+						<!--										style="@style/detail_drawtype_combo_text"/>-->
+						<!--								</LinearLayout>-->
+
+						<!--								&lt;!&ndash;<LinearLayout style="@style/detail_lineset_items" android:layout_width="26dp"/>&ndash;&gt;-->
+						<!--								<TextView style="@style/detial_lineset_thick" android:background="@drawable/line_thick"  android:layout_marginRight="6dp" android:id="@id/thicktextview" />-->
+						<!--								<TextView style="@style/detail_lineset_palette"  android:id="@id/colortextview" android:background="@drawable/shape_circle"/>-->
+
+						<!--								&lt;!&ndash;<LinearLayout style="@style/detail_lineset_items" android:layout_width="8dp"/>  &lt;!&ndash;  이 linearlayout 은 whiteSpace 용입니다.  &ndash;&gt;&ndash;&gt;-->
+						<!--							</LinearLayout>-->
+						<!--							<LinearLayout style="@style/detail_valset_linear" android:layout_weight="0.6" android:id="@id/gsetcolorSubLayout1" android:visibility="gone">-->
+						<!--								<LinearLayout style="@style/detail_lineset_items" android:layout_weight="0.13"/>  &lt;!&ndash;  이 linearlayout 은 whiteSpace 용입니다.  &ndash;&gt;-->
+						<!--								<androidx.appcompat.widget.AppCompatButton style="@style/btn_minus_pad" android:id="@id/btnminus"/>-->
+						<!--								<SeekBar style="@style/detail_lineset_seekbar" android:id="@+id/l_seekBar25"></SeekBar>-->
+						<!--								<androidx.appcompat.widget.AppCompatButton style="@style/btn_plus_pad" android:id="@id/btnplus"/>-->
+						<!--								<LinearLayout style="@style/detail_lineset_items" android:layout_weight="0.07"/>  &lt;!&ndash;  이 linearlayout 은 whiteSpace 용입니다.  &ndash;&gt;-->
+						<!--								<TextView style="@style/detail_lineset_title" android:text="굵기" android:id="@id/textView3"/>-->
+						<!--								&lt;!&ndash; <TextView style="@style/detail_valset_valuebox" android:id="@id/textView2"/> &ndash;&gt;-->
+						<!--								<drfn.chart.comp.UnderLineEditText style="@style/detail_valset_valuebox_edit" android:layout_marginLeft="0dp" android:id="@id/textView2"/>-->
+						<!--							</LinearLayout>-->
+						<!--						</LinearLayout>-->
+
+						<!--						<LinearLayout style="@style/detail_valset_outerlinear" android:id="@+id/l_gsetItem26"  android:visibility="gone">-->
+						<!--							&lt;!&ndash;<ImageView android:layout_width="match_parent" android:layout_height="1px" android:background="#cccccc"/>&ndash;&gt;-->
+						<!--							<LinearLayout style="@style/detail_valset_linear" >-->
+						<!--								&lt;!&ndash;<LinearLayout style="@style/detail_lineset_items" android:layout_weight="0.04" android:visibility="gone"/>&ndash;&gt;-->
+						<!--								<androidx.appcompat.widget.AppCompatCheckBox style="@style/detail_checkbox" android:id="@id/chk_isSelect"/>-->
+						<!--								&lt;!&ndash;<LinearLayout style="@style/detail_lineset_items" android:layout_weight="0.02" android:visibility="gone"/>&ndash;&gt;-->
+						<!--								<TextView style="@style/detail_lineset_title" android:id="@id/textView1"  />-->
+						<!--								<LinearLayout-->
+						<!--									android:id="@id/detail_drawtype_combo"-->
+						<!--									style="@style/detail_drawtype_combo" >-->
+						<!--									<TextView-->
+						<!--										android:id="@id/detail_drawtype_combo_text"-->
+						<!--										style="@style/detail_drawtype_combo_text"/>-->
+						<!--								</LinearLayout>-->
+
+						<!--								&lt;!&ndash;<LinearLayout style="@style/detail_lineset_items" android:layout_width="26dp"/>&ndash;&gt;-->
+						<!--								<TextView style="@style/detial_lineset_thick" android:background="@drawable/line_thick"  android:layout_marginRight="6dp" android:id="@id/thicktextview" />-->
+						<!--								<TextView style="@style/detail_lineset_palette"  android:id="@id/colortextview" android:background="@drawable/shape_circle"/>-->
+
+						<!--								&lt;!&ndash;<LinearLayout style="@style/detail_lineset_items" android:layout_width="8dp"/>  &lt;!&ndash;  이 linearlayout 은 whiteSpace 용입니다.  &ndash;&gt;&ndash;&gt;-->
+						<!--							</LinearLayout>-->
+						<!--							<LinearLayout style="@style/detail_valset_linear" android:layout_weight="0.6" android:id="@id/gsetcolorSubLayout1" android:visibility="gone">-->
+						<!--								<LinearLayout style="@style/detail_lineset_items" android:layout_weight="0.13"/>  &lt;!&ndash;  이 linearlayout 은 whiteSpace 용입니다.  &ndash;&gt;-->
+						<!--								<androidx.appcompat.widget.AppCompatButton style="@style/btn_minus_pad" android:id="@id/btnminus"/>-->
+						<!--								<SeekBar style="@style/detail_lineset_seekbar" android:id="@+id/l_seekBar26"></SeekBar>-->
+						<!--								<androidx.appcompat.widget.AppCompatButton style="@style/btn_plus_pad" android:id="@id/btnplus"/>-->
+						<!--								<LinearLayout style="@style/detail_lineset_items" android:layout_weight="0.07"/>  &lt;!&ndash;  이 linearlayout 은 whiteSpace 용입니다.  &ndash;&gt;-->
+						<!--								<TextView style="@style/detail_lineset_title" android:text="굵기" android:id="@id/textView3"/>-->
+						<!--								&lt;!&ndash; <TextView style="@style/detail_valset_valuebox" android:id="@id/textView2"/> &ndash;&gt;-->
+						<!--								<drfn.chart.comp.UnderLineEditText style="@style/detail_valset_valuebox_edit" android:layout_marginLeft="0dp" android:id="@id/textView2"/>-->
+						<!--							</LinearLayout>-->
+						<!--						</LinearLayout>-->
+
+						<!--						<LinearLayout style="@style/detail_valset_outerlinear" android:id="@+id/l_gsetItem27"  android:visibility="gone">-->
+						<!--							&lt;!&ndash;<ImageView android:layout_width="match_parent" android:layout_height="1px" android:background="#cccccc"/>&ndash;&gt;-->
+						<!--							<LinearLayout style="@style/detail_valset_linear" >-->
+						<!--								&lt;!&ndash;<LinearLayout style="@style/detail_lineset_items" android:layout_weight="0.04" android:visibility="gone"/>&ndash;&gt;-->
+						<!--								<androidx.appcompat.widget.AppCompatCheckBox style="@style/detail_checkbox" android:id="@id/chk_isSelect"/>-->
+						<!--								&lt;!&ndash;<LinearLayout style="@style/detail_lineset_items" android:layout_weight="0.02" android:visibility="gone"/>&ndash;&gt;-->
+						<!--								<TextView style="@style/detail_lineset_title" android:id="@id/textView1"  />-->
+						<!--								<LinearLayout-->
+						<!--									android:id="@id/detail_drawtype_combo"-->
+						<!--									style="@style/detail_drawtype_combo" >-->
+						<!--									<TextView-->
+						<!--										android:id="@id/detail_drawtype_combo_text"-->
+						<!--										style="@style/detail_drawtype_combo_text"/>-->
+						<!--								</LinearLayout>-->
+
+						<!--								&lt;!&ndash;<LinearLayout style="@style/detail_lineset_items" android:layout_width="26dp"/>&ndash;&gt;-->
+						<!--								<TextView style="@style/detial_lineset_thick" android:background="@drawable/line_thick"  android:layout_marginRight="6dp" android:id="@id/thicktextview" />-->
+						<!--								<TextView style="@style/detail_lineset_palette"  android:id="@id/colortextview" android:background="@drawable/shape_circle"/>-->
+
+						<!--								&lt;!&ndash;<LinearLayout style="@style/detail_lineset_items" android:layout_width="8dp"/>  &lt;!&ndash;  이 linearlayout 은 whiteSpace 용입니다.  &ndash;&gt;&ndash;&gt;-->
+						<!--							</LinearLayout>-->
+						<!--							<LinearLayout style="@style/detail_valset_linear" android:layout_weight="0.6" android:id="@id/gsetcolorSubLayout1" android:visibility="gone">-->
+						<!--								<LinearLayout style="@style/detail_lineset_items" android:layout_weight="0.13"/>  &lt;!&ndash;  이 linearlayout 은 whiteSpace 용입니다.  &ndash;&gt;-->
+						<!--								<androidx.appcompat.widget.AppCompatButton style="@style/btn_minus_pad" android:id="@id/btnminus"/>-->
+						<!--								<SeekBar style="@style/detail_lineset_seekbar" android:id="@+id/l_seekBar27"></SeekBar>-->
+						<!--								<androidx.appcompat.widget.AppCompatButton style="@style/btn_plus_pad" android:id="@id/btnplus"/>-->
+						<!--								<LinearLayout style="@style/detail_lineset_items" android:layout_weight="0.07"/>  &lt;!&ndash;  이 linearlayout 은 whiteSpace 용입니다.  &ndash;&gt;-->
+						<!--								<TextView style="@style/detail_lineset_title" android:text="굵기" android:id="@id/textView3"/>-->
+						<!--								&lt;!&ndash; <TextView style="@style/detail_valset_valuebox" android:id="@id/textView2"/> &ndash;&gt;-->
+						<!--								<drfn.chart.comp.UnderLineEditText style="@style/detail_valset_valuebox_edit" android:layout_marginLeft="0dp" android:id="@id/textView2"/>-->
+						<!--							</LinearLayout>-->
+						<!--						</LinearLayout>-->
+
+						<!--						<LinearLayout style="@style/detail_valset_outerlinear" android:id="@+id/l_gsetItem28"  android:visibility="gone">-->
+						<!--							&lt;!&ndash;<ImageView android:layout_width="match_parent" android:layout_height="1px" android:background="#cccccc"/>&ndash;&gt;-->
+						<!--							<LinearLayout style="@style/detail_valset_linear" >-->
+						<!--								&lt;!&ndash;<LinearLayout style="@style/detail_lineset_items" android:layout_weight="0.04" android:visibility="gone"/>&ndash;&gt;-->
+						<!--								<androidx.appcompat.widget.AppCompatCheckBox style="@style/detail_checkbox" android:id="@id/chk_isSelect"/>-->
+						<!--								&lt;!&ndash;<LinearLayout style="@style/detail_lineset_items" android:layout_weight="0.02" android:visibility="gone"/>&ndash;&gt;-->
+						<!--								<TextView style="@style/detail_lineset_title" android:id="@id/textView1"  />-->
+						<!--								<LinearLayout-->
+						<!--									android:id="@id/detail_drawtype_combo"-->
+						<!--									style="@style/detail_drawtype_combo" >-->
+						<!--									<TextView-->
+						<!--										android:id="@id/detail_drawtype_combo_text"-->
+						<!--										style="@style/detail_drawtype_combo_text"/>-->
+						<!--								</LinearLayout>-->
+
+						<!--								&lt;!&ndash;<LinearLayout style="@style/detail_lineset_items" android:layout_width="26dp"/>&ndash;&gt;-->
+						<!--								<TextView style="@style/detial_lineset_thick" android:background="@drawable/line_thick"  android:layout_marginRight="6dp" android:id="@id/thicktextview" />-->
+						<!--								<TextView style="@style/detail_lineset_palette"  android:id="@id/colortextview" android:background="@drawable/shape_circle"/>-->
+
+						<!--								&lt;!&ndash;<LinearLayout style="@style/detail_lineset_items" android:layout_width="8dp"/>  &lt;!&ndash;  이 linearlayout 은 whiteSpace 용입니다.  &ndash;&gt;&ndash;&gt;-->
+						<!--							</LinearLayout>-->
+						<!--							<LinearLayout style="@style/detail_valset_linear" android:layout_weight="0.6" android:id="@id/gsetcolorSubLayout1" android:visibility="gone">-->
+						<!--								<LinearLayout style="@style/detail_lineset_items" android:layout_weight="0.13"/>  &lt;!&ndash;  이 linearlayout 은 whiteSpace 용입니다.  &ndash;&gt;-->
+						<!--								<androidx.appcompat.widget.AppCompatButton style="@style/btn_minus_pad" android:id="@id/btnminus"/>-->
+						<!--								<SeekBar style="@style/detail_lineset_seekbar" android:id="@+id/l_seekBar28"></SeekBar>-->
+						<!--								<androidx.appcompat.widget.AppCompatButton style="@style/btn_plus_pad" android:id="@id/btnplus"/>-->
+						<!--								<LinearLayout style="@style/detail_lineset_items" android:layout_weight="0.07"/>  &lt;!&ndash;  이 linearlayout 은 whiteSpace 용입니다.  &ndash;&gt;-->
+						<!--								<TextView style="@style/detail_lineset_title" android:text="굵기" android:id="@id/textView3"/>-->
+						<!--								&lt;!&ndash; <TextView style="@style/detail_valset_valuebox" android:id="@id/textView2"/> &ndash;&gt;-->
+						<!--								<drfn.chart.comp.UnderLineEditText style="@style/detail_valset_valuebox_edit" android:layout_marginLeft="0dp" android:id="@id/textView2"/>-->
+						<!--							</LinearLayout>-->
+						<!--						</LinearLayout>-->
+
+						<!--						<LinearLayout style="@style/detail_valset_outerlinear" android:id="@+id/l_gsetItem29"  android:visibility="gone">-->
+						<!--							&lt;!&ndash;<ImageView android:layout_width="match_parent" android:layout_height="1px" android:background="#cccccc"/>&ndash;&gt;-->
+						<!--							<LinearLayout style="@style/detail_valset_linear" >-->
+						<!--								&lt;!&ndash;<LinearLayout style="@style/detail_lineset_items" android:layout_weight="0.04" android:visibility="gone"/>&ndash;&gt;-->
+						<!--								<androidx.appcompat.widget.AppCompatCheckBox style="@style/detail_checkbox" android:id="@id/chk_isSelect"/>-->
+						<!--								&lt;!&ndash;<LinearLayout style="@style/detail_lineset_items" android:layout_weight="0.02" android:visibility="gone"/>&ndash;&gt;-->
+						<!--								<TextView style="@style/detail_lineset_title" android:id="@id/textView1"  />-->
+						<!--								<LinearLayout-->
+						<!--									android:id="@id/detail_drawtype_combo"-->
+						<!--									style="@style/detail_drawtype_combo" >-->
+						<!--									<TextView-->
+						<!--										android:id="@id/detail_drawtype_combo_text"-->
+						<!--										style="@style/detail_drawtype_combo_text"/>-->
+						<!--								</LinearLayout>-->
+
+						<!--								&lt;!&ndash;<LinearLayout style="@style/detail_lineset_items" android:layout_width="26dp"/>&ndash;&gt;-->
+						<!--								<TextView style="@style/detial_lineset_thick" android:background="@drawable/line_thick"  android:layout_marginRight="6dp" android:id="@id/thicktextview" />-->
+						<!--								<TextView style="@style/detail_lineset_palette"  android:id="@id/colortextview" android:background="@drawable/shape_circle"/>-->
+
+						<!--								&lt;!&ndash;<LinearLayout style="@style/detail_lineset_items" android:layout_width="8dp"/>  &lt;!&ndash;  이 linearlayout 은 whiteSpace 용입니다.  &ndash;&gt;&ndash;&gt;-->
+						<!--							</LinearLayout>-->
+						<!--							<LinearLayout style="@style/detail_valset_linear" android:layout_weight="0.6" android:id="@id/gsetcolorSubLayout1" android:visibility="gone">-->
+						<!--								<LinearLayout style="@style/detail_lineset_items" android:layout_weight="0.13"/>  &lt;!&ndash;  이 linearlayout 은 whiteSpace 용입니다.  &ndash;&gt;-->
+						<!--								<androidx.appcompat.widget.AppCompatButton style="@style/btn_minus_pad" android:id="@id/btnminus"/>-->
+						<!--								<SeekBar style="@style/detail_lineset_seekbar" android:id="@+id/l_seekBar29"></SeekBar>-->
+						<!--								<androidx.appcompat.widget.AppCompatButton style="@style/btn_plus_pad" android:id="@id/btnplus"/>-->
+						<!--								<LinearLayout style="@style/detail_lineset_items" android:layout_weight="0.07"/>  &lt;!&ndash;  이 linearlayout 은 whiteSpace 용입니다.  &ndash;&gt;-->
+						<!--								<TextView style="@style/detail_lineset_title" android:text="굵기" android:id="@id/textView3"/>-->
+						<!--								&lt;!&ndash; <TextView style="@style/detail_valset_valuebox" android:id="@id/textView2"/> &ndash;&gt;-->
+						<!--								<drfn.chart.comp.UnderLineEditText style="@style/detail_valset_valuebox_edit" android:layout_marginLeft="0dp" android:id="@id/textView2"/>-->
+						<!--							</LinearLayout>-->
+						<!--						</LinearLayout>-->
+
+						<!--						<LinearLayout style="@style/detail_valset_outerlinear" android:id="@+id/l_gsetItem30"  android:visibility="gone">-->
+						<!--							&lt;!&ndash;<ImageView android:layout_width="match_parent" android:layout_height="1px" android:background="#cccccc"/>&ndash;&gt;-->
+						<!--							<LinearLayout style="@style/detail_valset_linear" >-->
+						<!--								&lt;!&ndash;<LinearLayout style="@style/detail_lineset_items" android:layout_weight="0.04" android:visibility="gone"/>&ndash;&gt;-->
+						<!--								<androidx.appcompat.widget.AppCompatCheckBox style="@style/detail_checkbox" android:id="@id/chk_isSelect"/>-->
+						<!--								&lt;!&ndash;<LinearLayout style="@style/detail_lineset_items" android:layout_weight="0.02" android:visibility="gone"/>&ndash;&gt;-->
+						<!--								<TextView style="@style/detail_lineset_title" android:id="@id/textView1"  />-->
+						<!--								<LinearLayout-->
+						<!--									android:id="@id/detail_drawtype_combo"-->
+						<!--									style="@style/detail_drawtype_combo" >-->
+						<!--									<TextView-->
+						<!--										android:id="@id/detail_drawtype_combo_text"-->
+						<!--										style="@style/detail_drawtype_combo_text"/>-->
+						<!--								</LinearLayout>-->
+
+						<!--								&lt;!&ndash;<LinearLayout style="@style/detail_lineset_items" android:layout_width="26dp"/>&ndash;&gt;-->
+						<!--								<TextView style="@style/detial_lineset_thick" android:background="@drawable/line_thick"  android:layout_marginRight="6dp" android:id="@id/thicktextview" />-->
+						<!--								<TextView style="@style/detail_lineset_palette"  android:id="@id/colortextview" android:background="@drawable/shape_circle"/>-->
+
+						<!--								&lt;!&ndash;<LinearLayout style="@style/detail_lineset_items" android:layout_width="8dp"/>  &lt;!&ndash;  이 linearlayout 은 whiteSpace 용입니다.  &ndash;&gt;&ndash;&gt;-->
+						<!--							</LinearLayout>-->
+						<!--							<LinearLayout style="@style/detail_valset_linear" android:layout_weight="0.6" android:id="@id/gsetcolorSubLayout1" android:visibility="gone">-->
+						<!--								<LinearLayout style="@style/detail_lineset_items" android:layout_weight="0.13"/>  &lt;!&ndash;  이 linearlayout 은 whiteSpace 용입니다.  &ndash;&gt;-->
+						<!--								<androidx.appcompat.widget.AppCompatButton style="@style/btn_minus_pad" android:id="@id/btnminus"/>-->
+						<!--								<SeekBar style="@style/detail_lineset_seekbar" android:id="@+id/l_seekBar30"></SeekBar>-->
+						<!--								<androidx.appcompat.widget.AppCompatButton style="@style/btn_plus_pad" android:id="@id/btnplus"/>-->
+						<!--								<LinearLayout style="@style/detail_lineset_items" android:layout_weight="0.07"/>  &lt;!&ndash;  이 linearlayout 은 whiteSpace 용입니다.  &ndash;&gt;-->
+						<!--								<TextView style="@style/detail_lineset_title" android:text="굵기" android:id="@id/textView3"/>-->
+						<!--								&lt;!&ndash; <TextView style="@style/detail_valset_valuebox" android:id="@id/textView2"/> &ndash;&gt;-->
+						<!--								<drfn.chart.comp.UnderLineEditText style="@style/detail_valset_valuebox_edit" android:layout_marginLeft="0dp" android:id="@id/textView2"/>-->
+						<!--							</LinearLayout>-->
+						<!--						</LinearLayout>-->
+
+						<!--						<LinearLayout android:layout_width="match_parent" android:layout_height="30dp"></LinearLayout>-->
+
+					</LinearLayout>
+
+					<!--  2020.03.20 주가이동평균 가격, 이평선 타입 수정  -->
+					<!--<LinearLayout-->
+					<!--android:id="@+id/ll_average"-->
+					<!--style="@style/detail_valset_outerlinear"-->
+					<!--android:layout_width="match_parent"-->
+					<!--android:visibility="gone" >-->
+					<!--&lt;!&ndash; 시고가,가중이평선 콤보박스&ndash;&gt;-->
+					<!--<LinearLayout-->
+					<!--android:id="@+id/jipyo_baseprice_average"-->
+					<!--style="@style/detail_valset_linear"-->
+					<!--android:layout_height="match_parent"-->
+					<!--android:gravity="left|center_vertical"-->
+					<!--android:orientation="horizontal">-->
+
+					<!--&lt;!&ndash; 시/저/고 &ndash;&gt;-->
+					<!--<TextView-->
+					<!--android:id="@+id/pricetv_average"-->
+					<!--style="@style/detail_valset_title_datatype"-->
+					<!--android:text="기준" />-->
+
+					<!--<androidx.appcompat.widget.AppCompatButton-->
+					<!--android:id="@+id/jipyo_button_price_average"-->
+					<!--android:layout_width="125dp"-->
+					<!--android:layout_height="36dp"-->
+					<!--android:layout_gravity="left|center_vertical"-->
+					<!--android:layout_marginLeft="20dp"-->
+					<!--android:background="@drawable/btncombo_change"-->
+					<!--android:gravity="left|center_vertical"-->
+					<!--android:paddingLeft="6dp"-->
+					<!--android:text="종가"-->
+					<!--android:textColor="#000000"-->
+					<!--android:textSize="14dp" />-->
+
+					<!--<View-->
+					<!--android:layout_width="0dp"-->
+					<!--android:layout_height="match_parent"-->
+					<!--android:layout_weight="1" />-->
+
+					<!--&lt;!&ndash; 가중평균이동선 타입 &ndash;&gt;-->
+					<!--<TextView-->
+					<!--android:id="@+id/averagetypetv_average"-->
+					<!--style="@style/detail_valset_title_datatype"-->
+					<!--android:text="계산" />-->
+
+					<!--<androidx.appcompat.widget.AppCompatButton-->
+					<!--android:id="@+id/jipyo_button_type_average"-->
+					<!--android:layout_width="88dp"-->
+					<!--android:layout_height="36dp"-->
+					<!--android:layout_gravity="left|center_vertical"-->
+					<!--android:layout_marginLeft="20dp"-->
+					<!--android:layout_marginRight="20dp"-->
+					<!--android:background="@drawable/btncombo_change"-->
+					<!--android:gravity="left|center_vertical"-->
+					<!--android:paddingLeft="6dp"-->
+					<!--android:text="15"-->
+					<!--android:textColor="#000000"-->
+					<!--android:textSize="14dp" />-->
+					<!--</LinearLayout>-->
+					<!--</LinearLayout>-->
+					<!--  2020.03.20 주가이동평균 기준가, 계산방법 추가  -->
+
+					<LinearLayout android:id="@+id/averageLayout" android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="vertical">
+						<!-- <ImageView android:layout_width="match_parent" android:layout_height="1dp" android:background="#eeeeee" /> -->
+
+						<LinearLayout style="@style/detail_valset_outerlinear" android:id="@id/gsetItem1" android:layout_height="90dp">
+							<LinearLayout android:layout_width="match_parent" android:layout_height="match_parent" android:orientation="horizontal">
+								<androidx.appcompat.widget.AppCompatCheckBox style="@style/detail_checkbox" android:id="@id/chk_isSelect" android:layout_marginTop="18dp"  android:layout_gravity="top"/>
+								<LinearLayout android:layout_width="0dp" android:layout_height="match_parent" android:layout_weight="1" android:orientation="vertical">
+									<LinearLayout style="@style/detail_valset_linear" android:layout_marginTop="0dp">
+
+										<TextView style="@style/detail_lineset_title" android:id="@id/textView1" android:layout_gravity="center" android:visibility="gone" />
+										<FrameLayout android:layout_width="match_parent" android:layout_height="wrap_content">
+											<androidx.appcompat.widget.AppCompatButton style="@style/btn_minus_pad" android:id="@id/btnminus"/>
+											<drfn.chart.comp.UnderLineEditText style="@style/detail_valset_valuebox_edit" android:id="@id/textView2" android:layout_width="match_parent"/>
+											<androidx.appcompat.widget.AppCompatButton style="@style/btn_plus_pad" android:id="@id/btnplus" android:layout_marginRight="0dp"/>
+
+											<LinearLayout android:id="@+id/ll_color_line" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_gravity="right" android:layout_marginTop="18dp" android:orientation="horizontal" android:background="@drawable/btn_round_border">
+												<TextView style="@style/detail_lineset_palette" android:id="@id/colortextview" android:background="@drawable/shape_circle"  />
+												<TextView style="@style/detial_lineset_thick" android:id="@id/thicktextview"/>
+											</LinearLayout>
+										</FrameLayout>
+
+										<SeekBar style="@style/detail_valset_seekbar" android:id="@id/seekBar1" android:visibility="gone"/>
+										<LinearLayout
+											android:id="@id/detail_drawtype_combo"
+											style="@style/detail_drawtype_combo"
+											android:layout_marginRight="10dp"
+											android:visibility="gone">
+											<TextView
+												android:id="@id/detail_drawtype_combo_text"
+												style="@style/detail_drawtype_combo_text"/>
+										</LinearLayout>
+										<!-- <LinearLayout style="@style/detail_lineset_items" android:layout_weight="0.04"/> -->  <!--  이 linearlayout 은 whiteSpace 용입니다.  -->
+									</LinearLayout>
+									<LinearLayout android:id="@id/jipyo_baseprice" style="@style/detail_valset_linear" android:paddingLeft="24dp" android:layout_marginTop="8dp" android:layout_marginRight="12dp" android:layout_marginBottom="16dp" >
+										<androidx.appcompat.widget.AppCompatButton android:text="종가" style="@style/detail_drawtype_combo" android:id="@id/jipyo_button_price"  android:textColor="#111111" android:layout_width="120dp"
+											android:textSize="14dp"  android:gravity="center_vertical" android:layout_marginRight="12dp"/>
+										<!-- 가중평균이동선 타입 -->
+										<androidx.appcompat.widget.AppCompatButton android:text="단순이평" style="@style/detail_drawtype_combo" android:id="@id/jipyo_button_type" android:textColor="#111111" android:layout_width="120dp"
+											android:textSize="14dp" android:gravity="center_vertical" />
+									</LinearLayout>
+								</LinearLayout>
+							</LinearLayout>
+						</LinearLayout>
+						<!-- <ImageView android:layout_width="match_parent" android:layout_height="1dp" android:background="#eeeeee"/ > -->
+						<LinearLayout style="@style/detail_valset_outerlinear" android:id="@id/gsetItem2" android:layout_height="90dp">
+							<LinearLayout android:layout_width="match_parent" android:layout_height="match_parent" android:orientation="horizontal">
+								<androidx.appcompat.widget.AppCompatCheckBox style="@style/detail_checkbox" android:id="@id/chk_isSelect" android:layout_marginTop="18dp"  android:layout_gravity="top"/>
+								<LinearLayout android:layout_width="0dp" android:layout_height="match_parent" android:layout_weight="1" android:orientation="vertical">
+									<LinearLayout style="@style/detail_valset_linear" android:layout_marginTop="0dp">
+
+										<TextView style="@style/detail_lineset_title" android:id="@id/textView1" android:layout_gravity="center" android:visibility="gone" />
+										<FrameLayout android:layout_width="match_parent" android:layout_height="wrap_content">
+											<androidx.appcompat.widget.AppCompatButton style="@style/btn_minus_pad" android:id="@id/btnminus"/>
+											<drfn.chart.comp.UnderLineEditText style="@style/detail_valset_valuebox_edit" android:id="@id/textView2" android:layout_width="match_parent"/>
+											<androidx.appcompat.widget.AppCompatButton style="@style/btn_plus_pad" android:id="@id/btnplus" android:layout_marginRight="0dp"/>
+
+											<LinearLayout android:id="@id/ll_color_line" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_gravity="right" android:layout_marginTop="18dp" android:orientation="horizontal" android:background="@drawable/btn_round_border">
+												<TextView style="@style/detail_lineset_palette" android:id="@id/colortextview" android:background="@drawable/shape_circle"  />
+												<TextView style="@style/detial_lineset_thick" android:id="@id/thicktextview"/>
+											</LinearLayout>
+										</FrameLayout>
+
+										<SeekBar style="@style/detail_valset_seekbar" android:id="@id/seekBar2" android:visibility="gone"/>
+										<LinearLayout
+											android:id="@id/detail_drawtype_combo"
+											style="@style/detail_drawtype_combo"
+											android:layout_marginRight="10dp"
+											android:visibility="gone">
+											<TextView
+												android:id="@id/detail_drawtype_combo_text"
+												style="@style/detail_drawtype_combo_text"/>
+										</LinearLayout>
+										<!-- <LinearLayout style="@style/detail_lineset_items" android:layout_weight="0.04"/> -->  <!--  이 linearlayout 은 whiteSpace 용입니다.  -->
+									</LinearLayout>
+									<LinearLayout android:id="@id/jipyo_baseprice" style="@style/detail_valset_linear" android:paddingLeft="24dp" android:layout_marginTop="8dp" android:layout_marginRight="12dp" android:layout_marginBottom="16dp" >
+										<androidx.appcompat.widget.AppCompatButton android:text="종가" style="@style/detail_drawtype_combo" android:id="@id/jipyo_button_price"  android:textColor="#111111" android:layout_width="120dp"
+											android:textSize="14dp"  android:gravity="center_vertical" android:layout_marginRight="12dp"/>
+										<!-- 가중평균이동선 타입 -->
+										<androidx.appcompat.widget.AppCompatButton android:text="단순이평" style="@style/detail_drawtype_combo" android:id="@id/jipyo_button_type" android:textColor="#111111" android:layout_width="120dp"
+											android:textSize="14dp" android:gravity="center_vertical" />
+									</LinearLayout>
+								</LinearLayout>
+							</LinearLayout>
+						</LinearLayout>
+						<!-- <ImageView android:layout_width="match_parent" android:layout_height="1dp" android:background="#eeeeee"/ > -->
+						<LinearLayout style="@style/detail_valset_outerlinear" android:id="@id/gsetItem3" android:layout_height="90dp">
+							<LinearLayout android:layout_width="match_parent" android:layout_height="match_parent" android:orientation="horizontal">
+								<androidx.appcompat.widget.AppCompatCheckBox style="@style/detail_checkbox" android:id="@id/chk_isSelect" android:layout_marginTop="18dp"  android:layout_gravity="top"/>
+								<LinearLayout android:layout_width="0dp" android:layout_height="match_parent" android:layout_weight="1" android:orientation="vertical">
+									<LinearLayout style="@style/detail_valset_linear" android:layout_marginTop="0dp">
+
+										<TextView style="@style/detail_lineset_title" android:id="@id/textView1" android:layout_gravity="center" android:visibility="gone" />
+										<FrameLayout android:layout_width="match_parent" android:layout_height="wrap_content">
+											<androidx.appcompat.widget.AppCompatButton style="@style/btn_minus_pad" android:id="@id/btnminus"/>
+											<drfn.chart.comp.UnderLineEditText style="@style/detail_valset_valuebox_edit" android:id="@id/textView2" android:layout_width="match_parent"/>
+											<androidx.appcompat.widget.AppCompatButton style="@style/btn_plus_pad" android:id="@id/btnplus" android:layout_marginRight="0dp"/>
+
+											<LinearLayout android:id="@id/ll_color_line" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_gravity="right" android:layout_marginTop="18dp" android:orientation="horizontal" android:background="@drawable/btn_round_border">
+												<TextView style="@style/detail_lineset_palette" android:id="@id/colortextview" android:background="@drawable/shape_circle"  />
+												<TextView style="@style/detial_lineset_thick" android:id="@id/thicktextview"/>
+											</LinearLayout>
+										</FrameLayout>
+
+										<SeekBar style="@style/detail_valset_seekbar" android:id="@id/seekBar3" android:visibility="gone"/>
+										<LinearLayout
+											android:id="@id/detail_drawtype_combo"
+											style="@style/detail_drawtype_combo"
+											android:layout_marginRight="10dp"
+											android:visibility="gone">
+											<TextView
+												android:id="@id/detail_drawtype_combo_text"
+												style="@style/detail_drawtype_combo_text"/>
+										</LinearLayout>
+										<!-- <LinearLayout style="@style/detail_lineset_items" android:layout_weight="0.04"/> -->  <!--  이 linearlayout 은 whiteSpace 용입니다.  -->
+									</LinearLayout>
+									<LinearLayout android:id="@id/jipyo_baseprice" style="@style/detail_valset_linear" android:paddingLeft="24dp" android:layout_marginTop="8dp" android:layout_marginRight="12dp" android:layout_marginBottom="16dp" >
+										<androidx.appcompat.widget.AppCompatButton android:text="종가" style="@style/detail_drawtype_combo" android:id="@id/jipyo_button_price"  android:textColor="#111111" android:layout_width="120dp"
+											android:textSize="14dp"  android:gravity="center_vertical" android:layout_marginRight="12dp"/>
+										<!-- 가중평균이동선 타입 -->
+										<androidx.appcompat.widget.AppCompatButton android:text="단순이평" style="@style/detail_drawtype_combo" android:id="@id/jipyo_button_type" android:textColor="#111111" android:layout_width="120dp"
+											android:textSize="14dp" android:gravity="center_vertical" />
+									</LinearLayout>
+								</LinearLayout>
+							</LinearLayout>
+						</LinearLayout>
+						<!-- <ImageView android:layout_width="match_parent" android:layout_height="1dp" android:background="#eeeeee"/ > -->
+						<LinearLayout style="@style/detail_valset_outerlinear" android:id="@id/gsetItem4" android:layout_height="90dp">
+							<LinearLayout android:layout_width="match_parent" android:layout_height="match_parent" android:orientation="horizontal">
+								<androidx.appcompat.widget.AppCompatCheckBox style="@style/detail_checkbox" android:id="@id/chk_isSelect" android:layout_marginTop="18dp"  android:layout_gravity="top"/>
+								<LinearLayout android:layout_width="0dp" android:layout_height="match_parent" android:layout_weight="1" android:orientation="vertical">
+									<LinearLayout style="@style/detail_valset_linear" android:layout_marginTop="0dp">
+
+										<TextView style="@style/detail_lineset_title" android:id="@id/textView1" android:layout_gravity="center" android:visibility="gone" />
+										<FrameLayout android:layout_width="match_parent" android:layout_height="wrap_content">
+											<androidx.appcompat.widget.AppCompatButton style="@style/btn_minus_pad" android:id="@id/btnminus"/>
+											<drfn.chart.comp.UnderLineEditText style="@style/detail_valset_valuebox_edit" android:id="@id/textView2" android:layout_width="match_parent"/>
+											<androidx.appcompat.widget.AppCompatButton style="@style/btn_plus_pad" android:id="@id/btnplus" android:layout_marginRight="0dp"/>
+
+											<LinearLayout android:id="@id/ll_color_line" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_gravity="right" android:layout_marginTop="18dp" android:orientation="horizontal" android:background="@drawable/btn_round_border">
+												<TextView style="@style/detail_lineset_palette" android:id="@id/colortextview" android:background="@drawable/shape_circle"  />
+												<TextView style="@style/detial_lineset_thick" android:id="@id/thicktextview"/>
+											</LinearLayout>
+										</FrameLayout>
+
+										<SeekBar style="@style/detail_valset_seekbar" android:id="@id/seekBar4" android:visibility="gone"/>
+										<LinearLayout
+											android:id="@id/detail_drawtype_combo"
+											style="@style/detail_drawtype_combo"
+											android:layout_marginRight="10dp"
+											android:visibility="gone">
+											<TextView
+												android:id="@id/detail_drawtype_combo_text"
+												style="@style/detail_drawtype_combo_text"/>
+										</LinearLayout>
+										<!-- <LinearLayout style="@style/detail_lineset_items" android:layout_weight="0.04"/> -->  <!--  이 linearlayout 은 whiteSpace 용입니다.  -->
+									</LinearLayout>
+									<LinearLayout android:id="@id/jipyo_baseprice" style="@style/detail_valset_linear" android:paddingLeft="24dp" android:layout_marginTop="8dp" android:layout_marginRight="12dp" android:layout_marginBottom="16dp" >
+										<androidx.appcompat.widget.AppCompatButton android:text="종가" style="@style/detail_drawtype_combo" android:id="@id/jipyo_button_price"  android:textColor="#111111" android:layout_width="120dp"
+											android:textSize="14dp"  android:gravity="center_vertical" android:layout_marginRight="12dp"/>
+										<!-- 가중평균이동선 타입 -->
+										<androidx.appcompat.widget.AppCompatButton android:text="단순이평" style="@style/detail_drawtype_combo" android:id="@id/jipyo_button_type" android:textColor="#111111" android:layout_width="120dp"
+											android:textSize="14dp" android:gravity="center_vertical" />
+									</LinearLayout>
+								</LinearLayout>
+							</LinearLayout>
+						</LinearLayout>
+						<!-- <ImageView android:layout_width="match_parent" android:layout_height="1dp" android:background="#eeeeee"/ > -->
+						<LinearLayout style="@style/detail_valset_outerlinear" android:id="@id/gsetItem5" android:layout_height="90dp">
+							<LinearLayout android:layout_width="match_parent" android:layout_height="match_parent" android:orientation="horizontal">
+								<androidx.appcompat.widget.AppCompatCheckBox style="@style/detail_checkbox" android:id="@id/chk_isSelect" android:layout_marginTop="18dp"  android:layout_gravity="top"/>
+								<LinearLayout android:layout_width="0dp" android:layout_height="match_parent" android:layout_weight="1" android:orientation="vertical">
+									<LinearLayout style="@style/detail_valset_linear" android:layout_marginTop="0dp">
+
+										<TextView style="@style/detail_lineset_title" android:id="@id/textView1" android:layout_gravity="center" android:visibility="gone" />
+										<FrameLayout android:layout_width="match_parent" android:layout_height="wrap_content">
+											<androidx.appcompat.widget.AppCompatButton style="@style/btn_minus_pad" android:id="@id/btnminus"/>
+											<drfn.chart.comp.UnderLineEditText style="@style/detail_valset_valuebox_edit" android:id="@id/textView2" android:layout_width="match_parent"/>
+											<androidx.appcompat.widget.AppCompatButton style="@style/btn_plus_pad" android:id="@id/btnplus" android:layout_marginRight="0dp"/>
+
+											<LinearLayout android:id="@id/ll_color_line" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_gravity="right" android:layout_marginTop="18dp" android:orientation="horizontal" android:background="@drawable/btn_round_border">
+												<TextView style="@style/detail_lineset_palette" android:id="@id/colortextview" android:background="@drawable/shape_circle"  />
+												<TextView style="@style/detial_lineset_thick" android:id="@id/thicktextview"/>
+											</LinearLayout>
+										</FrameLayout>
+
+										<SeekBar style="@style/detail_valset_seekbar" android:id="@id/seekBar5" android:visibility="gone"/>
+										<LinearLayout
+											android:id="@id/detail_drawtype_combo"
+											style="@style/detail_drawtype_combo"
+											android:layout_marginRight="10dp"
+											android:visibility="gone">
+											<TextView
+												android:id="@id/detail_drawtype_combo_text"
+												style="@style/detail_drawtype_combo_text"/>
+										</LinearLayout>
+										<!-- <LinearLayout style="@style/detail_lineset_items" android:layout_weight="0.04"/> -->  <!--  이 linearlayout 은 whiteSpace 용입니다.  -->
+									</LinearLayout>
+									<LinearLayout android:id="@id/jipyo_baseprice" style="@style/detail_valset_linear" android:paddingLeft="24dp" android:layout_marginTop="8dp" android:layout_marginRight="12dp" android:layout_marginBottom="16dp" >
+										<androidx.appcompat.widget.AppCompatButton android:text="종가" style="@style/detail_drawtype_combo" android:id="@id/jipyo_button_price"  android:textColor="#111111" android:layout_width="120dp"
+											android:textSize="14dp"  android:gravity="center_vertical" android:layout_marginRight="12dp"/>
+										<!-- 가중평균이동선 타입 -->
+										<androidx.appcompat.widget.AppCompatButton android:text="단순이평" style="@style/detail_drawtype_combo" android:id="@id/jipyo_button_type" android:textColor="#111111" android:layout_width="120dp"
+											android:textSize="14dp" android:gravity="center_vertical" />
+									</LinearLayout>
+								</LinearLayout>
+							</LinearLayout>
+						</LinearLayout>
+						<!-- <ImageView android:layout_width="match_parent" android:layout_height="1dp" android:background="#eeeeee"/ > -->
+						<LinearLayout style="@style/detail_valset_outerlinear" android:id="@id/gsetItem6" android:layout_height="90dp">
+							<LinearLayout android:layout_width="match_parent" android:layout_height="match_parent" android:orientation="horizontal">
+								<androidx.appcompat.widget.AppCompatCheckBox style="@style/detail_checkbox" android:id="@id/chk_isSelect" android:layout_marginTop="18dp"  android:layout_gravity="top"/>
+								<LinearLayout android:layout_width="0dp" android:layout_height="match_parent" android:layout_weight="1" android:orientation="vertical">
+									<LinearLayout style="@style/detail_valset_linear" android:layout_marginTop="0dp">
+
+										<TextView style="@style/detail_lineset_title" android:id="@id/textView1" android:layout_gravity="center" android:visibility="gone" />
+										<FrameLayout android:layout_width="match_parent" android:layout_height="wrap_content">
+											<androidx.appcompat.widget.AppCompatButton style="@style/btn_minus_pad" android:id="@id/btnminus"/>
+											<drfn.chart.comp.UnderLineEditText style="@style/detail_valset_valuebox_edit" android:id="@id/textView2" android:layout_width="match_parent"/>
+											<androidx.appcompat.widget.AppCompatButton style="@style/btn_plus_pad" android:id="@id/btnplus" android:layout_marginRight="0dp"/>
+
+											<LinearLayout android:id="@id/ll_color_line" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_gravity="right" android:layout_marginTop="18dp" android:orientation="horizontal" android:background="@drawable/btn_round_border">
+												<TextView style="@style/detail_lineset_palette" android:id="@id/colortextview" android:background="@drawable/shape_circle"  />
+												<TextView style="@style/detial_lineset_thick" android:id="@id/thicktextview"/>
+											</LinearLayout>
+										</FrameLayout>
+
+										<SeekBar style="@style/detail_valset_seekbar" android:id="@id/seekBar6" android:visibility="gone"/>
+										<LinearLayout
+											android:id="@id/detail_drawtype_combo"
+											style="@style/detail_drawtype_combo"
+											android:layout_marginRight="10dp"
+											android:visibility="gone">
+											<TextView
+												android:id="@id/detail_drawtype_combo_text"
+												style="@style/detail_drawtype_combo_text"/>
+										</LinearLayout>
+										<!-- <LinearLayout style="@style/detail_lineset_items" android:layout_weight="0.04"/> -->  <!--  이 linearlayout 은 whiteSpace 용입니다.  -->
+									</LinearLayout>
+									<LinearLayout android:id="@id/jipyo_baseprice" style="@style/detail_valset_linear" android:paddingLeft="24dp" android:layout_marginTop="8dp" android:layout_marginRight="12dp" android:layout_marginBottom="16dp" >
+										<androidx.appcompat.widget.AppCompatButton android:text="종가" style="@style/detail_drawtype_combo" android:id="@id/jipyo_button_price"  android:textColor="#111111" android:layout_width="120dp"
+											android:textSize="14dp"  android:gravity="center_vertical" android:layout_marginRight="12dp"/>
+										<!-- 가중평균이동선 타입 -->
+										<androidx.appcompat.widget.AppCompatButton android:text="단순이평" style="@style/detail_drawtype_combo" android:id="@id/jipyo_button_type" android:textColor="#111111" android:layout_width="120dp"
+											android:textSize="14dp" android:gravity="center_vertical" />
+									</LinearLayout>
+								</LinearLayout>
+							</LinearLayout>
+						</LinearLayout>
+						<!-- <ImageView android:layout_width="match_parent" android:layout_height="1dp" android:background="#eeeeee"/ > -->
+						<LinearLayout style="@style/detail_valset_outerlinear" android:id="@id/gsetItem7" android:layout_height="90dp">
+							<LinearLayout android:layout_width="match_parent" android:layout_height="match_parent" android:orientation="horizontal">
+								<androidx.appcompat.widget.AppCompatCheckBox style="@style/detail_checkbox" android:id="@id/chk_isSelect" android:layout_marginTop="18dp"  android:layout_gravity="top"/>
+								<LinearLayout android:layout_width="0dp" android:layout_height="match_parent" android:layout_weight="1" android:orientation="vertical">
+									<LinearLayout style="@style/detail_valset_linear" android:layout_marginTop="0dp">
+
+										<TextView style="@style/detail_lineset_title" android:id="@id/textView1" android:layout_gravity="center" android:visibility="gone" />
+										<FrameLayout android:layout_width="match_parent" android:layout_height="wrap_content">
+											<androidx.appcompat.widget.AppCompatButton style="@style/btn_minus_pad" android:id="@id/btnminus"/>
+											<drfn.chart.comp.UnderLineEditText style="@style/detail_valset_valuebox_edit" android:id="@id/textView2" android:layout_width="match_parent"/>
+											<androidx.appcompat.widget.AppCompatButton style="@style/btn_plus_pad" android:id="@id/btnplus" android:layout_marginRight="0dp"/>
+
+											<LinearLayout android:id="@id/ll_color_line" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_gravity="right" android:layout_marginTop="18dp" android:orientation="horizontal" android:background="@drawable/btn_round_border">
+												<TextView style="@style/detail_lineset_palette" android:id="@id/colortextview" android:background="@drawable/shape_circle"  />
+												<TextView style="@style/detial_lineset_thick" android:id="@id/thicktextview"/>
+											</LinearLayout>
+										</FrameLayout>
+
+										<SeekBar style="@style/detail_valset_seekbar" android:id="@id/seekBar7" android:visibility="gone"/>
+										<LinearLayout
+											android:id="@id/detail_drawtype_combo"
+											style="@style/detail_drawtype_combo"
+											android:layout_marginRight="10dp"
+											android:visibility="gone">
+											<TextView
+												android:id="@id/detail_drawtype_combo_text"
+												style="@style/detail_drawtype_combo_text"/>
+										</LinearLayout>
+										<!-- <LinearLayout style="@style/detail_lineset_items" android:layout_weight="0.04"/> -->  <!--  이 linearlayout 은 whiteSpace 용입니다.  -->
+									</LinearLayout>
+									<LinearLayout android:id="@id/jipyo_baseprice" style="@style/detail_valset_linear" android:paddingLeft="24dp" android:layout_marginTop="8dp" android:layout_marginRight="12dp" android:layout_marginBottom="16dp" >
+										<androidx.appcompat.widget.AppCompatButton android:text="종가" style="@style/detail_drawtype_combo" android:id="@id/jipyo_button_price"  android:textColor="#111111" android:layout_width="120dp"
+											android:textSize="14dp"  android:gravity="center_vertical" android:layout_marginRight="12dp"/>
+										<!-- 가중평균이동선 타입 -->
+										<androidx.appcompat.widget.AppCompatButton android:text="단순이평" style="@style/detail_drawtype_combo" android:id="@id/jipyo_button_type" android:textColor="#111111" android:layout_width="120dp"
+											android:textSize="14dp" android:gravity="center_vertical" />
+									</LinearLayout>
+								</LinearLayout>
+							</LinearLayout>
+						</LinearLayout>
+						<!-- <ImageView android:layout_width="match_parent" android:layout_height="1dp" android:background="#eeeeee"/ > -->
+						<LinearLayout style="@style/detail_valset_outerlinear" android:id="@id/gsetItem8" android:layout_height="90dp">
+							<LinearLayout android:layout_width="match_parent" android:layout_height="match_parent" android:orientation="horizontal">
+								<androidx.appcompat.widget.AppCompatCheckBox style="@style/detail_checkbox" android:id="@id/chk_isSelect" android:layout_marginTop="18dp"  android:layout_gravity="top"/>
+								<LinearLayout android:layout_width="0dp" android:layout_height="match_parent" android:layout_weight="1" android:orientation="vertical">
+									<LinearLayout style="@style/detail_valset_linear" android:layout_marginTop="0dp">
+
+										<TextView style="@style/detail_lineset_title" android:id="@id/textView1" android:layout_gravity="center" android:visibility="gone" />
+										<FrameLayout android:layout_width="match_parent" android:layout_height="wrap_content">
+											<androidx.appcompat.widget.AppCompatButton style="@style/btn_minus_pad" android:id="@id/btnminus"/>
+											<drfn.chart.comp.UnderLineEditText style="@style/detail_valset_valuebox_edit" android:id="@id/textView2" android:layout_width="match_parent"/>
+											<androidx.appcompat.widget.AppCompatButton style="@style/btn_plus_pad" android:id="@id/btnplus" android:layout_marginRight="0dp"/>
+
+											<LinearLayout android:id="@id/ll_color_line" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_gravity="right" android:layout_marginTop="18dp" android:orientation="horizontal" android:background="@drawable/btn_round_border">
+												<TextView style="@style/detail_lineset_palette" android:id="@id/colortextview" android:background="@drawable/shape_circle"  />
+												<TextView style="@style/detial_lineset_thick" android:id="@id/thicktextview"/>
+											</LinearLayout>
+										</FrameLayout>
+
+										<SeekBar style="@style/detail_valset_seekbar" android:id="@id/seekBar8" android:visibility="gone"/>
+										<LinearLayout
+											android:id="@id/detail_drawtype_combo"
+											style="@style/detail_drawtype_combo"
+											android:layout_marginRight="10dp"
+											android:visibility="gone">
+											<TextView
+												android:id="@id/detail_drawtype_combo_text"
+												style="@style/detail_drawtype_combo_text"/>
+										</LinearLayout>
+										<!-- <LinearLayout style="@style/detail_lineset_items" android:layout_weight="0.04"/> -->  <!--  이 linearlayout 은 whiteSpace 용입니다.  -->
+									</LinearLayout>
+									<LinearLayout android:id="@id/jipyo_baseprice" style="@style/detail_valset_linear" android:paddingLeft="24dp" android:layout_marginTop="8dp" android:layout_marginRight="12dp" android:layout_marginBottom="16dp" >
+										<androidx.appcompat.widget.AppCompatButton android:text="종가" style="@style/detail_drawtype_combo" android:id="@id/jipyo_button_price"  android:textColor="#111111" android:layout_width="120dp"
+											android:textSize="14dp"  android:gravity="center_vertical" android:layout_marginRight="12dp"/>
+										<!-- 가중평균이동선 타입 -->
+										<androidx.appcompat.widget.AppCompatButton android:text="단순이평" style="@style/detail_drawtype_combo" android:id="@id/jipyo_button_type" android:textColor="#111111" android:layout_width="120dp"
+											android:textSize="14dp" android:gravity="center_vertical" />
+									</LinearLayout>
+								</LinearLayout>
+							</LinearLayout>
+						</LinearLayout>
+						<!-- <ImageView android:layout_width="match_parent" android:layout_height="1dp" android:background="#eeeeee"/ > -->
+						<LinearLayout style="@style/detail_valset_outerlinear" android:id="@id/gsetItem9" android:layout_height="90dp">
+							<LinearLayout android:layout_width="match_parent" android:layout_height="match_parent" android:orientation="horizontal">
+								<androidx.appcompat.widget.AppCompatCheckBox style="@style/detail_checkbox" android:id="@id/chk_isSelect" android:layout_marginTop="18dp"  android:layout_gravity="top"/>
+								<LinearLayout android:layout_width="0dp" android:layout_height="match_parent" android:layout_weight="1" android:orientation="vertical">
+									<LinearLayout style="@style/detail_valset_linear" android:layout_marginTop="0dp">
+
+										<TextView style="@style/detail_lineset_title" android:id="@id/textView1" android:layout_gravity="center" android:visibility="gone" />
+										<FrameLayout android:layout_width="match_parent" android:layout_height="wrap_content">
+											<androidx.appcompat.widget.AppCompatButton style="@style/btn_minus_pad" android:id="@id/btnminus"/>
+											<drfn.chart.comp.UnderLineEditText style="@style/detail_valset_valuebox_edit" android:id="@id/textView2" android:layout_width="match_parent"/>
+											<androidx.appcompat.widget.AppCompatButton style="@style/btn_plus_pad" android:id="@id/btnplus" android:layout_marginRight="0dp"/>
+
+											<LinearLayout android:id="@id/ll_color_line" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_gravity="right" android:layout_marginTop="18dp" android:orientation="horizontal" android:background="@drawable/btn_round_border">
+												<TextView style="@style/detail_lineset_palette" android:id="@id/colortextview" android:background="@drawable/shape_circle"  />
+												<TextView style="@style/detial_lineset_thick" android:id="@id/thicktextview"/>
+											</LinearLayout>
+										</FrameLayout>
+
+										<SeekBar style="@style/detail_valset_seekbar" android:id="@id/seekBar9" android:visibility="gone"/>
+										<LinearLayout
+											android:id="@id/detail_drawtype_combo"
+											style="@style/detail_drawtype_combo"
+											android:layout_marginRight="10dp"
+											android:visibility="gone">
+											<TextView
+												android:id="@id/detail_drawtype_combo_text"
+												style="@style/detail_drawtype_combo_text"/>
+										</LinearLayout>
+										<!-- <LinearLayout style="@style/detail_lineset_items" android:layout_weight="0.04"/> -->  <!--  이 linearlayout 은 whiteSpace 용입니다.  -->
+									</LinearLayout>
+									<LinearLayout android:id="@id/jipyo_baseprice" style="@style/detail_valset_linear" android:paddingLeft="24dp" android:layout_marginTop="8dp" android:layout_marginRight="12dp" android:layout_marginBottom="16dp" >
+										<androidx.appcompat.widget.AppCompatButton android:text="종가" style="@style/detail_drawtype_combo" android:id="@id/jipyo_button_price"  android:textColor="#111111" android:layout_width="120dp"
+											android:textSize="14dp"  android:gravity="center_vertical" android:layout_marginRight="12dp"/>
+										<!-- 가중평균이동선 타입 -->
+										<androidx.appcompat.widget.AppCompatButton android:text="단순이평" style="@style/detail_drawtype_combo" android:id="@id/jipyo_button_type" android:textColor="#111111" android:layout_width="120dp"
+											android:textSize="14dp" android:gravity="center_vertical" />
+									</LinearLayout>
+								</LinearLayout>
+							</LinearLayout>
+						</LinearLayout>
+						<!-- <ImageView android:layout_width="match_parent" android:layout_height="1dp" android:background="#eeeeee"/ > -->
+						<LinearLayout style="@style/detail_valset_outerlinear" android:id="@id/gsetItem10" android:layout_height="90dp">
+							<LinearLayout android:layout_width="match_parent" android:layout_height="match_parent" android:orientation="horizontal">
+								<androidx.appcompat.widget.AppCompatCheckBox style="@style/detail_checkbox" android:id="@id/chk_isSelect" android:layout_marginTop="18dp"  android:layout_gravity="top"/>
+								<LinearLayout android:layout_width="0dp" android:layout_height="match_parent" android:layout_weight="1" android:orientation="vertical">
+									<LinearLayout style="@style/detail_valset_linear" android:layout_marginTop="0dp">
+
+										<TextView style="@style/detail_lineset_title" android:id="@id/textView1" android:layout_gravity="center" android:visibility="gone" />
+										<FrameLayout android:layout_width="match_parent" android:layout_height="wrap_content">
+											<androidx.appcompat.widget.AppCompatButton style="@style/btn_minus_pad" android:id="@id/btnminus"/>
+											<drfn.chart.comp.UnderLineEditText style="@style/detail_valset_valuebox_edit" android:id="@id/textView2" android:layout_width="match_parent"/>
+											<androidx.appcompat.widget.AppCompatButton style="@style/btn_plus_pad" android:id="@id/btnplus" android:layout_marginRight="0dp"/>
+
+											<LinearLayout android:id="@id/ll_color_line" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_gravity="right" android:layout_marginTop="18dp" android:orientation="horizontal" android:background="@drawable/btn_round_border">
+												<TextView style="@style/detail_lineset_palette" android:id="@id/colortextview" android:background="@drawable/shape_circle"  />
+												<TextView style="@style/detial_lineset_thick" android:id="@id/thicktextview"/>
+											</LinearLayout>
+										</FrameLayout>
+
+										<SeekBar style="@style/detail_valset_seekbar" android:id="@id/seekBar10" android:visibility="gone"/>
+										<LinearLayout
+											android:id="@id/detail_drawtype_combo"
+											style="@style/detail_drawtype_combo"
+											android:layout_marginRight="10dp"
+											android:visibility="gone">
+											<TextView
+												android:id="@id/detail_drawtype_combo_text"
+												style="@style/detail_drawtype_combo_text"/>
+										</LinearLayout>
+										<!-- <LinearLayout style="@style/detail_lineset_items" android:layout_weight="0.04"/> -->  <!--  이 linearlayout 은 whiteSpace 용입니다.  -->
+									</LinearLayout>
+									<LinearLayout android:id="@id/jipyo_baseprice" style="@style/detail_valset_linear" android:paddingLeft="24dp" android:layout_marginTop="8dp" android:layout_marginRight="12dp" android:layout_marginBottom="16dp" >
+										<androidx.appcompat.widget.AppCompatButton android:text="종가" style="@style/detail_drawtype_combo" android:id="@id/jipyo_button_price"  android:textColor="#111111" android:layout_width="120dp"
+											android:textSize="14dp"  android:gravity="center_vertical" android:layout_marginRight="12dp"/>
+										<!-- 가중평균이동선 타입 -->
+										<androidx.appcompat.widget.AppCompatButton android:text="단순이평" style="@style/detail_drawtype_combo" android:id="@id/jipyo_button_type" android:textColor="#111111" android:layout_width="120dp"
+											android:textSize="14dp" android:gravity="center_vertical" />
+									</LinearLayout>
+								</LinearLayout>
+							</LinearLayout>
+						</LinearLayout>
+						<!-- <ImageView android:layout_width="match_parent" android:layout_height="1dp" android:background="#eeeeee"/ > -->
+					</LinearLayout>
+
+					<!-- 2013. 9. 3  지표마다 기준선 설정 추가  -->
+					<TextView style="@style/detail_headline2" android:text="기준선 설정" android:id="@+id/baselinesettingtv" android:visibility="gone"/>
+					<LinearLayout android:id="@+id/baselinesettinglinear" android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="vertical">
+
+						<LinearLayout style="@style/detail_basesetting_outerlinear" android:id="@+id/baselinesetting_gsetItem1" android:visibility="invisible">
+							<LinearLayout style="@style/detail_valset_linear" android:layout_marginTop="0dp">
+								<!--  <LinearLayout style="@style/detail_lineset_items"/> -->
+								<androidx.appcompat.widget.AppCompatCheckBox style="@style/detail_checkbox" android:id="@+id/chk_basesetting_1" android:tag="1"/>
+								<!-- <LinearLayout style="@style/detail_lineset_items"/> -->
+								<TextView style="@style/detail_basesetting_title" android:text="기준선1" android:id="@+id/tv_basesetting_1"/>
+								<drfn.chart.comp.UnderLineEditText style="@style/detail_basesetting_valuebox_edit" android:id="@+id/ed_basesetting_1" android:tag="2222"/>
+								<!-- <LinearLayout style="@style/detail_lineset_items" android:layout_weight="0.1"/> -->  <!--  이 linearlayout 은 whiteSpace 용입니다.  -->
+							</LinearLayout>
+						</LinearLayout>
+
+						<LinearLayout style="@style/detail_basesetting_outerlinear" android:id="@+id/baselinesetting_gsetItem2" android:visibility="gone">
+							<LinearLayout style="@style/detail_valset_linear" android:layout_marginTop="0dp">
+								<!--  <LinearLayout style="@style/detail_lineset_items"/> -->
+								<androidx.appcompat.widget.AppCompatCheckBox style="@style/detail_checkbox" android:id="@+id/chk_basesetting_2" android:tag="2"/>
+								<!-- <LinearLayout style="@style/detail_lineset_items"/> -->
+								<TextView style="@style/detail_basesetting_title" android:text="기준선2" android:id="@+id/tv_basesetting_2"/>
+								<drfn.chart.comp.UnderLineEditText style="@style/detail_basesetting_valuebox_edit" android:id="@+id/ed_basesetting_2" android:tag="3333"/>
+								<!-- <LinearLayout style="@style/detail_lineset_items" android:layout_weight="0.1"/> -->  <!--  이 linearlayout 은 whiteSpace 용입니다.  -->
+							</LinearLayout>
+						</LinearLayout>
+
+					</LinearLayout>
+
+					<!-- 2014. 9. 11 매매 신호 보기 체크버튼 상세설정창에 추가  -->
+					<LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:id="@+id/sellingsignal_linear" android:orientation="vertical">
+						<TextView style="@style/detail_headline2" android:text="기타 설정" android:id="@+id/settingtv" android:visibility="gone"/>
+						<LinearLayout style="@style/detail_valset_outerlinear" android:background="#ffffff" android:orientation="horizontal" android:visibility="gone"> <!-- //2023.11.03 by CYJ - 카카오페이 디자인 -->
+							<androidx.appcompat.widget.AppCompatCheckBox style="@style/detail_checkbox" android:id="@+id/chk_sellingsignal" android:layout_marginLeft="18dp"/>
+							<TextView style="@style/detail_basesetting_title" android:id="@+id/tv_sellingsignal" android:layout_width="wrap_content" android:text="매매 신호 보기"/>
+						</LinearLayout>
+					</LinearLayout>
+
+					<!-- <LinearLayout android:id="@id/detail_tab" android:layout_height="35dip" android:layout_width="match_parent" android:orientation="horizontal" android:background="#e3e3e3">
+                        <androidx.appcompat.widget.AppCompatButton
+                           android:id="@id/btn_description"
+                           style="@style/detail_tabbutton"
+                           android:text="지표설명"
+                           android:textSize="14dp"
+                           android:background="@drawable/btn_info_change"/>
+                    </LinearLayout> -->
+
+					<!-- 2013. 3. 27  대기매물 설정창 레이아웃  -->
+					<LinearLayout android:id="@+id/standscalelinear" android:layout_width="match_parent" android:layout_height="wrap_content"
+						android:orientation="vertical" android:visibility="gone">
+						<LinearLayout style="@style/detail_standscale_outerlinear" android:id="@+id/standscale_row_1_linear">
+							<LinearLayout style="@style/detail_valset_linear">
+								<TextView style="@style/detail_volset_title" android:text="기본매물" android:id="@+id/standscale_row_1_title"/>
+								<View android:layout_width="0dp" android:layout_height="match_parent" android:layout_weight="1" />
+								<TextView style="@style/detail_standscale_items" android:id="@+id/standscale_row_1_colortextview" android:background="@drawable/shape_circle"/>
+								<!--					           <LinearLayout style="@style/detail_lineset_items"/>  &lt;!&ndash;  이 linearlayout 은 whiteSpace 용입니다.  &ndash;&gt;-->
+							</LinearLayout>
+							<ImageView android:layout_width="match_parent" android:layout_height="1dp" android:background="#f0f0f0" />
+						</LinearLayout>
+
+						<LinearLayout style="@style/detail_standscale_outerlinear" android:id="@+id/standscale_row_2_linear">
+							<LinearLayout style="@style/detail_valset_linear" >
+								<TextView style="@style/detail_volset_title" android:text="현재매물" android:id="@+id/standscale_row_2_title"/>
+								<View android:layout_width="0dp" android:layout_height="match_parent" android:layout_weight="1" />
+								<TextView style="@style/detail_standscale_items" android:id="@+id/standscale_row_2_colortextview"
+									android:background="@drawable/shape_circle"/>
+								<!--					           <LinearLayout style="@style/detail_lineset_items" />  &lt;!&ndash;  이 linearlayout 은 whiteSpace 용입니다.  &ndash;&gt;-->
+							</LinearLayout>
+							<ImageView android:layout_width="match_parent" android:layout_height="1dp" android:background="#f0f0f0" />
+						</LinearLayout>
+
+						<LinearLayout style="@style/detail_standscale_outerlinear" android:id="@+id/standscale_row_3_linear">
+							<LinearLayout style="@style/detail_valset_linear" >
+								<TextView style="@style/detail_volset_title" android:text="최대매물" android:id="@+id/standscale_row_3_title"/>
+								<View android:layout_width="0dp" android:layout_height="match_parent" android:layout_weight="1" />
+								<TextView style="@style/detail_standscale_items" android:id="@+id/standscale_row_3_colortextview"
+									android:background="@drawable/shape_circle"/>
+								<!--					           <LinearLayout style="@style/detail_lineset_items"/>  &lt;!&ndash;  이 linearlayout 은 whiteSpace 용입니다.  &ndash;&gt;-->
+							</LinearLayout>
+							<ImageView android:layout_width="match_parent" android:layout_height="1dp" android:background="#f0f0f0" />
+						</LinearLayout>
+
+						<!-- 2013. 9. 5 매물대설정 값 문자열 보이기 여부 처리 -->
+						<LinearLayout style="@style/detail_standscale_outerlinear" android:id="@+id/standscale_row_4_linear">
+							<LinearLayout style="@style/detail_valset_linear" >
+								<androidx.appcompat.widget.AppCompatCheckBox style="@style/detail_checkbox" android:id="@+id/chk_standscaleshow"/>
+								<!-- <LinearLayout style="@style/detail_lineset_items" android:layout_weight="0.14"/>  --> <!--  이 linearlayout 은 whiteSpace 용입니다.  -->
+								<TextView style="@style/detail_lineset_title" android:layout_width="wrap_content" android:layout_weight="0" android:id="@+id/tv_showvalue" android:text="수치 표시"  android:layout_height="wrap_content"
+									android:layout_gravity="center_vertical"/>
+							</LinearLayout>
+							<ImageView android:layout_width="match_parent" android:layout_height="1dp" android:background="#f0f0f0" />
+						</LinearLayout>
+					</LinearLayout>
+
+					<LinearLayout android:id="@+id/detail_tab" android:layout_height="36dp" android:layout_width="match_parent" android:orientation="horizontal" android:background="#ffffff" android:weightSum="1.0" android:visibility="gone">
+						<androidx.appcompat.widget.AppCompatButton
+							android:id="@+id/btn_valuesetting"
+							style="@style/detail_tabbutton"
+							android:focusable="true"
+							android:text="변수 설정"
+							android:background="@drawable/btn_indicator_jipyolistbutton_center_change"
+							android:visibility="gone"/>
+						<LinearLayout android:layout_width="0dp" android:layout_height="match_parent" android:layout_weight="1.0" />
+
+						<!--<androidx.appcompat.widget.AppCompatButton-->
+						<!--android:id="@+id/btn_description"-->
+						<!--android:layout_width="14dp"-->
+						<!--android:layout_height="14dp"-->
+						<!--android:background="@drawable/btn_info_change"-->
+						<!--android:layout_gravity="center_vertical"-->
+						<!--/>-->
+
+						<TextView
+							android:id="@+id/txt_description"
+							android:layout_width="53dp"
+							android:layout_height="wrap_content"
+							android:layout_marginRight="15dp"
+							android:layout_marginLeft="5dp"
+							android:text="지표설명"
+							android:textSize="14dp"
+							android:textColor="#666666"
+							android:layout_gravity="center_vertical"
+							/>
+					</LinearLayout>
+					<!-- <LinearLayout android:layout_width="match_parent" android:layout_height="10dip" android:background="#ffffff"/> -->
+				</LinearLayout>
+			</ScrollView>
+		</RelativeLayout>
+
+		<!-- 2015. 1. 13 각 보조지표 설명/활용법 추가(상세설정창) -->
+		<WebView android:id="@+id/webview_description" android:layout_width="match_parent" android:layout_height="match_parent" android:visibility="gone"/>
+	</FrameLayout>
+
+	<LinearLayout
+		android:id="@+id/bottom_view"
+		android:layout_width="match_parent"
+		android:layout_height="76dp"
+		android:layout_marginLeft="16dp"
+		android:layout_marginRight="16dp"
+		android:layout_marginTop="-76dp"
+		android:background="#ffffff"
+		android:orientation="horizontal">
+
+		<androidx.appcompat.widget.AppCompatButton
+			android:id="@+id/btn_reset"
+			android:layout_width="0dp"
+			android:layout_height="60dp"
+			android:layout_marginRight="4dp"
+			android:layout_weight="1"
+			android:background="@drawable/button_background1"
+			android:stateListAnimator="@null"
+			android:text="초기화"
+			android:textColor="@color/kfit_high__emphasis"
+			android:textSize="18dp"
+			android:textStyle="bold"/>
+
+		<androidx.appcompat.widget.AppCompatButton
+			android:id="@+id/btn_confirm"
+			android:layout_width="0dp"
+			android:layout_height="60dp"
+			android:layout_weight="2"
+			android:layout_marginLeft="4dp"
+			android:background="@drawable/button_background2"
+			android:stateListAnimator="@null"
+			android:text="확인"
+			android:textSize="18dp"
+			android:textStyle="bold"
+			android:textColor="@color/kfit_high__emphasis"/>
+	</LinearLayout>
+	<androidx.appcompat.widget.AppCompatButton
+		android:id="@+id/btn_edit_softkeypad_confirm"
+		android:layout_width="match_parent"
+		android:layout_height="60dp"
+		android:layout_marginTop="-60dp"
+		android:background="@color/kfit_yellow500_base"
+		android:text="확인"
+		android:textStyle="bold"
+		android:textColor="@color/kfit_high__emphasis"
+		android:textSize="18dp"/>
+	<!-- 2014. 11. 20 각 보조지표 설명/활용법 추가(상세설정창) -->
+</LinearLayout>
+

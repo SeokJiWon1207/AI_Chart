@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="utf-8"?><LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" android:background="#ffffff">
+	<RelativeLayout android:layout_width="match_parent" android:layout_height="match_parent" android:orientation="vertical" android:background="#ffffff">
+	    <!-- 2012. 8. 27  차트유형 거래량 추가설정창  -->
+	    <ScrollView android:layout_width="fill_parent" android:layout_height="fill_parent" android:background="#ffffff" android:layout_below="@+id/LinearLayout01">
+
+			<LinearLayout
+				android:id="@+id/volumesetting"
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:orientation="vertical">
+
+				<TextView
+					android:id="@+id/volumeTxt1"
+					style="@style/detail_headline2"
+					android:text="기준설정" />
+
+				<RadioGroup
+					android:id="@+id/volumesetting_radio_group"
+					android:layout_width="fill_parent"
+					android:layout_height="wrap_content"
+					android:background="#ffffff"
+					android:orientation="vertical">
+
+					<RadioButton
+						android:id="@+id/volume_radio_btn_1"
+						style="@style/volumesetting_radiobtn"
+						android:layout_marginLeft="20dp"
+						android:tag="1"
+						android:text="  일반" />
+					<ImageView android:layout_width="match_parent" android:layout_height="1dp" android:background="#eeeeee" />
+
+					<RadioButton
+						android:id="@+id/volume_radio_btn_4"
+						style="@style/volumesetting_radiobtn"
+						android:layout_marginLeft="20dp"
+						android:tag="4"
+						android:text="  상승/하락(거래량)" />
+					<ImageView android:layout_width="match_parent" android:layout_height="1dp" android:background="#eeeeee" />
+
+					<RadioButton
+						android:id="@+id/volume_radio_btn_5"
+						style="@style/volumesetting_radiobtn"
+						android:layout_marginLeft="20dp"
+						android:tag="5"
+						android:text="  캔들색과 같이" />
+					<ImageView android:layout_width="match_parent" android:layout_height="1dp" android:background="#eeeeee" />
+
+					<RadioButton
+						android:id="@+id/volume_radio_btn_2"
+						style="@style/volumesetting_radiobtn"
+						android:layout_marginLeft="20dp"
+						android:tag="2"
+						android:text="  전일종가대비 상승/하락" />
+					<ImageView android:layout_width="match_parent" android:layout_height="1dp" android:background="#eeeeee" />
+
+					<RadioButton
+						android:id="@+id/volume_radio_btn_3"
+						style="@style/volumesetting_radiobtn"
+						android:layout_marginLeft="20dp"
+						android:tag="3"
+						android:text="  전일고가대비 상승/하락" />
+				</RadioGroup>
+				<TextView
+					android:id="@+id/volumeTxt2"
+					style="@style/detail_headline2"
+					android:text="색상설정" />
+				<LinearLayout
+					android:layout_width="fill_parent"
+					android:layout_height="56dp"
+					android:background="#ffffff"
+					android:orientation="horizontal">
+
+
+					<TextView
+						style="@style/detail_lineset_title"
+						android:layout_width="wrap_content"
+						android:layout_weight="0"
+						android:layout_marginLeft="20dp"
+						android:layout_marginRight="10dp"
+						android:text="상승" />
+
+					<TextView
+						android:id="@+id/volumecolor_up"
+						style="@style/detail_lineset_items"
+						android:layout_gravity="center_vertical"
+						android:background="@drawable/shape_circle"></TextView>
+
+
+					<TextView
+						style="@style/detail_lineset_title"
+						android:layout_width="wrap_content"
+						android:layout_weight="0"
+						android:layout_marginLeft="30dp"
+						android:layout_marginRight="10dp"
+						android:text="하락" />
+
+					<TextView
+						android:id="@+id/volumecolor_down"
+						style="@style/detail_lineset_items"
+						android:layout_gravity="center_vertical"
+						android:background="@drawable/shape_circle"></TextView>
+
+
+					<TextView
+						style="@style/detail_lineset_title"
+						android:layout_width="wrap_content"
+						android:layout_weight="0"
+						android:layout_marginLeft="30dp"
+						android:layout_marginRight="10dp"
+						android:text="보합" />
+
+					<TextView
+						android:id="@+id/volumecolor_equal"
+						style="@style/detail_lineset_items"
+						android:layout_gravity="center_vertical"
+						android:background="@drawable/shape_circle"></TextView>
+				</LinearLayout>
+				<ImageView android:layout_width="match_parent" android:layout_height="1dp" android:background="#eeeeee" />
+			</LinearLayout>
+	    </ScrollView> 
+	    
+	    <LinearLayout android:id="@+id/LinearLayout01" android:layout_width="fill_parent" android:layout_height="52dp" android:background="#ffffff">
+
+	 	    <TextView android:layout_weight="1" android:gravity="left" android:textColor="#111111" android:textStyle="bold" android:textSize="17dp" android:text="차트 설정" android:id="@+id/frameaTitle"
+	 	        android:paddingLeft="12dp" android:layout_gravity="center_vertical" android:layout_height="wrap_content" android:layout_width="wrap_content"></TextView>
+	 	    <!--  초기화  -->
+			<Button android:textColor="#ffffff" android:layout_height="28dp" android:textSize="13dp" android:text="초기화"
+				android:layout_width="54dp" android:layout_gravity="center_vertical" android:layout_marginRight="6dp"
+				android:background="@drawable/btn_header_init" android:id="@+id/frameaBtnInit"/>
+
+			<!-- 닫기  -->
+			<Button android:background="@drawable/btn_close_transparent" android:layout_gravity="center_vertical"
+				android:id="@+id/frameaBtnBack" android:layout_height="28dp"
+				android:layout_width="28dp" android:layout_marginRight="12dp"/>
+
+		</LinearLayout>
+	</RelativeLayout>
+</LinearLayout>

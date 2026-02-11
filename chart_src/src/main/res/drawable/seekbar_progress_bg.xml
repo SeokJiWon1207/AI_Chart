@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+ <layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <item>
+        <clip>
+            <shape>
+                 <corners  android:radius="10dip"/>
+                <gradient
+                    android:startColor="#C54646"
+                    android:centerColor="#C54646"
+                    android:centerY="0.1"
+                    android:endColor="#C54646"
+                    android:angle="270"
+                />
+            </shape>
+        </clip>
+    </item>
+<!--     <item>
+        <clip>
+        <bitmap xmlns:android="http://schemas.android.com/apk/res/android"
+            android:src="@drawable/chart_greybar"
+            android:antialias="true"
+            android:dither="false"
+            android:filter="false"
+            android:gravity="left"
+        />
+        </clip>
+    </item> -->
+</layer-list>

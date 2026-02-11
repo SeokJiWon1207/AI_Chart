@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- <LinearLayout
+  xmlns:android="http://schemas.android.com/apk/res/android"
+   android:orientation="vertical" android:layout_height="wrap_content" android:layout_gravity="center_horizontal" android:layout_width="200dp" android:background="@drawable/pop_back"
+   android:clickable="true"> -->
+ <!-- 지표설정창 컨트롤이외영역 눌릴떄 꺼지는 현상 방지  -->
+  <!-- <RelativeLayout android:id="@+id/linearLayout2" android:layout_width="180dp" android:layout_gravity="center_horizontal" android:layout_height="wrap_content" android:layout_marginTop="15dip">
+      <TextView android:layout_height="wrap_content" android:text="분할" android:layout_width="wrap_content" android:id="@+id/textView2" android:layout_gravity="center|center_horizontal" android:layout_centerVertical="true" android:layout_centerHorizontal="true" android:textSize="14dip"></TextView>
+  </RelativeLayout> -->
+	<LinearLayout  xmlns:android="http://schemas.android.com/apk/res/android" android:clickable="true" android:id="@+id/linearLayout1"  android:orientation="vertical" android:layout_height="wrap_content" android:layout_width="wrap_content" android:layout_gravity="center_horizontal">
+	    <TextView style="@style/devideview_textview" android:text="1분할" android:id="@+id/textView1" ></TextView>
+	    <LinearLayout style="@style/devideview_relative" android:id="@+id/relativeLayout1">
+	        <!--<TextView style="@style/devideview_textview" android:text="1분할" android:id="@+id/textView1" ></TextView>  -->
+
+	        <Button style="@style/devideview_button" android:id="@+id/button01" android:background="@drawable/screen01_change" android:layout_marginLeft="5dp" android:tag="11"></Button>
+	    </LinearLayout>
+	    
+	    <TextView style="@style/devideview_textview" android:text="2분할" android:id="@+id/textView2" ></TextView>
+	    <LinearLayout style="@style/devideview_relative" android:id="@+id/relativeLayout2">	        
+	        <!-- <TextView style="@style/devideview_textview" android:text="2분할" android:id="@+id/textView1" ></TextView> -->
+
+	        <Button style="@style/devideview_button" android:id="@+id/button02" android:background="@drawable/screen02_2__change" android:tag="21" android:layout_marginLeft="5dp"></Button>
+	        <Button style="@style/devideview_button" android:id="@+id/button03" android:background="@drawable/screen02_1__change" android:tag="22"></Button>
+	    </LinearLayout>
+	    
+	    <TextView style="@style/devideview_textview" android:text="3분할" android:id="@+id/textView3" />
+	    <LinearLayout style="@style/devideview_relative" android:id="@+id/relativeLayout3">
+	        <!--  <TextView style="@style/devideview_textview" android:text="3분할" android:id="@+id/textView1" ></TextView>-->
+
+	        <Button style="@style/devideview_button" android:id="@+id/button04" android:background="@drawable/screen03_4__change" android:tag="31" android:layout_marginLeft="5dp"></Button>
+	        <Button style="@style/devideview_button" android:id="@+id/button05" android:background="@drawable/screen03_2__change" android:tag="32"></Button>
+	        <Button style="@style/devideview_button" android:id="@+id/button06" android:background="@drawable/screen03_1__change" android:tag="33"></Button>
+	        <Button style="@style/devideview_button" android:id="@+id/button07" android:background="@drawable/screen03_3__change" android:tag="34"></Button>
+
+	        <Button style="@style/devideview_button" android:id="@+id/button08" android:background="@drawable/screen03_5__change" android:tag="35"></Button>
+	        <Button style="@style/devideview_button" android:id="@+id/button09" android:background="@drawable/screen03_6__change" android:tag="36"></Button>
+	    </LinearLayout>
+	    
+	    <TextView style="@style/devideview_textview" android:text="4분할" android:id="@+id/textView4"></TextView>
+	    <LinearLayout style="@style/devideview_relative" android:id="@+id/relativeLayout5">
+	        <!-- <TextView style="@style/devideview_textview" android:text="4분할" android:id="@+id/textView1"></TextView> -->
+
+	        <Button style="@style/devideview_button" android:id="@+id/button13" android:background="@drawable/screen04_1__change" android:layout_marginLeft="5dp" android:tag="41"></Button>
+	        <Button style="@style/devideview_button" android:id="@+id/button11" android:background="@drawable/screen04_2__change" android:tag="42"></Button>
+	        <Button style="@style/devideview_button" android:id="@+id/button12" android:background="@drawable/screen04_3__change" android:tag="44"></Button>
+	        <Button style="@style/devideview_button" android:id="@+id/button10" android:background="@drawable/screen04_4__change" android:tag="45"></Button>
+
+	        <Button style="@style/devideview_button" android:id="@+id/button14" android:background="@drawable/screen04_5__change" android:tag="43"></Button>
+	    </LinearLayout>
+    </LinearLayout>
+<!-- </LinearLayout> -->  
+

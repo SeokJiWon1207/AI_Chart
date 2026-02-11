@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+	xmlns:android="http://schemas.android.com/apk/res/android"
+	android:orientation="vertical"
+	android:layout_width="match_parent"
+	android:layout_height="match_parent"
+	android:background="@drawable/shape_popup_alert_roundrect"
+	android:clickable="true">
+
+
+	<!-- 2012. 7. 20  기준선 설정  레이아웃 수정 - 배경색 변경  -->
+	<RelativeLayout android:id="@+id/savetop"
+		android:layout_width="fill_parent" android:layout_height="92dp">
+		<!-- <Button android:background="@drawable/icon_01"
+       android:id="@+id/btnchartsettingtrianglebtn" android:layout_height="match_parent"
+       android:layout_width="28dip" android:layout_marginLeft="4dp" android:layout_marginTop="4dp" android:layout_marginBottom="4dp"  android:layout_alignParentLeft="true"/> -->
+		<TextView
+			android:id="@+id/frameaTitle"
+			android:layout_width="fill_parent"
+			android:layout_height="fill_parent"
+			android:gravity="center"
+			android:text="차트 설정 상세"
+			android:textColor="#000000"
+			android:textSize="22dp"
+			android:textStyle="bold"></TextView>
+		<ImageView
+			android:layout_width="match_parent"
+			android:layout_height="1dp"
+			android:background="#f0f0f0"
+			android:layout_marginLeft="20dp"
+			android:layout_marginRight="20dp"
+			android:layout_alignParentBottom="true"/>
+		<!-- <Button android:background="@drawable/btn_close_transparent"
+            android:id="@+id/frameabtnfunction" android:layout_height="wrap_content"
+			android:layout_width="36dip" android:layout_alignParentRight="true"/> -->
+	</RelativeLayout>
+
+	<LinearLayout
+		android:layout_width="match_parent"
+		android:layout_height="356dp"
+		android:layout_weight="1"
+		android:orientation="vertical"
+		android:layout_below="@+id/savetop"
+		android:paddingBottom="16dp"
+		android:background="#ffffff">
+		<ListView
+			android:id="@+id/jipyoList"
+			android:layout_width="match_parent"
+			android:layout_height="match_parent"
+			android:divider="#ffffff"
+			android:dividerHeight="0dp"
+			android:background="#ffffff"
+			android:cacheColorHint="#00000000">
+		</ListView>
+	</LinearLayout>
+	<ImageView
+		android:visibility="gone"
+		android:layout_width="match_parent"
+		android:layout_height="1px"
+		android:background="#444444"/>
+	<LinearLayout android:layout_width="fill_parent" android:layout_height="48dp" android:orientation="horizontal" android:background="@android:color/transparent">
+		<Button
+			android:id="@+id/frameabtnfunction"
+			style="@style/alert_bottom_btn"
+			android:layout_gravity="center"
+			android:text="확인"
+			android:textColor="#ffffff"/>
+	</LinearLayout>
+</LinearLayout>

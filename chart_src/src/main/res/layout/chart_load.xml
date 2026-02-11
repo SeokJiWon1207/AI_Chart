@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+	<!-- 2012. 7. 24 차트불러오기 윗쪽 레이아웃 배경색 설정  -->
+<LinearLayout
+  xmlns:android="http://schemas.android.com/apk/res/android"
+  	android:orientation="vertical"
+	android:layout_width="fill_parent"
+	android:layout_height="fill_parent"
+	android:layout_gravity="center_horizontal"
+	android:background="@android:color/transparent">
+	<RelativeLayout android:id="@+id/loadtop"
+		android:orientation="horizontal"
+		android:layout_width="fill_parent" android:layout_height="52dp"  android:background="#ffffff">
+		<TextView android:id="@+id/frameaTitle" android:layout_width="match_parent"
+			android:layout_height="match_parent"
+			android:paddingLeft="12dp"
+			android:text="차트 불러오기"
+			android:textSize="17dp"
+			android:textColor="#111111"
+			android:gravity="center_vertical">
+		</TextView>
+
+		<Button android:id="@+id/frameaBtnfunction" android:layout_width="28dp" android:layout_height="28dp" android:layout_centerVertical="true" android:layout_alignParentRight="true" android:background="@drawable/btn_close_transparent" android:layout_marginRight="12dp"/>
+
+	</RelativeLayout>
+
+	<ImageView android:layout_width="match_parent" android:layout_height="1dp" android:background="#ebebeb" />
+	<LinearLayout android:background="#e3e3e3" android:layout_width="fill_parent" android:layout_height="35dp" android:orientation="horizontal" android:layout_gravity="center_vertical" android:visibility="gone">
+		<LinearLayout android:layout_width="130dp" android:layout_height="wrap_content"></LinearLayout>
+		<CheckBox android:id="@+id/chk_onetouch" style="@style/normalset_checkbox" android:layout_width="28dp" android:layout_height="15dp" android:layout_gravity="center_vertical" android:layout_marginRight="0dp"></CheckBox>
+		<TextView android:text="원터치 차트설정" android:id="@+id/tv_onetouch" android:textSize="14dp" android:textColor="#666666" android:layout_toRightOf="@+id/chk_onetouch" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_gravity="center_vertical" android:layout_marginLeft="3dp"/>
+	</LinearLayout>
+	<LinearLayout android:id="@+id/LinearLayout01" android:background="#ffffff" android:layout_weight="1"
+		android:orientation="vertical" android:layout_width="match_parent" android:layout_height="0dp">
+		<!-- <View android:layout_width="wrap_content" android:id="@+id/view1" android:background="@drawable/search_bg" android:layout_height="20px"></View> -->
+
+		<ListView android:divider="#eeeeee" android:dividerHeight="1dp" android:layout_height="wrap_content"
+			android:id="@+id/loadlist" android:layout_width="match_parent" android:cacheColorHint="#00000000"  ></ListView>
+
+	</LinearLayout>
+	<LinearLayout android:layout_width="fill_parent" android:layout_height="52dp" android:orientation="horizontal"
+	   				android:weightSum="1" android:visibility="gone">
+	    <!--  -->
+	    <!--<Button-->
+                <!--android:id="@+id/frameaBtnfunction"-->
+                <!--android:layout_width="0dp"-->
+                <!--android:layout_weight="0.5"-->
+                <!--android:layout_height="match_parent"-->
+                <!--android:background="#ececec"-->
+                <!--android:textColor="#333333"-->
+                <!--android:text="취소"-->
+                <!--android:textSize="15dp" />-->
+		<Button
+                android:id="@+id/chartload_btn_accept"
+                android:layout_width="0dp"
+                android:layout_weight="0.5"
+                android:layout_height="match_parent"
+                android:background="#0095A0"
+                android:textColor="#ffffff"
+                android:text="확인"
+                android:textStyle="bold"
+                android:textSize="15dp"
+                />
+	</LinearLayout>
+</LinearLayout>

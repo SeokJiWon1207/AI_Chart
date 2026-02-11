@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" android:clickable="true"
+    android:orientation="vertical" android:background="#d9dce2">
+    
+    <RelativeLayout android:id="@+id/LinearLayout01"
+		android:layout_width="fill_parent" 
+		android:layout_height="40dip" android:orientation="horizontal" android:background="#6a84b9">
+		
+		<!-- 2012. 7. 17 글자색상 변경  -->
+		<TextView android:id="@+id/frameaTitle" 
+		    android:layout_alignBaseline="@id/frameabtnfunction"
+			android:layout_width="320dip" 
+			android:layout_height="wrap_content" android:textSize="20dp"
+			android:text="Title" android:width="170dp" android:textColor="#000000"
+			android:gravity="center" android:layout_centerInParent="true">
+		</TextView>
+		
+		<!-- <Button android:id="@+id/frameaBtnFunction" 
+			android:background="@drawable/btn_close2"
+			android:layout_height="28dp" 
+			android:layout_width="47dp"
+			android:layout_marginLeft="5dp"
+			android:layout_marginTop="2dp" android:layout_marginRight="10dip" android:layout_alignParentRight="true">
+		</Button> -->
+		<Button android:textColor="#000000"
+			android:layout_marginRight="35dp" android:layout_height="32dip" android:layout_marginTop="7dp" android:layout_marginBottom="6dp"
+			android:layout_width="32dip" android:gravity="center_vertical"
+			android:layout_alignParentRight="true" android:background="@drawable/btn_refresh_change" android:id="@+id/frameaBtnInit"/>
+		<Button android:background="@drawable/btn_close_transparent" android:layout_marginTop="12dip" android:layout_marginRight="10dip" 
+            android:id="@+id/frameaBtnBack" android:layout_width="18dip" android:layout_height="19dip" android:layout_alignParentRight="true"/>
+	</RelativeLayout>
+	
+    <ScrollView android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="vertical" android:clickable="true" android:id="@+id/periodscrollview">
+        <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="vertical">
+	        <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="horizontal" android:weightSum="1" android:id="@+id/periodlinear">
+	            <LinearLayout android:layout_width="0dip" android:layout_height="wrap_content" android:layout_weight="0.04"/>
+	            <LinearLayout android:layout_width="0dip" android:layout_height="wrap_content" android:orientation="vertical" android:layout_weight="0.45">
+	                <TextView android:textSize="14dp" android:textColor="#2f4a67" android:layout_gravity="center_horizontal" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="분차트설정" android:layout_marginTop="10dip" android:layout_marginBottom="10dip"/>
+	                <LinearLayout style="@style/periodsetting_rowlinear">
+		                <TextView style="@style/periodsetting_text" android:text="분차트1"/>
+		                <EditText style="@style/periodsetting_edittext" android:id="@+id/periodsetting_minedit1" android:selectAllOnFocus="true"/>
+		            </LinearLayout>
+		            <LinearLayout style="@style/periodsetting_rowlinear">
+		                <TextView style="@style/periodsetting_text" android:text="분차트2"/>
+		                <EditText style="@style/periodsetting_edittext" android:id="@+id/periodsetting_minedit2" android:selectAllOnFocus="true"/>
+		            </LinearLayout>
+		            <LinearLayout style="@style/periodsetting_rowlinear">
+		                <TextView style="@style/periodsetting_text" android:text="분차트3"/>
+		                <EditText style="@style/periodsetting_edittext" android:id="@+id/periodsetting_minedit3" android:selectAllOnFocus="true"/>
+		            </LinearLayout>
+		            <LinearLayout style="@style/periodsetting_rowlinear">
+		                <TextView style="@style/periodsetting_text" android:text="분차트4"/>
+		                <EditText style="@style/periodsetting_edittext" android:id="@+id/periodsetting_minedit4" android:selectAllOnFocus="true"/>
+		            </LinearLayout>
+		            <LinearLayout style="@style/periodsetting_rowlinear">
+		                <TextView style="@style/periodsetting_text" android:text="분차트5"/>
+		                <EditText style="@style/periodsetting_edittext" android:id="@+id/periodsetting_minedit5" android:selectAllOnFocus="true"/>
+		            </LinearLayout>
+		            <LinearLayout style="@style/periodsetting_rowlinear">
+		                <TextView style="@style/periodsetting_text" android:text="분차트6"/>
+		                <EditText style="@style/periodsetting_edittext" android:id="@+id/periodsetting_minedit6" android:selectAllOnFocus="true"/>
+		            </LinearLayout>
+		            <LinearLayout style="@style/periodsetting_rowlinear">
+		                <TextView style="@style/periodsetting_text" android:text="분차트7"/>
+		                <EditText style="@style/periodsetting_edittext" android:id="@+id/periodsetting_minedit7" android:selectAllOnFocus="true"/>
+		            </LinearLayout>
+	            </LinearLayout>
+	            
+	            <LinearLayout android:layout_width="0dip" android:layout_height="wrap_content" android:layout_weight="0.03"/>
+	            
+	            <LinearLayout android:layout_width="0dip" android:layout_height="wrap_content" android:orientation="vertical" android:layout_weight="0.45">
+	                <TextView android:textSize="14dp" android:textColor="#2f4a67" android:layout_gravity="center_horizontal" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="틱차트설정" android:layout_marginTop="10dip" android:layout_marginBottom="10dip"/>
+	                <LinearLayout style="@style/periodsetting_rowlinear">
+		                <TextView style="@style/periodsetting_text" android:text="틱차트1"/>
+		                <EditText style="@style/periodsetting_edittext" android:id="@+id/periodsetting_tikedit1" android:selectAllOnFocus="true"/>
+		            </LinearLayout>
+		            <LinearLayout style="@style/periodsetting_rowlinear">
+		                <TextView style="@style/periodsetting_text" android:text="틱차트2"/>
+		                <EditText style="@style/periodsetting_edittext" android:id="@+id/periodsetting_tikedit2" android:selectAllOnFocus="true"/>
+		            </LinearLayout>
+		            <LinearLayout style="@style/periodsetting_rowlinear">
+		                <TextView style="@style/periodsetting_text" android:text="틱차트3"/>
+		                <EditText style="@style/periodsetting_edittext" android:id="@+id/periodsetting_tikedit3" android:selectAllOnFocus="true"/>
+		            </LinearLayout>
+		            <LinearLayout style="@style/periodsetting_rowlinear">
+		                <TextView style="@style/periodsetting_text" android:text="틱차트4"/>
+		                <EditText style="@style/periodsetting_edittext" android:id="@+id/periodsetting_tikedit4" android:selectAllOnFocus="true"/>
+		            </LinearLayout>
+		            <LinearLayout style="@style/periodsetting_rowlinear">
+		                <TextView style="@style/periodsetting_text" android:text="틱차트5"/>
+		                <EditText style="@style/periodsetting_edittext" android:id="@+id/periodsetting_tikedit5" android:selectAllOnFocus="true"/>
+		            </LinearLayout>
+		            <LinearLayout style="@style/periodsetting_rowlinear">
+		                <TextView style="@style/periodsetting_text" android:text="틱차트6"/>
+		                <EditText style="@style/periodsetting_edittext" android:id="@+id/periodsetting_tikedit6" android:selectAllOnFocus="true"/>
+		            </LinearLayout>
+	            </LinearLayout>
+	            <LinearLayout android:layout_width="0dip" android:layout_height="wrap_content" android:layout_weight="0.03"/>
+	        </LinearLayout>
+	        <RelativeLayout android:layout_width="fill_parent" android:layout_height="50dip" android:layout_marginBottom="30dip">
+	    		 <!--<Button android:textColor="#244275" android:layout_centerInParent="true"
+					 android:layout_height="match_parent" android:layout_marginBottom="6dp"
+					android:layout_width="wrap_content" android:layout_gravity="center_vertical"  android:background="@drawable/btn_saveload_pad_change" android:id="@+id/acceptbtn" android:text="  적용  "/>-->
+			</RelativeLayout> 
+	        
+	        
+	    </LinearLayout>
+    </ScrollView>
+
+</LinearLayout>

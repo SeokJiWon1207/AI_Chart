@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+  xmlns:android="http://schemas.android.com/apk/res/android"
+  android:layout_width="38dip"
+  android:layout_height="60dip" android:orientation="vertical" android:clickable="true" android:theme="@android:style/Theme.Translucent">
+  
+</LinearLayout>

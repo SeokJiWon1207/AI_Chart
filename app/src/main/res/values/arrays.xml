@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="array_charttype">
+        <item>@string/charttype_item1</item>
+        <item>@string/charttype_item2</item>
+        <item>@string/charttype_item3</item>
+        <item>@string/charttype_item4</item>
+        <item>@string/charttype_item5</item>
+        <item>@string/charttype_item6</item>
+        <item>@string/charttype_item7</item>
+    </string-array>
+    <string-array name="array_indicator_myinfo">
+        <item>@string/indicator_myinfo_item1</item>
+        <item>@string/indicator_myinfo_item2</item>
+    </string-array>
+    <string-array name="array_indicator_overlay">
+        <item>@string/indicator_overlay_item1</item>
+        <item>@string/indicator_overlay_item2</item>
+        <item>@string/indicator_overlay_item3</item>
+        <item>@string/indicator_overlay_item4</item>
+        <item>@string/indicator_overlay_item5</item>
+        <item>@string/indicator_overlay_item6</item>
+        <item>@string/indicator_overlay_item7</item>
+        <item>@string/indicator_overlay_item8</item>
+        <item>@string/indicator_overlay_item9</item>
+        <item>@string/indicator_overlay_item10</item>
+        <item>@string/indicator_overlay_item11</item>
+        <item>@string/indicator_overlay_item12</item>
+        <item>@string/indicator_overlay_item13</item>
+        <item>@string/indicator_overlay_item14</item>
+    </string-array>
+    <string-array name="spinner_tradingType">
+        <item>@string/indicator_overlay_item1</item>
+        <item>@string/indicator_overlay_item2</item>
+        <item>@string/indicator_overlay_item3</item>
+    </string-array>
+</resources>

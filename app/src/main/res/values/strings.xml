@@ -1,0 +1,83 @@
+<resources>
+    <string name="app_name">KfitsChart</string>
+    <string name="tab_title_top">차트 설정</string>
+    <string name="tab_title_charttype">주 차트</string>
+    <string name="tab_title_displayInfo">표시 정보</string>
+    <string name="tab_title_indicator">보조 지표</string>
+    <string name="tab_title_reset">초기화</string>
+
+    <string name="temp_title">마이크로 소프트</string>
+    <string name="temp_title2">$345.23</string>
+
+    <string name="displayinfo_header_myinfo">내 정보</string>
+    <string name="displayinfo_header_overlay">오버레이(주 지표 차트에 함께 표시)</string>
+    <string name="indicator_header">보조 지표(하단에 표시)</string>
+
+    <string name="tool_tip_text">나만의 지표 설정하기</string>
+
+    <string name="charttype_item1">\t라인 차트</string>
+    <string name="charttype_item2">\t캔들 차트</string>
+    <string name="charttype_item3">\t투명 캔들 차트</string>
+    <string name="charttype_item4">\t포인트 앤 피겨 차트</string>
+    <string name="charttype_item5">\t스윙 차트</string>
+    <string name="charttype_item6">\t렌코 차트</string>
+    <string name="charttype_item7">\t카기 차트</string>
+
+    <string name="indicator_myinfo_item1">구매평균가격 표시</string>
+    <string name="indicator_myinfo_item2">구매/판매 표시</string>
+    <string name="indicator_myinfo_item3">기업 캘린더 뱃지 표시</string>
+
+    <string name="indicator_overlay_item1">그물망</string>
+    <string name="indicator_overlay_item2">5일 이동평균선</string>
+    <string name="indicator_overlay_item3">20일 이동평균선</string>
+    <string name="indicator_overlay_item4">60일 이동평균선</string>
+    <string name="indicator_overlay_item5">일목균형표</string>
+    <string name="indicator_overlay_item6">볼린저밴드</string>
+    <string name="indicator_overlay_item7">매물대</string>
+    <string name="indicator_overlay_item8">추세선</string>
+    <string name="indicator_overlay_item9">지지선/저항선</string>
+    <string name="indicator_overlay_item10">엔벨로프</string>
+    <string name="indicator_overlay_item11">10일 이동평균선</string>
+    <string name="indicator_overlay_item12">120일 이동평균선</string>
+    <string name="indicator_overlay_item13">200일 이동평균선</string>
+    <string name="indicator_overlay_item14">240일 이동평균선</string>
+    <string name="indicator_overlay_item15">이동평균선</string>
+
+    <string name="indicator_item_hint_message">일 단위 차트에서만 제공됩니다.</string>
+
+    <!--    chartheaderlayout-->
+    <string name="chart_header_layout_text1">60틱</string>
+    <string name="chart_header_layout_text2">10분</string>
+    <string name="chart_header_layout_text3">일</string>
+    <string name="chart_header_layout_text4">주</string>
+    <string name="chart_header_layout_text5">월</string>
+    <string name="chart_header_layout_text_setting"><u>설정</u></string>
+
+    <string name="chart_bottomsheet_title_tick">틱 선택</string>
+    <string name="chart_bottomsheet_title_minutes">분 선택</string>
+
+    <string name="chart_common_menu_drop_down_minute_description">분봉 메뉴 이동</string>
+    <string name="chart_common_menu_drop_down_tick_description">틱봉 메뉴 이동</string>
+    <string name="chart_common_menu_landscape_description">차트 가로모드 화면 이동</string>
+    <string name="chart_common_menu_setting_description">차트 전체 설정 화면 이동</string>
+
+    <!--    임시로 쓰는 구매 유형-->
+    <string name="spinner_trading_type1">지정가</string>
+    <string name="spinner_trading_type2">시장가</string>
+    <string name="spinner_trading_type3">조건부지정가</string>
+    <string name="spinner_trading_type4">최유리지정가</string>
+    <string name="spinner_trading_type5">최우선지정가</string>
+
+    <!--    설정 팝업-->
+    <string name="dialog_clear_chart_title">전체 설정 초기화</string>
+    <string name="dialog_clear_chart_message">차트 설정을 모두 초기화 할까요?</string>
+    <string name="dialog_clear_chart_message2">차트 설정을\n모두 초기화 할까요?</string>
+    <string name="kfit_dialog_confirm">확인</string>
+    <string name="kfit_dialog_cancel">취소</string>
+    <string name="chart_setting_indicator_hint">일 단위 차트에서만 제공됩니다</string>
+    <string name="chart_setting_indicator_select_limit_message">보조 지표는 최대 4개까지 선택 가능해요.</string>
+    <string name="chart_setting_indicator_select_limit_message2">보조 지표는 최대 4개까지\n선택 가능해요.</string>
+
+    <string name="period_tick">틱</string>
+    <string name="period_minute">분</string>
+</resources>

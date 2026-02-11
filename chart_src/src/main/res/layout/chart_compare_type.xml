@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" 
+      android:orientation="vertical" android:background="#ffffff" android:clickable="true" android:weightSum="1">
+
+    <LinearLayout android:layout_width="match_parent" android:layout_height="51dp" android:background="#f9f9fa">
+
+        <TextView android:id="@+id/setTitle" android:layout_width="wrap_content" android:layout_height="match_parent" android:layout_weight="1" android:paddingLeft="20dp"  android:gravity="center_vertical" android:text="비교차트 설정" android:textColor="#000000" android:textSize="17dp" android:textStyle="bold" />
+        <Button android:id="@+id/frameaBtnInit" android:layout_width="78dp" android:layout_height="30dp" android:layout_gravity="center_vertical" android:background="@drawable/btn_refresh_change" android:textColor="#ffffff" android:layout_marginRight="6dp" />
+        <Button android:id="@+id/frameaBtnBack" android:layout_width="34dp" android:layout_height="34dp" android:layout_marginRight="14dp" android:layout_gravity="center_vertical" android:background="@drawable/btn_close_transparent" />
+    </LinearLayout>
+
+    <ScrollView
+        android:weightSum="1"
+        android:orientation="vertical"  android:layout_weight="1"  android:scrollbars="none"
+	    android:layout_width="fill_parent" android:layout_height="0dip">
+        <LinearLayout android:layout_width="match_parent" android:id="@+id/linearlayout1" android:layout_height="match_parent" android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/comparechart_txt_1"
+                style="@style/detail_headline2"
+                android:layout_width="match_parent"
+                android:text="비교 유형" />
+            <ImageView android:layout_width="match_parent" android:layout_height="1dp" android:background="#f0f0f0" />
+            <LinearLayout android:layout_height="56dp" android:layout_width="match_parent">
+                <CheckBox style="@style/volumesetting_radiobtn" android:id ="@+id/chk_comptype1"
+                    android:layout_marginLeft="20dp" android:layout_width="20dp" android:layout_height="20dp" android:checked="true"/>"
+                <TextView android:text="등락률 비교(오버레이)" android:id="@+id/textType1" android:layout_width="match_parent" android:layout_height="match_parent" android:textColor="@color/color01"
+                    android:textSize="16dp" android:gravity="left|center" android:layout_marginLeft="10dp"/>
+            </LinearLayout>
+            <ImageView android:layout_width="match_parent" android:layout_height="1dp" android:background="#f0f0f0" />
+            <LinearLayout android:layout_height="56dp" android:layout_width="match_parent">
+                <CheckBox style="@style/volumesetting_radiobtn" android:id ="@+id/chk_comptype2"
+                    android:layout_marginLeft="20dp" android:layout_width="20dp" android:layout_height="20dp"/>"
+                <TextView android:text="등락률 비교" android:id="@+id/textType2" android:layout_width="match_parent" android:layout_height="match_parent" android:textColor="@color/color01"
+                    android:textSize="16dp" android:gravity="left|center" android:layout_marginLeft="10dp"/>
+            </LinearLayout>
+            <ImageView android:layout_width="match_parent" android:layout_height="1dp" android:background="#f0f0f0" />
+            <LinearLayout android:layout_height="56dp"  android:layout_width="match_parent">
+                <CheckBox style="@style/volumesetting_radiobtn" android:id ="@+id/chk_comptype3"
+                    android:layout_marginLeft="20dp" android:layout_width="20dp" android:layout_height="20dp"/>"
+                <TextView android:text="추세 비교" android:id="@+id/textType3" android:layout_width="match_parent" android:layout_height="match_parent" android:textColor="@color/color01"
+                    android:textSize="16dp" android:gravity="left|center" android:layout_marginLeft="10dp"/>
+            </LinearLayout>
+
+        <!--<CheckBox style="@style/volumesetting_radiobtn" android:id ="@+id/chk_comptype3"-->
+            <!--android:layout_marginLeft="12dp" android:layout_width="21dp" android:layout_height="21dp"/>"-->
+        <!--<TextView android:text="추세비교" android:id="@+id/textType3" android:layout_width="wrap_content" android:layout_height="match_parent" android:textColor="@color/color01"-->
+            <!--android:textSize="14dp" android:gravity="left|center" android:layout_marginLeft="8dp"/>-->
+
+        <LinearLayout android:layout_width="match_parent" android:layout_height="95dp"  android:background="#ffffff" android:orientation="vertical"
+            android:layout_marginTop="10dp" android:visibility="gone">
+            <TextView style="@style/detail_headline" android:layout_width="match_parent" android:text="연결선물" />
+            <LinearLayout android:layout_height="50dp" android:layout_width="match_parent" android:orientation="horizontal"  >
+
+                <RadioButton style="@style/volumesetting_radiobtn" android:id ="@+id/chk_compOn"
+                    android:layout_marginLeft="15dp" android:layout_width="21dp" android:layout_height="21dp"/>
+                <TextView android:text="ON" android:id="@+id/textOn" android:layout_width="wrap_content" android:layout_height="match_parent" android:textColor="@color/color01"
+                    android:textSize="14dp" android:gravity="left|center" android:layout_marginLeft="15dp" android:layout_marginRight="68dp"/>
+
+                <RadioButton style="@style/volumesetting_radiobtn" android:id ="@+id/chk_compOff"
+                    android:layout_marginLeft="15dp" android:layout_width="21dp" android:layout_height="21dp"/>
+                <TextView android:text="OFF" android:id="@+id/textOff" android:layout_width="match_parent" android:layout_height="match_parent" android:textColor="@color/color01"
+                    android:textSize="14dp" android:gravity="left|center" android:layout_marginLeft="15dp"/>
+            </LinearLayout>
+        </LinearLayout>
+
+        <LinearLayout android:layout_width="match_parent" android:layout_height="95dp"  android:background="#ffffff" android:orientation="vertical"
+            android:layout_marginTop="10dp" android:visibility="gone">
+            <TextView style="@style/detail_headline" android:layout_width="match_parent" android:text="FX마진" />
+            <LinearLayout android:layout_height="50dp" android:layout_width="match_parent" android:orientation="horizontal">
+                <RadioButton style="@style/volumesetting_radiobtn" android:id ="@+id/chk_compfxbuy"
+                    android:layout_marginLeft="15dp" android:layout_width="21dp" android:layout_height="21dp"/>"
+                <TextView android:text="매수차트" android:id="@+id/textFxBuy" android:layout_width="wrap_content" android:layout_height="match_parent" android:textColor="@color/color01"
+                    android:textSize="14dp" android:gravity="left|center" android:layout_marginLeft="15dp" android:layout_marginRight="38dp"/>
+
+                <RadioButton style="@style/volumesetting_radiobtn" android:id ="@+id/chk_compfxsell"
+                    android:layout_marginLeft="15dp" android:layout_width="21dp" android:layout_height="21dp"/>"
+                <TextView android:text="매도차트" android:id="@+id/textFxSell" android:layout_width="wrap_content" android:layout_height="match_parent" android:textColor="@color/color01"
+                    android:textSize="14dp" android:gravity="left|center" android:layout_marginLeft="15dp"/>
+            </LinearLayout>
+        </LinearLayout>
+            <ImageView android:layout_width="match_parent" android:layout_height="1dp" android:background="#f0f0f0" />
+        <LinearLayout
+            android:layout_width="match_parent" android:layout_height="wrap_content" android:background="#ffffff" android:orientation="vertical"
+            >
+            <LinearLayout
+                android:layout_width="match_parent" android:layout_height="56dp" android:background="#F2F2F2" android:orientation="horizontal" android:weightSum="1">
+                <TextView android:id="@+id/comparechart_txt_2" style="@style/detail_headline2" android:text="색/굵기 설정" android:layout_weight="1" />
+                <Button android:layout_width="70dp" android:layout_height="30dp" android:text="전체초기화" android:textSize="13dp"
+                    android:background="@drawable/edittext_change2" android:id="@+id/frameaBtnInitA" android:layout_gravity="right|center"  android:layout_marginRight="10dp" android:visibility="gone"/>
+            </LinearLayout>
+            <ImageView android:layout_width="match_parent" android:layout_height="1dp" android:background="#f0f0f0" />
+            <LinearLayout android:layout_height="56dp" android:layout_width="match_parent">
+                <TextView android:text="종목 1" android:id="@+id/item1" android:layout_marginLeft="20dp" android:layout_height="match_parent" android:textColor="@color/color01"  android:textSize="16dp"
+                    android:gravity="center|left" android:layout_width="wrap_content"/>
+                <LinearLayout android:layout_width="wrap_content" android:layout_height="56dp" android:layout_weight="0.3"/>
+                <TextView style="@style/detial_lineset_thick" android:id="@+id/thicktextview1" android:background="@drawable/line_thick" android:layout_marginRight="10dp"  />
+                <TextView style="@style/detail_lineset_items"  android:id="@+id/line1" android:background="@drawable/shape_circle" android:layout_marginRight="20dp"></TextView>
+            </LinearLayout>
+            <ImageView android:layout_width="match_parent" android:layout_height="1dp" android:background="#f0f0f0" />
+            <LinearLayout android:layout_height="56dp" android:layout_width="match_parent">
+                <TextView android:text="종목 2" android:id="@+id/item2" android:layout_marginLeft="20dp" android:layout_height="match_parent" android:textColor="@color/color01"  android:textSize="16dp"
+                    android:gravity="center|left" android:layout_width="wrap_content"/>
+                <LinearLayout android:layout_width="wrap_content" android:layout_height="56dp" android:layout_weight="0.3"/>
+                <TextView style="@style/detial_lineset_thick" android:id="@+id/thicktextview2" android:background="@drawable/line_thick" android:layout_marginRight="10dp" />
+                <TextView style="@style/detail_lineset_items"  android:id="@+id/line2" android:background="@drawable/shape_circle" android:layout_marginRight="20dp"></TextView>
+            </LinearLayout>
+            <ImageView android:layout_width="match_parent" android:layout_height="1dp" android:background="#f0f0f0" />
+            <LinearLayout android:layout_height="56dp"  android:layout_width="match_parent" >
+                <TextView android:text="종목 3" android:id="@+id/item3" android:layout_marginLeft="20dp" android:layout_height="match_parent" android:textColor="@color/color01"  android:textSize="16dp"
+                    android:gravity="center|left" android:layout_width="wrap_content" />
+                <LinearLayout android:layout_width="wrap_content" android:layout_height="56dp" android:layout_weight="0.3"/>
+                <TextView style="@style/detial_lineset_thick" android:id="@+id/thicktextview3" android:background="@drawable/line_thick"  android:layout_marginRight="10dp" />
+                <TextView style="@style/detail_lineset_items"  android:id="@+id/line3" android:background="@drawable/shape_circle" android:layout_marginRight="20dp"></TextView>
+            </LinearLayout>
+            <ImageView android:layout_width="match_parent" android:layout_height="1dp" android:background="#f0f0f0" />
+            <LinearLayout android:layout_height="56dp" android:layout_width="match_parent" >
+                <TextView android:text="종목 4" android:id="@+id/item4" android:layout_marginLeft="20dp" android:layout_height="match_parent" android:textColor="@color/color01"  android:textSize="16dp"
+                    android:gravity="center|left" android:layout_width="wrap_content" />
+                <LinearLayout android:layout_width="wrap_content" android:layout_height="56dp" android:layout_weight="0.3"/>
+                <TextView style="@style/detial_lineset_thick" android:id="@+id/thicktextview4" android:background="@drawable/line_thick"  android:layout_marginRight="10dp" />
+                <TextView style="@style/detail_lineset_items"  android:id="@+id/line4" android:background="@drawable/shape_circle" android:layout_marginRight="20dp"></TextView>
+            </LinearLayout>
+            <ImageView android:layout_width="match_parent" android:layout_height="1dp" android:background="#f0f0f0" />
+            <LinearLayout android:layout_height="56dp" android:layout_width="match_parent" >
+                <TextView android:text="종목 5" android:id="@+id/item5" android:layout_marginLeft="20dp" android:layout_height="match_parent" android:textColor="@color/color01"  android:textSize="16dp"
+                    android:gravity="center|left" android:layout_width="wrap_content" />
+                <LinearLayout android:layout_width="wrap_content" android:layout_height="56dp" android:layout_weight="0.3"/>
+                <TextView style="@style/detial_lineset_thick" android:id="@+id/thicktextview5" android:background="@drawable/line_thick"  android:layout_marginRight="10dp" />
+                <TextView style="@style/detail_lineset_items"  android:id="@+id/line5" android:background="@drawable/shape_circle" android:layout_marginRight="20dp"></TextView>
+            </LinearLayout>
+            <ImageView android:layout_width="match_parent" android:layout_height="1dp" android:background="#f0f0f0" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+    </ScrollView>
+</LinearLayout>

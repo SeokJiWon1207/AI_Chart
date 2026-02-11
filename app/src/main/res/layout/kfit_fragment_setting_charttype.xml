@@ -1,0 +1,272 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <androidx.core.widget.NestedScrollView
+        android:id="@+id/scroll_view"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="top"
+        android:layout_marginLeft="@dimen/kfit_bottomSheet_sub_side_margin"
+        android:background="@color/kfits_grey0"
+        android:orientation="vertical"
+        android:paddingBottom="64dp">
+
+        <LinearLayout
+            android:id="@+id/charttype_radio_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:id="@+id/charttype_radio_layout_1"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/kfit_sub1_item_height"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <ImageButton
+                    android:id="@+id/charttype_radio_btn_1"
+                    android:layout_width="@dimen/kfit_sub_item_icon"
+                    android:layout_height="@dimen/kfit_sub_item_icon"
+                    android:layout_marginLeft="@dimen/kfit_sub1_item_button_left_side_margin"
+                    android:layout_marginRight="@dimen/kfit_sub1_item_button_right_side_margin"
+                    android:background="@drawable/radiobtn_bottomsheet_chartselect"
+                    android:clickable="false"
+                    android:tag="1" />
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="@dimen/kfit_sub1_item_button_right_side_margin"
+                    android:layout_weight="1"
+                    android:text="@string/charttype_item1"
+                    android:textColor="@color/kfits_grey990"
+                    android:textSize="@dimen/kfit_sub1_item_text_size" />
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="0.5dp"
+                android:layout_marginLeft="@dimen/kfit_sub1_item_button_left_side_margin"
+                android:layout_marginTop="@dimen/kfit_sub1_item_divider_margin"
+                android:layout_marginBottom="@dimen/kfit_sub1_item_divider_margin"
+                android:alpha="0.2"
+                android:background="@color/kfits_grey500" />
+
+            <LinearLayout
+                android:id="@+id/charttype_radio_layout_2"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/kfit_sub1_item_height"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <ImageButton
+                    android:id="@+id/charttype_radio_btn_2"
+                    android:layout_width="@dimen/kfit_sub_item_icon"
+                    android:layout_height="@dimen/kfit_sub_item_icon"
+                    android:layout_marginLeft="@dimen/kfit_sub1_item_button_left_side_margin"
+                    android:layout_marginRight="@dimen/kfit_sub1_item_button_right_side_margin"
+                    android:background="@drawable/radiobtn_bottomsheet_chartselect"
+                    android:clickable="false"
+                    android:tag="2" />
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="@dimen/kfit_sub1_item_button_right_side_margin"
+                    android:layout_weight="1"
+                    android:text="@string/charttype_item2"
+                    android:textColor="@color/kfits_grey990"
+                    android:textSize="@dimen/kfit_sub1_item_text_size" />
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="0.5dp"
+                android:layout_marginLeft="@dimen/kfit_sub1_item_button_left_side_margin"
+                android:layout_marginTop="@dimen/kfit_sub1_item_divider_margin"
+                android:layout_marginBottom="@dimen/kfit_sub1_item_divider_margin"
+                android:alpha="0.2"
+                android:background="@color/kfits_grey500" />
+
+            <LinearLayout
+                android:id="@+id/charttype_radio_layout_3"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/kfit_sub1_item_height"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <ImageButton
+                    android:id="@+id/charttype_radio_btn_3"
+                    android:layout_width="@dimen/kfit_sub_item_icon"
+                    android:layout_height="@dimen/kfit_sub_item_icon"
+                    android:layout_marginLeft="@dimen/kfit_sub1_item_button_left_side_margin"
+                    android:layout_marginRight="@dimen/kfit_sub1_item_button_right_side_margin"
+                    android:background="@drawable/radiobtn_bottomsheet_chartselect"
+                    android:clickable="false"
+                    android:tag="3" />
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="@dimen/kfit_sub1_item_button_right_side_margin"
+                    android:layout_weight="1"
+                    android:text="@string/charttype_item3"
+                    android:textColor="@color/kfits_grey990"
+                    android:textSize="@dimen/kfit_sub1_item_text_size" />
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="0.5dp"
+                android:layout_marginLeft="@dimen/kfit_sub1_item_button_left_side_margin"
+                android:layout_marginTop="@dimen/kfit_sub1_item_divider_margin"
+                android:layout_marginBottom="@dimen/kfit_sub1_item_divider_margin"
+                android:alpha="0.2"
+                android:background="@color/kfits_grey500" />
+
+            <LinearLayout
+                android:id="@+id/charttype_radio_layout_4"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/kfit_sub1_item_height"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <ImageButton
+                    android:id="@+id/charttype_radio_btn_4"
+                    android:layout_width="@dimen/kfit_sub_item_icon"
+                    android:layout_height="@dimen/kfit_sub_item_icon"
+                    android:layout_marginLeft="@dimen/kfit_sub1_item_button_left_side_margin"
+                    android:layout_marginRight="@dimen/kfit_sub1_item_button_right_side_margin"
+                    android:background="@drawable/radiobtn_bottomsheet_chartselect"
+                    android:clickable="false"
+                    android:tag="4" />
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="@dimen/kfit_sub1_item_button_right_side_margin"
+                    android:layout_weight="1"
+                    android:text="@string/charttype_item4"
+                    android:textColor="@color/kfits_grey990"
+                    android:textSize="@dimen/kfit_sub1_item_text_size" />
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="0.5dp"
+                android:layout_marginLeft="@dimen/kfit_sub1_item_button_left_side_margin"
+                android:layout_marginTop="@dimen/kfit_sub1_item_divider_margin"
+                android:layout_marginBottom="@dimen/kfit_sub1_item_divider_margin"
+                android:alpha="0.2"
+                android:background="@color/kfits_grey500" />
+
+            <LinearLayout
+                android:id="@+id/charttype_radio_layout_5"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/kfit_sub1_item_height"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <ImageButton
+                    android:id="@+id/charttype_radio_btn_5"
+                    android:layout_width="@dimen/kfit_sub_item_icon"
+                    android:layout_height="@dimen/kfit_sub_item_icon"
+                    android:layout_marginLeft="@dimen/kfit_sub1_item_button_left_side_margin"
+                    android:layout_marginRight="@dimen/kfit_sub1_item_button_right_side_margin"
+                    android:background="@drawable/radiobtn_bottomsheet_chartselect"
+                    android:clickable="false"
+                    android:tag="5" />
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="@dimen/kfit_sub1_item_button_right_side_margin"
+                    android:layout_weight="1"
+                    android:text="@string/charttype_item5"
+                    android:textColor="@color/kfits_grey990"
+                    android:textSize="@dimen/kfit_sub1_item_text_size" />
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="0.5dp"
+                android:layout_marginLeft="@dimen/kfit_sub1_item_button_left_side_margin"
+                android:layout_marginTop="@dimen/kfit_sub1_item_divider_margin"
+                android:layout_marginBottom="@dimen/kfit_sub1_item_divider_margin"
+                android:alpha="0.2"
+                android:background="@color/kfits_grey500" />
+
+            <LinearLayout
+                android:id="@+id/charttype_radio_layout_6"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/kfit_sub1_item_height"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <ImageButton
+                    android:id="@+id/charttype_radio_btn_6"
+                    android:layout_width="@dimen/kfit_sub_item_icon"
+                    android:layout_height="@dimen/kfit_sub_item_icon"
+                    android:layout_marginLeft="@dimen/kfit_sub1_item_button_left_side_margin"
+                    android:layout_marginRight="@dimen/kfit_sub1_item_button_right_side_margin"
+                    android:background="@drawable/radiobtn_bottomsheet_chartselect"
+                    android:clickable="false"
+                    android:tag="6" />
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="@dimen/kfit_sub1_item_button_right_side_margin"
+                    android:layout_weight="1"
+                    android:text="@string/charttype_item6"
+                    android:textColor="@color/kfits_grey990"
+                    android:textSize="@dimen/kfit_sub1_item_text_size" />
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="0.5dp"
+                android:layout_marginLeft="@dimen/kfit_sub1_item_button_left_side_margin"
+                android:layout_marginTop="@dimen/kfit_sub1_item_divider_margin"
+                android:layout_marginBottom="@dimen/kfit_sub1_item_divider_margin"
+                android:alpha="0.2"
+                android:background="@color/kfits_grey500" />
+
+            <LinearLayout
+                android:id="@+id/charttype_radio_layout_7"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/kfit_sub1_item_height"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <ImageButton
+                    android:id="@+id/charttype_radio_btn_7"
+                    android:layout_width="@dimen/kfit_sub_item_icon"
+                    android:layout_height="@dimen/kfit_sub_item_icon"
+                    android:layout_marginLeft="@dimen/kfit_sub1_item_button_left_side_margin"
+                    android:layout_marginRight="@dimen/kfit_sub1_item_button_right_side_margin"
+                    android:background="@drawable/radiobtn_bottomsheet_chartselect"
+                    android:clickable="false"
+                    android:tag="7" />
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="@dimen/kfit_sub1_item_button_right_side_margin"
+                    android:layout_weight="1"
+                    android:text="@string/charttype_item7"
+                    android:textColor="@color/kfits_grey990"
+                    android:textSize="@dimen/kfit_sub1_item_text_size" />
+            </LinearLayout>
+
+            <!--            <View-->
+            <!--                android:layout_width="match_parent"-->
+            <!--                android:layout_height="0.5dp"-->
+            <!--                android:background="@color/kfits_grey500"-->
+            <!--                android:alpha="0.2" />-->
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+</ScrollView>

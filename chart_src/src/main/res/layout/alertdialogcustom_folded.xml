@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+	android:layout_marginLeft="32dp" android:layout_marginRight="32dp"
+    android:orientation="vertical"  android:padding="0dp"
+	>
+	<LinearLayout
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:background="@drawable/shape_popup_alert_roundrect"
+		android:orientation="vertical" android:padding="0dp">
+
+	<RelativeLayout android:id="@+id/savetop_init"
+		android:orientation="horizontal"
+		android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="32dp" >
+		<TextView android:id="@+id/alert_title"
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:gravity="center"
+			android:text="@string/dialog_clear_chart_title"
+			android:textSize="@dimen/kfit_alertdialog_title_textsize"
+			android:textStyle="bold"
+			android:textColor="@color/kfit_grey990">
+		</TextView>
+	</RelativeLayout>
+
+	<LinearLayout  android:id="@+id/savemid_init" android:layout_width="fill_parent" android:layout_height="wrap_content"
+		android:orientation="vertical" android:background="@android:color/transparent" android:gravity="center_vertical"
+		android:paddingLeft="16dp" android:paddingRight="16dp">
+
+		<TextView android:layout_width="match_parent"	android:layout_height="wrap_content" android:id="@+id/alert_message"
+			android:gravity="center" android:layout_marginTop="10dp" android:layout_marginBottom="26dp"
+			android:text="차트 설정을 초기화합니다." android:textSize="16dp" android:textColor="@color/kfit_high__emphasis" />
+
+	</LinearLayout>
+	<!--<LinearLayout-->
+		<!--android:layout_width="match_parent"-->
+		<!--android:layout_height="wrap_content">-->
+		<!--<ImageView android:layout_width="match_parent" android:layout_height="1px" android:background="#444444" />-->
+	<!--</LinearLayout>-->
+
+    <LinearLayout
+		android:orientation="vertical"
+		android:layout_width="fill_parent" android:layout_height="wrap_content"
+		android:layout_marginLeft="16dp" android:layout_marginRight="16dp" android:paddingBottom="16dp"
+		>
+
+		<androidx.appcompat.widget.AppCompatButton
+			android:id="@+id/alert_btn_yes"
+			android:layout_width="match_parent"
+			android:layout_height="52dp"
+			android:layout_marginBottom="8dp"
+			android:background="@drawable/dialog_button_background2"
+			android:text="초기화"
+			android:textSize="@dimen/kfit_alertdialog_button_textsize"
+			android:textColor="@color/kfit_red"
+			android:textStyle="bold"
+			android:gravity="center_vertical|center_horizontal"
+			android:stateListAnimator="@null" />
+
+		<androidx.appcompat.widget.AppCompatButton
+			android:id="@+id/alert_btn_no"
+			android:layout_width="match_parent"
+			android:layout_height="52dp"
+			android:background="@drawable/dialog_button_background"
+			android:gravity="center_vertical|center_horizontal"
+			android:stateListAnimator="@null"
+			android:text="취소"
+			android:textColor="@color/kfit_high__emphasis"
+			android:textSize="@dimen/kfit_alertdialog_button_textsize"
+			android:textStyle="bold" />
+
+		<androidx.appcompat.widget.AppCompatButton
+			android:id="@+id/alert_btn_ok"
+			style="@style/alert_bottom_btn"
+			android:layout_width="match_parent"
+			android:textStyle="normal"
+			android:textColor="#ffffff"
+			android:text="확인" android:visibility="gone"
+                />
+	</LinearLayout>
+	</LinearLayout>
+	<LinearLayout
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content">
+		<androidx.appcompat.widget.AppCompatButton
+			android:id="@+id/btn_cancle"
+			android:layout_width="match_parent"
+			android:layout_height="52dp"
+			android:gravity="center"
+			android:background="@android:color/transparent"
+			android:text="취소"
+			android:textColor="@color/kfit_high__emphasis"
+			android:textSize="14dp"
+			android:textAlignment="center"
+			android:visibility="gone"/>
+	</LinearLayout>
+</LinearLayout>

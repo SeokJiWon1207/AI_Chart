@@ -1,0 +1,2 @@
+configurations.create("default")
+artifacts.add("default", file('chart_src-release.aar'))

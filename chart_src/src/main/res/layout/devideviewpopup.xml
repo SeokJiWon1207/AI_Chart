@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:id="@+id/ll_divide"
+    xmlns:android="http://schemas.android.com/apk/res/android" android:clickable="true"
+               android:padding="0dp" android:orientation="vertical"
+                android:layout_height="match_parent" android:layout_width="match_parent" android:layout_gravity="center_horizontal" android:background="@drawable/shape_popup_alert_roundrect">
+
+    <RelativeLayout android:id="@+id/savetop"
+                    android:orientation="horizontal"
+                    android:background="@android:color/transparent"
+                    android:layout_width="fill_parent" android:layout_height="68dp">
+        <TextView android:id="@+id/frameaTitle" android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:text="멀티차트"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:textColor="#111111">
+        </TextView>
+
+        <!--<ImageView-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="1dp"-->
+            <!--android:background="#f0f0f0"-->
+            <!--android:layout_marginLeft="30dp"-->
+            <!--android:layout_marginRight="30dp"-->
+            <!--android:layout_alignParentBottom="true"/>-->
+    </RelativeLayout>
+
+
+    <ScrollView
+        android:id="@+id/devideviewscroll"
+        android:layout_width="fill_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:layout_marginLeft="18dp"
+        android:layout_marginRight="18dp"
+        android:background="#00ffffff"
+        android:fadingEdge="none">
+
+<!--        <LinearLayout android:layout_width="fill_parent" android:layout_height="wrap_content" android:background="#ffffff"  android:orientation="vertical" >-->
+        <LinearLayout android:layout_width="match_parent" android:layout_height="match_parent" android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:orientation="vertical"
+                android:background="#ffffff">
+                <LinearLayout android:background="#e3e3e3" android:layout_width="fill_parent" android:layout_height="35dp" android:orientation="horizontal" android:layout_gravity="center_vertical" android:visibility="gone">
+                    <LinearLayout android:layout_width="240dp" android:layout_height="wrap_content"></LinearLayout>
+                    <LinearLayout android:id="@+id/ll_refresh_area" android:layout_width="wrap_content" android:layout_height="match_parent">
+
+                        <TextView android:text="초기화" android:id="@+id/paramtv" android:textSize="14dp" android:textColor="#666666" android:layout_toRightOf="@+id/btn_baseline_refresh" android:layout_width="40dp" android:layout_height="wrap_content" android:layout_gravity="center_vertical" android:layout_marginLeft="5dp"/>
+                    </LinearLayout>
+                </LinearLayout>
+
+                <TextView android:id="@+id/devideview_txt_1" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="레이아웃 설정" android:textColor="#111111" android:textSize="15sp"/>
+
+                <LinearLayout style="@style/devideview_relative" android:id="@+id/relativeLayout1" android:layout_marginTop="16dp" android:orientation="horizontal">
+                    <Button style="@style/devideview_button" android:id="@+id/button01" android:background="@drawable/screen01_change"  android:tag="11"></Button>
+                    <Button style="@style/devideview_button" android:id="@+id/button03" android:background="@drawable/screen02_1__change" android:tag="22"></Button>
+                    <Button style="@style/devideview_button" android:id="@+id/button02" android:background="@drawable/screen02_2__change" android:tag="21"></Button>
+                    <Button style="@style/devideview_button" android:id="@+id/button06" android:background="@drawable/screen03_1__change" android:tag="33"></Button>
+                    <Button style="@style/devideview_button" android:id="@+id/button05" android:background="@drawable/screen03_2__change" android:tag="32" android:layout_marginRight="0dp"></Button>
+
+
+
+                </LinearLayout>
+
+                <LinearLayout style="@style/devideview_relative" android:id="@+id/relativeLayout2" android:orientation="horizontal">
+                    <Button style="@style/devideview_button" android:id="@+id/button07" android:background="@drawable/screen03_3__change" android:tag="34"></Button>
+                    <Button style="@style/devideview_button" android:id="@+id/button04" android:background="@drawable/screen03_4__change" android:tag="31"></Button>
+                    <Button style="@style/devideview_button" android:id="@+id/button08" android:background="@drawable/screen03_5__change" android:tag="35"></Button>
+                    <Button style="@style/devideview_button" android:id="@+id/button09" android:background="@drawable/screen03_6__change" android:tag="36"></Button>
+                    <Button style="@style/devideview_button" android:id="@+id/button10" android:background="@drawable/screen04_1__change" android:tag="41" android:layout_marginRight="0dp"></Button>
+                </LinearLayout>
+                <LinearLayout style="@style/devideview_relative" android:id="@+id/relativeLayout3" android:orientation="horizontal">
+                    <Button style="@style/devideview_button" android:id="@+id/button11" android:background="@drawable/screen04_2__change" android:tag="42"></Button>
+                    <Button style="@style/devideview_button" android:id="@+id/button12" android:background="@drawable/screen04_3__change" android:tag="44"></Button>
+                    <Button style="@style/devideview_button" android:id="@+id/button13" android:background="@drawable/screen04_4__change" android:tag="45"></Button>
+                    <Button style="@style/devideview_button" android:id="@+id/button14" android:background="@drawable/screen04_5__change" android:tag="43"></Button>
+                    <Button style="@style/devideview_button" android:layout_marginRight="0dp" android:visibility="invisible"></Button>
+                </LinearLayout>
+
+        <!--        <ImageView style="@style/popup_imageline" android:layout_width="280dp" android:layout_gravity="center" android:visibility="gone"/>-->
+
+                <TextView android:id="@+id/devideview_txt_2" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_gravity="left" android:textColor="#111111"  android:text="분할설정"
+                android:layout_marginTop="30dp" android:textSize="15sp"/>
+
+                <LinearLayout style="@style/sync_linearlayout" android:layout_width="match_parent"  android:id="@+id/dividesync_linear_jongmok" android:orientation="horizontal" android:layout_marginTop="17dp">
+                    <CheckBox style="@style/sync_checkbox" android:id="@+id/button15" android:layout_marginLeft="19dp"/>
+                    <TextView style="@style/sync_textview" android:id="@+id/button16"  android:text="종목" android:includeFontPadding="false"/>
+                    <View  android:layout_width="0dp" android:layout_height="match_parent" android:layout_weight="1" android:visibility="gone"/>
+                    <CheckBox style="@style/sync_checkbox" android:id="@+id/button17" android:layout_marginLeft="55dp"/>
+                    <TextView style="@style/sync_textview" android:id="@+id/button18" android:text="주기" android:includeFontPadding="false"/>
+                    <View  android:layout_width="0dp" android:layout_height="match_parent" android:layout_weight="1" android:visibility="gone"/>
+
+                    <!--<CheckBox style="@style/sync_checkbox" android:id="@+id/button15" android:layout_marginLeft="20dp"/>
+                    <TextView style="@style/sync_textview" android:id="@+id/button16" android:text="지표" />-->
+                </LinearLayout>
+
+                <LinearLayout style="@style/sync_linearlayout" android:layout_width="match_parent" android:orientation="horizontal" android:layout_marginTop="31dp" android:layout_marginBottom="40dp">
+                    <Button android:id="@+id/button19" android:layout_width="0dp" android:layout_height="36dp" android:layout_weight="1" android:background="@drawable/ctl_radio_rect_n"
+                        android:text="지표 동기화" android:textSize="14dp" android:textColor="#111111" android:layout_marginRight="8dp" android:layout_marginLeft="19dp"/>
+                    <Button android:id="@+id/btn_devideview_refresh" android:background="@drawable/ctl_radio_rect_n" android:text="초기화" android:textSize="14dp" android:textColor="#111111" android:layout_width="0dp" android:layout_height="36dp" android:layout_weight="1"  android:layout_marginRight="19dp"></Button>
+                </LinearLayout>
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+    <!--<ImageView android:layout_width="match_parent" android:layout_height="1px" android:background="#444444" />-->
+
+	
+    <LinearLayout android:id="@+id/savebottom"
+		android:orientation="horizontal" android:weightSum="1"
+		android:layout_width="fill_parent" android:layout_height="48dp"
+		android:gravity="center_vertical"  android:background="@android:color/transparent">
+		<Button
+            android:id="@+id/btnchartsettingclose"
+            style="@style/alert_bottom_btn"
+            android:background="@drawable/btn_popup_chart_neg"
+            android:textSize="17sp"
+            android:text="취소"/>
+		<!-- <Button
+                android:id="@+id/btn_devideview_refresh"
+                style="@style/alert_bottom_btn"
+                android:text="분할초기화"/> -->
+                
+        <Button
+            android:id="@+id/btn_devideview_confirm"
+            style="@style/alert_bottom_btn"
+            android:background="@drawable/btn_popup_chart"
+            android:textSize="17sp"
+            android:text="확인"/>
+	</LinearLayout>
+    
+</LinearLayout> 
+

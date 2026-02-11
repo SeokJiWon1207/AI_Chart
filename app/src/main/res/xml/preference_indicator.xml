@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <PreferenceCategory app:title="@string/displayinfo_header_myinfo">
+        <CheckBoxPreference
+            app:key="myinfo1"
+            app:title="@string/indicator_myinfo_item1"
+            app:useSimpleSummaryProvider="true"
+            app:persistent="true" />
+        <CheckBoxPreference
+            app:key="myinfo2"
+            app:title="@string/indicator_myinfo_item2"
+            app:useSimpleSummaryProvider="true"
+            app:persistent="true" />
+    </PreferenceCategory>
+
+    <PreferenceCategory app:title="@string/displayinfo_header_overlay">
+        <CheckBoxPreference
+            app:key="overlay1"
+            app:title="@string/indicator_overlay_item1"
+            app:useSimpleSummaryProvider="true"
+            app:persistent="true" />
+        <CheckBoxPreference
+            app:key="overlay2"
+            app:title="@string/indicator_overlay_item1"
+            app:useSimpleSummaryProvider="true"
+            app:persistent="true" />
+
+    </PreferenceCategory>
+
+</PreferenceScreen>

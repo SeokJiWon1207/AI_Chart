@@ -1,0 +1,219 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	android:layout_width="320dp"
+	android:layout_height="wrap_content"
+	android:clickable="true"
+	android:focusable="true"
+	android:focusableInTouchMode="true"
+	android:orientation="vertical"
+	android:padding="0dp"
+	android:background="@drawable/shape_popup_alert_roundrect">
+	<!-- 2012. 8. 4 Mug맵차트에서 PopupWindow 의 너비/높이를 둘다 match_parent 를 했을경우 위쪽이 짤리는데 이것이 y축좌표 설정하는 것으로 해결되지 않아 위쪽 여백 설정  -->
+	<!-- 2012. 7. 20  자동추세설정  레이아웃 수정 - 배경색  -->
+	<RelativeLayout
+		android:id="@+id/savetop"
+		android:layout_width="fill_parent"
+		android:layout_height="63dp"
+		android:orientation="horizontal">
+
+		<TextView
+			android:id="@+id/frameaTitle"
+			android:layout_width="fill_parent"
+			android:layout_height="fill_parent"
+			android:gravity="center"
+			android:text="자동추세 설정"
+			android:textColor="#111111"
+			android:textSize="18sp"
+			android:paddingLeft="12dp"></TextView>
+		<!--  초기화  -->
+		<Button android:textColor="#ffffff" android:layout_height="28dp" android:textSize="13dp" android:text="초기화"
+			android:layout_width="54dp" android:layout_gravity="center_vertical" android:layout_marginRight="18dp"
+			android:background="@drawable/btn_header_init" android:id="@+id/initbtn" android:layout_centerVertical="true" android:layout_alignParentRight="true"/>
+		<ImageView
+			android:layout_width="match_parent"
+			android:layout_height="1dp"
+			android:background="#f1f1f1"
+			android:layout_marginLeft="18dp"
+			android:layout_marginRight="18dp"
+			android:layout_alignParentBottom="true"/>
+	</RelativeLayout>
+	<!-- 2012. 7. 25 자동추세  설정창  레이아웃  weight(가중치) 로 수정   -->
+		<!--<ImageView android:layout_width="match_parent" android:layout_height="1px" android:background="#444444" />-->
+	<ScrollView
+		android:weightSum="1"
+		android:layout_weight="1"
+		android:id="@+id/autotrendscroll"
+		android:layout_width="fill_parent"
+		android:layout_height="fill_parent"
+		android:layout_marginLeft="0dp"
+		android:layout_marginRight="0dp"
+		android:background="#00ffffff"
+		android:fadingEdge="none">
+
+		<LinearLayout android:layout_width="match_parent" android:layout_height="match_parent" android:orientation="vertical" android:paddingBottom="40dp">
+
+		<LinearLayout
+			android:layout_width="fill_parent"
+			android:layout_height="fill_parent"
+			android:orientation="vertical">
+
+			<LinearLayout android:id="@+id/autotrendlinear01" style="@style/detail_valset_outerlinear">
+				<LinearLayout style="@style/detail_valset_linear" android:layout_marginTop="0dp" android:layout_height="match_parent">
+
+					<CheckBox
+						android:id="@+id/public_checkbox01"
+						style="@style/detail_checkbox"
+						android:layout_alignTop="@+id/autotitle01"
+						android:layout_toRightOf="@+id/autotitle01"
+						android:tag="1" />
+
+					<TextView
+						android:id="@+id/autotitle01"
+						style="@style/detail_lineset_title"
+						android:text="파동선"></TextView>
+				</LinearLayout>
+			</LinearLayout>
+
+			<ImageView android:layout_width="match_parent" android:layout_height="1dp" android:background="#f1f1f1" android:layout_marginLeft="18dp" android:layout_marginRight="18dp"/>
+			<LinearLayout android:id="@+id/autotrendlinear02" style="@style/detail_valset_outerlinear">
+				<LinearLayout style="@style/detail_valset_linear" android:layout_marginTop="0dp" android:layout_height="match_parent">
+
+					<CheckBox
+						android:id="@+id/public_checkbox02"
+						style="@style/detail_checkbox"
+						android:layout_alignTop="@+id/autotitle02"
+						android:layout_toRightOf="@+id/autotitle02"
+						android:tag="2" />
+
+					<TextView
+						android:id="@+id/autotitle02"
+						style="@style/detail_lineset_title"
+						android:layout_weight="0.5"
+						android:text="고점수평선"></TextView>
+
+				</LinearLayout>
+			</LinearLayout>
+
+			<ImageView android:layout_width="match_parent" android:layout_height="1dp" android:background="#f1f1f1" android:layout_marginLeft="18dp" android:layout_marginRight="18dp"/>
+			<LinearLayout android:id="@+id/autotrendlinear03" style="@style/detail_valset_outerlinear">
+				<LinearLayout style="@style/detail_valset_linear" android:layout_marginTop="0dp" android:layout_height="match_parent">
+
+					<CheckBox
+						android:id="@+id/public_checkbox03"
+						style="@style/detail_checkbox"
+						android:layout_alignTop="@+id/autotitle03"
+						android:layout_toRightOf="@+id/autotitle03"
+						android:tag="3" />
+
+					<TextView
+						android:id="@+id/autotitle03"
+						style="@style/detail_lineset_title"
+						android:layout_weight="0.5"
+						android:text="저점수평선"></TextView>
+
+				</LinearLayout>
+			</LinearLayout>
+
+			<ImageView android:layout_width="match_parent" android:layout_height="1dp" android:background="#f1f1f1" android:layout_marginLeft="18dp" android:layout_marginRight="18dp"/>
+			<LinearLayout android:id="@+id/autotrendlinear06" style="@style/detail_valset_outerlinear">
+				<LinearLayout style="@style/detail_valset_linear" android:layout_marginTop="0dp" android:layout_height="match_parent">
+
+					<CheckBox
+						android:id="@+id/public_checkbox06"
+						style="@style/detail_checkbox"
+						android:layout_alignTop="@+id/autotitle06"
+						android:layout_toRightOf="@+id/autotitle06"
+						android:tag="4" />
+
+					<TextView
+						android:id="@+id/autotitle06"
+						style="@style/detail_lineset_title"
+						android:text="W형"></TextView>
+
+				</LinearLayout>
+			</LinearLayout>
+
+			<ImageView android:layout_width="match_parent" android:layout_height="1dp" android:background="#f1f1f1" android:layout_marginLeft="18dp" android:layout_marginRight="18dp"/>
+			<LinearLayout android:id="@+id/autotrendlinear04" style="@style/detail_valset_outerlinear">
+				<LinearLayout style="@style/detail_valset_linear" android:layout_marginTop="0dp" android:layout_height="match_parent">
+
+					<TextView
+						android:id="@+id/autotitle04"
+						style="@style/detail_valset_title_datatype"
+						android:text="전봉 : "></TextView>
+
+					<LinearLayout
+						android:layout_width="0dp"
+						android:layout_height="wrap_content"
+						android:layout_weight="1"></LinearLayout>
+
+					<drfn.chart.comp.ExEditText
+						android:id="@+id/prenamefield"
+						style="@style/autotrend_edittext"
+						android:gravity="center"
+						android:tag="9005" />
+				</LinearLayout>
+			</LinearLayout>
+			<ImageView android:layout_width="match_parent" android:layout_height="1dp" android:background="#f1f1f1" android:layout_marginLeft="18dp" android:layout_marginRight="18dp"/>
+			<LinearLayout android:id="@+id/autotrendlinear05" style="@style/detail_valset_outerlinear">
+				<LinearLayout style="@style/detail_valset_linear" android:layout_marginTop="0dp" android:layout_height="match_parent">
+
+					<TextView
+						android:id="@+id/autotitle05"
+						style="@style/detail_valset_title_datatype"
+						android:text="후봉 : "></TextView>
+
+					<LinearLayout
+						android:layout_width="0dp"
+						android:layout_height="wrap_content"
+						android:layout_weight="1"></LinearLayout>
+
+					<drfn.chart.comp.ExEditText
+						android:id="@+id/endnamefield"
+						style="@style/autotrend_edittext"
+						android:gravity="center"
+						android:tag="9006" />
+				</LinearLayout>
+			</LinearLayout>
+			<ImageView android:layout_width="match_parent" android:layout_height="1dp" android:background="#f1f1f1" android:layout_marginLeft="18dp" android:layout_marginRight="18dp"/>
+		</LinearLayout>
+		</LinearLayout>
+	</ScrollView>
+		<!-- <LinearLayout android:layout_width="fill_parent" android:layout_height="0dp" android:layout_weight="0.05"></LinearLayout> -->
+	<!--<ImageView android:layout_width="match_parent" android:layout_height="1px" android:background="#444444" />-->
+	<!-- 2012. 7. 20  자동추세설정  레이아웃 수정 - 배경색  -->
+	<LinearLayout
+		android:layout_width="fill_parent"
+		android:layout_height="48dp"
+		android:gravity="center_vertical"
+		android:background="@android:color/transparent">
+		<!--  -->
+		<!--<Button-->
+		<!--android:id="@+id/acceptbtn"-->
+		<!--android:layout_marginLeft="9dp"-->
+		<!--android:layout_marginTop="9dp" -->
+		<!--android:layout_width="80dp"-->
+		<!--android:layout_height="40dp"-->
+
+		<!--android:background="@drawable/btn_popup_chart"-->
+		<!--android:textColor="#333333"-->
+		<!--android:text="적용"-->
+		<!--android:textSize="18dp"-->
+		<!--android:visibility="gone" />-->
+
+		<Button
+			android:id="@+id/btn_autotrend_close"
+			style="@style/alert_bottom_btn"
+			android:layout_weight="0.4"
+			android:background="@drawable/btn_popup_chart_neg"
+			android:text="취소" />
+
+		<Button
+			android:id="@+id/acceptbtn"
+			style="@style/alert_bottom_btn"
+			android:layout_weight="0.6"
+			android:background="@drawable/btn_popup_chart"
+			android:text="확인"/>
+	</LinearLayout>
+</LinearLayout>
+

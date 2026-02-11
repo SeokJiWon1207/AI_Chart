@@ -1,0 +1,168 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <View
+        android:id="@+id/sub2_cell_divider"
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="@dimen/kfit_sub2_item_divider_margin"
+        android:layout_marginBottom="@dimen/kfit_sub2_item_divider_margin"
+        android:alpha="0.2"
+        android:background="@color/kfits_grey500"
+        android:visibility="gone" />
+
+    <View
+        android:id="@+id/sub2_cell_headerMarginView"
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:layout_marginTop="6dp"
+        android:layout_marginBottom="6dp"
+        android:visibility="gone" />
+
+    <LinearLayout
+        android:id="@+id/fctb_AbsoluteLayout"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/kfit_bottomSheet_sub_side_margin"
+        android:layout_marginRight="0dp"
+        android:background="@color/kfits_grey0"
+        android:gravity="center_vertical"
+        android:orientation="horizontal">
+        <LinearLayout
+            android:id="@+id/fctb_AbsoluteLayout01"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="@dimen/kfit_sub2_item_height"
+            android:layout_marginLeft="@dimen/kfit_bottomSheet_sub_side_margin"
+            android:layout_marginRight="0dp"
+            android:background="@color/kfits_grey0"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <ImageButton
+                android:id="@+id/usf_ImageButton"
+                android:layout_width="@dimen/kfit_sub_item_icon"
+                android:layout_height="@dimen/kfit_sub_item_icon"
+                android:layout_marginLeft="@dimen/kfit_sub2_item_button_side_margin"
+                android:background="@drawable/checkboxbtn_bottomsheet"
+                android:focusable="false" />
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:id="@+id/indicatorNameLayout"
+                android:layout_height="@dimen/kfit_sub2_item_height"
+                android:layout_marginLeft="@dimen/kfit_bottomSheet_sub_side_margin"
+                android:layout_marginRight="0dp"
+                android:background="@color/kfits_grey0"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/fctb_TextViewA01"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginLeft="@dimen/kfit_sub2_item_view_side_margin"
+                    android:textColor="@color/kfits_grey990"
+                    android:textSize="@dimen/kfit_sub2_item_text_size"
+                    tools:text="지표이름" />
+
+                <TextView
+                    android:id="@+id/sub2_cell_item_textlint"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/kfit_sub2_item_view_top_margin"
+                    android:layout_marginLeft="@dimen/kfit_sub2_item_view_side_margin"
+                    android:layout_gravity="bottom"
+                    android:text="일차트에서만 제공됩니다"
+                    android:textColor="@color/kfits_grey500"
+                    android:textSize="@dimen/kfit_sub2_item_lint_text_size"
+                    android:visibility="invisible" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/indicatorConfigButtonLayout"
+                android:layout_width="83dp"
+                android:layout_height="match_parent"
+                android:paddingLeft="8dp"
+                android:paddingRight="@dimen/kfit_sub2_item_button_side_margin"
+                android:background="@color/kfits_grey0"
+                android:layout_gravity="center"
+                android:visibility="invisible"
+                android:orientation="horizontal"
+                >
+                <TextView
+                    android:id="@+id/fctb_TextView_config"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/kfits_grey990"
+                    android:textSize="@dimen/kfit_sub2_item_text_size"
+                    android:layout_gravity="center|center_vertical|center_horizontal"
+                    android:visibility="visible"
+                    tools:text="설정"
+                    android:layout_marginRight="0dp"/>
+
+                <ImageView
+                    android:id="@+id/iv_config"
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginLeft="-6dp"
+                    android:background="@drawable/kfit_core_ic_common_detail" />
+            </LinearLayout>
+        </LinearLayout>
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:id="@+id/fctb_AbsoluteLayout03"
+            android:layout_width="fill_parent"
+            android:layout_height="36dp"
+            android:background="@color/kfits_grey0"
+            android:gravity="bottom"
+            android:orientation="horizontal"
+            android:visibility="gone">
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="12dp"
+                android:alpha="1.0"
+                android:background="@color/divider_chart" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/fctb_AbsoluteLayout02"
+            android:layout_width="fill_parent"
+            android:layout_height="44dp"
+            android:layout_marginLeft="@dimen/kfit_bottomSheet_common_side_margin"
+            android:layout_marginBottom="16dp"
+            android:background="@color/kfits_grey0"
+            android:gravity="bottom"
+            android:orientation="horizontal"
+            android:visibility="gone">
+
+            <TextView
+                android:id="@+id/sub2_cell_headerTextview"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/kfit_sub2_item_view_side_margin"
+                android:text="내 정보"
+                android:textColor="@color/kfits_fit_on_background_emphasis_medium"
+                android:textSize="@dimen/kfit_sub2_item_text_size" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <View
+        android:id="@+id/kfit_cell_emptyview"
+        android:layout_width="match_parent"
+        android:layout_height="24dp" />
+</LinearLayout>

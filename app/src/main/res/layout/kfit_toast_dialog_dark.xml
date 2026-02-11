@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="16dp"
+    android:gravity="center"
+    android:background="@drawable/toast_dialog_background_dark"
+    android:orientation="vertical">
+
+
+    <TextView
+        android:id="@+id/kfit_alert_content"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="left"
+        android:layout_marginTop="16dp"
+        android:layout_marginBottom="16dp"
+        android:layout_marginLeft="24dp"
+        android:layout_marginRight="24dp"
+        android:text="선택하신 차트는 보조 지표 사용할 수 없어요."
+        android:textSize="14dp"
+        android:textColor="@color/kfits_fit_inverse_emphasis_high_type" />
+
+
+</LinearLayout>

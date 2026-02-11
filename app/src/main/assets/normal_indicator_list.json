@@ -1,0 +1,773 @@
+[
+  {
+    "use" : "1",
+    "detailType" : "other",
+    "subType" : "market",
+    "type" : "Indicator",
+    "name" : "외국인 순매수",
+    "tag" : "30102"
+  },
+  {
+    "use" : "1",
+    "detailType" : "other",
+    "subType" : "market",
+    "type" : "Indicator",
+    "name" : "기관 순매수",
+    "tag" : "30103"
+  },
+  {
+    "use" : "1",
+    "detailType" : "other",
+    "subType" : "market",
+    "type" : "Indicator",
+    "name" : "개인 순매수",
+    "tag" : "30104"
+  },
+  {
+    "use" : "1",
+    "detailType" : "other",
+    "subType" : "market",
+    "type" : "Indicator",
+    "name" : "외국인/기관/개인 추세",
+    "tag" : "30101"
+  },
+  {
+    "use" : "1",
+    "detailType" : "other",
+    "subType" : "market",
+    "type" : "Indicator",
+    "name" : "외국인 비율",
+    "tag" : "30100"
+  },
+  {
+    "use" : "1",
+    "detailType" : "jipyo",
+    "subType" : "volume",
+    "type" : "Indicator",
+    "name" : "거래량",
+    "tag" : "30000"
+  },
+  {
+    "use" : "1",
+    "detailType" : "jipyo",
+    "subType" : "volume",
+    "type" : "Indicator",
+    "name" : "거래대금",
+    "tag" : "30043"
+  },
+  {
+    "use" : "1",
+    "detailType" : "jipyo",
+    "subType" : "marketStrength",
+    "type" : "Indicator",
+    "name" : "심리도",
+    "tag" : "30016"
+  },
+  {
+    "use" : "1",
+    "detailType" : "jipyo",
+    "subType" : "marketStrength",
+    "type" : "Indicator",
+    "name" : "신심리도",
+    "tag" : "30045"
+  },
+  {
+    "use" : "1",
+    "detailType" : "jipyo",
+    "subType" : "volatility",
+    "type" : "Indicator",
+    "name" : "이격도",
+    "tag" : "30015"
+  },
+  {
+    "use" : "1",
+    "detailType" : "jipyo",
+    "subType" : "trend",
+    "type" : "Indicator",
+    "name" : "AD Line",
+    "tag" : "30026"
+  },
+  {
+    "use" : "1",
+    "detailType" : "jipyo",
+    "subType" : "volatility",
+    "type" : "Indicator",
+    "name" : "ATR",
+    "tag" : "30035"
+  },
+  {
+    "use" : "1",
+    "detailType" : "jipyo",
+    "subType" : "trend",
+    "type" : "Indicator",
+    "name" : "ADX",
+    "tag" : "30006"
+  },
+  {
+    "use" : "1",
+    "detailType" : "jipyo",
+    "subType" : "trend",
+    "type" : "Indicator",
+    "name" : "CCI",
+    "tag" : "30019"
+  },
+  {
+    "use" : "1",
+    "detailType" : "jipyo",
+    "subType" : "trend",
+    "type" : "Indicator",
+    "name" : "DMI",
+    "tag" : "30005"
+  },
+  {
+    "use" : "1",
+    "detailType" : "jipyo",
+    "subType" : "volume",
+    "type" : "Indicator",
+    "name" : "EOM",
+    "tag" : "30044"
+  },
+  {
+    "use" : "1",
+    "detailType" : "jipyo",
+    "subType" : "trend",
+    "type" : "Indicator",
+    "name" : "MACD",
+    "tag" : "30002"
+  },
+  {
+    "use" : "1",
+    "detailType" : "jipyo",
+    "subType" : "trend",
+    "type" : "Indicator",
+    "name" : "MACD OSC",
+    "tag" : "30001"
+  },
+  {
+    "use" : "1",
+    "detailType" : "jipyo",
+    "subType" : "volatility",
+    "type" : "Indicator",
+    "name" : "Mass Index",
+    "tag" : "30023"
+  },
+  {
+    "use" : "1",
+    "detailType" : "jipyo",
+    "subType" : "volume",
+    "type" : "Indicator",
+    "name" : "MFI",
+    "tag" : "30022"
+  },
+  {
+    "use" : "1",
+    "detailType" : "jipyo",
+    "subType" : "trend",
+    "type" : "Indicator",
+    "name" : "Momentum",
+    "tag" : "30018"
+  },
+  {
+    "use" : "1",
+    "detailType" : "jipyo",
+    "subType" : "volume",
+    "type" : "Indicator",
+    "name" : "NVI",
+    "tag" : "30024"
+  },
+  {
+    "use" : "1",
+    "detailType" : "jipyo",
+    "subType" : "volume",
+    "type" : "Indicator",
+    "name" : "OBV",
+    "tag" : "30009"
+  },
+  {
+    "use" : "1",
+    "detailType" : "jipyo",
+    "subType" : "trend",
+    "type" : "Indicator",
+    "name" : "Price Oscillator",
+    "tag" : "30036"
+  },
+  {
+    "use" : "1",
+    "detailType" : "jipyo",
+    "subType" : "marketStrength",
+    "type" : "Indicator",
+    "name" : "PVT",
+    "tag" : "30040"
+  },
+  {
+    "use" : "1",
+    "detailType" : "jipyo",
+    "subType" : "volume",
+    "type" : "Indicator",
+    "name" : "PVI",
+    "tag" : "30090"
+  },
+  {
+    "use" : "1",
+    "detailType" : "jipyo",
+    "subType" : "volatility",
+    "type" : "Indicator",
+    "name" : "RMI",
+    "tag" : "30029"
+  },
+  {
+    "use" : "1",
+    "detailType" : "jipyo",
+    "subType" : "trend",
+    "type" : "Indicator",
+    "name" : "ROC",
+    "tag" : "30028"
+  },
+  {
+    "use" : "1",
+    "detailType" : "jipyo",
+    "subType" : "volatility",
+    "type" : "Indicator",
+    "name" : "RSI",
+    "tag" : "30008"
+  },
+  {
+    "use" : "1",
+    "detailType" : "jipyo",
+    "subType" : "trend",
+    "type" : "Indicator",
+    "name" : "Sonar",
+    "tag" : "30011"
+  },
+  {
+    "use" : "1",
+    "detailType" : "jipyo",
+    "subType" : "volatility",
+    "type" : "Indicator",
+    "name" : "Stochastic Fast",
+    "tag" : "30004"
+  },
+  {
+    "use" : "1",
+    "detailType" : "jipyo",
+    "subType" : "volatility",
+    "type" : "Indicator",
+    "name" : "Stochastic Slow",
+    "tag" : "30003"
+  },
+  {
+    "use" : "1",
+    "detailType" : "jipyo",
+    "subType" : "volatility",
+    "type" : "Indicator",
+    "name" : "Stochastics Oscillator",
+    "tag" : "30046"
+  },
+  {
+    "use" : "1",
+    "detailType" : "jipyo",
+    "subType" : "trend",
+    "type" : "Indicator",
+    "name" : "TRIX",
+    "tag" : "30025"
+  },
+  {
+    "use" : "1",
+    "detailType" : "jipyo",
+    "subType" : "volume",
+    "type" : "Indicator",
+    "name" : "VA Oscillator",
+    "tag" : "30065"
+  },
+  {
+    "use" : "1",
+    "detailType" : "jipyo",
+    "subType" : "volume",
+    "type" : "Indicator",
+    "name" : "Volume Oscillator",
+    "tag" : "30013"
+  },
+  {
+    "use" : "1",
+    "detailType" : "jipyo",
+    "subType" : "volume",
+    "type" : "Indicator",
+    "name" : "VR",
+    "tag" : "30014"
+  },
+  {
+    "use" : "1",
+    "detailType" : "jipyo",
+    "subType" : "volume",
+    "type" : "Indicator",
+    "name" : "VROC",
+    "tag" : "30038"
+  },
+
+
+
+
+
+
+
+
+  {
+    "use" : "1",
+    "detailType" : "jipyo",
+    "subType" : "volume",
+    "type" : "Trend",
+    "name" : "거래량이동평균",
+    "tag" : "40007"
+  },
+
+  {
+    "use" : "0",
+    "detailType" : "jipyo",
+    "subType" : "trend",
+    "type" : "Indicator",
+    "name" : "MACD+OSC",
+    "tag" : "30048"
+  },
+
+
+
+
+
+
+
+
+
+
+  {
+    "use" : "0",
+    "detailType" : "jipyo",
+    "subType" : "volatility",
+    "type" : "Indicator",
+    "name" : "NCO",
+    "tag" : "30039"
+  },
+  {
+    "use" : "0",
+    "detailType" : "jipyo",
+    "subType" : "volume",
+    "type" : "Indicator",
+    "name" : "Chaikins OSC",
+    "tag" : "30020"
+  },
+  {
+    "use" : "0",
+    "detailType" : "jipyo",
+    "subType" : "volume",
+    "type" : "Indicator",
+    "name" : "CMF",
+    "tag" : "30063"
+  },
+  {
+    "use" : "0",
+    "detailType" : "jipyo",
+    "subType" : "volume",
+    "type" : "Indicator",
+    "name" : "Force Index",
+    "tag" : "30064"
+  },
+  {
+    "use" : "0",
+    "detailType" : "jipyo",
+    "subType" : "trend",
+    "type" : "Indicator",
+    "name" : "ADXR",
+    "tag" : "30066"
+  },
+  {
+    "use" : "0",
+    "detailType" : "jipyo",
+    "subType" : "trend",
+    "type" : "Indicator",
+    "name" : "Formula",
+    "tag" : "30087"
+  },
+  {
+    "use" : "0",
+    "detailType" : "jipyo",
+    "subType" : "trend",
+    "type" : "Indicator",
+    "name" : "LRL",
+    "tag" : "30041"
+  },
+  {
+    "use" : "0",
+    "detailType" : "jipyo",
+    "subType" : "trend",
+    "type" : "Indicator",
+    "name" : "LRS",
+    "tag" : "30027"
+  },
+  {
+    "use" : "0",
+    "detailType" : "jipyo",
+    "subType" : "trend",
+    "type" : "Indicator",
+    "name" : "MAO",
+    "tag" : "30062"
+  },
+  {
+    "use" : "0",
+    "detailType" : "jipyo",
+    "subType" : "trend",
+    "type" : "Indicator",
+    "name" : "NDI",
+    "tag" : "30088"
+  },
+  {
+    "use" : "0",
+    "detailType" : "jipyo",
+    "subType" : "trend",
+    "type" : "Indicator",
+    "name" : "Price ROC",
+    "tag" : "30047"
+  },
+  {
+    "use" : "0",
+    "detailType" : "jipyo",
+    "subType" : "trend",
+    "type" : "Indicator",
+    "name" : "Reverse",
+    "tag" : "30010"
+  },
+  {
+    "use" : "0",
+    "detailType" : "jipyo",
+    "subType" : "trend",
+    "type" : "Indicator",
+    "name" : "SROC",
+    "tag" : "30032"
+  },
+  {
+    "use" : "0",
+    "detailType" : "jipyo",
+    "subType" : "trend",
+    "type" : "Indicator",
+    "name" : "TSF",
+    "tag" : "30061"
+  },
+  {
+    "use" : "0",
+    "detailType" : "jipyo",
+    "subType" : "trend",
+    "type" : "Indicator",
+    "name" : "VHF",
+    "tag" : "30031"
+  },
+  {
+    "use" : "0",
+    "detailType" : "jipyo",
+    "subType" : "volatility",
+    "type" : "Indicator",
+    "name" : "이격도[지수]",
+    "tag" : "30084"
+  },
+  {
+    "use" : "0",
+    "detailType" : "jipyo",
+    "subType" : "volatility",
+    "type" : "Indicator",
+    "name" : "AB Ratio",
+    "tag" : "30007"
+  },
+  {
+    "use" : "0",
+    "detailType" : "jipyo",
+    "subType" : "volatility",
+    "type" : "Indicator",
+    "name" : "Band %B",
+    "tag" : "30049"
+  },
+  {
+    "use" : "0",
+    "detailType" : "jipyo",
+    "subType" : "volatility",
+    "type" : "Indicator",
+    "name" : "Band Width",
+    "tag" : "30083"
+  },
+  {
+    "use" : "0",
+    "detailType" : "jipyo",
+    "subType" : "volatility",
+    "type" : "Indicator",
+    "name" : "Bollinger Band [보조]",
+    "tag" : "30091"
+  },
+  {
+    "use" : "0",
+    "detailType" : "jipyo",
+    "subType" : "volatility",
+    "type" : "Indicator",
+    "name" : "Chaikins Volatility",
+    "tag" : "30033"
+  },
+  {
+    "use" : "0",
+    "detailType" : "jipyo",
+    "subType" : "volatility",
+    "type" : "Indicator",
+    "name" : "DPO",
+    "tag" : "30085"
+  },
+  {
+    "use" : "0",
+    "detailType" : "jipyo",
+    "subType" : "volatility",
+    "type" : "Indicator",
+    "name" : "DRF",
+    "tag" : "30086"
+  },
+  {
+    "use" : "0",
+    "detailType" : "jipyo",
+    "subType" : "volatility",
+    "type" : "Indicator",
+    "name" : "Qstic",
+    "tag" : "30089"
+  },
+  {
+    "use" : "0",
+    "detailType" : "jipyo",
+    "subType" : "volatility",
+    "type" : "Indicator",
+    "name" : "Sigma",
+    "tag" : "30034"
+  },
+  {
+    "use" : "0",
+    "detailType" : "jipyo",
+    "subType" : "volatility",
+    "type" : "Indicator",
+    "name" : "Standard Deviation",
+    "tag" : "30012"
+  },
+  {
+    "use" : "0",
+    "detailType" : "jipyo",
+    "subType" : "volatility",
+    "type" : "Indicator",
+    "name" : "Williams R",
+    "tag" : "30017"
+  },
+  {
+    "use" : "0",
+    "detailType" : "jipyo",
+    "subType" : "derivation",
+    "type" : "Indicator",
+    "name" : "%B+Stochastic",
+    "tag" : "30050"
+  },
+  {
+    "use" : "0",
+    "detailType" : "jipyo",
+    "subType" : "derivation",
+    "type" : "Indicator",
+    "name" : "LRS+Stochastic",
+    "tag" : "30051"
+  },
+  {
+    "use" : "0",
+    "detailType" : "jipyo",
+    "subType" : "derivation",
+    "type" : "Indicator",
+    "name" : "MACD+Stochastic",
+    "tag" : "30052"
+  },
+  {
+    "use" : "0",
+    "detailType" : "jipyo",
+    "subType" : "derivation",
+    "type" : "Indicator",
+    "name" : "Momentum+Stochastic",
+    "tag" : "30053"
+  },
+  {
+    "use" : "0",
+    "detailType" : "jipyo",
+    "subType" : "derivation",
+    "type" : "Indicator",
+    "name" : "OBV+Momentum",
+    "tag" : "30054"
+  },
+  {
+    "use" : "0",
+    "detailType" : "jipyo",
+    "subType" : "marketStrength",
+    "type" : "Indicator",
+    "name" : "OBV Oscillator",
+    "tag" : "30080"
+  },
+  {
+    "use" : "0",
+    "detailType" : "jipyo",
+    "subType" : "derivation",
+    "type" : "Indicator",
+    "name" : "OBV+Stochastic",
+    "tag" : "30055"
+  },
+  {
+    "use" : "0",
+    "detailType" : "jipyo",
+    "subType" : "derivation",
+    "type" : "Indicator",
+    "name" : "ROC+Stochastic",
+    "tag" : "30056"
+  },
+  {
+    "use" : "0",
+    "detailType" : "jipyo",
+    "subType" : "derivation",
+    "type" : "Indicator",
+    "name" : "RSI+MACD",
+    "tag" : "30057"
+  },
+  {
+    "use" : "0",
+    "detailType" : "jipyo",
+    "subType" : "derivation",
+    "type" : "Indicator",
+    "name" : "RSI+Stochastic",
+    "tag" : "30058"
+  },
+  {
+    "use" : "0",
+    "detailType" : "jipyo",
+    "subType" : "derivation",
+    "type" : "Indicator",
+    "name" : "Sonar+심리도",
+    "tag" : "30059"
+  },
+  {
+    "use" : "0",
+    "detailType" : "jipyo",
+    "subType" : "derivation",
+    "type" : "Indicator",
+    "name" : "Stochastic+RSI",
+    "tag" : "30060"
+  },
+  {
+    "use" : "0",
+    "detailType" : "jipyo",
+    "subType" : "marketStrength",
+    "type" : "Indicator",
+    "name" : "BPDL Short Trend",
+    "tag" : "30068"
+  },
+  {
+    "use" : "0",
+    "detailType" : "jipyo",
+    "subType" : "marketStrength",
+    "type" : "Indicator",
+    "name" : "BPDL Stochastic",
+    "tag" : "30069"
+  },
+  {
+    "use" : "0",
+    "detailType" : "jipyo",
+    "subType" : "marketStrength",
+    "type" : "Indicator",
+    "name" : "Elder_Ray Bear Power",
+    "tag" : "30070"
+  },
+  {
+    "use" : "0",
+    "detailType" : "jipyo",
+    "subType" : "marketStrength",
+    "type" : "Indicator",
+    "name" : "Elder_Ray Bull Power",
+    "tag" : "30071"
+  },
+  {
+    "use" : "0",
+    "detailType" : "jipyo",
+    "subType" : "marketStrength",
+    "type" : "Indicator",
+    "name" : "Force Index Long Term",
+    "tag" : "30072"
+  },
+  {
+    "use" : "0",
+    "detailType" : "jipyo",
+    "subType" : "marketStrength",
+    "type" : "Indicator",
+    "name" : "Force Index Short Term",
+    "tag" : "30073"
+  },
+  {
+    "use" : "0",
+    "detailType" : "jipyo",
+    "subType" : "marketStrength",
+    "type" : "Indicator",
+    "name" : "GM McClellan Oscillator",
+    "tag" : "30074"
+  },
+  {
+    "use" : "0",
+    "detailType" : "jipyo",
+    "subType" : "marketStrength",
+    "type" : "Indicator",
+    "name" : "GM McClellan Summation",
+    "tag" : "30075"
+  },
+  {
+    "use" : "0",
+    "detailType" : "jipyo",
+    "subType" : "marketStrength",
+    "type" : "Indicator",
+    "name" : "LFI",
+    "tag" : "30076"
+  },
+  {
+    "use" : "0",
+    "detailType" : "jipyo",
+    "subType" : "marketStrength",
+    "type" : "Indicator",
+    "name" : "Moving Balance Indicator",
+    "tag" : "30077"
+  },
+  {
+    "use" : "0",
+    "detailType" : "jipyo",
+    "subType" : "marketStrength",
+    "type" : "Indicator",
+    "name" : "OBV[Midpoint]",
+    "tag" : "30079"
+  },
+  {
+    "use" : "0",
+    "detailType" : "jipyo",
+    "subType" : "marketStrength",
+    "type" : "Indicator",
+    "name" : "OBV with Average Volume",
+    "tag" : "30078"
+  },
+  {
+    "use" : "0",
+    "detailType" : "jipyo",
+    "subType" : "marketStrength",
+    "type" : "Indicator",
+    "name" : "RCI",
+    "tag" : "30030"
+  },
+  {
+    "use" : "0",
+    "detailType" : "jipyo",
+    "subType" : "marketStrength",
+    "type" : "Indicator",
+    "name" : "TRIN[Inverted]",
+    "tag" : "30081"
+  },
+  {
+    "use" : "0",
+    "detailType" : "jipyo",
+    "subType" : "marketStrength",
+    "type" : "Indicator",
+    "name" : "Volume & Price Accumulator",
+    "tag" : "30082"
+  }
+]

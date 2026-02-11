@@ -1,0 +1,691 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android" android:background="#d9dce2" android:layout_width="fill_parent" android:layout_height="1025dip" android:orientation="vertical"  android:clickable="true">
+ <LinearLayout android:layout_width="fill_parent" android:layout_height="fill_parent" android:background="#202020" android:orientation="vertical">
+     	<LinearLayout android:layout_width="fill_parent" android:layout_height="40dip" android:background="#202020">
+	  	    <Button android:textColor="#ffffff" android:layout_height="32dp" android:text="초기화" android:textSize="16dp"
+				android:layout_width="70dip" android:layout_gravity="center" android:layout_marginLeft="10dp" 
+				 android:background="@drawable/btn_chart_init_change" android:id="@+id/btnchartsettingreset"/>
+	  	    <TextView android:textColor="#ffffff" android:textSize="20dp" android:text="차트설정" android:layout_marginRight="10dp"
+	 	        android:layout_height="match_parent" android:layout_width="wrap_content" android:layout_weight="1" android:gravity="center"></TextView>
+	         <Button android:background="@drawable/btn_detail_back_change" android:layout_marginRight="10dp" android:layout_gravity="center_vertical"
+	            android:id="@+id/btnchartsettingclose" android:layout_height="24dp" android:layout_width="24dip"/> 
+		</LinearLayout>
+
+
+	    <LinearLayout android:layout_width="fill_parent" android:layout_height="40dip" android:weightSum="1">
+	        <Button style="@style/indicator_tabbutton_black" android:text="지표" android:id="@+id/indicatorSetBtn"/>
+	        <Button style="@style/indicator_tabbutton_black" android:text="분/틱" android:id="@+id/periodSetBtn"/>
+	        <Button style="@style/indicator_tabbutton_black" android:text="도구모음" android:id="@+id/toolbarSetBtn"/>
+	        <Button style="@style/indicator_tabbutton_black" android:text="일반설정" android:id="@+id/normalSetBtn"/>
+	    </LinearLayout>
+
+        <LinearLayout android:id="@+id/linear_jipyolistbtn" android:layout_height="60dip" android:layout_width="match_parent" android:orientation="horizontal"
+				    android:paddingLeft="5dp" android:paddingRight="5dp" android:background="#202020">
+				    <!-- 2012. 7. 16  지표설정창 레이아웃 수정 : 라디오버튼 제목 색상 변경     -->
+				    <!-- 2012. 7. 30 라디오버튼 중복되는 속성 style 화  -->
+				    
+		    <!-- <Button
+                android:id="@+id/btn_totalindicator"
+                android:layout_marginLeft="1px"
+                style="@style/indicator_jipyolistbutton"
+                android:focusable="true"
+                android:text="전체지표"
+                android:background="@drawable/btn_indicator_jipyolistbutton_left_change"
+                android:tag="1150"/> -->
+            <Button
+                android:id="@+id/btn_charttypeindicator"
+				style="@style/indicator_jipyolistbutton_black"
+                android:text="차트유형"
+                android:textColor="#ffffff"
+                android:background="@drawable/btn_indicator_jipyolistbutton_left_change_black"
+                android:tag="1190" />
+		    <Button
+                android:id="@+id/btn_channelindicator"
+                style="@style/indicator_jipyolistbutton_black"
+                android:text="오버레이"
+                android:textColor="#ffffff"
+                android:background="@drawable/btn_indicator_jipyolistbutton_center_change_black"
+                android:tag="1160" />
+   			<Button
+                android:id="@+id/btn_technicalindicator"
+                style="@style/indicator_jipyolistbutton_black"
+                android:text="보조지표"
+                android:textColor="#ffffff"
+                android:background="@drawable/btn_indicator_jipyolistbutton_center_change_black"
+                android:tag="1170" />
+   			<!-- 2015. 1. 13 차트유형 추가 -->
+			<Button
+                android:id="@+id/btn_etcindicator"
+				style="@style/indicator_jipyolistbutton_black"
+                android:text="기타지표"
+                android:background="@drawable/btn_indicator_jipyolistbutton_right_change_black"
+                android:tag="1180" />
+			
+			<!-- <Button
+                android:id="@+id/btnchartsettingadd"
+				style="@style/indicator_jipyolistbutton"
+                android:text="중복지표"
+                android:background="@drawable/btn_indicator_jipyolistbutton_right_change"
+                android:tag="1120" /> -->
+
+		    <!-- 2015. 1. 13 차트유형 추가 -->
+		    
+		    <!-- <TextView android:layout_marginLeft="12dip"  android:layout_marginTop="13dip" android:textSize="15sp" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="테마" android:textColor="#333333"/>
+	    	<RadioGroup
+				android:id="@+id/skin_gbn_radio_group"
+				android:layout_width="fill_parent"
+				android:layout_height="46dip"
+				android:gravity="center_vertical"
+				android:layout_marginLeft="12dip"
+				android:orientation="horizontal">
+				<RadioButton
+				    style="@style/chartset_radio_btn"
+					android:id="@+id/bns_gbn_black_radio_btn"
+					android:tag="500001"
+					android:text="Black"
+					android:layout_width="100dp"
+					/>
+				<RadioButton
+				    style="@style/chartset_radio_btn"
+					android:id="@+id/bns_gbn_white_radio_btn"
+					android:tag="500002"
+					android:layout_width="100dp"
+					android:text="white"/>
+			</RadioGroup> -->
+	    </LinearLayout>
+        
+		<ScrollView android:scrollbarStyle="insideOverlay"
+ 			  android:layout_width="fill_parent" android:id="@+id/indicatorscroll" android:background="#ffffff" android:visibility="visible" android:layout_gravity="top"
+			  android:layout_height="fill_parent" android:orientation="vertical" android:tag="20007" android:clickable="true">
+		
+		 <!-- 2012. 7. 16  지표설정창 레이아웃 수정 : 패딩 5 추가    -->
+			<LinearLayout
+			  android:layout_width="fill_parent" 
+			  android:layout_height="wrap_content" android:orientation="vertical" android:tag="20007" android:clickable="true">
+			  		<!-- 2012. 7. 16  지표설정창 레이아웃 수정 : 차트설정창  맨위쪽 제목줄 삽입    -->	
+			  	
+			    <!-- 2012. 9. 5 분틱차트 주기 설정 추가 -->
+			    <RelativeLayout style="@style/chartset_fortablet_headline_rl" android:id="@+id/indicator_periodsetting" android:visibility="gone">
+			        <TextView style="@style/chartset_fortablet_headline_tv" android:text="분틱차트 주기 설정"/>
+			    </RelativeLayout>
+			    <!-- 2012. 7. 27  API 모드 대비  onClick 삭제 및 헤드라인쪽  RelativeLayout에 id 부여   -->
+			    <!-- 2012. 7. 17 차트유형 리스트뷰 추가  -->
+			    <!-- 2012. 7. 30 중복속성 style 화  -->
+			    <!-- 2012. 7. 30 중복속성 style 화  -->
+			    <RelativeLayout style="@style/chartset_fortablet_headline_rl" android:id="@+id/indicator_charttype" android:background="@drawable/menu_img_section_landscape">
+			        <!-- 2012. 7. 20  제목클릭시 '+' 버튼과 동일하게 설정그룹을 펼치고 열 수 있도록 수정   -->
+			        <TextView style="@style/chartset_fortablet_headline_tv" android:text="차트유형"/>
+			        <Button style="@style/chartset_headline_btn" android:id="@+id/chartBtn" android:background="@drawable/ic_cl02"></Button>
+			    </RelativeLayout>
+			    <!-- 2012. 7. 23 각행 height 크기 조절로 인한 레이아웃의 높이 조절  -->
+			    <RelativeLayout style="@style/chartset_fortablet_listview_rl_black" android:id="@+id/chartLayout" android:layout_height="352dip" android:visibility="gone"> <!-- 2015. 1. 13 차트유형 추가 : height 조절 -->
+					<ListView style="@style/chartset_listview_list" android:id="@+id/chartList"></ListView>
+			    </RelativeLayout>
+			    <!-- 2012. 7. 16  지표설정창 레이아웃 수정 : 제목배경색 변경 및 하단 마진 추가    -->
+			    <RelativeLayout  style="@style/chartset_fortablet_headline_rl" android:id="@+id/indicator_overlay" android:background="@drawable/menu_img_section_landscape">
+			        <!-- 2012. 7. 20  제목클릭시 '+' 버튼과 동일하게 설정그룹을 펼치고 열 수 있도록 수정   -->
+			        <TextView style="@style/chartset_fortablet_headline_tv" android:text="오버레이"/>
+			        <Button style="@style/chartset_headline_btn" android:id="@+id/overlayBtn" android:background="@drawable/ic_cl02"></Button>
+			    </RelativeLayout>
+			    <!-- 2012. 7. 23 각행 height 크기 조절로 인한 레이아웃의 높이 조절  -->
+			    <RelativeLayout style="@style/chartset_fortablet_listview_rl_black" android:id="@+id/overlayLayout" android:layout_height="352dip" android:visibility="gone">
+					<ListView style="@style/chartset_listview_list" android:id="@+id/overlayList"></ListView>
+			    </RelativeLayout>
+			    <!-- 2012. 7. 16  지표설정창 레이아웃 수정 : 제목 배경색 변경  및 하단 마진 추가   -->
+			    <RelativeLayout style="@style/chartset_fortablet_headline_rl" android:id="@+id/indicator_jipyo" android:background="@drawable/menu_img_section_landscape">
+			      <!-- 2012. 7. 20  제목클릭시 '+' 버튼과 동일하게 설정그룹을 펼치고 열 수 있도록 수정   -->
+			        <TextView style="@style/chartset_fortablet_headline_tv" android:text="보조지표"/>
+			        <Button style="@style/chartset_headline_btn" android:id="@+id/jipyoBtn" android:background="@drawable/ic_cl01"></Button>
+			    </RelativeLayout>
+			    <!-- 2012. 7. 20  지표설정창 레이아웃 수정 : 보조지표 리스트뷰 크기 조절    -->
+			    <!-- 2012. 7. 23 각행 height 크기 조절로 인한 레이아웃의 높이 조절  -->
+			    <RelativeLayout style="@style/chartset_fortablet_listview_rl_black" android:id="@+id/jipyoLayout" android:layout_width="fill_parent" android:layout_height="wrap_content" android:visibility="visible">
+			        <ListView style="@style/chartset_listview_list" android:id="@+id/jipyoList"></ListView>
+			    </RelativeLayout>
+			    <RelativeLayout style="@style/chartset_fortablet_listview_rl_black" android:id="@+id/totalLayout" android:layout_height="352dip" android:visibility="gone">
+					<ListView style="@style/chartset_listview_list" android:id="@+id/totalList"></ListView>
+			    </RelativeLayout>
+			    <RelativeLayout style="@style/chartset_fortablet_listview_rl_black" android:id="@+id/otherLayout" android:layout_height="352dip" android:visibility="gone">
+					<ListView style="@style/chartset_listview_list" android:id="@+id/otherList"></ListView>
+			    </RelativeLayout>
+			</LinearLayout>
+		</ScrollView>
+		<!-- 지표설정창 끝  -->
+		
+		<!-- 분틱설정창 시작  -->
+		
+		<!--  -->
+		<ScrollView 
+			  android:layout_width="fill_parent" android:id="@+id/periodscroll" android:background="#202020" android:layout_gravity="top"
+			  android:layout_height="fill_parent" android:orientation="vertical" android:clickable="true" android:visibility="gone">
+			  <LinearLayout
+			  android:layout_width="fill_parent" android:id="@+id/periodparentlinear"
+			  android:layout_height="wrap_content" android:orientation="vertical" android:clickable="true">
+			    
+			    	<LinearLayout style="@style/periodset_rowlinear" android:layout_height="66dip" android:weightSum="1">
+				       <!-- <TextView android:layout_width="121dip" android:textStyle="bold" android:layout_height="wrap_content" android:textSize="17sp" android:textColor="#333333" android:layout_gravity="center_vertical" android:text="설정항목선택"
+				           			/> 
+					   <LinearLayout android:layout_width="match_parent" android:layout_height="match_parent" android:orientation="vertical">
+					     	
+							<RadioGroup
+									android:id="@+id/screenset_radiogroup"
+									android:layout_width="fill_parent"
+									android:layout_height="match_parent"
+									android:gravity="center_vertical"
+									android:orientation="horizontal">
+									<RadioButton
+									    style="@style/chartset_radio_btn"
+										android:id="@+id/periodset_radiomin"
+										android:text="분차트"
+										android:checked="true"
+										android:layout_marginRight="15dip"/>
+									<RadioButton
+									    style="@style/chartset_radio_btn"
+										android:id="@+id/periodset_radiotik"
+										android:checked="false"
+										android:text="틱차트"/>
+							</RadioGroup>
+						</LinearLayout> -->
+				       <TextView android:layout_weight="0.5" android:layout_width="0dp" android:textStyle="bold" android:layout_height="wrap_content" android:textSize="17dp" android:textColor="@color/kfit_white" android:gravity="center" android:text="분차트"/>
+	           		   <TextView android:layout_weight="0.5" android:layout_width="0dp" android:textStyle="bold" android:layout_height="wrap_content" android:textSize="17dp" android:textColor="@color/kfit_white" android:gravity="center" android:text="틱차트"/>
+				  	</LinearLayout>
+				  <TableLayout android:layout_width="fill_parent" android:layout_height="fill_parent">
+				      <LinearLayout android:id="@+id/bunview" android:layout_width="fill_parent" android:layout_height="fill_parent" android:visibility="visible" android:orientation="vertical">
+					      <LinearLayout style="@style/periodset_rowlinear">
+					          <!-- 분 -->
+						      <!-- <LinearLayout style="@style/periodset_blank" android:layout_weight="0.11"></LinearLayout> -->
+						      <!-- <CheckBox style="@style/periodset_checkbox" android:checked="true" android:id="@+id/periodset_check_bun_1"/>  -->
+						      <TextView style="@style/periodset_title_black" android:id="@+id/periodset_row1_tv1" android:text="분차트1"/>
+						      <!-- <LinearLayout style="@style/periodset_blank" android:layout_weight="0.1"></LinearLayout> -->
+						      <EditText style="@style/periodset_edit_black" android:id="@+id/periodset_row1_edit_bun_1" android:maxLength="3"/>
+						      <!-- <LinearLayout style="@style/periodset_blank" android:layout_weight="0.1"></LinearLayout> -->
+						      
+						      <!-- 구분선 -->
+						      	<!-- <LinearLayout android:layout_width="1dip" android:layout_height="match_parent"
+						      	   				android:layout_marginLeft="10dp" android:layout_marginRight="10dp">
+									<ImageView 
+										 android:layout_width="match_parent" 
+										android:layout_height="match_parent"
+										android:background="#BEBEBE"
+										android:layout_gravity="center_vertical">
+									</ImageView>
+								</LinearLayout> -->
+						      
+						      <!-- 틱 -->
+						      <!-- <CheckBox style="@style/periodset_checkbox" android:checked="true" android:id="@+id/periodset_check_tic_1"/>  -->
+						      <TextView style="@style/periodset_title_black" android:text="틱차트1"/>
+						      <EditText style="@style/periodset_edit_black" android:id="@+id/periodset_row1_edit_tic_1" android:maxLength="3"/>
+						  </LinearLayout>
+						  
+					      <LinearLayout style="@style/periodset_rowlinear">
+					          <!-- 분 -->
+						      <!-- <LinearLayout style="@style/periodset_blank" android:layout_weight="0.11"></LinearLayout> -->
+						      <!-- <CheckBox style="@style/periodset_checkbox" android:checked="true" android:id="@+id/periodset_check_bun_2"/>  -->
+						      <TextView style="@style/periodset_title_black" android:id="@+id/periodset_row1_tv2" android:text="분차트2"/>
+						      <!-- <LinearLayout style="@style/periodset_blank" android:layout_weight="0.1"></LinearLayout> -->
+						      <EditText style="@style/periodset_edit_black" android:id="@+id/periodset_row1_edit_bun_2" android:maxLength="3"/>
+						      <!--<LinearLayout style="@style/periodset_blank" android:layout_weight="0.05"></LinearLayout> -->
+						      
+						      <!-- 구분선 -->
+						      	<!-- <LinearLayout android:layout_width="1dip" android:layout_height="match_parent"
+						      	   				android:layout_marginLeft="10dp" android:layout_marginRight="10dp">
+									<ImageView 
+										 android:layout_width="match_parent" 
+										android:layout_height="match_parent"
+										android:background="#BEBEBE"
+										android:layout_gravity="center_vertical">
+									</ImageView>
+								</LinearLayout> -->
+						      
+						      <!-- 틱 -->
+						     <!--  <CheckBox style="@style/periodset_checkbox" android:checked="true" android:id="@+id/periodset_check_tic_2"/>  -->
+						     <TextView style="@style/periodset_title_black" android:text="틱차트2"/>
+						      <EditText style="@style/periodset_edit_black" android:id="@+id/periodset_row1_edit_tic_2" android:maxLength="3"/>
+						  </LinearLayout>
+						  
+					      <LinearLayout style="@style/periodset_rowlinear">
+					          <!-- 분 -->
+						      <!-- <LinearLayout style="@style/periodset_blank" android:layout_weight="0.11"></LinearLayout> -->
+						      <!-- <CheckBox style="@style/periodset_checkbox" android:checked="true" android:id="@+id/periodset_check_bun_3"/>  -->
+						      <TextView style="@style/periodset_title_black" android:id="@+id/periodset_row1_tv3" android:text="분차트3"/>
+						      <!-- <LinearLayout style="@style/periodset_blank" android:layout_weight="0.1"></LinearLayout> -->
+						      <EditText style="@style/periodset_edit_black" android:id="@+id/periodset_row1_edit_bun_3" android:maxLength="3"/>
+						      <!--<LinearLayout style="@style/periodset_blank" android:layout_weight="0.05"></LinearLayout> -->
+						      
+						      <!-- 구분선 -->
+						      	<!-- <LinearLayout android:layout_width="1dip" android:layout_height="match_parent"
+						      	   				android:layout_marginLeft="10dp" android:layout_marginRight="10dp">
+									<ImageView 
+										 android:layout_width="match_parent" 
+										android:layout_height="match_parent"
+										android:background="#BEBEBE"
+										android:layout_gravity="center_vertical">
+									</ImageView>
+								</LinearLayout> -->
+						      
+						      <!-- 틱 -->
+						      <!-- <CheckBox style="@style/periodset_checkbox" android:checked="true" android:id="@+id/periodset_check_tic_3"/>  -->
+						      <TextView style="@style/periodset_title_black" android:text="틱차트3"/>
+						      <EditText style="@style/periodset_edit_black" android:id="@+id/periodset_row1_edit_tic_3" android:maxLength="3"/>
+						  </LinearLayout>
+						  
+					      <LinearLayout style="@style/periodset_rowlinear">
+					          <!-- 분 -->
+						      <!-- <LinearLayout style="@style/periodset_blank" android:layout_weight="0.11"></LinearLayout> -->
+						      <!-- <CheckBox style="@style/periodset_checkbox" android:checked="true" android:id="@+id/periodset_check_bun_4"/>  -->
+						      <TextView style="@style/periodset_title_black" android:id="@+id/periodset_row1_tv4" android:text="분차트4"/>
+						      <!-- <LinearLayout style="@style/periodset_blank" android:layout_weight="0.1"></LinearLayout> -->
+						      <EditText style="@style/periodset_edit_black" android:id="@+id/periodset_row1_edit_bun_4" android:maxLength="3"/>
+						      <!--<LinearLayout style="@style/periodset_blank" android:layout_weight="0.05"></LinearLayout> -->
+						      
+						      <!-- 구분선 -->
+						      	<!-- <LinearLayout android:layout_width="1dip" android:layout_height="match_parent"
+						      	   				android:layout_marginLeft="10dp" android:layout_marginRight="10dp">
+									<ImageView 
+										 android:layout_width="match_parent" 
+										android:layout_height="match_parent"
+										android:background="#BEBEBE"
+										android:layout_gravity="center_vertical">
+									</ImageView>
+								</LinearLayout> -->
+						      
+						      <!-- 틱 -->
+						      <!-- <CheckBox style="@style/periodset_checkbox" android:checked="true" android:id="@+id/periodset_check_tic_4"/> -->
+						      <TextView style="@style/periodset_title_black" android:text="틱차트4"/> 
+						      <EditText style="@style/periodset_edit_black" android:id="@+id/periodset_row1_edit_tic_4" android:maxLength="3"/>
+						  </LinearLayout>
+						  
+					      <LinearLayout style="@style/periodset_rowlinear">
+					          <!-- 분 -->
+						      <!-- <LinearLayout style="@style/periodset_blank" android:layout_weight="0.11"></LinearLayout> -->
+						      <!-- <CheckBox style="@style/periodset_checkbox" android:checked="true" android:id="@+id/periodset_check_bun_5"/>  -->
+						      <TextView style="@style/periodset_title_black" android:id="@+id/periodset_row1_tv5" android:text="분차트5"/>
+						      <!-- <LinearLayout style="@style/periodset_blank" android:layout_weight="0.1"></LinearLayout> -->
+						      <EditText style="@style/periodset_edit_black" android:id="@+id/periodset_row1_edit_bun_5" android:maxLength="3"/>
+						      <!--<LinearLayout style="@style/periodset_blank" android:layout_weight="0.05"></LinearLayout> -->
+						      
+						      <!-- 구분선 -->
+						      	<!-- <LinearLayout android:layout_width="1dip" android:layout_height="match_parent"
+						      	   				android:layout_marginLeft="10dp" android:layout_marginRight="10dp">
+									<ImageView 
+										 android:layout_width="match_parent" 
+										android:layout_height="match_parent"
+										android:background="#BEBEBE"
+										android:layout_gravity="center_vertical">
+									</ImageView>
+								</LinearLayout> -->
+						      
+						      <!-- 틱 -->
+						      <!-- <CheckBox style="@style/periodset_checkbox" android:checked="true" android:id="@+id/periodset_check_tic_5"/>  -->
+						      <TextView style="@style/periodset_title_black" android:text="틱차트5"/> 
+						      <EditText style="@style/periodset_edit_black" android:id="@+id/periodset_row1_edit_tic_5" android:maxLength="3"/>
+						  </LinearLayout>
+						  
+					      <LinearLayout style="@style/periodset_rowlinear">
+					          <!-- 분 -->
+						      <!-- <LinearLayout style="@style/periodset_blank" android:layout_weight="0.11"></LinearLayout> -->
+						      <!-- <CheckBox style="@style/periodset_checkbox" android:checked="true" android:id="@+id/periodset_check_bun_6"/>  -->
+						      <TextView style="@style/periodset_title_black" android:id="@+id/periodset_row1_tv6" android:text="분차트6"/>
+						      <!-- <LinearLayout style="@style/periodset_blank" android:layout_weight="0.1"></LinearLayout> -->
+						      <EditText style="@style/periodset_edit_black" android:id="@+id/periodset_row1_edit_bun_6" android:maxLength="3"/>
+						      <!--<LinearLayout style="@style/periodset_blank" android:layout_weight="0.05"></LinearLayout> -->
+						      
+						      <!-- 구분선 -->
+						      	<!-- <LinearLayout android:layout_width="1dip" android:layout_height="match_parent"
+						      	   				android:layout_marginLeft="10dp" android:layout_marginRight="10dp">
+									<ImageView 
+										 android:layout_width="match_parent" 
+										android:layout_height="match_parent"
+										android:background="#BEBEBE"
+										android:layout_gravity="center_vertical">
+									</ImageView>
+								</LinearLayout> -->
+						      
+						      <!-- 틱 -->
+						      <!-- <CheckBox style="@style/periodset_checkbox" android:checked="true" android:id="@+id/periodset_check_tic_6"/>  -->
+						      <TextView style="@style/periodset_title_black" android:text="틱차트6"/> 
+						      <EditText style="@style/periodset_edit_black" android:id="@+id/periodset_row1_edit_tic_6" android:maxLength="3"/>
+						  </LinearLayout>
+						  
+					      <LinearLayout style="@style/periodset_rowlinear">
+					          <!-- 분 -->
+						      <!-- <LinearLayout style="@style/periodset_blank" android:layout_weight="0.11"></LinearLayout> -->
+						      <!-- <CheckBox style="@style/periodset_checkbox" android:checked="true" android:id="@+id/periodset_check_bun_7"/>  -->
+						      <TextView style="@style/periodset_title_black" android:id="@+id/periodset_row1_tv7" android:text="분차트7"/>
+						      <!-- <LinearLayout style="@style/periodset_blank" android:layout_weight="0.1"></LinearLayout> -->
+						      <EditText style="@style/periodset_edit_black" android:id="@+id/periodset_row1_edit_bun_7" android:maxLength="3"/>
+						      <!--<LinearLayout style="@style/periodset_blank" android:layout_weight="0.05"></LinearLayout> -->
+						      
+						      <!-- 구분선 -->
+						      	<!-- <LinearLayout android:layout_width="1dip" android:layout_height="match_parent"
+						      	   				android:layout_marginLeft="10dp" android:layout_marginRight="10dp">
+									<ImageView 
+										 android:layout_width="match_parent" 
+										android:layout_height="match_parent"
+										android:background="#BEBEBE"
+										android:layout_gravity="center_vertical">
+									</ImageView>
+								</LinearLayout> -->
+						      
+						      <!-- 틱 -->
+						      <!-- <CheckBox style="@style/periodset_checkbox" android:checked="true" android:id="@+id/periodset_check_tic_7"/>  -->
+						      <TextView style="@style/periodset_title_black" android:text="틱차트7"/> 
+						      <EditText style="@style/periodset_edit_black" android:id="@+id/periodset_row1_edit_tic_7" android:maxLength="3"/>
+						  </LinearLayout>
+						  
+					      <LinearLayout style="@style/periodset_rowlinear">
+					          <!-- 분 -->
+						      <!-- <LinearLayout style="@style/periodset_blank" android:layout_weight="0.11"></LinearLayout> -->
+						      <!-- <CheckBox style="@style/periodset_checkbox" android:checked="true" android:id="@+id/periodset_check_bun_7"/>  -->
+						      <TextView style="@style/periodset_title_black" android:id="@+id/periodset_row1_tv8" android:text="분차트8"/>
+						      <!-- <LinearLayout style="@style/periodset_blank" android:layout_weight="0.1"></LinearLayout> -->
+						      <EditText style="@style/periodset_edit_black" android:id="@+id/periodset_row1_edit_bun_8" android:maxLength="3"/>
+						      <!--<LinearLayout style="@style/periodset_blank" android:layout_weight="0.05"></LinearLayout> -->
+						      
+						      <!-- 구분선 -->
+						      	<!-- <LinearLayout android:layout_width="1dip" android:layout_height="match_parent"
+						      	   				android:layout_marginLeft="10dp" android:layout_marginRight="10dp">
+									<ImageView 
+										 android:layout_width="match_parent" 
+										android:layout_height="match_parent"
+										android:background="#BEBEBE"
+										android:layout_gravity="center_vertical">
+									</ImageView>
+								</LinearLayout> -->
+						      
+						      <!-- 틱 -->
+						      <!-- <CheckBox style="@style/periodset_checkbox" android:checked="true" android:id="@+id/periodset_check_tic_7"/>  -->
+						      <TextView style="@style/periodset_title_black" android:text="틱차트8"/> 
+						      <EditText style="@style/periodset_edit_black" android:id="@+id/periodset_row1_edit_tic_8" android:maxLength="3"/>
+						  </LinearLayout>
+					 </LinearLayout>
+					 
+				      <!-- <LinearLayout android:id="@+id/ticview" android:layout_width="fill_parent" android:layout_height="fill_parent" android:visibility="gone" android:orientation="vertical">
+				           <LinearLayout style="@style/periodset_rowlinear">
+
+						      <CheckBox style="@style/periodset_checkbox" android:checked="true" android:id="@+id/periodset_check_tic_1"/> 
+						      <TextView style="@style/periodset_title" android:id="@+id/periodset_row1_tv1" android:text="틱차트1"/>
+						      
+						      <EditText style="@style/periodset_edit" android:id="@+id/periodset_row1_edit_tic_1" android:maxLength="3"/>
+						      
+						  </LinearLayout>
+						  
+					      <LinearLayout style="@style/periodset_rowlinear">
+						     
+						      <CheckBox style="@style/periodset_checkbox" android:checked="true" android:id="@+id/periodset_check_tic_2"/> 
+						      <TextView style="@style/periodset_title" android:id="@+id/periodset_row1_tv2" android:text="틱차트2"/>
+						      
+						      <EditText style="@style/periodset_edit" android:id="@+id/periodset_row1_edit_tic_2" android:maxLength="3"/>
+						      
+						  </LinearLayout>
+						  
+					      <LinearLayout style="@style/periodset_rowlinear">
+						      
+						      <CheckBox style="@style/periodset_checkbox" android:checked="true" android:id="@+id/periodset_check_tic_3"/> 
+						      <TextView style="@style/periodset_title" android:id="@+id/periodset_row1_tv3" android:text="틱차트3"/>
+						      
+						      <EditText style="@style/periodset_edit" android:id="@+id/periodset_row1_edit_tic_3" android:maxLength="3"/>
+						      
+						  </LinearLayout>
+						  
+					      <LinearLayout style="@style/periodset_rowlinear">
+						      
+						      <CheckBox style="@style/periodset_checkbox" android:checked="true" android:id="@+id/periodset_check_tic_4"/> 
+						      <TextView style="@style/periodset_title" android:id="@+id/periodset_row1_tv4" android:text="틱차트4"/>
+						      
+						      <EditText style="@style/periodset_edit" android:id="@+id/periodset_row1_edit_tic_4" android:maxLength="3"/>
+						      
+						  </LinearLayout>
+						  
+					      <LinearLayout style="@style/periodset_rowlinear">
+						      
+						      <CheckBox style="@style/periodset_checkbox" android:checked="true" android:id="@+id/periodset_check_tic_5"/> 
+						      <TextView style="@style/periodset_title" android:id="@+id/periodset_row1_tv5" android:text="틱차트5"/>
+						      
+						      <EditText style="@style/periodset_edit" android:id="@+id/periodset_row1_edit_tic_5" android:maxLength="3"/>
+						      
+						  </LinearLayout>
+						  
+					      <LinearLayout style="@style/periodset_rowlinear">
+						      
+						      <CheckBox style="@style/periodset_checkbox" android:checked="true" android:id="@+id/periodset_check_tic_6"/> 
+						      <TextView style="@style/periodset_title" android:id="@+id/periodset_row1_tv6" android:text="틱차트6"/>
+						      
+						      <EditText style="@style/periodset_edit" android:id="@+id/periodset_row1_edit_tic_6" android:maxLength="3"/>
+						      
+						  </LinearLayout>
+						  
+					      <LinearLayout style="@style/periodset_rowlinear">
+						      
+						      <CheckBox style="@style/periodset_checkbox" android:checked="true" android:id="@+id/periodset_check_tic_7"/> 
+						      <TextView style="@style/periodset_title" android:id="@+id/periodset_row1_tv7" android:text="틱차트7"/>
+						      
+						      <EditText style="@style/periodset_edit" android:id="@+id/periodset_row1_edit_tic_7" android:maxLength="3"/>
+						      
+						  </LinearLayout>
+				      </LinearLayout> -->
+				      
+				  </TableLayout>
+
+				  <Button
+					  android:id="@+id/indicator_btn_buntick_reset"
+					  android:layout_height="44dp"
+					  android:layout_width="match_parent"
+					  android:layout_gravity="center"
+					  android:textColor="@color/kfit_white"
+				  	  android:textSize="16dp"
+					  android:layout_marginBottom="0dp"
+					  android:background="@drawable/btn_option_rbottom_change_black"
+					  android:text="분/틱 초기화"
+					  />
+			  </LinearLayout>
+
+		</ScrollView>
+		<!-- 분틱설정창 끝  -->
+		
+		<!-- 일반설정(기본환경) 창 시작  -->
+		<ScrollView android:visibility="gone" 
+			  android:layout_width="fill_parent" android:id="@+id/normalscroll" android:background="#262626" android:layout_gravity="top"
+			  android:layout_height="fill_parent" android:orientation="vertical" android:clickable="true">
+			  <LinearLayout
+			  android:layout_width="fill_parent" 
+			  android:layout_height="wrap_content" android:orientation="vertical" android:clickable="true">
+			    <TextView style="@style/normalset_subtitle_black" android:text="편의설정"/>
+			    <ImageView android:layout_width="match_parent" android:layout_height="1px" android:background="#999999"/>
+				<LinearLayout style="@style/normalset_rowlinear" android:id="@+id/convenient_rowlinear_1">
+			        <CheckBox style="@style/normalset_checkbox_black" android:id="@+id/normalset_check_1"/>
+				    <TextView style="@style/normalset_title_black" android:id="@+id/normalset_tv_1" android:text="수정주가 적용"/>
+			    </LinearLayout>
+			    <ImageView android:layout_width="match_parent" android:layout_height="1px" android:background="#999999"/>
+			    <LinearLayout style="@style/normalset_rowlinear" android:id="@+id/convenient_rowlinear_2">
+			        <CheckBox style="@style/normalset_checkbox_black" android:id="@+id/normalset_check_2"/>
+				    <TextView style="@style/normalset_title_black" android:id="@+id/normalset_tv_2" android:text="Y축 눈금표시"/>
+			    </LinearLayout>
+			    <ImageView android:layout_width="match_parent" android:layout_height="1px" android:background="#999999"/>
+		        <LinearLayout style="@style/normalset_rowlinear" android:id="@+id/convenient_rowlinear_3">
+			        <CheckBox style="@style/normalset_checkbox_black" android:id="@+id/normalset_check_3"/>
+				    <TextView style="@style/normalset_title_black" android:id="@+id/normalset_tv_3" android:text="눈금 위 현재가 라벨 표시"/>
+			    </LinearLayout>
+			    <ImageView android:layout_width="match_parent" android:layout_height="1px" android:background="#999999"/>
+		        <LinearLayout style="@style/normalset_rowlinear" android:id="@+id/convenient_rowlinear_4">
+			        <CheckBox style="@style/normalset_checkbox_black" android:id="@+id/normalset_check_4"/>
+				    <TextView style="@style/normalset_title_black" android:id="@+id/normalset_tv_4" android:text="상/하한가 바 표시"/>
+			    </LinearLayout>
+			    <ImageView android:layout_width="match_parent" android:layout_height="1px" android:background="#999999"/>
+		        <!-- 2013. 9. 3 추세선 수치 가시성 제어 추가  -->
+		        <LinearLayout style="@style/normalset_rowlinear" android:id="@+id/convenient_rowlinear_5">
+			        <CheckBox style="@style/normalset_checkbox_black" android:id="@+id/normalset_check_5"/>
+				    <TextView style="@style/normalset_title_black" android:id="@+id/normalset_tv_5" android:text="추세선 수치 표시"/>
+			    </LinearLayout>
+			    <ImageView android:layout_width="match_parent" android:layout_height="1px" android:background="#999999"/>
+		        <!-- 2013. 9. 3 분틱 날짜구분선 보이기 여부 처리   -->
+		        <LinearLayout style="@style/normalset_rowlinear" android:id="@+id/convenient_rowlinear_6">
+			        <CheckBox style="@style/normalset_checkbox_black" android:id="@+id/normalset_check_6"/>
+				    <TextView style="@style/normalset_title_black" android:id="@+id/normalset_tv_6" android:text="분틱 날짜구분선 표시"/>
+			    </LinearLayout>
+			   <!--  <ImageView android:layout_width="match_parent" android:layout_height="1px" android:background="@drawable/img_line4"/>-->
+			    <!-- 2015. 2. 24 차트 상하한가 표시 -->
+			    <!-- <LinearLayout style="@style/normalset_rowlinear" android:id="@+id/convenient_rowlinear_7" android:visibility="gone">
+			        <CheckBox style="@style/normalset_checkbox" android:id="@+id/normalset_check_7"/>
+			   		<TextView style="@style/normalset_title" android:id="@+id/normalset_tv_7" android:text="상/하한가 표시"/>
+			    </LinearLayout> -->
+			    <ImageView android:layout_width="match_parent" android:layout_height="1px" android:background="#999999"/>
+			    <!-- //2015.04.16 by lyk - 주기별 차트 설정 옵션 -->
+				  <!-- <LinearLayout style="@style/normalset_rowlinear" android:id="@+id/convenient_rowlinear_8" android:visibility="gone">
+				      <CheckBox style="@style/normalset_checkbox_black" android:checked="true" android:id="@+id/normalset_check_8"/> 
+				      <TextView style="@style/normalset_title" android:text="주기별 차트 설정" android:id="@+id/normalset_tv_8"/>
+				  </LinearLayout> -->
+				  <!-- //2015.04.16 by lyk - 주기별 차트 설정 옵션 end -->
+				  
+				  <LinearLayout style="@style/normalset_rowlinear" android:id="@+id/convenient_rowlinear_7">
+				      <CheckBox style="@style/normalset_checkbox_black" android:checked="true" android:id="@+id/normalset_check_7"/> 
+				      <TextView style="@style/normalset_title_black" android:text="조회개수 설정 표시" android:id="@+id/normalset_tv_7"/>
+				  </LinearLayout>
+			    <ImageView android:layout_width="match_parent" android:layout_height="1px" android:background="#999999"/>
+			    <!-- 2015. 3. 18 보이는 개수 및 조회 갯수 설정 -->
+<!-- 			    <LinearLayout style="@style/normalset_rowlinear"  android:background="@drawable/indicator_list_bg_change" android:id="@+id/convenient_rowlinear_8">
+			        <TextView style="@style/normalset_title" android:layout_marginLeft="20dip"  android:text="기본 캔들(봉) 조회 개수 : "/>
+			        <EditText android:id="@+id/normalset_edit_requestdatalength" style="@style/periodset_edit" android:layout_width="60dp" android:layout_weight="0" android:layout_marginRight="10dp"/>
+			        <Button android:id="@+id/normalset_btn_requestdatalength" android:layout_width="50dp" android:layout_height="35dp" android:text="적용" android:textColor="#333333" android:layout_gravity="center_vertical" android:background="@drawable/btn_popup_chart"/>
+			    </LinearLayout> -->
+			    
+			    <!-- 
+				  <LinearLayout style="@style/normalset_rowlinear" android:layout_marginTop="10dip">
+				      <LinearLayout style="@style/normalset_blank" android:layout_weight="0.11"></LinearLayout>
+				      <TextView style="@style/normalset_title" android:text="- Y축에 현재가 표시"/>
+				      <LinearLayout style="@style/normalset_blank" android:layout_weight="0.15"></LinearLayout>
+				      <CheckBox style="@style/normalset_checkbox" android:checked="true" android:id="@+id/normalset_check_1"/> 
+				      <LinearLayout style="@style/normalset_blank" android:layout_weight="0.05"></LinearLayout>
+				  </LinearLayout>
+
+				  <LinearLayout style="@style/normalset_rowlinear" android:layout_marginTop="10dip">
+				      <LinearLayout style="@style/normalset_blank" android:layout_weight="0.11"></LinearLayout>
+				      <TextView style="@style/normalset_title" android:text="- 수정주가 적용"/>
+				      <LinearLayout style="@style/normalset_blank" android:layout_weight="0.15"></LinearLayout>
+				      <CheckBox style="@style/normalset_checkbox" android:checked="true" android:id="@+id/normalset_check_2"/> 
+				      <LinearLayout style="@style/normalset_blank" android:layout_weight="0.05"></LinearLayout>
+				  </LinearLayout>
+				    
+				  <LinearLayout style="@style/normalset_rowlinear" android:layout_marginTop="10dip">
+				      <LinearLayout style="@style/normalset_blank" android:layout_weight="0.11"></LinearLayout>
+				      <TextView style="@style/normalset_title" android:text="- 상/하한가 바 표시"/>
+				      <LinearLayout style="@style/normalset_blank" android:layout_weight="0.15"></LinearLayout>
+				      <CheckBox style="@style/normalset_checkbox" android:checked="true" android:id="@+id/normalset_check_3"/> 
+				      <LinearLayout style="@style/normalset_blank" android:layout_weight="0.05"></LinearLayout>
+				  </LinearLayout>
+			  
+				  <LinearLayout style="@style/normalset_rowlinear" android:layout_height="wrap_content" android:layout_marginTop="10dip" android:weightSum="1">
+				  -->
+
+				  <!-- 2013. 8. 21 일반설정에서 화면설정(길게누름) 제외  -->
+				   <!--<LinearLayout style="@style/normalset_rowlinear"  android:background="@drawable/indicator_list_bg_change">
+					  <LinearLayout android:layout_width="match_parent"  android:layout_marginLeft="12dip" android:layout_height="wrap_content" android:orientation="vertical">
+					     	<TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:textColor="#000000" android:text="화면 설정(길게누름)"/> 
+							<RadioGroup
+									android:id="@+id/screenset_radiogroup"
+									android:layout_width="fill_parent"
+									android:layout_height="wrap_content"
+									android:orientation="horizontal">
+									<RadioButton
+									    style="@style/chartset_radio_btn"
+										android:id="@+id/screenset_valuesearch"
+										android:text="수치조회창 보기"
+										android:checked="true"
+										android:layout_marginRight="15dip"/>
+									<RadioButton
+									    style="@style/chartset_radio_btn"
+										android:id="@+id/screenset_indicator"
+										android:checked="false"
+										android:text="지표설정창 보기"/>
+							</RadioGroup>
+						</LinearLayout> -->
+						
+						<!-- <TextView android:layout_marginLeft="20dip"  android:gravity="center_vertical" android:textSize="17dp" android:layout_width="wrap_content" android:layout_height="match_parent" android:text="테마" android:textColor="#333333"/>
+				    	<RadioGroup
+							android:id="@+id/skin_gbn_radio_group"
+							android:layout_width="fill_parent"
+							android:layout_height="match_parent"
+							android:gravity="center_vertical"
+							android:layout_marginLeft="12dip"
+							android:orientation="horizontal">
+					      	<RadioButton
+							    style="@style/chartset_radio_btn"
+								android:id="@+id/bns_gbn_white_radio_btn"
+								android:tag="500002"
+								android:layout_width="100dp"
+								android:text="white"/>
+							<RadioButton
+							    style="@style/chartset_radio_btn"
+								android:id="@+id/bns_gbn_black_radio_btn"
+								android:tag="500001"
+								android:text="Black"
+								android:layout_width="100dp"
+								/>
+							2015. 3. 4 차트 테마 메인따라가기 추가
+							<RadioButton
+								style="@style/chartset_radio_btn"								
+								android:id="@+id/bns_gbn_auto_radio_btn"
+								android:tag="500003"
+								android:text="자동(테마)"
+								android:layout_width="120dp"
+								/>
+						</RadioGroup>
+				  </LinearLayout> -->
+
+			    <TextView style="@style/normalset_subtitle_black" android:text="종가 등락률 대비"/>
+			    <ImageView android:layout_width="match_parent" android:layout_height="1px" android:background="#999999"/>
+			    <ListView style="@style/chartset_listview_list" android:layout_height="108dp" android:id="@+id/chgrateList"></ListView>
+				<ImageView android:layout_width="match_parent" android:layout_height="1px" android:background="#999999"/>
+			    <TextView style="@style/normalset_subtitle_black" android:text="화면설정(길게누름)"/>
+			    <ImageView android:layout_width="match_parent" android:layout_height="1px" android:background="#999999"/>
+			    <ListView style="@style/chartset_listview_list" android:layout_height="108dp" android:id="@+id/screensetList"></ListView>
+			        
+				 <!-- 2013. 11. 29 종목별 추세선 전체초기화  -->
+				 <ImageView android:layout_width="match_parent" android:layout_height="1px" android:background="#999999"/>
+			     <TextView style="@style/normalset_subtitle_black" android:text="추세선 초기화"></TextView>
+			     <ImageView android:layout_width="match_parent" android:layout_height="1px" android:background="#999999"/>
+				 <LinearLayout style="@style/normalset_rowlinear"  android:background="#262626" android:id="@+id/convenient_rowlinear_analtool"   android:layout_marginBottom="28dp">
+					    <TextView style="@style/normalset_title_black" android:layout_marginLeft="20dp" android:layout_width="match_parent" android:text="추세선 전체 초기화"/>
+			      </LinearLayout>
+			  </LinearLayout>
+		</ScrollView>
+		<!-- 일반설정창 끝   -->
+		
+		<!-- 도구설정창 시작  -->
+		<!-- <ScrollView android:layout_marginTop="75dp"
+			  android:layout_width="fill_parent" android:id="@+id/toolbarscroll" android:background="#ffffff" android:layout_gravity="top"
+			  android:layout_height="fill_parent" android:orientation="vertical" android:clickable="true"  android:visibility="gone">
+			 -->
+			<LinearLayout android:id="@+id/toolbarSetView"  android:background="#262626"
+				android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="match_parent" android:visibility="gone">
+				<!-- <ListView  style="@style/chartset_listview_list" android:layout_height="fill_parent" android:id="@+id/toolbarlist"></ListView> -->
+				<LinearLayout
+					android:id="@+id/toolbar_tablearea"
+					android:layout_width="match_parent"
+					android:layout_height="0dp" android:layout_weight="1" android:orientation="vertical"/>
+				<Button
+					android:id="@+id/indicator_btn_tool_reset"
+					android:layout_height="44dp"
+					android:layout_width="match_parent"
+					android:layout_gravity="center"
+					android:textColor="@color/kfit_white"
+					android:textSize="16dp"
+					android:layout_marginTop="0dp"
+					android:layout_marginBottom="0dp"
+					android:background="@drawable/btn_option_rbottom_change_black"
+					android:text="도구모음 초기화"
+					/>
+			</LinearLayout>
+		<!-- </ScrollView> -->
+		<!-- 도구설정창 시작  -->
+<!-- 		       
+        <LinearLayout android:id="@+id/tabParentLinear" android:layout_width="fill_parent" android:layout_height="35dip" android:weightSum="1" >
+	        <Button style="@style/indicator_tabbutton" android:text="지표설정" android:id="@+id/indicatorSetBtn" android:background="@drawable/tab214_dn"/>
+	        <Button style="@style/indicator_tabbutton" android:text="분틱설정" android:id="@+id/periodSetBtn" android:background="@drawable/tab214" android:layout_centerVertical="true"/>
+	        <Button style="@style/indicator_tabbutton" android:text="일반설정" android:id="@+id/normalSetBtn" android:background="@drawable/tab214" android:layout_weight="0.34" android:layout_centerVertical="true"/>
+    	</LinearLayout>
+ -->    	
+	</LinearLayout>
+</LinearLayout>
+
+

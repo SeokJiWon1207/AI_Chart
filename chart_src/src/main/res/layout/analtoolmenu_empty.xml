@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 2012. 7. 25 툴바 레이아웃 수정 : 중복되는 속성들 style화, 툴 사이에 구분선 삽입  -->
+<LinearLayout
+  xmlns:android="http://schemas.android.com/apk/res/android"
+  android:layout_width="wrap_content"
+  android:layout_height="match_parent" android:orientation="vertical" android:clickable="true" >
+    <ScrollView android:layout_height="match_parent" android:id="@+id/analtoolmenuScrollView" android:layout_width="wrap_content"  android:layout_marginTop="0dp" android:scrollbars="none">
+        <LinearLayout android:weightSum="1" android:orientation="vertical" android:id="@+id/relativeLayout1" android:layout_height="match_parent" android:layout_width="wrap_content">
+        
+        </LinearLayout>
+    </ScrollView>
+  
+</LinearLayout>

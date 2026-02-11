@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/blurview_parent_layout"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    >
+    <drfn.chart.util.blur.LiveBlurView
+        android:id="@+id/live_blur"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:liveBlurRadius="6" />
+</RelativeLayout>
+<!--    app:liveBlurOverlayColor="@color/budgetColorGreenRingColor"-->
+    <!--        android:background="@drawable/infoview_shadow"-->

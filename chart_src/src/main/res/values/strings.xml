@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="hello">Hello World, ChartPro!</string>
+    <string name="app_name">MtsChart</string>
+    <string name="title01">차트</string>
+	<string name="title02">조건검색</string>
+	<string name="title03">원클릭</string>	
+	<string name="title04">종료</string>
+	<string name="name_sigframe">신호검색</string>
+	<string name="name_oneclickframe">원클릭메인</string>
+	<string name="name_oneclickview">원클릭</string>
+	<string name="title_noselection">미조건</string>
+	<string name="title_above">이상</string>
+	<string name="title_bellow">이하</string>
+	<string name="detailJipyoLeft">지표설정</string>
+	<string name="closeName">닫기</string>
+	<string name="defaultName">기본값</string>
+	<string name="sigviewTitle">종목신호등</string>
+	<string name="codeHelperText">종목명,종목코드,초성검색</string>
+
+	<!--    뷰패널 문구-->
+	<string name="viewpanel_typeE_profit">%1$s천원</string>
+	<string name="viewpanel_typeE_expect_over">+%1$s%% 초과</string>
+	<string name="viewpanel_typeE_expect_under">-%1$s%% 미달</string>
+	<string name="viewpanel_typeE_expect_same">%1$s%%</string>
+	<string name="viewpanel_typeE_compared_plus">+%1$s%%</string>
+	<string name="viewpanel_typeE_compared_minus">-%1$s%%</string>
+	<string name="viewpanel_rightdata_hint">(Quarterly Dividend)</string>
+
+	<!-- 차트 외부 설정 저장키 -->
+	<string name="avgBuyPriceFunc">avgBuyPriceFunc</string>
+	<string name="buySellPriceFunc">buySellPriceFunc</string>
+	<string name="corporateCalendarFunc">corporateCalendarFunc</string>
+	<string name="supportResistanceLine">supportResistanceLine</string>
+	<string name="autoTrendWaveLine">autoTrendWaveLine</string>
+	<string name="movingAverageLine">movingAverageLine</string>
+
+	<!--    설정 팝업-->
+	<string name="dialog_clear_chart_title">전체 설정 초기화</string>
+	<string name="dialog_clear_chart_message">차트 설정을 모두 초기화 할까요?</string>
+	<string name="dialog_clear_chart_message2">차트 설정을\n모두 초기화 할까요?</string>
+	<string name="kfit_dialog_confirm">확인</string>
+	<string name="kfit_dialog_cancel">취소</string>
+
+	<string name="kfit_dialog_at_last_one_message">1개 이상의 기간이 활성화 되어야 해요.</string> <!---2023.11.16 by CYJ - kakaopay 최소 하나의 설정이 존재하는 안내창 -->
+	<string name="kfit_dialog_value_change_min">최소 입력가능 기간으로 적용되었어요.</string>
+	<string name="kfit_dialog_value_change_max">최대 입력가능 기간으로 적용되었어요.</string>
+	<string name="kfit_dialog_save_value">지표 설정이 저장되었어요.</string>
+
+</resources>

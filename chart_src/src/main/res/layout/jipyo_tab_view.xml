@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:weightSum="1" >
+    
+    <HorizontalScrollView
+        android:id="@+id/ll_tab_scroll"
+        android:layout_width="match_parent"
+        android:layout_height="36dp"
+        android:scrollbars="none"
+        android:layout_marginTop="16dp"
+        android:layout_marginLeft="18dp"
+        android:layout_marginRight="18dp">
+
+        <LinearLayout
+            android:id="@+id/ll_tab_area"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_margin="0dp"
+            android:background="#ffffff"
+            android:weightSum="1">
+
+            <Button
+                android:id="@+id/btn_total"
+                style="@style/jipyo_tab_button"
+                android:layout_width="59dp"
+                android:text="전체"/>
+
+            <Button
+                android:id="@+id/btn_favorite"
+                style="@style/jipyo_tab_button"
+                android:layout_marginLeft="6dp"
+                android:text="관심지표" />
+
+            <Button
+                android:id="@+id/btn_overlay"
+                style="@style/jipyo_tab_button"
+                android:layout_marginLeft="6dp"
+                android:text="오버레이" />
+
+            <Button
+                android:id="@+id/btn_indicator"
+                style="@style/jipyo_tab_button"
+                android:layout_marginLeft="6dp"
+                android:text="보조지표" />
+
+            <Button
+                android:id="@+id/btn_other"
+                style="@style/jipyo_tab_button"
+                android:layout_marginLeft="6dp"
+                android:text="기타지표"
+                android:visibility="gone"/>
+
+            <Button
+                android:id="@+id/btn_signal"
+                style="@style/jipyo_tab_button"
+                android:layout_marginLeft="6dp"
+                android:text="신호/강세"/>
+
+            <Button
+                android:id="@+id/btn_charttype"
+                style="@style/jipyo_tab_button"
+                android:layout_marginLeft="6dp"
+                android:text="차트유형"
+                android:visibility="gone"/>
+
+        </LinearLayout>
+    </HorizontalScrollView>
+
+    <RelativeLayout
+        android:id="@+id/ll_filter"
+        android:layout_width="match_parent"
+        android:layout_height="36dp"
+        android:layout_marginTop="12dp"
+        android:layout_marginBottom="13dp"
+        android:background="#ffffff"
+        android:orientation="horizontal"
+        android:paddingLeft="18dp"
+        android:paddingRight="18dp">
+
+        <EditText
+            android:id="@+id/ed_filter"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="start|center_vertical"
+            android:hint="지표 이름을 입력해주세요."
+            android:textColorHint="#bbbbbb"
+            android:paddingLeft="10dp"
+            android:background="@drawable/assist_input_nor"
+            android:textSize="14dp"
+            android:textColor="#111111"/>
+        
+        <Button
+            android:id="@+id/btn_clear"
+            android:layout_width="16dp"
+            android:layout_height="16dp"
+            android:layout_alignRight="@id/ed_filter"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="10dp" />
+    </RelativeLayout>
+
+    <ImageView android:id="@+id/ll_listview_line" android:layout_width="match_parent" android:layout_height="1dp" android:background="#eeeeee"/>
+
+    <LinearLayout
+        android:id="@+id/ll_listview"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:background="#ffffff"
+        android:orientation="vertical"
+        android:padding="0dp" >
+
+        <ListView
+            android:id="@+id/lv_jipyolist"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:visibility="gone" />
+
+        <ExpandableListView
+            android:id="@+id/lv_expandable"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:groupIndicator="@null"
+
+            android:visibility="gone" />
+        <ExpandableListView
+            android:id="@+id/lv_expandable_signal"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:groupIndicator="@null"
+
+            android:visibility="gone" />
+    </LinearLayout>
+
+</LinearLayout>

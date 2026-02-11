@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="kfit_fab_margin">16dp</dimen>
+    <dimen name="kfit_main_start_padding">10dp</dimen>
+    <dimen name="kfit_main_end_padding">10dp</dimen>
+    <dimen name="kfit_tab_label">18dp</dimen>
+
+    <!--    상단뷰 및 분틱주기바-->
+    <dimen name="kfit_header_layout_height">56dp</dimen>
+    <dimen name="kfit_header_title_height">20dp</dimen>
+    <dimen name="kfit_header_title2_height">16dp</dimen>
+    <dimen name="kfit_header_close_btn_size">24dp</dimen>
+    <dimen name="kfit_chart_option_bar_height">54dp</dimen>
+    <dimen name="kfit_chart_option_bar_side_margin">14dp</dimen>
+    <dimen name="kfit_chart_option_bar_down_icon">16dp</dimen>
+
+    <dimen name="kfit_header_title_text_size">16dp</dimen>
+    <dimen name="kfit_header_title2_text_size">10dp</dimen>
+    <dimen name="kfit_header_title3_text_size">9dp</dimen>
+    <dimen name="kfit_chart_option_bar_text_size">14dp</dimen>
+
+    <!-- 2023.01.19 by SJW - icon background 설정으로 인한 padding 값 추가 -->
+    <dimen name="kfit_header_icon_padding_vertical_padding">10dp</dimen>
+    <dimen name="kfit_header_icon_padding_horizontal_padding">10dp</dimen>
+
+    <!--    툴팁-->
+    <dimen name="kfit_tooltip_width">117dp</dimen>
+    <dimen name="kfit_tooltip_height">34dp</dimen>
+    <dimen name="kfit_config_tooltip_width">178dp</dimen>
+    <dimen name="kfit_config_tooltip_height">26dp</dimen>
+    <dimen name="kfit_tooltip_arrow_size">8dp</dimen>
+    <dimen name="kfit_tooltip_body_height">27dp</dimen>
+    <dimen name="kfit_tooltip_text_size">12dp</dimen>
+    <dimen name="kfit_tooltip_icon_right_margin">22dp</dimen>
+    <dimen name="kfit_config_tooltip_icon_right_margin">0dp</dimen>
+
+    <dimen name="kfit_alertdialog_title_textsize">20dp</dimen>
+    <dimen name="kfit_alertdialog_contents_textsize">16dp</dimen>
+    <!-- dialog textsize-->
+    <dimen name="kfit_alertdialog_contents_textsize2">16dp</dimen>
+    <dimen name="kfit_alertdialog_button_textsize">16dp</dimen>
+
+    <!--    토스트 -->
+    <dimen name="kfit_toast_contents_textsize">14dp</dimen>
+
+    <!--    분틱바텀시트-->
+    <dimen name="kfit_bottom_header_close_btn">24dp</dimen>
+    <dimen name="kfit_bottom_header_close_margin">16dp</dimen>
+    <dimen name="kfit_bottom_header_title_text_size">20dp</dimen>
+    <dimen name="kfit_bottom_cycle_item_text_size">16dp</dimen>
+
+    <!--    바텀시트-->
+    <dimen name="kfit_bottomSheet_title_height">44dp</dimen>
+    <dimen name="kfit_bottomSheet_title_textsize">17dp</dimen>
+    <dimen name="kfit_bottomSheet_title_textwidth">163dp</dimen>
+    <dimen name="kfit_bottomSheet_title_close_btn">24dp</dimen>
+    <dimen name="kfit_bottomSheet_title_close_btn_marginEnd">14dp</dimen>
+    <dimen name="kfit_bottomSheet_common_side_margin">16dp</dimen>
+    <dimen name="kfit_bottomSheet_config_side_margin">8dp</dimen>
+
+    <!-- 2021.10.20 by JHY 0dp 추가 [기존에 kfit_bottomSheet_common_side_margin 값이 적용돼있었음]-->
+    <dimen name="kfit_bottomSheet_sub_side_margin">0dp</dimen>
+    <dimen name="kfit_bottomSheet_tab_textsize">18dp</dimen>
+    <dimen name="kfit_bottomSheet_common_bottom_margin">64dp</dimen>
+    <dimen name="kfit_sub_item_icon">24dp</dimen>
+    <!-- 2021.10.20 by JHY 48dp -> 52dp 변경-->
+    <dimen name="kfit_sub1_item_height">56dp</dimen> <!--주차트 아이템 높이-->
+    <!-- 2021.10.20 by JHY 8dp -> 24dp 변경-->
+    <dimen name="kfit_sub1_item_button_left_side_margin">24dp</dimen>
+    <!-- 2021.10.20 by JHY 8dp 추가-->
+    <dimen name="kfit_sub1_item_button_right_side_margin">8dp</dimen>
+    <dimen name="kfit_sub1_item_top_margin">16dp</dimen>
+    <!-- 2021.10.20 by JHY 8dp -> 0dp 변경-->
+    <dimen name="kfit_sub1_item_divider_margin">0dp</dimen>
+    <!-- 2021.10.20 by JHY 4dp 추가-->
+    <dimen name="kfit_sub1_item_layout_margin">4dp</dimen>
+    <dimen name="kfit_sub1_item_text_size">16dp</dimen>
+    <!-- 2021.10.20 by JHY 52dp 추가-->
+    <dimen name="kfit_sub2_item_height">52dp</dimen> <!--주차트 아이템 높이-->
+    <dimen name="kfit_sub2_item_text_size">14dp</dimen>
+    <dimen name="kfit_sub2_item_lint_text_size">12dp</dimen>
+    <!-- 2021.10.20 by JHY 24dp 추가 -->
+    <dimen name="kfit_sub2_item_button_side_margin">24dp</dimen>
+    <!-- 2021.10.20 by JHY 0dp 추가 -->
+    <dimen name="kfit_sub2_item_divider_margin">0dp</dimen>
+    <dimen name="kfit_sub2_item_view_side_margin">8dp</dimen>
+    <dimen name="kfit_sub2_item_lint_side_margin">6dp</dimen>
+    <!-- 2023.06.14 by SJW - 차트설정 서브 텍스트 영역 수정 -->
+    <dimen name="kfit_sub2_item_view_top_margin">4dp</dimen>
+    <!--    바텀시트 end-->
+</resources>

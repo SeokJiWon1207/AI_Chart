@@ -1,0 +1,320 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/chartviewactivity_parent_layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/kfits_grey0"
+    tools:context="com.kfitchart.screen.landscape.KfitChartLandscapeActivity">
+
+    <!--    <include-->
+    <!--        layout="@layout/toolbar"-->
+    <!--        android:id="@+id/toolbar" />-->
+    <include
+        android:id="@+id/headerView"
+        layout="@layout/kfit_header_view"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/kfit_header_layout_height"
+        android:layout_alignParentTop="true" />
+
+    <!--    android:layout_above="@+id/view_Trading"-->
+    <LinearLayout
+        android:id="@+id/chartlayoutViewGroup"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/headerView"
+        android:background="@color/kfits_grey0"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:id="@+id/chartHeaderlayout"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/kfit_chart_option_bar_height"
+            android:layout_marginLeft="@dimen/kfit_chart_option_bar_side_margin"
+            android:layout_marginRight="@dimen/kfit_chart_option_bar_side_margin"
+            android:paddingBottom="8dp"
+            android:orientation="horizontal"
+            android:weightSum="1">
+
+            <LinearLayout
+                android:id="@+id/chartPeriodHeaderlayout"
+                android:layout_width="302dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1.0"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:weightSum="5.8">
+
+                <LinearLayout
+                    android:id="@+id/llChartHeader_day_parent"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1.0"
+                    android:background="@drawable/chart_option_bar_text_background_left"
+                    android:gravity="center">
+
+                    <LinearLayout
+                        android:id="@+id/llChartHeader_day"
+                        android:layout_width="match_parent"
+                        android:layout_height="44dp"
+                        android:background="@drawable/chart_option_bar_text_background_left"
+                        android:gravity="center">
+
+                        <TextView
+                            android:id="@+id/tvChartHeader_day"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:gravity="center"
+                            android:text="@string/chart_header_layout_text3"
+                            android:textColor="@drawable/kfit_bg_chart_common_menu_drop_down_text"
+                            android:textSize="@dimen/kfit_chart_option_bar_text_size"
+                            android:textStyle="bold" />
+                    </LinearLayout>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/llChartHeader_week_parent"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1.0"
+                    android:background="@drawable/chart_option_bar_text_background"
+                    android:gravity="center">
+
+                    <LinearLayout
+                        android:id="@+id/llChartHeader_week"
+                        android:layout_width="match_parent"
+                        android:layout_height="44dp"
+                        android:background="@drawable/chart_option_bar_text_background"
+                        android:gravity="center">
+
+                        <TextView
+                            android:id="@+id/tvChartHeader_week"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:gravity="center"
+                            android:text="@string/chart_header_layout_text4"
+                            android:textColor="@drawable/kfit_bg_chart_common_menu_drop_down_text"
+                            android:textSize="@dimen/kfit_chart_option_bar_text_size"
+                            android:textStyle="bold" />
+                    </LinearLayout>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/llChartHeader_month_parent"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1.0"
+                    android:background="@drawable/chart_option_bar_text_background"
+                    android:gravity="center">
+
+                    <LinearLayout
+                        android:id="@+id/llChartHeader_month"
+                        android:layout_width="match_parent"
+                        android:layout_height="44dp"
+                        android:background="@drawable/chart_option_bar_text_background"
+                        android:gravity="center">
+
+                        <TextView
+                            android:id="@+id/tvChartHeader_month"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:gravity="center"
+                            android:text="@string/chart_header_layout_text5"
+                            android:textColor="@drawable/kfit_bg_chart_common_menu_drop_down_text"
+                            android:textSize="@dimen/kfit_chart_option_bar_text_size"
+                            android:textStyle="bold" />
+                    </LinearLayout>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1.4"
+                    android:background="@drawable/chart_option_bar_text_background"
+                    android:gravity="center">
+
+                    <LinearLayout
+                        android:id="@+id/llChartHeader_minutes"
+                        android:layout_width="match_parent"
+                        android:layout_height="44dp"
+                        android:background="@drawable/chart_option_bar_text_background"
+                        android:gravity="center"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:id="@+id/tvChartHeader_minutes"
+                            android:layout_width="29dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="10dp"
+                            android:gravity="center"
+                            android:text="@string/chart_header_layout_text2"
+                            android:textColor="@drawable/kfit_bg_chart_common_menu_drop_down_text"
+                            android:textSize="@dimen/kfit_chart_option_bar_text_size"
+                            android:textStyle="bold" />
+
+                        <ImageView
+                            android:id="@+id/ivChartHeader_minutes"
+                            android:layout_width="@dimen/kfit_chart_option_bar_down_icon"
+                            android:layout_height="@dimen/kfit_chart_option_bar_down_icon"
+                            android:layout_marginEnd="10dp"
+                            android:background="@drawable/kfit_bg_chart_common_menu_drop_down_icon"
+                            android:clickable="false" />
+                    </LinearLayout>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1.4"
+                    android:background="@drawable/chart_option_bar_text_background_right"
+                    android:gravity="center">
+
+                    <LinearLayout
+                        android:id="@+id/llChartHeader_ticks"
+                        android:layout_width="match_parent"
+                        android:layout_height="44dp"
+                        android:background="@drawable/chart_option_bar_text_background_right"
+                        android:gravity="center"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:id="@+id/tvChartHeader_ticks"
+                            android:layout_width="29dp"
+                            android:layout_height="wrap_content"
+                            android:gravity="center"
+                            android:text="@string/chart_header_layout_text1"
+                            android:textColor="@drawable/kfit_bg_chart_common_menu_drop_down_text"
+                            android:textSize="@dimen/kfit_chart_option_bar_text_size"
+                            android:textStyle="bold" />
+
+                        <ImageView
+                            android:id="@+id/ivChartHeader_ticks"
+                            android:layout_width="@dimen/kfit_chart_option_bar_down_icon"
+                            android:layout_height="@dimen/kfit_chart_option_bar_down_icon"
+                            android:background="@drawable/kfit_bg_chart_common_menu_drop_down_icon"
+                            android:clickable="false" />
+                    </LinearLayout>
+                </LinearLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/llChartHeader_setting"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:gravity="center_vertical">
+
+                <ImageView
+                    android:id="@+id/ivChartCross_setting"
+                    android:layout_width="44dp"
+                    android:layout_height="44dp"
+                    android:layout_marginLeft="5dp"
+                    android:background="@drawable/chart_option_bar_icon_background"
+                    android:gravity="center"
+                    android:paddingHorizontal="@dimen/kfit_header_icon_padding_horizontal_padding"
+                    android:paddingVertical="@dimen/kfit_header_icon_padding_vertical_padding"
+                    android:scaleType="fitXY"
+                    android:src="@drawable/kfit_service_ic_card_vertical" />
+
+                <ImageView
+                    android:id="@+id/tvChartHeader_setting"
+                    android:layout_width="44dp"
+                    android:layout_height="44dp"
+                    android:layout_marginLeft="5dp"
+                    android:background="@drawable/chart_option_bar_icon_background"
+                    android:clickable="false"
+                    android:gravity="center"
+                    android:paddingHorizontal="@dimen/kfit_header_icon_padding_horizontal_padding"
+                    android:paddingVertical="@dimen/kfit_header_icon_padding_vertical_padding"
+                    android:scaleType="fitXY"
+                    android:src="@drawable/kfit_core_ic_navi_setting" />
+
+                <ImageView
+                    android:id="@+id/ivChartHeader_close"
+                    android:layout_width="44dp"
+                    android:layout_height="44dp"
+                    android:layout_marginLeft="9dp"
+                    android:layout_marginRight="15dp"
+                    android:clickable="false"
+                    android:gravity="center"
+                    android:paddingHorizontal="10dp"
+                    android:paddingVertical="@dimen/kfit_header_icon_padding_vertical_padding"
+                    android:scaleType="fitXY"
+                    android:src="@drawable/kfit_kp_core_ic_common_close"
+                    android:visibility="gone" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <HorizontalScrollView
+            android:id="@+id/layout_expand_sec"
+            android:layout_width="match_parent"
+            android:layout_height="20dp"
+            android:scrollbars="none"
+            android:visibility="gone" />
+
+        <HorizontalScrollView
+            android:id="@+id/layout_expand_min"
+            android:layout_width="match_parent"
+            android:layout_height="20dp"
+            android:scrollbars="none"
+            android:visibility="gone" />
+
+        <!--        2021.05.12 by hanjun.Kim - kakaopay - 차트 최상단 외곽 가로선-->
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="0.5dp"
+            android:alpha="0.2"
+            android:background="@color/kfits_grey500" />
+        <!--        2021.05.12 by hanjun.Kim - kakaopay - 차트 최상단 외곽 가로선-->
+
+        <RelativeLayout
+            android:id="@+id/chartlayout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:visibility="visible"
+            tools:visibility="visible">
+
+            <!--            <LinearLayout-->
+            <!--                android:layout_width="wrap_content"-->
+            <!--                android:layout_height="wrap_content"-->
+            <!--                android:orientation="horizontal"-->
+            <!--                android:visibility="gone">-->
+
+            <!--                <Button-->
+            <!--                    android:id="@+id/btnAddData"-->
+            <!--                    android:layout_width="wrap_content"-->
+            <!--                    android:layout_height="wrap_content"-->
+            <!--                    android:layout_weight="1"-->
+            <!--                    android:text="종목추가" />-->
+
+            <!--                <Button-->
+            <!--                    android:id="@+id/btnSetup"-->
+            <!--                    android:layout_width="wrap_content"-->
+            <!--                    android:layout_height="wrap_content"-->
+            <!--                    android:text="설정" />-->
+
+            <!--                <Button-->
+            <!--                    android:id="@+id/btnTool"-->
+            <!--                    android:layout_width="wrap_content"-->
+            <!--                    android:layout_height="wrap_content"-->
+            <!--                    android:text="도구" />-->
+
+            <!--                <Button-->
+            <!--                    android:id="@+id/btnRealTest"-->
+            <!--                    android:layout_width="wrap_content"-->
+            <!--                    android:layout_height="wrap_content"-->
+            <!--                    android:text="RealTest Start" />-->
+            <!--            </LinearLayout>-->
+        </RelativeLayout>
+    </LinearLayout>
+
+    <!--    사기/팔기버튼 영역-->
+    <!--    <include-->
+    <!--        android:id="@+id/view_Trading"-->
+    <!--        layout="@layout/footer_trading_view"-->
+    <!--        android:layout_width="match_parent"-->
+    <!--        android:layout_height="wrap_content"-->
+    <!--        android:layout_alignParentBottom="true" />-->
+</RelativeLayout>

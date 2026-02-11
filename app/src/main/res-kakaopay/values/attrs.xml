@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!--카카오페이 브랜드 컬러를 기반으로 한 메인 컬러입니다.-->
+    <attr name="colorYellow" format="color" />
+    <!--강조를 목적으로 보조적으로 사용하는 컬러입니다.-->
+    <attr name="colorBlue" format="color" />
+    <!--경고 혹은 에러 등의 부정적인 상황에서의 강조를 위해 사용하는 컬러입니다.-->
+    <attr name="colorRed" format="color" />
+    <!--Yellow 컬러 위에 Text 나 icon tint 용으로 사용하는 컬러입니다.-->
+    <attr name="colorOnYellow" format="color" />
+    <!--Blue 컬러 위에 Text 나 icon tint 용으로 사용하는 컬러입니다.-->
+    <attr name="colorOnBlue" format="color" />
+    <!--Red 컬러 위에 Text 나 icon tint 용으로 사용하는 컬러입니다.-->
+    <attr name="colorOnRed" format="color" />
+    <!--Card component background 에 쓰인다.-->
+    <attr name="colorSurface02" format="color" />
+    <!--Dialog, BottomSheet component background 에 쓰인다.-->
+    <attr name="colorSurface03" format="color" />
+    <!--Segment tab component background 에 쓰인다.-->
+    <attr name="colorSurface04" format="color" />
+</resources>

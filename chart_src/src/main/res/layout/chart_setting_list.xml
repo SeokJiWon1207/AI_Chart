@@ -1,0 +1,208 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+	<!-- 2012. 7. 24 차트불러오기 윗쪽 레이아웃 배경색 설정  -->
+<LinearLayout
+  xmlns:android="http://schemas.android.com/apk/res/android"
+  	android:orientation="vertical"
+	android:layout_width="match_parent"
+	android:layout_height="wrap_content"
+	android:background="@android:color/transparent">
+	<RelativeLayout android:id="@+id/popup_header_bg"
+		android:orientation="horizontal"
+		android:layout_width="fill_parent" android:layout_height="74dp"  android:background="@drawable/shape_bottom_alert_roundrect">
+		<TextView android:id="@+id/frameaTitle" android:layout_width="match_parent"
+			android:layout_height="26dp"
+			android:layout_marginTop="24dp"
+			android:layout_marginBottom="24dp"
+			android:gravity="center"
+			android:text="차트 설정"
+			android:textSize="18dp"
+			android:textStyle="bold"
+			android:textColor="#000000">
+		</TextView>
+		<TextView android:id="@+id/frameaSub" android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:gravity="right"
+			android:layout_marginRight="33dp"
+			android:layout_marginTop="28dp"
+			android:text="기본값"
+			android:textSize="13dp"
+			android:textColor="#000000">
+		</TextView>
+	</RelativeLayout>
+	<ScrollView
+		android:id="@+id/baselinescroll" android:layout_width="fill_parent" android:layout_height="0dp" android:layout_weight="1" android:background="#ffffff" >
+
+		<LinearLayout android:layout_width="fill_parent" android:layout_height="wrap_content" android:orientation="vertical">
+
+
+			<TextView android:gravity="center_vertical" android:text="차트 유형" style="@style/chart_setting_list_sub_tv" android:layout_marginTop="18dp" android:layout_marginLeft="26dp"/>
+			<LinearLayout
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:orientation="vertical">
+				<LinearLayout android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:orientation="horizontal"
+					android:layout_marginTop="20dp">
+					<Button
+						android:id="@+id/btn_candle"
+						android:layout_width="150dp"
+						android:layout_height="42dp"
+						android:layout_weight="1"
+						android:layout_marginLeft="26dp"
+						android:clickable="true"
+						android:background="@drawable/csettinglist_popup_change_btn"
+						android:textSize="14dp"
+						android:textColor="#333333"
+						android:text="캔들"/>
+					<LinearLayout
+						android:layout_width="8dp"
+						android:layout_height="wrap_content"
+						/>
+					<Button
+						android:id="@+id/btn_line"
+						android:layout_width="150dp"
+						android:layout_height="42dp"
+						android:layout_marginRight="26dp"
+						android:clickable="true"
+						android:layout_weight="1"
+						android:textSize="14dp"
+						android:textColor="#333333"
+						android:background="@drawable/csettinglist_popup_change_btn"
+						android:text="라인"/>
+				</LinearLayout>
+				<TextView android:text="툴바" style="@style/chart_setting_list_sub_tv" android:layout_marginLeft="26dp" android:layout_marginTop="27dp"/>
+				<LinearLayout
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:layout_marginTop="20dp">
+					<Button
+						android:id="@+id/btn_enable_tool"
+						android:layout_width="150dp"
+						android:layout_height="42dp"
+						android:layout_marginLeft="26dp"
+						android:clickable="true"
+						android:textSize="14dp"
+						android:layout_weight="1"
+						android:textColor="#333333"
+						android:background="@drawable/csettinglist_popup_change_btn"
+						android:text="사용"/>
+					<LinearLayout
+						android:layout_width="8dp"
+						android:layout_height="wrap_content"/>
+					<Button
+						android:id="@+id/btn_disenable_tool"
+						android:layout_width="150dp"
+						android:layout_height="42dp"
+						android:layout_marginRight="26dp"
+						android:clickable="true"
+						android:textSize="14dp"
+						android:layout_weight="1"
+						android:textColor="#333333"
+						android:background="@drawable/csettinglist_popup_change_btn"
+						android:text="미사용"/>
+				</LinearLayout>
+				<ImageView android:layout_width="match_parent" android:layout_height="1dp" android:background="#f0f0f0" android:layout_marginTop="33dp" />
+
+				<TextView android:text="오버레이지표" style="@style/chart_setting_list_sub_tv" android:layout_marginLeft="26dp" android:layout_marginTop="30dp"/>
+				<LinearLayout android:id="@+id/baselinear01" style="@style/detail_valset_outerlinear">
+					<LinearLayout style="@style/detail_valset_linear" android:layout_marginLeft="26dp">
+						<TextView android:id="@+id/title01" style="@style/detail_lineset_title" android:layout_marginLeft="0dp" android:text="대기매물"></TextView>
+						<CheckBox android:id="@+id/public_checkbox01" android:layout_width="20dp" android:layout_height="20dp" android:button="@drawable/csettinglist_popup_checkbox_change" android:layout_gravity="center_vertical" android:layout_alignTop="@+id/title01" android:layout_toRightOf="@+id/title01" android:tag="0" android:layout_marginRight="26dp"/>
+					</LinearLayout>
+				</LinearLayout>
+				<LinearLayout android:id="@+id/baselinear02" style="@style/detail_valset_outerlinear">
+					<LinearLayout style="@style/detail_valset_linear" android:layout_marginLeft="26dp">
+						<TextView android:id="@+id/title02" style="@style/detail_lineset_title" android:layout_marginLeft="0dp" android:text="Bollinger Band"></TextView>
+						<CheckBox android:id="@+id/public_checkbox02" android:layout_width="20dp" android:layout_height="20dp" android:button="@drawable/csettinglist_popup_checkbox_change"  android:layout_gravity="center_vertical" android:layout_alignTop="@+id/title02" android:layout_toRightOf="@+id/title02" android:tag="0" android:layout_marginRight="26dp"/>
+					</LinearLayout>
+				</LinearLayout>
+				<LinearLayout android:id="@+id/baselinear03" style="@style/detail_valset_outerlinear">
+					<LinearLayout style="@style/detail_valset_linear" android:layout_marginLeft="26dp">
+						<TextView android:id="@+id/title03" style="@style/detail_lineset_title" android:layout_marginLeft="0dp" android:text="Parabolic SAR"></TextView>
+						<CheckBox android:id="@+id/public_checkbox03" android:layout_width="20dp" android:layout_height="20dp" android:button="@drawable/csettinglist_popup_checkbox_change"  android:layout_gravity="center_vertical" android:layout_alignTop="@+id/title03" android:layout_toRightOf="@+id/title03" android:tag="0" android:layout_marginRight="26dp"/>
+					</LinearLayout>
+				</LinearLayout>
+
+				<ImageView android:layout_width="match_parent" android:layout_height="1dp" android:background="#f0f0f0" android:layout_marginTop="30dp" />
+
+				<TextView android:text="보조지표" style="@style/chart_setting_list_sub_tv" android:layout_marginLeft="26dp" android:layout_marginTop="30dp"/>
+				<LinearLayout android:id="@+id/baselinear04" style="@style/detail_valset_outerlinear">
+					<LinearLayout style="@style/detail_valset_linear" android:layout_marginLeft="26dp">
+						<TextView android:id="@+id/title04" style="@style/detail_lineset_title" android:layout_marginLeft="0dp" android:layout_height="wrap_content" android:text="주가이동평균"/>
+						<CheckBox android:id="@+id/public_checkbox04" android:layout_width="20dp" android:layout_height="20dp" android:button="@drawable/csettinglist_popup_checkbox_change"  android:layout_gravity="center_vertical" android:layout_alignTop="@+id/title04" android:layout_toRightOf="@+id/title04" android:tag="0" android:layout_marginRight="26dp"/>
+					</LinearLayout>
+				</LinearLayout>
+				<LinearLayout android:id="@+id/baselinear05" style="@style/detail_valset_outerlinear">
+					<LinearLayout style="@style/detail_valset_linear" android:layout_marginLeft="26dp">
+						<TextView android:id="@+id/title05" style="@style/detail_lineset_title" android:layout_marginLeft="0dp" android:text="거래량"></TextView>
+						<CheckBox android:id="@+id/public_checkbox05" android:layout_width="20dp" android:layout_height="20dp" android:button="@drawable/csettinglist_popup_checkbox_change"  android:layout_gravity="center_vertical" android:layout_alignTop="@+id/title05" android:layout_toRightOf="@+id/title05" android:tag="0" android:layout_marginRight="26dp"/>
+					</LinearLayout>
+				</LinearLayout>
+				<LinearLayout android:id="@+id/baselinear06" style="@style/detail_valset_outerlinear">
+					<LinearLayout style="@style/detail_valset_linear" android:layout_marginLeft="26dp">
+						<TextView android:id="@+id/title06" style="@style/detail_lineset_title" android:layout_marginLeft="0dp" android:text="거래량이동평균"></TextView>
+						<CheckBox android:id="@+id/public_checkbox06" android:layout_width="20dp" android:layout_height="20dp" android:button="@drawable/csettinglist_popup_checkbox_change"  android:layout_gravity="center_vertical" android:layout_alignTop="@+id/title06" android:layout_toRightOf="@+id/title06" android:tag="0" android:layout_marginRight="26dp"/>
+					</LinearLayout>
+				</LinearLayout>
+				<LinearLayout android:id="@+id/baselinear07" style="@style/detail_valset_outerlinear">
+					<LinearLayout style="@style/detail_valset_linear" android:layout_marginLeft="26dp">
+						<TextView android:id="@+id/title07" style="@style/detail_lineset_title" android:layout_marginLeft="0dp" android:text="MACD OSC"></TextView>
+						<CheckBox android:id="@+id/public_checkbox07" android:layout_width="20dp" android:layout_height="20dp" android:button="@drawable/csettinglist_popup_checkbox_change"  android:layout_gravity="center_vertical" android:layout_alignTop="@+id/title07" android:layout_toRightOf="@+id/title07" android:tag="0" android:layout_marginRight="26dp"/>
+					</LinearLayout>
+				</LinearLayout>
+				<LinearLayout android:id="@+id/baselinear08" style="@style/detail_valset_outerlinear">
+					<LinearLayout style="@style/detail_valset_linear" android:layout_marginLeft="26dp">
+						<TextView android:id="@+id/title08" style="@style/detail_lineset_title" android:layout_marginLeft="0dp" android:text="Stochastic Slow"></TextView>
+						<CheckBox android:id="@+id/public_checkbox08" android:layout_width="20dp" android:layout_height="20dp" android:button="@drawable/csettinglist_popup_checkbox_change"  android:layout_gravity="center_vertical" android:layout_alignTop="@+id/title08" android:layout_toRightOf="@+id/title08" android:tag="0" android:layout_marginRight="26dp"/>
+					</LinearLayout>
+				</LinearLayout>
+
+				<ImageView android:layout_width="match_parent" android:layout_height="1dp" android:background="#f0f0f0" android:layout_marginTop="30dp" />
+
+				<TextView android:text="기타지표" style="@style/chart_setting_list_sub_tv" android:layout_marginLeft="26dp" android:layout_marginTop="30dp"/>
+				<LinearLayout android:id="@+id/baselinear09" style="@style/detail_valset_outerlinear">
+					<LinearLayout style="@style/detail_valset_linear" android:layout_marginLeft="26dp">
+						<TextView android:id="@+id/title09" style="@style/detail_lineset_title" android:layout_marginLeft="0dp" android:text="외국인소진율"></TextView>
+						<CheckBox android:id="@+id/public_checkbox09" android:layout_width="20dp" android:layout_height="20dp" android:button="@drawable/csettinglist_popup_checkbox_change"  android:layout_gravity="center_vertical" android:layout_alignTop="@+id/title09" android:layout_toRightOf="@+id/title09" android:tag="0" android:layout_marginRight="26dp"/>
+					</LinearLayout>
+				</LinearLayout>
+				<LinearLayout android:id="@+id/baselinear10" style="@style/detail_valset_outerlinear">
+					<LinearLayout style="@style/detail_valset_linear" android:layout_marginLeft="26dp">
+						<TextView android:id="@+id/title10" style="@style/detail_lineset_title" android:layout_marginLeft="0dp" android:text="외국인순매수(장내)"></TextView>
+						<CheckBox android:id="@+id/public_checkbox10" android:layout_width="20dp" android:layout_height="20dp" android:button="@drawable/csettinglist_popup_checkbox_change"  android:layout_gravity="center_vertical" android:layout_alignTop="@+id/title10" android:layout_toRightOf="@+id/title10" android:tag="0" android:layout_marginRight="26dp"/>
+					</LinearLayout>
+				</LinearLayout>
+				<LinearLayout android:id="@+id/baselinear11" style="@style/detail_valset_outerlinear">
+					<LinearLayout style="@style/detail_valset_linear" android:layout_marginLeft="26dp">
+						<TextView android:id="@+id/title11" style="@style/detail_lineset_title" android:layout_marginLeft="0dp" android:text="기관순매수"></TextView>
+						<CheckBox android:id="@+id/public_checkbox11" android:layout_width="20dp" android:layout_height="20dp" android:button="@drawable/csettinglist_popup_checkbox_change" android:layout_gravity="center_vertical" android:layout_alignTop="@+id/title11" android:layout_toRightOf="@+id/title11" android:tag="0" android:layout_marginRight="26dp"/>
+					</LinearLayout>
+				</LinearLayout>
+				<LinearLayout android:id="@+id/baselinear12" style="@style/detail_valset_outerlinear">
+					<LinearLayout style="@style/detail_valset_linear" android:layout_marginLeft="26dp">
+						<TextView android:id="@+id/title12" style="@style/detail_lineset_title" android:layout_marginLeft="0dp" android:text="개인순매수"></TextView>
+						<CheckBox android:id="@+id/public_checkbox12" android:layout_width="20dp" android:layout_height="20dp" android:button="@drawable/csettinglist_popup_checkbox_change" android:layout_gravity="center_vertical" android:layout_alignTop="@+id/title12" android:layout_toRightOf="@+id/title12" android:tag="0" android:layout_marginRight="26dp"/>
+					</LinearLayout>
+				</LinearLayout>
+
+
+			</LinearLayout>
+		</LinearLayout>
+	</ScrollView>
+
+	<LinearLayout android:layout_width="fill_parent" android:layout_height="wrap_content" android:orientation="horizontal" android:background="#ffffff" android:padding="10dp">
+		<Button
+			android:id="@+id/frameabtnfunction"
+			style="@style/alert_bottom_btn"
+			android:layout_gravity="center"
+			android:layout_height="48dp"
+			android:background="@drawable/csettinglist_popup_chart_btn_black"
+			android:text="적용"
+			android:textSize="16dp"
+			android:textColor="#ffffff"
+			android:textStyle="bold"/>
+	</LinearLayout>
+
+</LinearLayout>

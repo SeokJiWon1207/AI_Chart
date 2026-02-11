@@ -1,0 +1,280 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	android:layout_width="match_parent" android:layout_height="fill_parent" android:orientation="vertical" android:weightSum="1" android:clickable="true"  android:padding="0dp">
+
+
+		<LinearLayout android:id="@+id/savetop" android:layout_width="fill_parent" android:layout_height="52dp" android:background="#ffffff">
+			<!-- 닫기  -->
+
+			<TextView android:layout_weight="1" android:layout_gravity="center_vertical" android:textColor="#111111" android:textSize="17dp"  android:text="기준선설정" android:id="@+id/frameaTitle"
+				android:layout_height="wrap_content" android:layout_width="wrap_content" android:paddingLeft="12dp"></TextView>
+			<!--  초기화  -->
+			<Button android:textColor="#ffffff" android:layout_height="28dp" android:textSize="13dp" android:text="초기화"
+				android:layout_width="54dp" android:layout_gravity="center_vertical" android:layout_marginRight="6dp"
+				android:background="@drawable/btn_header_init" android:id="@+id/btn_baseline_refresh"/>
+
+			<Button android:background="@drawable/btn_close_transparent" android:layout_gravity="center_vertical"
+				android:id="@+id/frameabtnfunction" android:layout_height="28dp"
+				android:layout_width="28dp" android:layout_marginRight="12dp"/>
+		</LinearLayout>
+
+
+		<LinearLayout android:layout_width="fill_parent" android:layout_alignBottom="@+id/savetop" android:layout_height="46dp" android:background="#ffffff" android:paddingLeft="12dp" android:paddingRight="12dp">
+			<Button android:id="@+id/baslineSetBtn" style="@style/indicator_tabbutton" android:text="당일/전일" android:layout_weight="0.5" android:layout_marginRight="6dp"/>
+			<Button android:id="@+id/PDlineSetBtn" style="@style/indicator_tabbutton" android:textColor="#666666" android:text="Pivot/Demark" android:layout_weight="0.5" android:layout_marginLeft="6dp"/>
+		</LinearLayout>
+		<!--< 기준선 스크롤뷰 >-->
+
+		<ScrollView
+			android:id="@+id/baselinescroll" android:layout_width="fill_parent" android:layout_height="match_parent" android:background="#ffffffff" >
+
+			<LinearLayout android:layout_width="fill_parent" android:layout_height="wrap_content" android:orientation="vertical">
+
+				<TextView android:id="@+id/baseline_txt_2" android:text="전일가격" style="@style/detail_headline2" android:layout_marginBottom="10dp"/>
+				<!--<ImageView android:layout_width="match_parent" android:layout_height="1dp" android:background="#f0f0f0" />-->
+
+				<LinearLayout android:id="@+id/baselinear08" style="@style/detail_valset_outerlinear" android:layout_height="40dp">
+					<LinearLayout style="@style/detail_valset_linear" android:layout_marginTop="0dp">
+						<CheckBox android:id="@+id/public_checkbox08" style="@style/detail_checkbox" android:layout_alignTop="@+id/title08" android:layout_toRightOf="@+id/title08" android:tag="8" />
+						<TextView android:id="@+id/title08" style="@style/detail_lineset_title" android:text="전일 시가" android:textColor="#666666"></TextView>
+
+						<TextView style="@style/detial_lineset_thick" android:id="@+id/baseline_lineview8" android:background="@drawable/line_thick" android:layout_marginRight="10dp" />
+						<TextView style="@style/detail_lineset_palette" android:id="@+id/baseline_pttv8" android:background="@drawable/shape_circle" />
+
+					</LinearLayout>
+				</LinearLayout>
+
+				<LinearLayout android:id="@+id/baselinear09" style="@style/detail_valset_outerlinear" android:layout_height="40dp">
+					<LinearLayout style="@style/detail_valset_linear" android:layout_marginTop="0dp">
+						<CheckBox android:id="@+id/public_checkbox09" style="@style/detail_checkbox" android:layout_alignTop="@+id/title09" android:layout_toRightOf="@+id/title09" android:tag="9" />
+						<TextView android:id="@+id/title09" style="@style/detail_lineset_title" android:text="전일 고가" android:textColor="#666666"></TextView>
+
+						<TextView style="@style/detial_lineset_thick" android:id="@+id/baseline_lineview9" android:background="@drawable/line_thick" android:layout_marginRight="10dp" />
+						<TextView style="@style/detail_lineset_palette" android:id="@+id/baseline_pttv9" android:background="@drawable/shape_circle" />
+
+					</LinearLayout>
+				</LinearLayout>
+
+				<LinearLayout android:id="@+id/baselinear10" style="@style/detail_valset_outerlinear" android:layout_height="40dp">
+					<LinearLayout style="@style/detail_valset_linear" android:layout_marginTop="0dp">
+						<CheckBox android:id="@+id/public_checkbox10" style="@style/detail_checkbox" android:layout_alignTop="@+id/title10" android:layout_toRightOf="@+id/title10" android:tag="10" />
+						<TextView android:id="@+id/title10" style="@style/detail_lineset_title" android:text="전일 저가" android:textColor="#666666"></TextView>
+
+						<TextView style="@style/detial_lineset_thick" android:id="@+id/baseline_lineview10" android:background="@drawable/line_thick" android:layout_marginRight="10dp" />
+						<TextView style="@style/detail_lineset_palette" android:id="@+id/baseline_pttv10" android:background="@drawable/shape_circle" />
+
+					</LinearLayout>
+				</LinearLayout>
+
+				<LinearLayout android:id="@+id/baselinear11" style="@style/detail_valset_outerlinear" android:layout_height="40dp">
+					<LinearLayout style="@style/detail_valset_linear" android:layout_marginTop="0dp">
+						<CheckBox android:id="@+id/public_checkbox11" style="@style/detail_checkbox" android:layout_alignTop="@+id/title11" android:layout_toRightOf="@+id/title11" android:tag="11" />
+						<TextView android:id="@+id/title11" style="@style/detail_lineset_title" android:text="전일 종가" android:textColor="#666666"></TextView>
+
+						<TextView style="@style/detial_lineset_thick" android:id="@+id/baseline_lineview11" android:background="@drawable/line_thick" android:layout_marginRight="10dp" />
+						<TextView style="@style/detail_lineset_palette" android:id="@+id/baseline_pttv11" android:background="@drawable/shape_circle" />
+
+					</LinearLayout>
+				</LinearLayout>
+
+				<LinearLayout android:id="@+id/baselinear12" style="@style/detail_valset_outerlinear" android:layout_height="40dp">
+					<LinearLayout style="@style/detail_valset_linear" android:layout_marginTop="0dp">
+						<CheckBox android:id="@+id/public_checkbox12" style="@style/detail_checkbox" android:layout_alignTop="@+id/title12" android:layout_toRightOf="@+id/title12" android:tag="12" />
+						<TextView android:id="@+id/title12" style="@style/detail_lineset_title" android:text="전일 (시+고+저)/3" android:textColor="#666666"></TextView>
+
+						<TextView style="@style/detial_lineset_thick" android:id="@+id/baseline_lineview12" android:background="@drawable/line_thick" android:layout_marginRight="10dp" />
+						<TextView style="@style/detail_lineset_palette" android:id="@+id/baseline_pttv12" android:background="@drawable/shape_circle" />
+
+					</LinearLayout>
+				</LinearLayout>
+
+				<TextView android:gravity="center_vertical" android:id="@+id/baseline_txt_1" android:text="당일가격" style="@style/detail_headline2" android:layout_marginBottom="10dp" android:layout_marginTop="20dp"/>
+				<!--<ImageView android:layout_width="match_parent" android:layout_height="1dp" android:background="#f0f0f0" />-->
+
+				<LinearLayout android:id="@+id/baselinear01" style="@style/detail_valset_outerlinear" android:layout_height="40dp">
+					<LinearLayout style="@style/detail_valset_linear" android:layout_marginTop="0dp">
+						<CheckBox android:id="@+id/public_checkbox01" style="@style/detail_checkbox" android:tag="1"/>
+						<TextView android:id="@+id/title01" style="@style/detail_lineset_title" android:text="당일 시가" android:textColor="#666666"></TextView>
+						<TextView style="@style/detial_lineset_thick" android:id="@+id/baseline_lineview1" android:background="@drawable/line_thick" android:layout_marginRight="10dp" />
+						<TextView style="@style/detail_lineset_palette" android:id="@+id/baseline_pttv1" android:background="@drawable/shape_circle" />
+					</LinearLayout>
+				</LinearLayout>
+
+				<LinearLayout android:id="@+id/baselinear02" style="@style/detail_valset_outerlinear" android:layout_height="40dp">
+					<LinearLayout style="@style/detail_valset_linear" android:layout_marginTop="0dp">
+						<CheckBox android:id="@+id/public_checkbox02" style="@style/detail_checkbox" android:layout_alignTop="@+id/title02" android:layout_toRightOf="@+id/title02" android:tag="2" />
+						<TextView android:id="@+id/title02" style="@style/detail_lineset_title" android:text="당일 고가" android:textColor="#666666"></TextView>
+
+						<TextView style="@style/detial_lineset_thick" android:id="@+id/baseline_lineview2" android:background="@drawable/line_thick" android:layout_marginRight="10dp" />
+						<TextView style="@style/detail_lineset_palette" android:id="@+id/baseline_pttv2" android:background="@drawable/shape_circle" />
+					</LinearLayout>
+				</LinearLayout>
+
+				<LinearLayout android:id="@+id/baselinear03" style="@style/detail_valset_outerlinear" android:layout_height="40dp">
+					<LinearLayout style="@style/detail_valset_linear" android:layout_marginTop="0dp">
+						<CheckBox android:id="@+id/public_checkbox03" style="@style/detail_checkbox" android:layout_alignTop="@+id/title03" android:layout_toRightOf="@+id/title03" android:tag="3" />
+						<TextView android:id="@+id/title03" style="@style/detail_lineset_title" android:text="당일 저가" android:textColor="#666666"></TextView>
+
+						<TextView style="@style/detial_lineset_thick" android:id="@+id/baseline_lineview3" android:background="@drawable/line_thick" android:layout_marginRight="10dp" />
+						<TextView style="@style/detail_lineset_palette" android:id="@+id/baseline_pttv3" android:background="@drawable/shape_circle" />
+					</LinearLayout>
+				</LinearLayout>
+
+				<LinearLayout android:id="@+id/baselinear04" style="@style/detail_valset_outerlinear" android:layout_height="40dp">
+					<LinearLayout style="@style/detail_valset_linear" android:layout_marginTop="0dp">
+						<CheckBox android:id="@+id/public_checkbox04" style="@style/detail_checkbox" android:layout_alignTop="@+id/title04" android:layout_toRightOf="@+id/title04" android:tag="4" />
+						<TextView android:id="@+id/title04" style="@style/detail_lineset_title" android:text="당일 종가" android:textColor="#666666"></TextView>
+
+						<TextView style="@style/detial_lineset_thick" android:id="@+id/baseline_lineview4" android:background="@drawable/line_thick" android:layout_marginRight="10dp" />
+						<TextView style="@style/detail_lineset_palette" android:id="@+id/baseline_pttv4" android:background="@drawable/shape_circle" />
+					</LinearLayout>
+				</LinearLayout>
+
+				<LinearLayout android:id="@+id/baselinear05" style="@style/detail_valset_outerlinear" android:layout_height="40dp">
+					<LinearLayout style="@style/detail_valset_linear" android:layout_marginTop="0dp">
+						<CheckBox android:id="@+id/public_checkbox05" style="@style/detail_checkbox" android:layout_alignTop="@+id/title05" android:layout_toRightOf="@+id/title05" android:tag="5" />
+						<TextView android:id="@+id/title05" style="@style/detail_lineset_title" android:text="상한가" android:textColor="#666666"></TextView>
+
+						<TextView style="@style/detial_lineset_thick" android:id="@+id/baseline_lineview5" android:background="@drawable/line_thick" android:layout_marginRight="10dp" />
+						<TextView style="@style/detail_lineset_palette" android:id="@+id/baseline_pttv5" android:background="@drawable/shape_circle" />
+					</LinearLayout>
+				</LinearLayout>
+
+				<LinearLayout android:id="@+id/baselinear06" style="@style/detail_valset_outerlinear" android:layout_height="40dp">
+					<LinearLayout style="@style/detail_valset_linear" android:layout_marginTop="0dp">
+						<CheckBox android:id="@+id/public_checkbox06" style="@style/detail_checkbox" android:layout_alignTop="@+id/title06" android:layout_toRightOf="@+id/title06" android:tag="6" />
+						<TextView android:id="@+id/title06" style="@style/detail_lineset_title" android:text="하한가" android:textColor="#666666"></TextView>
+
+						<TextView style="@style/detial_lineset_thick" android:id="@+id/baseline_lineview6" android:background="@drawable/line_thick" android:layout_marginRight="10dp" />
+						<TextView style="@style/detail_lineset_palette" android:id="@+id/baseline_pttv6" android:background="@drawable/shape_circle" />
+
+					</LinearLayout>
+				</LinearLayout>
+
+				<LinearLayout android:id="@+id/baselinear07" style="@style/detail_valset_outerlinear" android:layout_height="40dp">
+					<LinearLayout style="@style/detail_valset_linear" android:layout_marginTop="0dp">
+						<CheckBox android:id="@+id/public_checkbox07" style="@style/detail_checkbox" android:layout_alignTop="@+id/title07" android:layout_toRightOf="@+id/title07" android:tag="7" />
+						<TextView android:id="@+id/title07" style="@style/detail_lineset_title" android:text="(시+고+저)/3" android:textColor="#666666"></TextView>
+
+						<TextView style="@style/detial_lineset_thick" android:id="@+id/baseline_lineview7" android:background="@drawable/line_thick" android:layout_marginRight="10dp" />
+						<TextView style="@style/detail_lineset_palette" android:id="@+id/baseline_pttv7" android:background="@drawable/shape_circle" />
+
+					</LinearLayout>
+				</LinearLayout>
+
+
+
+			</LinearLayout>
+		</ScrollView>
+
+
+		<!--< Pivot/Demark 레이아웃 시작>-->
+		<ScrollView
+			android:id="@+id/pivotdemarkscroll" android:layout_width="fill_parent" android:layout_height="wrap_content" android:background="#ffffffff" android:clickable="true" android:visibility="gone" android:layout_weight="1">
+
+			<LinearLayout android:layout_width="fill_parent" android:layout_height="match_parent" android:orientation="vertical">
+
+				<!--< Pivot >-->
+					<TextView android:id="@+id/baseline_txt_3" android:gravity="center_vertical"
+						android:text="Pivot"  style="@style/detail_headline2" android:layout_marginBottom="10dp"/>
+
+				<LinearLayout android:id="@+id/pdlinear01" style="@style/detail_valset_outerlinear" android:layout_height="40dp">
+					<LinearLayout style="@style/detail_valset_linear" android:layout_marginTop="0dp">
+						<CheckBox android:id="@+id/public_pdcheckbox01" style="@style/detail_checkbox" android:layout_alignTop="@+id/pdtitle01" android:layout_toRightOf="@+id/pdtitle01" android:tag="13" />
+						<TextView android:id="@+id/pdtitle01" style="@style/detail_lineset_title" android:text="피봇 2차 저항" android:textColor="#666666"></TextView>
+
+						<TextView style="@style/detial_lineset_thick" android:id="@+id/pdline_lineview1" android:background="@drawable/line_thick" android:layout_marginRight="10dp"/>
+						<TextView style="@style/detail_lineset_palette" android:id="@+id/pdline_pttv1" android:background="@drawable/shape_circle" />
+
+					</LinearLayout>
+				</LinearLayout>
+
+				<LinearLayout android:id="@+id/pdlinear02" style="@style/detail_valset_outerlinear" android:layout_height="40dp">
+					<LinearLayout style="@style/detail_valset_linear" android:layout_marginTop="0dp">
+						<CheckBox android:id="@+id/public_pdcheckbox02" style="@style/detail_checkbox" android:layout_alignTop="@+id/pdtitle02" android:layout_toRightOf="@+id/pdtitle02" android:tag="14" />
+						<TextView android:id="@+id/pdtitle02" style="@style/detail_lineset_title" android:text="피봇 1차 저항" android:textColor="#666666"></TextView>
+
+						<TextView style="@style/detial_lineset_thick" android:id="@+id/pdline_lineview2" android:background="@drawable/line_thick" android:layout_marginRight="10dp" />
+						<TextView style="@style/detail_lineset_palette" android:id="@+id/pdline_pttv2" android:background="@drawable/shape_circle" />
+
+					</LinearLayout>
+				</LinearLayout>
+
+				<LinearLayout android:id="@+id/pdlinear03" style="@style/detail_valset_outerlinear" android:layout_height="40dp">
+					<LinearLayout style="@style/detail_valset_linear" android:layout_marginTop="0dp">
+						<CheckBox android:id="@+id/public_pdcheckbox03" style="@style/detail_checkbox" android:layout_alignTop="@+id/pdtitle02" android:layout_toRightOf="@+id/pdtitle03" android:tag="15" />
+						<TextView android:id="@+id/pdtitle03" style="@style/detail_lineset_title" android:text="피봇 기준선" android:textColor="#666666"></TextView>
+
+						<TextView style="@style/detial_lineset_thick" android:id="@+id/pdline_lineview3" android:background="@drawable/line_thick" android:layout_marginRight="10dp" />
+						<TextView style="@style/detail_lineset_palette" android:id="@+id/pdline_pttv3" android:background="@drawable/shape_circle" />
+
+					</LinearLayout>
+				</LinearLayout>
+
+				<LinearLayout android:id="@+id/pdlinear04" style="@style/detail_valset_outerlinear" android:layout_height="40dp">
+					<LinearLayout style="@style/detail_valset_linear" android:layout_marginTop="0dp">
+						<CheckBox android:id="@+id/public_pdcheckbox04" style="@style/detail_checkbox" android:layout_alignTop="@+id/pdtitle02" android:layout_toRightOf="@+id/pdtitle04" android:tag="16" />
+						<TextView android:id="@+id/pdtitle04" style="@style/detail_lineset_title" android:text="피봇 1차 지지" android:textColor="#666666"></TextView>
+
+						<TextView style="@style/detial_lineset_thick" android:id="@+id/pdline_lineview4" android:background="@drawable/line_thick" android:layout_marginRight="10dp" />
+						<TextView style="@style/detail_lineset_palette" android:id="@+id/pdline_pttv4" android:background="@drawable/shape_circle" />
+
+					</LinearLayout>
+				</LinearLayout>
+
+				<LinearLayout android:id="@+id/pdlinear05" style="@style/detail_valset_outerlinear" android:layout_height="40dp">
+					<LinearLayout style="@style/detail_valset_linear" android:layout_marginTop="0dp">
+						<CheckBox android:id="@+id/public_pdcheckbox05" style="@style/detail_checkbox" android:layout_alignTop="@+id/pdtitle02" android:layout_toRightOf="@+id/pdtitle05" android:tag="17" />
+						<TextView android:id="@+id/pdtitle05" style="@style/detail_lineset_title" android:text="피봇 2차 지지" android:textColor="#666666"></TextView>
+
+						<TextView style="@style/detial_lineset_thick" android:id="@+id/pdline_lineview5" android:background="@drawable/line_thick" android:layout_marginRight="10dp" />
+						<TextView style="@style/detail_lineset_palette" android:id="@+id/pdline_pttv5" android:background="@drawable/shape_circle" />
+
+					</LinearLayout>
+				</LinearLayout>
+
+
+				<!--< Demark >-->
+					<TextView android:id="@+id/baseline_txt_4" android:gravity="center_vertical"
+						android:text="Demark" style="@style/detail_headline2" android:layout_marginBottom="10dp" android:layout_marginTop="20dp"/>
+
+				<LinearLayout android:id="@+id/pdlinear06" style="@style/detail_valset_outerlinear" android:layout_height="40dp">
+					<LinearLayout style="@style/detail_valset_linear" android:layout_marginTop="0dp">
+						<CheckBox android:id="@+id/public_pdcheckbox06" style="@style/detail_checkbox" android:layout_alignTop="@+id/pdtitle02" android:layout_toRightOf="@+id/pdtitle06" android:tag="18" />
+						<TextView android:id="@+id/pdtitle06" style="@style/detail_lineset_title" android:text="디마크 예상 고가" android:textColor="#666666"></TextView>
+
+						<TextView style="@style/detial_lineset_thick" android:id="@+id/pdline_lineview6" android:background="@drawable/line_thick" android:layout_marginRight="10dp" />
+						<TextView style="@style/detail_lineset_palette" android:id="@+id/pdline_pttv6" android:background="@drawable/shape_circle" />
+
+					</LinearLayout>
+				</LinearLayout>
+
+				<LinearLayout android:id="@+id/pdlinear07" style="@style/detail_valset_outerlinear" android:layout_height="40dp">
+					<LinearLayout style="@style/detail_valset_linear" android:layout_marginTop="0dp">
+						<CheckBox android:id="@+id/public_pdcheckbox07" style="@style/detail_checkbox" android:layout_alignTop="@+id/pdtitle02" android:layout_toRightOf="@+id/pdtitle07" android:tag="19" />
+						<TextView android:id="@+id/pdtitle07" style="@style/detail_lineset_title" android:text="디마크 기준선" android:textColor="#666666"></TextView>
+
+						<TextView style="@style/detial_lineset_thick" android:id="@+id/pdline_lineview7" android:background="@drawable/line_thick" android:layout_marginRight="10dp" />
+						<TextView style="@style/detail_lineset_palette" android:id="@+id/pdline_pttv7" android:background="@drawable/shape_circle" />
+
+					</LinearLayout>
+				</LinearLayout>
+
+				<LinearLayout android:id="@+id/pdlinear08" style="@style/detail_valset_outerlinear" android:layout_height="40dp">
+					<LinearLayout style="@style/detail_valset_linear" android:layout_marginTop="0dp">
+						<CheckBox android:id="@+id/public_pdcheckbox08" style="@style/detail_checkbox" android:layout_alignTop="@+id/pdtitle02" android:layout_toRightOf="@+id/pdtitle08" android:tag="20" />
+						<TextView android:id="@+id/pdtitle08" style="@style/detail_lineset_title" android:text="디카트 예상 저가" android:textColor="#666666"></TextView>
+
+						<TextView style="@style/detial_lineset_thick" android:id="@+id/pdline_lineview8" android:background="@drawable/line_thick" android:layout_marginRight="10dp" />
+						<TextView style="@style/detail_lineset_palette" android:id="@+id/pdline_pttv8" android:background="@drawable/shape_circle" />
+
+					</LinearLayout>
+				</LinearLayout>
+
+				<LinearLayout style="@style/detail_valset_outerlinear"/>
+			</LinearLayout>
+		</ScrollView>
+
+
+</LinearLayout>
+

@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 2012. 7. 25 툴바 레이아웃 수정 : 중복되는 속성들 style화, 툴 사이에 구분선 삽입  -->
+<!-- <RelativeLayout
+  xmlns:android="http://schemas.android.com/apk/res/android"
+  android:layout_width="48dip"
+  android:layout_height="match_parent" android:orientation="vertical" android:clickable="true" android:background="@drawable/toolbar">
+  <ScrollView android:layout_height="match_parent" android:id="@+id/analtoolmenuScrollView" android:layout_width="match_parent"  android:layout_marginTop="2dp" android:scrollbars="none">-->
+  <RelativeLayout
+  xmlns:android="http://schemas.android.com/apk/res/android"
+  android:layout_width="48dip"
+  android:layout_height="match_parent" android:orientation="vertical" android:clickable="true" >
+    <ScrollView android:layout_height="match_parent" android:id="@+id/analtoolmenuScrollView" android:layout_width="match_parent"  android:layout_marginTop="0dp" android:scrollbars="none">
+        <LinearLayout android:weightSum="1" android:orientation="vertical" android:id="@+id/relativeLayout1" android:layout_height="wrap_content" android:layout_width="wrap_content">
+            <!--
+            <Button style="@style/toolbar_icons" android:tag="50034" android:id="@+id/button34" android:background="@drawable/c_option_34_change"/>
+            <ImageView style="@style/toolbar_imageline"/>
+            -->            
+            <Button style="@style/toolbar_icons" android:tag="50001" android:id="@+id/button01" android:background="@drawable/c_option_01_change"/>
+            <ImageView style="@style/toolbar_imageline"/>
+            <Button style="@style/toolbar_icons" android:tag="50002" android:id="@+id/button02" android:background="@drawable/c_option_02_change"/>
+            <ImageView style="@style/toolbar_imageline"/>
+            <Button style="@style/toolbar_icons" android:tag="50003" android:id="@+id/button03" android:background="@drawable/c_option_03_change"/>
+     	    <ImageView style="@style/toolbar_imageline"/>
+     	    
+     	    <Button style="@style/toolbar_icons" android:tag="50004" android:id="@+id/button04" android:background="@drawable/c_option_04_change"/>
+			<ImageView style="@style/toolbar_imageline"/>
+	        <Button style="@style/toolbar_icons" android:tag="50005" android:id="@+id/button05" android:background="@drawable/c_option_05_change"/>
+            <ImageView style="@style/toolbar_imageline"/>
+            <Button style="@style/toolbar_icons" android:tag="50006" android:id="@+id/button06" android:background="@drawable/c_option_06_change"/>
+            <ImageView style="@style/toolbar_imageline"/>
+            <Button style="@style/toolbar_icons" android:tag="50007" android:id="@+id/button07" android:background="@drawable/c_option_07_change"/>
+            <ImageView style="@style/toolbar_imageline"/>
+            <Button style="@style/toolbar_icons" android:tag="50008" android:id="@+id/button08" android:background="@drawable/c_option_08_change"/>
+            <ImageView style="@style/toolbar_imageline"/>
+            <Button style="@style/toolbar_icons" android:tag="50009" android:id="@+id/button09" android:background="@drawable/c_option_09_change"/>
+            <ImageView style="@style/toolbar_imageline"/>
+            <Button style="@style/toolbar_icons" android:tag="50010" android:id="@+id/button10" android:background="@drawable/c_option_10_change"/>
+            <ImageView style="@style/toolbar_imageline"/>
+            <Button style="@style/toolbar_icons" android:tag="50011" android:id="@+id/button11" android:background="@drawable/c_option_11_change"/>
+            <ImageView style="@style/toolbar_imageline"/>
+            <Button style="@style/toolbar_icons" android:tag="50012" android:id="@+id/button12" android:background="@drawable/c_option_12_change"/>
+            <ImageView style="@style/toolbar_imageline"/>
+            <Button style="@style/toolbar_icons" android:tag="50013" android:id="@+id/button13" android:background="@drawable/c_option_13_change"/>
+            <ImageView style="@style/toolbar_imageline"/>
+            <Button style="@style/toolbar_icons" android:tag="50014" android:id="@+id/button14" android:background="@drawable/c_option_14_change"/>
+            <ImageView style="@style/toolbar_imageline"/>
+           
+            <Button style="@style/toolbar_icons" android:tag="50018" android:id="@+id/button18" android:background="@drawable/c_option_18_change"/>
+            <ImageView style="@style/toolbar_imageline"/>
+            <Button style="@style/toolbar_icons" android:tag="50019" android:id="@+id/button19" android:background="@drawable/c_option_19_change"/>
+            <ImageView style="@style/toolbar_imageline"/>
+            <Button style="@style/toolbar_icons" android:tag="50020" android:id="@+id/button20" android:background="@drawable/c_option_20_change"/>
+            <ImageView style="@style/toolbar_imageline"/>
+      
+            <Button style="@style/toolbar_icons" android:tag="50021" android:id="@+id/button21" android:background="@drawable/c_option_21_change"/>            
+            <ImageView style="@style/toolbar_imageline"/>
+            
+            <Button style="@style/toolbar_icons" android:tag="50022" android:id="@+id/button22" android:background="@drawable/c_option_22_change"/>
+            <ImageView style="@style/toolbar_imageline"/>
+            <Button style="@style/toolbar_icons" android:tag="50023" android:id="@+id/button23" android:background="@drawable/c_option_23_change"/>
+            <ImageView style="@style/toolbar_imageline"/>
+            <Button style="@style/toolbar_icons" android:tag="50024" android:id="@+id/button24" android:background="@drawable/c_option_24_change"/>
+            <ImageView style="@style/toolbar_imageline"/>
+            <Button style="@style/toolbar_icons" android:tag="50025" android:id="@+id/button25" android:background="@drawable/c_option_25_change"/>
+            <ImageView style="@style/toolbar_imageline"/>
+            <Button style="@style/toolbar_icons" android:tag="50026" android:id="@+id/button26" android:background="@drawable/c_option_26_change"/>
+            <ImageView style="@style/toolbar_imageline"/>
+            <Button style="@style/toolbar_icons" android:tag="50027" android:id="@+id/button27" android:background="@drawable/c_option_27_change"/>
+            <ImageView style="@style/toolbar_imageline"/>
+            <Button style="@style/toolbar_icons" android:tag="50028" android:id="@+id/button28" android:background="@drawable/c_option_28_change"/>
+            <ImageView style="@style/toolbar_imageline"/>
+			          
+            <Button style="@style/toolbar_icons" android:tag="50029" android:id="@+id/button29" android:background="@drawable/c_option_29_change"/>
+            <ImageView style="@style/toolbar_imageline"/>
+            
+            <Button style="@style/toolbar_icons" android:tag="50030" android:id="@+id/button30" android:background="@drawable/c_option_30_change"/>
+            <ImageView style="@style/toolbar_imageline"/>
+            <Button style="@style/toolbar_icons" android:tag="50031" android:id="@+id/button31" android:background="@drawable/c_option_31_change"/>
+            <ImageView style="@style/toolbar_imageline"/>
+                      
+            <Button style="@style/toolbar_icons" android:tag="50032" android:id="@+id/button32" android:background="@drawable/c_option_gijunsun_change"/>
+            <ImageView style="@style/toolbar_imageline"/>
+	        
+	         <Button style="@style/toolbar_icons" android:tag="50033" android:id="@+id/button33" android:background="@drawable/c_option_jadongchuse_change"/>
+            <ImageView style="@style/toolbar_imageline"/>
+             
+            <Button style="@style/toolbar_icons" android:tag="50034" android:id="@+id/button34" android:background="@drawable/c_option_34_change"/>
+			<ImageView style="@style/toolbar_imageline"/>
+            <Button style="@style/toolbar_icons" android:tag="50035" android:id="@+id/button35" android:background="@drawable/c_option_35_change"/>
+			<ImageView style="@style/toolbar_imageline"/>
+			<Button style="@style/toolbar_icons" android:tag="50036" android:id="@+id/button36" android:background="@drawable/c_option_36_change"/>
+			<!--<ImageView style="@style/toolbar_imageline"/>-->
+			<!--
+			<Button style="@style/toolbar_icons" android:tag="50037" android:id="@+id/button37" android:background="@drawable/c_option_37_change"/>
+			<ImageView style="@style/toolbar_imageline"/>
+			-->			
+        </LinearLayout>
+    </ScrollView>
+    
+    			<!-- Prev Scroll Button -->
+			<FrameLayout
+				android:id="@+id/CommonUpScrollButton"
+				android:layout_width="16dp"
+				android:layout_height="wrap_content"
+				android:layout_centerHorizontal="true"
+				android:layout_marginTop="3dp"
+				android:layout_alignTop="@+id/analtoolmenuScrollView"
+				android:visibility="invisible"
+				android:clickable="true"
+			>
+				<ImageView
+					android:layout_width="16dp"
+					android:layout_height="10dp"
+					android:layout_gravity="center"
+
+				>
+				</ImageView>
+			</FrameLayout>
+
+			<!-- Next Scroll Button -->
+			<FrameLayout
+				android:id="@+id/CommonDownScrollButton"
+				android:layout_width="16dp"
+				android:layout_centerHorizontal="true"
+				android:layout_marginBottom="3dp"
+				android:layout_height="wrap_content"
+				android:layout_alignBottom="@+id/analtoolmenuScrollView"
+				android:clickable="true"
+				android:visibility="invisible"
+			>
+				<ImageView
+					android:layout_width="16dp"
+					android:layout_height="10dp"
+					android:layout_gravity="center"
+				>
+				</ImageView>
+			</FrameLayout>
+</RelativeLayout>

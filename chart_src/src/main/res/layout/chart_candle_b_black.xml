@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" android:background="#202020">
+    
+    <RelativeLayout android:layout_width="match_parent" android:layout_height="match_parent" android:orientation="vertical" android:background="#202020">
+	     <!-- 2012. 8. 27  캔들 추가설정창  -->
+	     <ScrollView android:layout_width="fill_parent" android:layout_height="fill_parent" android:background="#202020" android:layout_marginTop="57dp">
+	         <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:id="@+id/candlesetting" android:orientation="vertical" android:padding="10dip">
+		        <LinearLayout style="@style/candlesetting_rowlinear">
+		            <TextView style="@style/detail_lineset_title_black" android:layout_weight="0.35" android:text="양봉(상승)"/>
+		            <TextView style="@style/detail_lineset_items" android:layout_weight="0.35" android:id="@+id/candlecolor_yangsang"  android:layout_marginRight="20dip" android:background="@drawable/shape_roundrect"></TextView>
+		            <CheckBox style="@style/detail_checkbox_black" android:layout_marginLeft="10dip" android:checked="true" android:id="@+id/candle_yangsang_check"/>
+		            <TextView style="@style/detail_lineset_title_black" android:paddingLeft="10dip" android:layout_weight="0.25" android:text="채우기" android:id="@+id/candle_yangsang_label"/>
+		        </LinearLayout>
+		        
+		        <LinearLayout style="@style/candlesetting_rowlinear">
+		            <TextView style="@style/detail_lineset_title_black" android:layout_weight="0.35" android:text="양봉(하락)"/>
+		            <TextView style="@style/detail_lineset_items" android:layout_weight="0.35" android:id="@+id/candlecolor_yangha" android:layout_marginRight="20dip"  android:background="@drawable/shape_roundrect"></TextView>
+		            <CheckBox style="@style/detail_checkbox_black" android:layout_marginLeft="10dip" android:checked="true" android:id="@+id/candle_yangha_check"/>
+		            <TextView style="@style/detail_lineset_title_black" android:paddingLeft="10dip" android:layout_weight="0.25" android:text="채우기" android:id="@+id/candle_yangha_label"/>
+		        </LinearLayout>
+		        
+		        <LinearLayout style="@style/candlesetting_rowlinear">
+		            <TextView style="@style/detail_lineset_title_black" android:layout_weight="0.35" android:text="음봉(상승)"/>
+		            <TextView style="@style/detail_lineset_items" android:layout_weight="0.35" android:id="@+id/candlecolor_eumsang" android:layout_marginRight="20dip"  android:background="@drawable/shape_roundrect"></TextView>
+		            <CheckBox style="@style/detail_checkbox_black" android:layout_marginLeft="10dip" android:checked="true" android:id="@+id/candle_eumsang_check"/>
+		            <TextView style="@style/detail_lineset_title_black" android:paddingLeft="10dip" android:layout_weight="0.25" android:text="채우기" android:id="@+id/candle_eumsang_label"/>
+		        </LinearLayout>
+		        
+		        <LinearLayout style="@style/candlesetting_rowlinear">
+		            <TextView style="@style/detail_lineset_title_black" android:layout_weight="0.35" android:text="음봉(하락)"/>
+		            <TextView style="@style/detail_lineset_items" android:layout_weight="0.35" android:id="@+id/candlecolor_eumha"  android:layout_marginRight="20dip" android:background="@drawable/shape_roundrect"></TextView>
+		            <CheckBox style="@style/detail_checkbox_black" android:layout_marginLeft="10dip" android:checked="true" android:id="@+id/candle_eumha_check"/>
+		            <TextView style="@style/detail_lineset_title_black" android:paddingLeft="10dip" android:layout_weight="0.25" android:text="채우기" android:id="@+id/candle_eumha_label"/>
+		        </LinearLayout>
+		        
+		        <LinearLayout style="@style/candlesetting_rowlinear" android:layout_height="wrap_content" android:layout_marginTop="20dip" android:id="@+id/candle_baseprice_layout">
+		            <TextView style="@style/detail_lineset_title_black" android:textSize="14dp" android:layout_weight="0.5" android:text="상승/하락기준: 전봉종가 대비" android:layout_marginRight="5dip"/>
+		            <!-- <Spinner style="@style/candlesetting_spinner" android:id="@+id/candle_spinner_prevcandle"/> -->
+	
+	
+	                <LinearLayout
+	                    android:id="@+id/candle_button_baseprice"
+	                    android:layout_width="0dp"
+	                    android:layout_height="33dp"
+	                    android:layout_weight="0.2"
+	                    android:gravity="center_vertical"
+	                    android:orientation="horizontal"
+	                    android:paddingBottom="2dp"
+	                    android:paddingRight="2dp" >
+	
+	                    <TextView
+	                        android:id="@+id/candle_button_baseprice_text"
+	                        android:layout_width="0dp"
+	                        android:layout_height="wrap_content"
+	                        android:layout_marginLeft="5dp"
+	                        android:layout_weight="0.6"
+	                        android:singleLine="true"
+	                        android:text=""
+	                        android:textColor="@color/kfit_white"
+	                        android:textSize="15dp" />
+	
+	                </LinearLayout>
+	
+	                
+		            <TextView android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="0.3" android:layout_gravity="center_vertical" android:textColor="#ffffff" android:textSize="14dp" android:layout_marginLeft="5dip" android:text=" 상승/하락"/>
+		        </LinearLayout>
+		        
+		        <LinearLayout style="@style/candlesetting_rowlinear" android:layout_height="wrap_content">
+		            <TextView style="@style/detail_lineset_title_black" android:layout_weight="0.5" android:textSize="14dp" android:text="보합(시가=종가) 색상"/>
+		            <!-- <Spinner style="@style/candlesetting_spinner" android:id="@+id/candle_spinner_closevalue"/> -->
+	
+	                <LinearLayout
+	                    android:id="@+id/candle_button_samecolor"
+	                    android:layout_width="0dp"
+	                    android:layout_height="33dp"
+	                    android:layout_weight="0.4"
+	                    android:gravity="center_vertical"
+	                    android:orientation="horizontal"
+	                    android:paddingBottom="2dp"
+	                    android:paddingRight="2dp" >
+	
+	                    <TextView
+	                        android:id="@+id/candle_button_samecolor_text"
+	                        android:layout_width="0dp"
+	                        android:layout_height="wrap_content"
+	                        android:layout_marginLeft="5dp"
+	                        android:layout_weight="0.6"
+	                        android:singleLine="true"
+	                        android:text=""
+	                        android:textColor="@color/kfit_white"
+	                        android:textSize="15dp" />
+	                    
+	                    <LinearLayout
+	                    android:layout_width="0dp"
+	                    android:layout_height="33dp"
+	                    android:layout_weight="0.1"/>
+	                </LinearLayout>
+		        </LinearLayout>
+		        
+		        <LinearLayout style="@style/candlesetting_rowlinear" android:layout_marginTop="20dip">
+		            <CheckBox style="@style/detail_checkbox_black" android:checked="false" android:id="@+id/candle_minmax_check" android:layout_marginLeft="10dp"/>
+		            <TextView style="@style/detail_lineset_title_black" android:textColor="#ffffff" android:paddingLeft="10dip" android:layout_width="wrap_content" android:text="지표(이평 등) 제외 Y축 표시" android:id="@+id/candle_minmax_label"/>
+		        </LinearLayout>
+		        
+		        <LinearLayout style="@style/candlesetting_rowlinear">
+		            <CheckBox style="@style/detail_checkbox_black" android:checked="false" android:id="@+id/candle_log_check" android:layout_marginLeft="10dp"/>
+		            <TextView style="@style/detail_lineset_title_black" android:textColor="#ffffff" android:paddingLeft="10dip" android:layout_width="wrap_content" android:text="로그차트" android:id="@+id/candle_log_label"/>
+		        </LinearLayout>
+		    </LinearLayout>
+	         
+	     </ScrollView>
+	     
+	     <LinearLayout android:layout_width="match_parent" android:layout_height="40dip" android:background="#202020">
+	           <!--  초기화  -->
+	        <Button android:text="초기화" android:textColor="#ffffff" android:layout_height="32dp" android:textSize="16dp" android:layout_marginLeft="10dp"
+				android:layout_width="70dip" android:gravity="center" android:layout_gravity="center"
+				android:background="@drawable/btn_chart_init_change" android:id="@+id/frameaBtnInit"/>  
+	 	    <TextView android:layout_weight="1" android:gravity="center" android:textColor="#ffffff"  
+	 	        android:textSize="20dp" android:text="차트 설정" android:id="@+id/frameaTitle" 
+	 	        android:layout_height="match_parent" android:layout_width="0dp" android:layout_marginRight="10dp"></TextView>
+	 	 
+				<!-- 닫기  -->
+			<Button android:background="@drawable/btn_detail_back_change" android:layout_gravity="center_vertical"
+	            android:id="@+id/frameaBtnBack" android:layout_height="24dp" android:layout_width="24dp" android:layout_marginRight="10dp"/>  
+		</LinearLayout>
+		
+	 </RelativeLayout>
+</LinearLayout>

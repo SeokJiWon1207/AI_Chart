@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#202020"
+    android:clickable="true"
+    android:orientation="vertical"  android:weightSum="1">
+
+ 	<LinearLayout
+ 	    android:layout_weight="1" 
+ 	    android:layout_width="match_parent"
+ 	    android:layout_height="0dp"
+ 	    android:background="#202020"
+ 	    android:orientation="vertical" >
+
+     	<!-- 상단 차트설정(기존지표설정) 버튼 -->
+	   
+
+        <!-- <LinearLayout android:id="@+id/linear_jipyolistbtn" android:layout_height="46dip" android:layout_width="match_parent" android:orientation="horizontal"
+				    android:paddingLeft="5dp" android:paddingRight="5dp" android:background="@drawable/list_bg"> 
+		    <Button
+                android:id="@+id/btn_totalindicator"
+                android:layout_marginLeft="1dp"
+                style="@style/indicator_jipyolistbutton"
+                android:focusable="true"
+                android:text="전체지표"
+                android:background="@drawable/btn_indicator_jipyolistbutton_left_change"
+                android:tag="1150"/>
+		    <Button
+                android:id="@+id/btn_channelindicator"
+                style="@style/indicator_jipyolistbutton"
+                android:text="채널지표"
+                android:background="@drawable/btn_indicator_jipyolistbutton_center_change"
+                android:tag="1160" />
+   			<Button
+                android:id="@+id/btn_technicalindicator"
+                style="@style/indicator_jipyolistbutton"
+                android:text="기술적지표"
+                android:textColor="#8bbdff"
+                android:background="@drawable/btn_indicator_jipyolistbutton_center_change"
+                android:tag="1170" />
+			<Button
+                android:id="@+id/btn_etcindicator"
+				style="@style/indicator_jipyolistbutton"
+                android:text="기타지표"
+                android:background="@drawable/btn_indicator_jipyolistbutton_center_change"
+                android:tag="1180" />
+			<Button
+                android:id="@+id/btn_charttypeindicator"
+				style="@style/indicator_jipyolistbutton"
+                android:text="차트유형"
+                android:background="@drawable/btn_indicator_jipyolistbutton_right_change"
+                android:tag="1190" />
+	    </LinearLayout> -->
+        
+		<ScrollView android:scrollbarStyle="insideOverlay"
+ 			  android:layout_width="match_parent" android:id="@+id/indicatorscroll" android:background="#202020" android:visibility="visible" android:layout_gravity="top"
+			  android:layout_height="match_parent" android:orientation="vertical" android:tag="20007" android:clickable="true">
+			<!-- <LinearLayout
+			  android:layout_width="match_parent" 
+			  android:layout_height="wrap_content" android:orientation="vertical" android:tag="20007" android:clickable="true">
+
+			    <RelativeLayout style="@style/chartset_fortablet_listview_rl" android:id="@+id/chartLayout" android:layout_height="352dip" android:visibility="gone"> 2015. 1. 13 차트유형 추가 : height 조절
+					<ListView style="@style/chartset_listview_list" android:id="@+id/chartList"></ListView>
+			    </RelativeLayout>
+			    <RelativeLayout style="@style/chartset_fortablet_listview_rl" android:id="@+id/overlayLayout" android:layout_height="352dip" android:visibility="gone">
+					<ListView style="@style/chartset_listview_list" android:id="@+id/overlayList"></ListView>
+			    </RelativeLayout>
+			    <RelativeLayout style="@style/chartset_fortablet_listview_rl" android:id="@+id/jipyoLayout" android:layout_width="match_parent" android:layout_height="wrap_content" android:visibility="visible">
+			        <ListView style="@style/chartset_listview_list" android:id="@+id/jipyoList"></ListView>
+			    </RelativeLayout>
+			    <RelativeLayout style="@style/chartset_fortablet_listview_rl" android:id="@+id/totalLayout" android:layout_height="352dip" android:visibility="gone">
+					<ListView style="@style/chartset_listview_list" android:id="@+id/totalList"></ListView>
+			    </RelativeLayout>
+			    <RelativeLayout style="@style/chartset_fortablet_listview_rl" android:id="@+id/otherLayout" android:layout_height="352dip" android:visibility="gone">
+					<ListView style="@style/chartset_listview_list" android:id="@+id/otherList"></ListView>
+			    </RelativeLayout>
+			</LinearLayout> -->
+			
+			<LinearLayout
+			  android:layout_width="fill_parent" 
+			  android:layout_height="wrap_content" android:orientation="vertical" android:tag="20007" android:clickable="true">
+			    <RelativeLayout style="@style/chartset_headline_rl_black" android:id="@+id/indicator_charttype" >
+			        <TextView style="@style/chartset_headline_tv_black" android:text="차트유형"/>
+			    </RelativeLayout>
+			    <RelativeLayout style="@style/chartset_fortablet_listview_rl_black" android:id="@+id/chartLayout" android:layout_height="290dip" android:visibility="gone">
+					<ListView style="@style/chartset_listview_list_black" android:id="@+id/chartList"></ListView>
+			    </RelativeLayout>
+
+			    <RelativeLayout  style="@style/chartset_headline_rl_black" android:id="@+id/indicator_overlay">
+			        <TextView style="@style/chartset_headline_tv_black" android:text="오버레이"/>
+			    </RelativeLayout>
+			    <RelativeLayout style="@style/chartset_fortablet_listview_rl_black" android:id="@+id/overlayLayout" android:layout_height="375dip" android:visibility="gone">
+					<ListView style="@style/chartset_listview_list" android:id="@+id/overlayList"></ListView>
+			    </RelativeLayout>
+
+			    <RelativeLayout style="@style/chartset_headline_rl_black" android:id="@+id/indicator_jipyo">
+			        <TextView style="@style/chartset_headline_tv_black" android:text="보조지표"/>
+			    </RelativeLayout>
+			    <RelativeLayout style="@style/chartset_fortablet_listview_rl_black" android:id="@+id/jipyoLayout" android:layout_width="fill_parent" android:layout_height="1410dip" android:visibility="gone">
+			        <ListView style="@style/chartset_listview_list" android:id="@+id/jipyoList"></ListView>
+			    </RelativeLayout>
+			    
+			    <RelativeLayout style="@style/chartset_headline_rl_black" android:id="@+id/indicator_other">
+			        <TextView style="@style/chartset_headline_tv_black" android:text="기타지표"/>
+			    </RelativeLayout>
+			    <RelativeLayout style="@style/chartset_fortablet_listview_rl_black" android:id="@+id/otherLayout" android:layout_width="fill_parent" android:layout_height="375dip"  android:layout_marginBottom="30dip" android:visibility="gone">
+			        <ListView style="@style/chartset_listview_list" android:id="@+id/otherList"></ListView>
+			    </RelativeLayout>
+			</LinearLayout>
+		</ScrollView>
+		<!-- 지표설정창 끝  -->
+	</LinearLayout>
+
+		<LinearLayout android:layout_width="fill_parent" android:layout_height="44dip" android:orientation="horizontal"
+	    		android:weightSum="1" android:layout_marginBottom="0dp" android:background="#ffffff">
+	    <!-- 2015. 1. 20 저장창/수정창 상세설명 제외 초기화버튼 제외 창크기 축소 : 초기화버튼 감추고 나머지 두버튼 가중치 조정 -->
+	    <Button
+                android:id="@+id/indicatormini_btn_close"
+                style="@style/alert_bottom_btn"
+                android:layout_height="44dp"
+                android:background="@drawable/btn_option_lbottom_change_black"
+                android:textColor="@color/kfit_white"
+    
+                android:text="닫기"/>
+		<Button
+                android:id="@+id/indicatormini_btn_showindicator"
+                style="@style/alert_bottom_btn"
+                 android:layout_height="44dp"
+                android:background="@drawable/btn_option_rbottom_change_black"
+                android:textColor="@color/color11"
+ 	           android:text="차트설정"/>
+	</LinearLayout>
+</LinearLayout>
+
+

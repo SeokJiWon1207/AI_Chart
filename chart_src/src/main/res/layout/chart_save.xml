@@ -1,0 +1,173 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 2012. 7. 24  차트저장화면 윗쪽 배경색 지정  -->
+<LinearLayout
+  xmlns:android="http://schemas.android.com/apk/res/android" android:clickable="true" android:background="@drawable/shape_popup_alert_roundrect"
+  	android:orientation="vertical" android:layout_height="wrap_content" android:layout_width="324dp">
+	<RelativeLayout android:id="@+id/savetop"
+		android:orientation="horizontal"
+		android:layout_width="fill_parent" android:layout_height="63dp"  android:background="@android:color/transparent">
+		<TextView android:id="@+id/frameaTitle" android:layout_width="match_parent"
+			android:layout_height="match_parent"
+			android:gravity="center"
+			android:text="차트 저장"
+			android:textSize="18sp"
+			android:textStyle="bold"
+			android:textColor="#111111">
+		</TextView>
+		<ImageView
+			android:layout_width="match_parent"
+			android:layout_height="1dp"
+			android:background="#f0f0f0"
+			android:layout_marginLeft="30dp"
+			android:layout_marginRight="30dp"
+			android:layout_alignParentBottom="true"
+			android:visibility="gone"/>
+		<ImageView android:background="#e3e3e3" android:layout_height="5dp" android:layout_width="fill_parent" android:visibility="gone"/>
+	</RelativeLayout>
+
+	<ScrollView
+	    android:weightSum="1" android:background="#ffffff"
+		android:orientation="vertical"  android:layout_weight="1"
+	    android:layout_width="fill_parent" android:layout_height="0dip">
+		
+	    <LinearLayout android:layout_width="match_parent" android:layout_height="match_parent" android:orientation="vertical"  android:paddingLeft="18dp" android:paddingRight="18dp">
+	        <LinearLayout android:layout_width="wrap_content" android:layout_height="wrap_content" android:gravity="center_vertical">
+	    	<!-- <ImageView 	android:layout_width="4dp" android:layout_height="4dp" android:background="@drawable/popup_bullet"/> -->
+			<TextView
+				    android:id="@+id/savechart_txt_1"
+				    android:layout_width="wrap_content"
+				    android:layout_height="wrap_content"
+				    android:gravity="center_vertical"
+				    android:text="저장명"
+				    android:textColor="#000000"
+				    android:textSize="14dp"
+					android:visibility="gone"/>
+			</LinearLayout>
+			<drfn.chart.comp.ExEditText
+			    android:id="@+id/chartsave_editname"
+			    android:layout_width="match_parent"
+			    android:layout_height="36dp"
+			    android:maxLength="20"
+			    android:textSize="14dp"
+			    android:textColor="#111111"
+			    android:paddingLeft="10dp"
+			    android:background="@drawable/edittext_change"
+			    android:hint="차트이름(최대20자까지 입력가능)"
+				android:textColorHint="#bbbbbb"
+				android:gravity="start|center_vertical"/>
+			
+			<!-- 2015. 1. 20 저장창/수정창 상세설명 제외 초기화버튼 제외 창크기 축소 : 상세내용쪽 감추기 -->
+			<LinearLayout android:layout_width="wrap_content" android:layout_height="wrap_content" android:gravity="center_vertical" android:visibility="gone">
+		    	<!-- <ImageView 	android:layout_width="4dp" android:layout_height="4dp" android:background="@drawable/popup_bullet"/> -->
+				<TextView
+					    android:id="@+id/savechart_txt_2"
+					    android:layout_width="wrap_content"
+					    android:layout_height="wrap_content"
+					    android:gravity="center_vertical"
+					    android:text="상세내용"
+					    android:textColor="#000000"
+					    android:textSize="14dp" />
+			</LinearLayout>
+	
+			<ScrollView android:id="@+id/linear_detailinfoback"
+			    	android:orientation="vertical"
+					android:layout_height="wrap_content"
+					android:layout_width="match_parent">
+
+				<LinearLayout android:layout_height="match_parent" android:layout_width="match_parent" android:orientation="vertical">
+					<LinearLayout android:layout_height="wrap_content" android:layout_width="match_parent" android:orientation="horizontal" android:layout_marginTop="20dp">
+						<TextView style="@style/savechart_tv_detailinfo" android:id="@+id/detailinfo_date" android:layout_width="0dp" android:layout_weight="1"/>
+						<TextView style="@style/savechart_tv_detailinfo" android:id="@+id/detailinfo_period" android:textColor="#488be2" android:text="일"/>
+					</LinearLayout>
+					<LinearLayout android:layout_height="wrap_content" android:layout_width="match_parent" android:orientation="horizontal" android:layout_marginTop="20dp">
+						<TextView style="@style/savechart_tv_detailinfo" android:layout_width="wrap_content" android:text="지표"/>
+						<TextView style="@style/savechart_tv_detailinfo" android:id="@+id/detailinfo_jipyo" android:layout_width="0dp" android:layout_weight="1" android:textColor="#111111" android:layout_marginLeft="8dp" android:singleLine="true"/>
+					</LinearLayout>
+
+				    <LinearLayout android:layout_height="wrap_content" android:layout_width="match_parent" android:orientation="horizontal" android:layout_marginTop="20dp">
+						<CheckBox
+							android:id="@+id/chk_save_jongmok"
+							android:layout_width="20dp"
+							android:layout_height="20dp"
+							android:layout_marginRight="9dp"
+							android:background="@drawable/checkbox_change"
+							android:layout_gravity="center_vertical"
+							android:button="@null"
+							android:checked="true"/>
+						<TextView android:id="@+id/tv_save_jongmok" style="@style/savechart_tv_detailinfo" android:text="종목저장"/>
+
+				    </LinearLayout>
+					<TextView style="@style/savechart_tv_detailinfo" android:id="@+id/detailinfo_jongmokname" android:textColor="#111111" android:textStyle="bold" android:layout_marginTop="10dp" android:layout_marginBottom="30dp"/>
+
+
+			    </LinearLayout>
+			</ScrollView>
+	
+<!--	   	    <LinearLayout android:layout_width="wrap_content" android:layout_height="22dp" android:gravity="center_vertical" android:visibility="gone">-->
+<!--		    	<ImageView 	android:layout_width="4dp" android:layout_height="4dp" />-->
+<!--				<TextView-->
+<!--					    android:id="@id/textview01"-->
+<!--					    android:layout_width="wrap_content"-->
+<!--					    android:layout_height="22dp"-->
+<!--					    android:layout_marginLeft="5dp"-->
+<!--					    android:gravity="center_vertical"-->
+<!--					    android:text="상세설명"-->
+<!--					    android:textColor="#333333"-->
+<!--					    android:textSize="14dp"/>-->
+<!--			</LinearLayout>-->
+			<!-- <LinearLayout
+	   	        android:id="@+id/chartsave_lineardescribe"
+	   	        android:layout_width="fill_parent"
+	   	        android:layout_height="match_parent"
+	   	        android:background="@drawable/shape_savechart_rect"
+	   	        android:orientation="vertical"
+	   	        android:padding="10dip"
+	   	        android:layout_weight="0.2" > -->
+	
+			<EditText android:id="@+id/memo_box"
+			    	android:padding="6dip"
+					android:layout_height="90dip"
+					android:layout_width="match_parent"
+					android:layout_marginTop="2dip"
+					android:background="@drawable/edittext_change"
+					android:textColor="#000000"
+					android:text="" 
+					android:gravity="top"
+					android:maxLength="140" android:visibility="gone"/>
+	    </LinearLayout>
+	    
+   	    
+			
+		<!-- <TextView android:id="@+id/savedatetitle" android:layout_marginLeft="180dip"
+						android:layout_width="wrap_content" 
+						android:layout_height="0dip" android:layout_weight="0.15" 
+						android:textSize="9dp" android:gravity="center"
+						android:text="9999-99-99"
+						android:textStyle="bold">
+					</TextView> 
+		</LinearLayout>-->
+	</ScrollView>
+	<LinearLayout android:layout_width="fill_parent" android:layout_height="48dp" android:background="@android:color/transparent" android:orientation="horizontal">
+	    <!-- 2015. 1. 20 저장창/수정창 상세설명 제외 초기화버튼 제외 창크기 축소 : 초기화버튼 감추고 나머지 두버튼 가중치 조정 -->
+	    <Button
+                android:id="@+id/refreshbtn"
+                android:layout_width="0dp"
+                android:layout_weight="0.32"
+                android:layout_height="35dp"
+                android:background="@drawable/btn_popup_chart"
+                android:text="초기화"
+                android:textSize="18dp" android:visibility="gone"/>
+	    <Button
+			android:id="@+id/frameabtnfunction"
+			style="@style/alert_bottom_btn"
+			android:background="@drawable/btn_popup_chart_neg"
+			android:layout_weight="0.4"
+			android:text="취소"/>
+		<Button
+			android:id="@+id/acceptbtn"
+			style="@style/alert_bottom_btn"
+			android:background="@drawable/btn_popup_chart"
+			android:layout_weight="0.6"
+			android:text="확인" />
+	</LinearLayout>
+</LinearLayout>

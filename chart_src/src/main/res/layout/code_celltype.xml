@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<AbsoluteLayout android:id="@+id/code_AbsoluteLayout01" 
+	android:layout_width="fill_parent" 
+	android:layout_height="fill_parent" 
+	xmlns:android="http://schemas.android.com/apk/res/android">
+	<TextView android:text="123456" 
+		android:id="@+id/code_TextViewA01"
+		style = "@style/codehelper_code"
+		android:width="100sp"
+		android:height="30sp"
+		android:layout_x="2sp"
+		android:layout_y="4sp">
+		</TextView>
+	<TextView android:text="CodeName" 
+		android:id="@+id/code_TextViewA02"
+		style = "@style/codehelper_name"
+		android:height="30sp"
+		android:layout_x="62sp"
+		android:layout_y="2sp">
+		</TextView>
+</AbsoluteLayout>

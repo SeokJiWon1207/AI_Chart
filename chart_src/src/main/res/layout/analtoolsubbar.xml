@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+  xmlns:android="http://schemas.android.com/apk/res/android"
+  android:layout_width="141dp"
+  android:layout_height="30dp" android:background="@drawable/subbar">
+  	<Button android:text="수정" android:id="@+id/button03" android:tag="modify" android:layout_width="23dp" android:textSize="12dip" android:background="#00000000" android:textColor="@color/kfit_white" android:layout_height="30dp" android:layout_gravity="center_vertical" android:textStyle="normal" android:layout_marginLeft="8dp"></Button>
+    <ImageView android:layout_height="12dp" android:id="@+id/imageView2" android:layout_width="1dp" android:background="#888888" android:layout_gravity="center_vertical" android:layout_marginLeft="8dp"></ImageView>
+    <Button android:text="삭제" android:id="@+id/button01" android:tag="one" android:layout_width="23dp" android:textSize="12dip" android:background="#00000000" android:textColor="@color/kfit_white" android:layout_height="30dp" android:layout_gravity="center_vertical" android:textStyle="normal" android:layout_marginLeft="8dp"></Button>
+    <ImageView android:layout_height="12dp" android:id="@+id/imageView1" android:layout_width="1dp" android:background="#888888" android:layout_gravity="center_vertical" android:layout_marginLeft="8dp"></ImageView>
+    <Button android:text="전체삭제" android:id="@+id/button02" android:tag="all" android:layout_width="45dp" android:textSize="12dip" android:background="#00000000" android:textColor="@color/kfit_white" android:layout_height="30dp" android:layout_gravity="center_vertical" android:textStyle="normal" android:layout_marginLeft="8dp"></Button>
+</LinearLayout>

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<RelativeLayout android:id="@+id/fctb_AbsoluteLayout01" 
+	android:layout_width="fill_parent" 
+	android:layout_height="25dp" 
+	xmlns:android="http://schemas.android.com/apk/res/android" android:layout_marginRight="5dp">
+    <Spinner android:id="@+id/spinner" android:layout_alignParentTop="true" android:layout_height="wrap_content" android:layout_width="100dip"></Spinner>
+	<EditText android:text="" android:id="@+id/editText" android:textSize="14dip" android:layout_height="25dp" android:layout_alignParentRight="true" android:background="#000000" android:textColor="@color/kfit_white" android:layout_centerVertical="true" android:layout_width="80dip" android:imeOptions="actionDone|flagNoExtractUi" android:inputType="phone" android:hint="직접입력"></EditText>
+</RelativeLayout>

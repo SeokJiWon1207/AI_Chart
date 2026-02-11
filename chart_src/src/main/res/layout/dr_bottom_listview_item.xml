@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="56dp"
+    android:orientation="horizontal"
+    android:background="#ffffff">
+
+    <LinearLayout
+        android:id="@+id/ll_bottomlistview"
+        android:layout_width="match_parent"
+        android:layout_height="56dp">
+        <LinearLayout
+            android:id="@+id/ll_listview"
+            android:layout_width="0dp"
+            android:layout_height="56dp"
+            android:orientation="vertical"
+            android:layout_weight="0.8"
+            android:layout_gravity="start|center_vertical">
+
+            <TextView
+                android:id="@+id/tv_cond_title"
+                android:layout_width="match_parent"
+                android:layout_height="56dp"
+                android:layout_marginLeft="40dp"
+                android:layout_marginRight="40dp"
+                android:layout_weight="1"
+                android:gravity="center_vertical"
+                android:text="조건이름"
+                android:textColor="#000000"
+                android:textSize="16dp" />
+            <TextView
+                android:id="@+id/tv_cond_explain"
+                android:layout_width="match_parent"
+                android:layout_height="56dp"
+                android:layout_marginLeft="23.3dp"
+                android:layout_weight="1"
+                android:text="조건이름"
+                android:textColor="#ffffff"
+                android:textSize="12dp"
+                android:visibility="gone"
+                />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/ll_imge_item"
+            android:layout_width="wrap_content"
+            android:layout_height="52dp"
+            android:orientation="vertical"
+            android:paddingRight="23.6dp"
+            android:gravity="center|end">
+<!--            <ImageView-->
+<!--                android:id="@+id/iv_cond_desc"-->
+<!--                android:layout_width="6.3dp"-->
+<!--                android:layout_height="12dp"-->
+<!--                android:layout_gravity="center_vertical"-->
+<!--                android:background="@drawable/cond_btn_arrow" />-->
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/ll_cond_delete"
+            android:layout_width="25dp"
+            android:layout_height="52dp"
+            android:orientation="vertical"
+            android:layout_marginRight="15dp"
+            android:gravity="center|end" android:visibility="gone">
+
+<!--            <ImageView-->
+<!--                android:id="@+id/iv_cond_delete"-->
+<!--                android:layout_width="18dp"-->
+<!--                android:layout_height="18dp"-->
+<!--                android:layout_gravity="center_vertical"-->
+<!--                android:background="@drawable/cond_btn_bottom_del_n" />-->
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/ll_check_item"
+            android:layout_width="wrap_content"
+            android:layout_height="52dp"
+            android:orientation="vertical"
+            android:paddingRight="23.6dp"
+            android:gravity="center"
+            android:visibility="gone">
+<!--            <CheckBox android:id="@+id/chk_cond_item"-->
+<!--                    android:layout_width="17dp"-->
+<!--                    android:layout_height="12dp"-->
+<!--                    android:button="@drawable/cond_checkitem_gray_sn"/>-->
+        </LinearLayout>
+    </LinearLayout>
+</LinearLayout>
